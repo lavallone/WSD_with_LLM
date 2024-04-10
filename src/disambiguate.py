@@ -72,6 +72,7 @@ def _get_gold_data():
     with open("../data/evaluation/ALL_preprocessed.json", "r") as json_file:
         gold_data = json.load(json_file)
     return gold_data
+    
 def _print_log(subtask:str, approach:str, shortcut_model_name:str, last_prompt, n_instances_processed:str):
     """
     Prints log information to a JSON file.
@@ -153,6 +154,7 @@ def _process(subtask: str, approach:str, shortcut_model_name:str):
 def _process_wic(subtask: str, approach:str, shortcut_model_name:str):
     "To be implemented"
     pass
+    
 def process(subtask:str, approach:str, shortcut_model_name:str):
     """
     Starts the processing for a specified subtask, approach, and model.
@@ -174,7 +176,6 @@ def process(subtask:str, approach:str, shortcut_model_name:str):
 
     elif subtask == "wic":
         _process_wic(subtask, approach, shortcut_model_name)
-
 
 if __name__ == "__main__":
 
