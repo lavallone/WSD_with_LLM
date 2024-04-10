@@ -8,14 +8,6 @@ import json
 import torch
 import os
 
-warnings.filterwarnings("ignore", category=UserWarning)
-warnings.filterwarnings("ignore", category=FutureWarning)
-
-supported_subtasks = ["selection", "generation", "wic"]
-supported_approaches = ["zero_shot", "one_shot", "few_shot"]
-supported_shortcut_model_names = ["llama-2-7b-chat-hf", "Mistral-7B-Instruct-v0.2", "falcon-7b-instruct", "vicuna-7b-v1.5", "TowerInstruct-7B-v0.1"]
-full_model_name2pipeline = {}
-
 def countdown(t):
     """
     Activates and displays a countdown timer in the terminal.
@@ -179,6 +171,14 @@ def process(subtask:str, approach:str, shortcut_model_name:str):
 
 if __name__ == "__main__":
 
+    warnings.filterwarnings("ignore", category=UserWarning)
+    warnings.filterwarnings("ignore", category=FutureWarning)
+
+    supported_subtasks = ["selection", "generation", "wic"]
+    supported_approaches = ["zero_shot", "one_shot", "few_shot"]
+    supported_shortcut_model_names = ["llama-2-7b-chat-hf", "Mistral-7B-Instruct-v0.2", "falcon-7b-instruct", "vicuna-7b-v1.5", "TowerInstruct-7B-v0.1"]
+    full_model_name2pipeline = {}
+    
     parser = argparse.ArgumentParser()
     parser.add_argument("--subtask", "-st", type=str, help="Input the task")
     parser.add_argument("--approach", "-a", type=str, help="Input the approach")
