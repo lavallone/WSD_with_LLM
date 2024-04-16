@@ -176,7 +176,8 @@ if __name__ == "__main__":
 
     supported_subtasks = ["selection", "generation", "wic"]
     supported_approaches = ["zero_shot", "one_shot", "few_shot"]
-    supported_shortcut_model_names = ["llama-2-7b-chat-hf", "Mistral-7B-Instruct-v0.2", "falcon-7b-instruct", "vicuna-7b-v1.5", "TowerInstruct-7B-v0.1"]
+    supported_shortcut_model_names = ["llama-2-7b-chat-hf", "Mistral-7B-Instruct-v0.2", "falcon-7b-instruct", "vicuna-7b-v1.5", "TowerInstruct-7B-v0.1", 
+                                      "tiiuae-falcon-rw-1b", "microsoft-phi-1_5", "TinyLlama-TinyLlama-1.1B-Chat-v1.0", "bigscience-bloom-1b1"]
     full_model_name2pipeline = {}
     
     parser = argparse.ArgumentParser()

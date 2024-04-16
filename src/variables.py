@@ -2,7 +2,11 @@ shortcut_model_name2full_model_name = {"llama-2-7b-chat":"meta-llama/Llama-2-7b-
                                        "llama-2-7b-chat-hf":"meta-llama/Llama-2-7b-chat-hf",
                                        "vicuna-7b-v1.5":"lmsys/vicuna-7b-v1.5",
                                        "Mistral-7B-Instruct-v0.2":"mistralai/Mistral-7B-Instruct-v0.2",
-                                       "falcon-7b-instruct":"tiiuae/falcon-7b-instruct"}
+                                       "falcon-7b-instruct":"tiiuae/falcon-7b-instruct",
+                                       "tiiuae-falcon-rw-1b":"tiiuae/falcon-rw-1b", 
+                                       "microsoft-phi-1_5":"microsoft/phi-1_5",
+                                       "TinyLlama-TinyLlama-1.1B-Chat-v1.0":"TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+                                       "bigscience-bloom-1b1":"bigscience/bloom-1b1"}
 
 prompts = {
             "selection":{

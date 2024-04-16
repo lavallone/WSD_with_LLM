@@ -104,8 +104,7 @@ def compute_scores(disambiguated_data_path:str):
         else:
             if instance_gold["pos"] != args.pos:
                 continue
-
-        assert instance_gold["id"] == instance_disambiguated_data["id"]
+        assert instance_gold["id"] == instance_disambiguated_data["instance_id"]
 
         answer = instance_disambiguated_data["answer"]
 
@@ -152,6 +151,36 @@ def compute_scores(disambiguated_data_path:str):
     print("F1 Score (average=micro):", f1)
     print("Accuracy:", correct/number_of_evaluation_instances)
 
+def _generate_gold_data_vectors():
+    """
+    Generates sentence embeddings for gold data and saves them to a file.
+
+    Args:
+        None
+
+    Returns:
+        None
+    """
+    gold_vector_file_path = f"../data/evaluation/vectors/{args.sentence_embedder}_id2vec.tsv"
+    if os.path.exists(gold_vector_file_path):
+        print("Gold vectors already exist")
+        return None
+
+    print("Generating vectors from gold data")
+    sentence_embedder = SentenceTransformer(f'sentence-transformers/{args.sentence_embedder}')
+    data = _get_gold_data()
+
+    gold_vector_file_path = f"../data/evaluation/vectors/{args.sentence_embedder}_id2vec.tsv"
+    id2vec_dd = {}
+    with open(gold_vector_file_path, "w") as fw:
+        for el in tqdm(data, total=len(data)):
+            id_ = el["id"]
+            definitions = el["definitions"]
+            for definition in definitions:
+                vec = sentence_embedder.encode(definition).tolist()
+                vec = " ".join([str(x) for x in vec])
+                fw.write(f"{id_}\t{definition}\t{vec}\n")
+
 def _generate_disambiguated_data_vectors(disambiguated_data_path:str, len_gold:int):
     """
     Generates sentence embeddings for disambiguated data and saves them to a file.
@@ -165,11 +194,12 @@ def _generate_disambiguated_data_vectors(disambiguated_data_path:str, len_gold:i
     """
     vector_file_path = f"../data/{args.subtask}/{args.approach}/{args.shortcut_model_name}/vectors/{args.sentence_embedder}_id2vec.tsv"
     if os.path.exists(vector_file_path):
-        with open(vector_file_path) as fr:
+        with open(vector_file_path, "r") as fr:
             if len(fr.readlines()) != len_gold:
                 print("Missing vectors")
                 exit()
-        return None
+            print("Disambiguated data vectors already exist")
+            return None
 
     print("Generating vectors from:", disambiguated_data_path)
     sentence_embedder = SentenceTransformer(f'sentence-transformers/{args.sentence_embedder}')
@@ -181,7 +211,7 @@ def _generate_disambiguated_data_vectors(disambiguated_data_path:str, len_gold:i
     id2vec_dd = {}
     with open(vector_file_path, "w") as fw:
         for el in tqdm(data, total=len(data)):
-            id_ = el["id"]
+            id_ = el["instance_id"]
             answer = el["answer"]
             vec = sentence_embedder.encode(answer)
             id2vec_dd[id_] = " ".join([str(x) for x in vec.tolist()])
@@ -275,7 +305,8 @@ if __name__ == "__main__":
 
     assert args.subtask in ["generation", "selection", "wic"]
     assert args.approach in ["zero_shot", "one_shot", "few_shot"]
-    assert args.shortcut_model_name in ["llama-2-7b-chat-hf", "Mistral-7B-Instruct-v0.2", "falcon-7b-instruct", "vicuna-7b-v1.5"]
+    assert args.shortcut_model_name in ["llama-2-7b-chat-hf", "Mistral-7B-Instruct-v0.2", "falcon-7b-instruct", "vicuna-7b-v1.5", "TowerInstruct-7B-v0.1", 
+                                      "tiiuae-falcon-rw-1b", "microsoft-phi-1_5", "TinyLlama-TinyLlama-1.1B-Chat-v1.0", "bigscience-bloom-1b1"]
     assert args.pos in ["NOUN", "ADJ", "VERB", "ADV", "ALL"]
 
     if args.subtask in ["selection", "generation"]:
@@ -283,8 +314,8 @@ if __name__ == "__main__":
         len_gold = 7253
 
         if args.subtask == "generation":
-
             assert args.sentence_embedder in ["all-MiniLM-L6-v2", "all-mpnet-base-v2"]
+            _generate_gold_data_vectors()
             _generate_disambiguated_data_vectors(disambiguated_data_path, len_gold)
             id2vec_gold = _get_gold_data_vectors()
             id2vec_disambiguated_data = _get_disambiguated_data_vectors()
