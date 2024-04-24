@@ -10,23 +10,32 @@ import nltk
 import sys
 import os
 
-def _choose_definition(id_, definitions: List[str], answer):
+def _choose_definition(instance_gold, answer):
     """
     Chooses the most appropriate definition from a list of definitions for a given answer.
     
     Args:
-        id_ (str): The identifier for the instance.
-        definitions (List[str]): A list of candidate definitions.
+        instance_gold (Dict): One instance of the golden data.
         answer (str): The answer to be disambiguated.
     
     Returns:
         str: The chosen definition with the highest overlap score with the answer.
     """
+    id_ = instance_gold["id"]
+    definitions = instance_gold["definitions"]
+    
     if args.subtask == "generation":
         global id2vec_gold, id2vec_disambiguated_data
 
-    definition2overlap = {}
+    # when we want to select sense keys, we first try to locate the key in the answer...
+    if args.subtask == "selection" and args.prompt_type == "v3":
+        tokenized_answer = list(nltk.word_tokenize(answer))
+        for candidate, definition in list(zip(instance_gold["candidates"], definitions)):
+            if candidate in tokenized_answer:
+                return definition
+    # if we don't succeed, we use instead lexical overlap!
 
+    definition2overlap = {}
     for definition in definitions:
         if args.subtask == "generation":
             vec1, vec2 = id2vec_gold[id_+definition], id2vec_disambiguated_data[id_]
@@ -98,7 +107,6 @@ def compute_scores(disambiguated_data_path:str):
     global_idx = 0
 
     for instance_gold, instance_disambiguated_data in zip(gold_data, disambiguated_data):
-
         if args.pos == "ALL":
             pass
         else:
@@ -109,24 +117,28 @@ def compute_scores(disambiguated_data_path:str):
         answer = instance_disambiguated_data["answer"]
 
         if args.subtask == "selection":
+            if args.prompt_type == "v3":
+                # adds sense_key before each gold definition
+                for definition in instance_gold["definitions"]:
+                    for idx_, gold_definition in enumerate(instance_gold["gold_definitions"]): # because there may be more than one gold candidate
+                        if definition == gold_definition:
+                            instance_gold["gold_definitions"][idx_] = f"[{instance_gold['gold'][idx_]}]: {instance_gold['gold_definitions'][idx_]}"
+                # adds sense_key before all candidate definitions
+                for idx, (sense_key, definition) in enumerate( list(zip(instance_gold["candidates"], instance_gold["definitions"])) ):
+                    instance_gold["definitions"][idx] = f"[{sense_key}]: {definition}"
+            else:
+                # adds n) before each gold definition
+                for idx, definition in enumerate(instance_gold["definitions"]):
+                    for idx_, gold_definition in enumerate(instance_gold["gold_definitions"]): # because there may be more than one gold candidate
+                        if definition == gold_definition:
+                            instance_gold["gold_definitions"][idx_] = f"{idx}) {instance_gold['gold_definitions'][idx_]}"
+                # adds n) before all candidate definitions
+                for idx, definition in enumerate(instance_gold["definitions"]):
+                    instance_gold["definitions"][idx] = f"{idx}) {definition}"
 
-            #adds n) before each gold definition
-            for idx, definition in enumerate(instance_gold["definitions"]):
-                for idx_, gold_definition in enumerate(instance_gold["gold_definitions"]):
-                    if definition == gold_definition:
-                        instance_gold["gold_definitions"][idx_] = f"{idx}) {instance_gold['gold_definitions'][idx_]}"
-
-            # adds n) before all candidate definitions
-            for idx, definition in enumerate(instance_gold["definitions"]):
-                instance_gold["definitions"][idx] = f"{idx}) {definition}"
-
-        definitions = instance_gold["definitions"]
-
-        if answer.strip() == "":
-            selected_definition = ""
-        else:
-            selected_definition = _choose_definition(instance_gold["id"], definitions, answer)
-
+        if answer.strip() == "": selected_definition = ""
+        else: selected_definition = _choose_definition(instance_gold, answer)
+        
         if selected_definition in instance_gold["gold_definitions"]:
             correct += 1
         else:
@@ -134,7 +146,6 @@ def compute_scores(disambiguated_data_path:str):
             wrong += 1
 
         global_idx += 1
-
     assert correct+wrong == number_of_evaluation_instances
 
     precision = precision_score(true_labels, predicted_labels, average='micro')
@@ -165,6 +176,9 @@ def _generate_gold_data_vectors():
     if os.path.exists(gold_vector_file_path):
         print("Gold vectors already exist")
         return None
+    gold_vector_folder_path = f"../data/evaluation/vectors"
+    if not os.path.exists(gold_vector_folder_path):
+        os.makedirs(gold_vector_folder_path)
 
     print("Generating vectors from gold data")
     sentence_embedder = SentenceTransformer(f'sentence-transformers/{args.sentence_embedder}')
@@ -192,7 +206,7 @@ def _generate_disambiguated_data_vectors(disambiguated_data_path:str, len_gold:i
     Returns:
         None
     """
-    vector_file_path = f"../data/{args.subtask}/{args.approach}/{args.shortcut_model_name}/vectors/{args.sentence_embedder}_id2vec.tsv"
+    vector_file_path = f"../data/{args.subtask}/{args.prompt_type}/{args.prompt_addition}/{args.approach}/{args.shortcut_model_name}/vectors/{args.sentence_embedder}_id2vec.tsv"
     if os.path.exists(vector_file_path):
         with open(vector_file_path, "r") as fr:
             if len(fr.readlines()) != len_gold:
@@ -200,6 +214,9 @@ def _generate_disambiguated_data_vectors(disambiguated_data_path:str, len_gold:i
                 exit()
             print("Disambiguated data vectors already exist")
             return None
+    vector_folder_path = f"../data/{args.subtask}/{args.prompt_type}/{args.prompt_addition}/{args.approach}/{args.shortcut_model_name}/vectors"
+    if not os.path.exists(vector_folder_path):
+        os.makedirs(vector_folder_path)          
 
     print("Generating vectors from:", disambiguated_data_path)
     sentence_embedder = SentenceTransformer(f'sentence-transformers/{args.sentence_embedder}')
@@ -207,7 +224,7 @@ def _generate_disambiguated_data_vectors(disambiguated_data_path:str, len_gold:i
     with open(disambiguated_data_path) as fr:
         data = json.load(fr)
 
-    vector_file_path = f"../data/{args.subtask}/{args.approach}/{args.shortcut_model_name}/vectors/{args.sentence_embedder}_id2vec.tsv"
+    vector_file_path = f"../data/{args.subtask}/{args.prompt_type}/{args.prompt_addition}/{args.approach}/{args.shortcut_model_name}/vectors/{args.sentence_embedder}_id2vec.tsv"
     id2vec_dd = {}
     with open(vector_file_path, "w") as fw:
         for el in tqdm(data, total=len(data)):
@@ -236,7 +253,8 @@ def _get_gold_data():
     Returns:
         dict: A dictionary containing the loaded gold data.
     """
-    with open("../data/evaluation/ALL_preprocessed.json", "r") as json_file:
+    data_path = "../data/evaluation/ALL_preprocessed.json"
+    with open(data_path, "r") as json_file:
         gold_data = json.load(json_file)
     return gold_data
 
@@ -252,7 +270,7 @@ def _get_disambiguated_data_vectors():
     """
     id2vec_disambiguated_data = {}
 
-    vector_file_path = f"../data/{args.subtask}/{args.approach}/{args.shortcut_model_name}/vectors/{args.sentence_embedder}_id2vec.tsv"
+    vector_file_path = f"../data/{args.subtask}/{args.prompt_type}/{args.prompt_addition}/{args.approach}/{args.shortcut_model_name}/vectors/{args.sentence_embedder}_id2vec.tsv"
     with open(vector_file_path, "r") as fr:
         for line in fr:
             id_, vec = line.strip().split('\t')
@@ -297,6 +315,8 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description='Script description')
     parser.add_argument('--subtask', '-s', type=str, help='Input the task')
+    parser.add_argument("--prompt_type", "-pt", type=str, help="Input the prompt type")
+    parser.add_argument("--prompt_addition", "-pa", type=str, help="Input the prompt addition")
     parser.add_argument('--approach', '-a', type=str, help='Input the approach')
     parser.add_argument('--shortcut_model_name', '-sm', type=str, help='Input the model')
     parser.add_argument('--pos', '-p', type=str, help='Input the part of speech')
@@ -304,14 +324,16 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     assert args.subtask in ["generation", "selection", "wic"]
+    assert args.prompt_type in ["v1", "v2", "v3"]
+    assert args.prompt_addition in ["no_additions", "cot", "reflective", "cognitive", "emotion"]
     assert args.approach in ["zero_shot", "one_shot", "few_shot"]
     assert args.shortcut_model_name in ["llama-2-7b-chat-hf", "Mistral-7B-Instruct-v0.2", "falcon-7b-instruct", "vicuna-7b-v1.5", "TowerInstruct-7B-v0.1", 
                                       "tiiuae-falcon-rw-1b", "microsoft-phi-1_5", "TinyLlama-TinyLlama-1.1B-Chat-v1.0", "bigscience-bloom-1b1"]
     assert args.pos in ["NOUN", "ADJ", "VERB", "ADV", "ALL"]
 
     if args.subtask in ["selection", "generation"]:
-        disambiguated_data_path = f"../data/{args.subtask}/{args.approach}/{args.shortcut_model_name}/output.json"
-        len_gold = 7253
+        disambiguated_data_path = f"../data/{args.subtask}/{args.prompt_type}/{args.prompt_addition}/{args.approach}/{args.shortcut_model_name}/output.json"
+        len_gold = len(_get_gold_data())
 
         if args.subtask == "generation":
             assert args.sentence_embedder in ["all-MiniLM-L6-v2", "all-mpnet-base-v2"]
