@@ -28,12 +28,12 @@ def _choose_definition(instance_gold, answer):
         global id2vec_gold, id2vec_disambiguated_data
 
     # when we want to select sense keys, we first try to locate the key in the answer...
+    # if we don't succeed, we use instead lexical overlap!
     if args.subtask == "selection" and args.prompt_type == "v3":
         tokenized_answer = list(nltk.word_tokenize(answer))
         for candidate, definition in list(zip(instance_gold["candidates"], definitions)):
             if candidate in tokenized_answer:
                 return definition
-    # if we don't succeed, we use instead lexical overlap!
 
     definition2overlap = {}
     for definition in definitions:
@@ -118,12 +118,12 @@ def compute_scores(disambiguated_data_path:str):
 
         if args.subtask == "selection":
             if args.prompt_type == "v3":
-                # adds sense_key before each gold definition
+                # adds [sense_key] before each gold definition
                 for definition in instance_gold["definitions"]:
                     for idx_, gold_definition in enumerate(instance_gold["gold_definitions"]): # because there may be more than one gold candidate
                         if definition == gold_definition:
                             instance_gold["gold_definitions"][idx_] = f"[{instance_gold['gold'][idx_]}]: {instance_gold['gold_definitions'][idx_]}"
-                # adds sense_key before all candidate definitions
+                # adds [sense_key] before all candidate definitions
                 for idx, (sense_key, definition) in enumerate( list(zip(instance_gold["candidates"], instance_gold["definitions"])) ):
                     instance_gold["definitions"][idx] = f"[{sense_key}]: {definition}"
             else:
@@ -324,11 +324,11 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     assert args.subtask in ["generation", "selection", "wic"]
-    assert args.prompt_type in ["v1", "v2", "v3"]
+    assert args.prompt_type in ["v1", "v1.1", "v1.2", "v2", "v2.1", "v2.2", "v3", "v3.1", "v3.2"]
     assert args.prompt_addition in ["no_additions", "cot", "reflective", "cognitive", "emotion"]
     assert args.approach in ["zero_shot", "one_shot", "few_shot"]
     assert args.shortcut_model_name in ["llama-2-7b-chat-hf", "Mistral-7B-Instruct-v0.2", "falcon-7b-instruct", "vicuna-7b-v1.5", "TowerInstruct-7B-v0.1", 
-                                      "tiiuae-falcon-rw-1b", "microsoft-phi-1_5", "TinyLlama-TinyLlama-1.1B-Chat-v1.0", "bigscience-bloom-1b1"]
+                                      "microsoft-phi-1_5", "TinyLlama-TinyLlama-1.1B-Chat-v1.0", "stabilityai-stablelm-2-1_6b-chat", "h2oai-h2o-danube2-1.8b-chat"]
     assert args.pos in ["NOUN", "ADJ", "VERB", "ADV", "ALL"]
 
     if args.subtask in ["selection", "generation"]:
