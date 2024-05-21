@@ -13,7 +13,7 @@ warnings.filterwarnings("ignore")
 #selection vs generation
 task = "selection"
 
-dataset_name = f"data/training/{task}/training.json"
+dataset_name = f"../data/training/{task}/training.json"
 data = load_dataset("json", data_files=dataset_name)
 data = data["train"].train_test_split(test_size=0.1)
 

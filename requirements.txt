@@ -7,3 +7,8 @@ nltk
 sentence_transformers
 sentencepiece
 protobuf
+datasets
+peft
+trl
+bitsandbytes
+accelerate==0.27.2
