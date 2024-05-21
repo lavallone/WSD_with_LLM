@@ -8,7 +8,8 @@ shortcut_model_name2full_model_name = {"llama-2-7b-chat":"meta-llama/Llama-2-7b-
                                        "stabilityai-stablelm-2-1_6b-chat": "stabilityai/stablelm-2-1_6b-chat",
                                        "h2oai-h2o-danube2-1.8b-chat": "h2oai/h2o-danube2-1.8b-chat",
                                        "microsoft-phi-2":"microsoft/phi-2",
-                                       "microsoft-phi-3-mini-128k-instruct":"microsoft/Phi-3-mini-128k-instruct"}
+                                       "microsoft-phi-3-mini-128k-instruct":"microsoft/Phi-3-mini-128k-instruct",
+                                       "meta-llama-Meta-Llama-3-8B" : "meta-llama/Meta-Llama-3-8B"}
 
 prompts = {
             "selection":{

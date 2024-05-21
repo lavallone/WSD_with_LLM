@@ -202,9 +202,9 @@ if __name__ == "__main__":
     supported_prompt_types = ["v1", "v1.1", "v1.2", "v1.3", "v2", "v2.1", "v2.2", "v3", "v3.1", "v3.2"]
     supported_prompt_additions = ["no_additions", "cot", "reflective", "cognitive", "emotion"]
     supported_approaches = ["zero_shot", "one_shot", "few_shot"]
-    supported_shortcut_model_names = ["llama-2-7b-chat-hf", "Mistral-7B-Instruct-v0.2", "falcon-7b-instruct", "vicuna-7b-v1.5", "TowerInstruct-7B-v0.1", 
+    supported_shortcut_model_names = ["llama-2-7b-chat-hf", "Mistral-7B-Instruct-v0.2", "falcon-7b-instruct", "vicuna-7b-v1.5", 
                                       "microsoft-phi-1_5", "TinyLlama-TinyLlama-1.1B-Chat-v1.0", "stabilityai-stablelm-2-1_6b-chat", "h2oai-h2o-danube2-1.8b-chat",
-                                      "microsoft-phi-2", "microsoft-phi-3-mini-128k-instruct"]
+                                      "microsoft-phi-2", "microsoft-phi-3-mini-128k-instruct", "meta-llama-Meta-Llama-3-8B"]
     full_model_name2pipeline = {}
     
     parser = argparse.ArgumentParser()

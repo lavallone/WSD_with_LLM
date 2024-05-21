@@ -13,11 +13,11 @@ warnings.filterwarnings("ignore")
 #selection vs generation
 task = "selection"
 
-dataset_name = f"data/training_data/{task}/training.json"
+dataset_name = f"data/training/{task}/training.json"
 data = load_dataset("json", data_files=dataset_name)
 data = data["train"].train_test_split(test_size=0.1)
 
-model_name = "meta-llama/Llama-2-7b-chat-hf"
+model_name = "meta-llama/Meta-Llama-3-8B"
 
 bnb_config = BitsAndBytesConfig(
     load_in_4bit=True,
@@ -37,9 +37,9 @@ model = prepare_model_for_kbit_training(model)
 
 peft_model = model
 
-lora_alpha = 32 #16
-lora_dropout = 0.05 #0.1
-lora_rank = 32 #64
+lora_alpha = 32
+lora_dropout = 0.05
+lora_rank = 32
 
 peft_config = LoraConfig(
     lora_alpha=16,
