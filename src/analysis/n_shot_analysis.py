@@ -51,7 +51,7 @@ def _get_gold_data():
     Returns:
         dict: A dictionary containing the loaded gold data.
     """
-    data_path = "../../data/evaluation/ALL_preprocessed_TOY.json"
+    data_path = "../../data/evaluation/ALL_preprocessed.json"
     with open(data_path, "r") as json_file:
         gold_data = json.load(json_file)
     return gold_data
