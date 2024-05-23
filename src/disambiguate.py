@@ -25,7 +25,7 @@ def countdown(t):
         time.sleep(1)
         t -= 1
 
-def _generate_prompt(instance:dict, subtask:str, prompt_type:str, prompt_addition:str, approach:str):
+def _generate_prompt(instance:list, subtask:str, prompt_type:str, prompt_addition:str, approach:str):
     """
     Generates a prompt based on the instance, subtask, prompt_type, prompt_addition and approach.
 
@@ -40,7 +40,8 @@ def _generate_prompt(instance:dict, subtask:str, prompt_type:str, prompt_additio
         str or None: The generated prompt if applicable, otherwise None.
     """
     if subtask in ["selection", "generation"]:
-
+        
+        instance = instance[0]
         word = instance["word"]
         text = instance["text"].replace(" ,", ",").replace(" .", ".")
         
@@ -53,24 +54,42 @@ def _generate_prompt(instance:dict, subtask:str, prompt_type:str, prompt_additio
                 word=word,
                 text=text,
                 candidate_definitions=candidate_definitions)
-
+    
     elif subtask == "wic":
-        "To be implemented"
-        pass
+        instance_data, instance_gold = instance
+        sentence1, sentence2 = instance_data["sentence1"], instance_data["sentence2"]
+        target_word1, target_word2 = sentence1[int(instance_data["start1"]):int(instance_data["end1"])], sentence2[int(instance_data["start2"]):int(instance_data["end2"])]
+        
+        prompt = prompts[subtask][prompt_type][prompt_addition][approach].format(
+                target_word1=target_word1,
+                target_word2=target_word2,
+                sentence1=sentence1,
+                sentence2=sentence2)
 
     return prompt
 
-def _get_gold_data():
+def _get_gold_data(subtask:str):
     """
     Loads gold data from a JSON file.
 
     Returns:
         dict: A dictionary containing the loaded gold data.
     """
-    data_path = "../data/evaluation/ALL_preprocessed.json"
-    with open(data_path, "r") as json_file:
-        gold_data = json.load(json_file)
-    return gold_data
+    data = []
+    if subtask in ["selection", "generation"]:
+        data_path = "../data/evaluation/ALL_preprocessed.json"
+        with open(data_path, "r") as json_file:
+            data_ = json.load(json_file)
+        data.append(data_)
+    elif subtask == "wic":
+        data_path = "../data/evaluation/test.en-en.data"
+        gold_path = "../data/evaluation/test.en-en.gold"
+        with open(data_path, "r") as fr:
+            data_ = json.load(fr)
+        with open(gold_path, "r") as fr:
+            gold = json.load(fr)
+        data.extend((data_, gold))
+    return data
     
 def _print_log(subtask:str, prompt_type:str, prompt_addition:str, approach:str, shortcut_model_name:str, last_prompt, n_instances_processed:str):
     """
@@ -120,23 +139,10 @@ def _process(subtask:str, prompt_type:str, prompt_addition:str, approach:str, sh
     """
     global full_model_name2pipeline, shortcut_model_name2full_model_name
 
-    gold_data = _get_gold_data()
+    gold_data = _get_gold_data()[0]
     output_file_path = f"../data/{subtask}/{prompt_type}/{prompt_addition}/{approach}/{shortcut_model_name}/"
     n_instances_processed = 0
     json_data = []
-
-    # to manage creation/deletion of folders
-    if not os.path.exists(f"../data/{subtask}/{prompt_type}/"):
-        os.system(f"mkdir ../data/{subtask}/{prompt_type}/")
-    if not os.path.exists(f"../data/{subtask}/{prompt_type}/{prompt_addition}/"):
-        os.system(f"mkdir ../data/{subtask}/{prompt_type}/{prompt_addition}/")
-    if not os.path.exists(f"../data/{subtask}/{prompt_type}/{prompt_addition}/{approach}/"):
-        os.system(f"mkdir ../data/{subtask}/{prompt_type}/{prompt_addition}/{approach}/")
-    if not os.path.exists(output_file_path):
-        os.system(f"mkdir {output_file_path}")
-    elif os.path.exists(f"{output_file_path}/output.txt"):
-        countdown(5)
-        os.system(f"rm -r {output_file_path}/*")
 
     full_model_name = shortcut_model_name2full_model_name[shortcut_model_name]
     tokenizer = AutoTokenizer.from_pretrained(full_model_name)
@@ -164,9 +170,39 @@ def _process(subtask:str, prompt_type:str, prompt_addition:str, approach:str, sh
         _print_log(subtask, prompt_type, prompt_addition, approach, shortcut_model_name, last_prompt, n_instances_processed)
 
 def _process_wic(subtask:str, prompt_type:str, prompt_addition:str, approach:str, shortcut_model_name:str):
-    "To be implemented"
-    pass
-    
+    global full_model_name2pipeline, shortcut_model_name2full_model_name
+
+    data, gold = _get_gold_data(subtask)
+    output_file_path = f"../data/{subtask}/{prompt_type}/{prompt_addition}/{approach}/{shortcut_model_name}/"
+    n_instances_processed = 0
+    json_data = []
+
+    full_model_name = shortcut_model_name2full_model_name[shortcut_model_name]
+    tokenizer = AutoTokenizer.from_pretrained(full_model_name)
+    tokenizer.pad_token = tokenizer.eos_token
+    pipe = pipeline("text-generation", model=full_model_name, device="cuda", tokenizer=tokenizer, pad_token_id=tokenizer.eos_token_id, max_new_tokens=25)
+
+    with open(f"{output_file_path}/output.txt", "a") as fa_txt, open(f"{output_file_path}/output.json", "w") as fw_json:
+        for instance_data, instance_gold in tqdm(zip(data, gold), total=len(gold)):
+            
+            n_instances_processed += 1
+            instance_id = instance_data["id"]
+            
+            prompt = _generate_prompt([instance_data, instance_gold], subtask, prompt_type, prompt_addition, approach)
+
+            answer = pipe(prompt)[0]["generated_text"].replace(prompt, "").replace("\n", "").strip()
+            
+            fa_txt.write(f"{instance_id}\t{answer}\n")
+            fa_txt.flush()
+
+            json_answer = {"instance_id":instance_id, "answer":answer}
+            json_data.append(json_answer)
+        json.dump(json_data, fw_json, indent=4)
+
+    last_prompt= prompt
+    if args.log_config:
+        _print_log(subtask, prompt_type, prompt_addition, approach, shortcut_model_name, last_prompt, n_instances_processed)
+
 def process(subtask:str, prompt_type:str, prompt_addition:str, approach:str, shortcut_model_name:str):
     """
     Starts the processing for a specified subtask, approach, and model.
@@ -186,10 +222,25 @@ def process(subtask:str, prompt_type:str, prompt_addition:str, approach:str, sho
     assert approach in supported_approaches
     assert prompt_type in supported_prompt_types
     assert prompt_addition in supported_prompt_additions
+    
+    # to manage creation/deletion of folders
+    if not os.path.exists(f"../data/{subtask}/"):
+        os.system(f"mkdir ../data/{subtask}/")
+    if not os.path.exists(f"../data/{subtask}/{prompt_type}/"):
+        os.system(f"mkdir ../data/{subtask}/{prompt_type}/")
+    if not os.path.exists(f"../data/{subtask}/{prompt_type}/{prompt_addition}/"):
+        os.system(f"mkdir ../data/{subtask}/{prompt_type}/{prompt_addition}/")
+    if not os.path.exists(f"../data/{subtask}/{prompt_type}/{prompt_addition}/{approach}/"):
+        os.system(f"mkdir ../data/{subtask}/{prompt_type}/{prompt_addition}/{approach}/")
+    if not os.path.exists(f"../data/{subtask}/{prompt_type}/{prompt_addition}/{approach}/{shortcut_model_name}/"):
+        os.system(f"mkdir ../data/{subtask}/{prompt_type}/{prompt_addition}/{approach}/{shortcut_model_name}/")
+    elif os.path.exists(f"../data/{subtask}/{prompt_type}/{prompt_addition}/{approach}/{shortcut_model_name}/output.txt"):
+        countdown(5)
+        os.system(f"rm -r ../data/{subtask}/{prompt_type}/{prompt_addition}/{approach}/{shortcut_model_name}/*")
 
     if subtask in ["selection", "generation"]:
         _process(subtask, prompt_type, prompt_addition, approach, shortcut_model_name)
-
+    
     elif subtask == "wic":
         _process_wic(subtask, prompt_type, prompt_addition, approach, shortcut_model_name)
 
