@@ -123,7 +123,7 @@ def _print_log(subtask:str, prompt_type:str, prompt_addition:str, approach:str, 
     with open(log_file_path, "w") as fp:
         json.dump(log, fp, indent=4)
 
-def _process(subtask:str, prompt_type:str, prompt_addition:str, approach:str, shortcut_model_name:str):
+def _process(subtask:str, prompt_type:str, prompt_addition:str, approach:str, shortcut_model_name:str, is_finetuned:bool):
     """
     Processes the evaluation task for a specific subtask, approach, and model. Selection and generation subtasks only.
 
@@ -140,11 +140,14 @@ def _process(subtask:str, prompt_type:str, prompt_addition:str, approach:str, sh
     global full_model_name2pipeline, shortcut_model_name2full_model_name
 
     gold_data = _get_gold_data()[0]
-    output_file_path = f"../data/{subtask}/{prompt_type}/{prompt_addition}/{approach}/{shortcut_model_name}/"
+    if is_finetuned == False:
+        output_file_path = f"../data/{subtask}/{prompt_type}/{prompt_addition}/{approach}/{shortcut_model_name}/"
+    else: 
+        output_file_path = f"../data/{shortcut_model_name.split("/")[1]}/{prompt_type}/{prompt_addition}/{approach}/finetuned_{shortcut_model_name.split("/")[2]}/"
     n_instances_processed = 0
     json_data = []
 
-    full_model_name = shortcut_model_name2full_model_name[shortcut_model_name]
+    full_model_name = shortcut_model_name2full_model_name[shortcut_model_name] if is_finetuned == False else shortcut_model_name
     tokenizer = AutoTokenizer.from_pretrained(full_model_name)
     tokenizer.pad_token = tokenizer.eos_token
     pipe = pipeline("text-generation", model=full_model_name, device="cuda", tokenizer=tokenizer, pad_token_id=tokenizer.eos_token_id, max_new_tokens=25)
@@ -169,15 +172,18 @@ def _process(subtask:str, prompt_type:str, prompt_addition:str, approach:str, sh
     if args.log_config:
         _print_log(subtask, prompt_type, prompt_addition, approach, shortcut_model_name, last_prompt, n_instances_processed)
 
-def _process_wic(subtask:str, prompt_type:str, prompt_addition:str, approach:str, shortcut_model_name:str):
+def _process_wic(subtask:str, prompt_type:str, prompt_addition:str, approach:str, shortcut_model_name:str, is_finetuned:bool):
     global full_model_name2pipeline, shortcut_model_name2full_model_name
 
     data, gold = _get_gold_data(subtask)
-    output_file_path = f"../data/{subtask}/{prompt_type}/{prompt_addition}/{approach}/{shortcut_model_name}/"
+    if is_finetuned == False:
+        output_file_path = f"../data/{subtask}/{prompt_type}/{prompt_addition}/{approach}/{shortcut_model_name}/"
+    else: 
+        output_file_path = f"../data/{shortcut_model_name.split("/")[1]}/{prompt_type}/{prompt_addition}/{approach}/finetuned_{shortcut_model_name.split("/")[2]}/"
     n_instances_processed = 0
     json_data = []
 
-    full_model_name = shortcut_model_name2full_model_name[shortcut_model_name]
+    full_model_name = shortcut_model_name2full_model_name[shortcut_model_name] if is_finetuned == False else shortcut_model_name
     tokenizer = AutoTokenizer.from_pretrained(full_model_name)
     tokenizer.pad_token = tokenizer.eos_token
     pipe = pipeline("text-generation", model=full_model_name, device="cuda", tokenizer=tokenizer, pad_token_id=tokenizer.eos_token_id, max_new_tokens=25)
@@ -203,7 +209,7 @@ def _process_wic(subtask:str, prompt_type:str, prompt_addition:str, approach:str
     if args.log_config:
         _print_log(subtask, prompt_type, prompt_addition, approach, shortcut_model_name, last_prompt, n_instances_processed)
 
-def process(subtask:str, prompt_type:str, prompt_addition:str, approach:str, shortcut_model_name:str):
+def process(subtask:str, prompt_type:str, prompt_addition:str, approach:str, shortcut_model_name:str, is_finetuned:bool):
     """
     Starts the processing for a specified subtask, approach, and model.
 
@@ -217,7 +223,8 @@ def process(subtask:str, prompt_type:str, prompt_addition:str, approach:str, sho
     Returns:
         None
     """
-    assert shortcut_model_name in supported_shortcut_model_names
+    if is_finetuned == False:
+        assert shortcut_model_name in supported_shortcut_model_names
     assert subtask in supported_subtasks
     assert approach in supported_approaches
     assert prompt_type in supported_prompt_types
@@ -239,10 +246,10 @@ def process(subtask:str, prompt_type:str, prompt_addition:str, approach:str, sho
         os.system(f"rm -r ../data/{subtask}/{prompt_type}/{prompt_addition}/{approach}/{shortcut_model_name}/*")
 
     if subtask in ["selection", "generation"]:
-        _process(subtask, prompt_type, prompt_addition, approach, shortcut_model_name)
+        _process(subtask, prompt_type, prompt_addition, approach, shortcut_model_name, is_finetuned)
     
     elif subtask == "wic":
-        _process_wic(subtask, prompt_type, prompt_addition, approach, shortcut_model_name)
+        _process_wic(subtask, prompt_type, prompt_addition, approach, shortcut_model_name, is_finetuned)
 
 if __name__ == "__main__":
 
@@ -265,6 +272,7 @@ if __name__ == "__main__":
     parser.add_argument("--prompt_addition", "-pa", type=str, help="Input the prompt addition")
     parser.add_argument("--approach", "-a", type=str, help="Input the approach")
     parser.add_argument("--shortcut_model_name", "-m", type=str, help="Input the model")
+    parser.add_argument("--is_finetuned", "-f", type=bool, default=False, help="If the model we want to test is finetuned or not")
     parser.add_argument("--log_config", "-l", type=bool, default=True, help="Log the results")
     args = parser.parse_args()
-    process(args.subtask, args.prompt_type, args.prompt_addition, args.approach, args.shortcut_model_name)
+    process(args.subtask, args.prompt_type, args.prompt_addition, args.approach, args.shortcut_model_name, args.is_finetuned)

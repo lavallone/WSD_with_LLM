@@ -7,6 +7,7 @@ import numpy as np
 import argparse
 import json
 import nltk
+nltk.download('punkt')
 import sys
 import os
 
@@ -319,6 +320,7 @@ if __name__ == "__main__":
     parser.add_argument("--prompt_addition", "-pa", type=str, help="Input the prompt addition")
     parser.add_argument('--approach', '-a', type=str, help='Input the approach')
     parser.add_argument('--shortcut_model_name', '-sm', type=str, help='Input the model')
+    parser.add_argument("--is_finetuned", "-f", type=bool, default=False, help="If the model we want to test is finetuned or not")
     parser.add_argument('--pos', '-p', type=str, help='Input the part of speech')
     parser.add_argument('--sentence_embedder', '-se', type=str, default=None, help='Input the sentence embedder')
     args = parser.parse_args()
@@ -327,10 +329,13 @@ if __name__ == "__main__":
     assert args.prompt_type in ["v1", "v1.1", "v1.2", "v1.3", "v2", "v2.1", "v2.2", "v3", "v3.1", "v3.2"]
     assert args.prompt_addition in ["no_additions", "cot", "reflective", "cognitive", "emotion"]
     assert args.approach in ["zero_shot", "one_shot", "few_shot"]
-    assert args.shortcut_model_name in ["llama-2-7b-chat-hf", "Mistral-7B-Instruct-v0.2", "falcon-7b-instruct", "vicuna-7b-v1.5",
+    supported_shortcut_model_names = ["llama-2-7b-chat-hf", "Mistral-7B-Instruct-v0.2", "falcon-7b-instruct", "vicuna-7b-v1.5",
                                       "microsoft-phi-1_5", "TinyLlama-TinyLlama-1.1B-Chat-v1.0", "stabilityai-stablelm-2-1_6b-chat", "h2oai-h2o-danube2-1.8b-chat",
                                       "microsoft-phi-2", "microsoft-phi-3-mini-128k-instruct", "meta-llama-Meta-Llama-3-8B",
                                       "openlm-research-open_llama_3b_v2", "openlm-research-open_llama_7b_v2"]
+    supported_shortcut_model_names += [f"finetuned_{e}" for e in supported_shortcut_model_names]
+    assert args.shortcut_model_name in supported_shortcut_model_names
+    
     assert args.pos in ["NOUN", "ADJ", "VERB", "ADV", "ALL"]
 
     if args.subtask in ["selection", "generation"]:
