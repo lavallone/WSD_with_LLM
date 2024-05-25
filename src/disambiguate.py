@@ -41,7 +41,7 @@ def _generate_prompt(instance:list, subtask:str, prompt_type:str, prompt_additio
     """
     if subtask in ["selection", "generation"]:
         
-        instance = instance[0]
+        instance = instance
         word = instance["word"]
         text = instance["text"].replace(" ,", ",").replace(" .", ".")
         
@@ -123,31 +123,30 @@ def _print_log(subtask:str, prompt_type:str, prompt_addition:str, approach:str, 
     with open(log_file_path, "w") as fp:
         json.dump(log, fp, indent=4)
 
-def _process(subtask:str, prompt_type:str, prompt_addition:str, approach:str, shortcut_model_name:str, is_finetuned:bool):
+def _process(output_file_path:str, subtask:str, prompt_type:str, prompt_addition:str, approach:str, shortcut_model_name:str, is_finetuned:bool):
     """
     Processes the evaluation task for a specific subtask, approach, and model. Selection and generation subtasks only.
 
     Args:
+        output_file_path (str): The path of the output foledr.
         subtask (str): The subtask of the evaluation.
         prompt_type (str): The prompt type used.
         prompt_addition (str): The prompt addition technique added to the nominal prompt.
         approach (str): The approach used for evaluation.
         shortcut_model_name (str): The name of the model.
+        is_finetuned (bool): If the model is finetuned or not.
 
     Returns:
         None
     """
     global full_model_name2pipeline, shortcut_model_name2full_model_name
 
-    gold_data = _get_gold_data()[0]
-    if is_finetuned == False:
-        output_file_path = f"../data/{subtask}/{prompt_type}/{prompt_addition}/{approach}/{shortcut_model_name}/"
-    else: 
-        output_file_path = f"../data/{shortcut_model_name.split("/")[1]}/{prompt_type}/{prompt_addition}/{approach}/finetuned_{shortcut_model_name.split("/")[2]}/"
+    gold_data = _get_gold_data(subtask)[0]
     n_instances_processed = 0
     json_data = []
 
-    full_model_name = shortcut_model_name2full_model_name[shortcut_model_name] if is_finetuned == False else shortcut_model_name
+    # if the model is finetuned, the checkpoint path is needed
+    full_model_name = shortcut_model_name if is_finetuned else shortcut_model_name2full_model_name[shortcut_model_name]
     tokenizer = AutoTokenizer.from_pretrained(full_model_name)
     tokenizer.pad_token = tokenizer.eos_token
     pipe = pipeline("text-generation", model=full_model_name, device="cuda", tokenizer=tokenizer, pad_token_id=tokenizer.eos_token_id, max_new_tokens=25)
@@ -170,20 +169,33 @@ def _process(subtask:str, prompt_type:str, prompt_addition:str, approach:str, sh
 
     last_prompt= prompt
     if args.log_config:
+        if is_finetuned: finetuned_model_name = shortcut_model_name.split("/")[2]; shortcut_model_name = f"finetuned_{finetuned_model_name}"
         _print_log(subtask, prompt_type, prompt_addition, approach, shortcut_model_name, last_prompt, n_instances_processed)
 
-def _process_wic(subtask:str, prompt_type:str, prompt_addition:str, approach:str, shortcut_model_name:str, is_finetuned:bool):
+def _process_wic(output_file_path:str, subtask:str, prompt_type:str, prompt_addition:str, approach:str, shortcut_model_name:str, is_finetuned:bool):
+    """
+    Processes the evaluation task for a specific subtask, approach, and model. WiC subtasks only.
+
+    Args:
+        output_file_path (str): The path of the output foledr.
+        subtask (str): The subtask of the evaluation.
+        prompt_type (str): The prompt type used.
+        prompt_addition (str): The prompt addition technique added to the nominal prompt.
+        approach (str): The approach used for evaluation.
+        shortcut_model_name (str): The name of the model.
+        is_finetuned (bool): If the model is finetuned or not.
+
+    Returns:
+        None
+    """
     global full_model_name2pipeline, shortcut_model_name2full_model_name
 
     data, gold = _get_gold_data(subtask)
-    if is_finetuned == False:
-        output_file_path = f"../data/{subtask}/{prompt_type}/{prompt_addition}/{approach}/{shortcut_model_name}/"
-    else: 
-        output_file_path = f"../data/{shortcut_model_name.split("/")[1]}/{prompt_type}/{prompt_addition}/{approach}/finetuned_{shortcut_model_name.split("/")[2]}/"
     n_instances_processed = 0
     json_data = []
 
-    full_model_name = shortcut_model_name2full_model_name[shortcut_model_name] if is_finetuned == False else shortcut_model_name
+    # if the model is finetuned, the checkpoint path is needed
+    full_model_name = shortcut_model_name if is_finetuned else shortcut_model_name2full_model_name[shortcut_model_name]
     tokenizer = AutoTokenizer.from_pretrained(full_model_name)
     tokenizer.pad_token = tokenizer.eos_token
     pipe = pipeline("text-generation", model=full_model_name, device="cuda", tokenizer=tokenizer, pad_token_id=tokenizer.eos_token_id, max_new_tokens=25)
@@ -207,6 +219,7 @@ def _process_wic(subtask:str, prompt_type:str, prompt_addition:str, approach:str
 
     last_prompt= prompt
     if args.log_config:
+        if is_finetuned: finetuned_model_name = shortcut_model_name.split("/")[2]; shortcut_model_name = f"finetuned_{finetuned_model_name}"
         _print_log(subtask, prompt_type, prompt_addition, approach, shortcut_model_name, last_prompt, n_instances_processed)
 
 def process(subtask:str, prompt_type:str, prompt_addition:str, approach:str, shortcut_model_name:str, is_finetuned:bool):
@@ -219,17 +232,21 @@ def process(subtask:str, prompt_type:str, prompt_addition:str, approach:str, sho
         prompt_addition (str): The prompt addition technique added to the nominal prompt.
         approach (str): The approach used for evaluation.
         shortcut_model_name (str): The name of the model.
+        is_finetuned (bool): If the model is finetuned or not.
 
     Returns:
         None
     """
-    if is_finetuned == False:
+    if not is_finetuned:
         assert shortcut_model_name in supported_shortcut_model_names
     assert subtask in supported_subtasks
     assert approach in supported_approaches
     assert prompt_type in supported_prompt_types
     assert prompt_addition in supported_prompt_additions
     
+    # we define the correct output path
+    if is_finetuned: finetuned_model_name = shortcut_model_name.split("/")[2]; output_file_path = f"../data/{subtask}/{prompt_type}/{prompt_addition}/{approach}/finetuned_{finetuned_model_name}/"
+    else: output_file_path = f"../data/{subtask}/{prompt_type}/{prompt_addition}/{approach}/{shortcut_model_name}/"
     # to manage creation/deletion of folders
     if not os.path.exists(f"../data/{subtask}/"):
         os.system(f"mkdir ../data/{subtask}/")
@@ -239,17 +256,17 @@ def process(subtask:str, prompt_type:str, prompt_addition:str, approach:str, sho
         os.system(f"mkdir ../data/{subtask}/{prompt_type}/{prompt_addition}/")
     if not os.path.exists(f"../data/{subtask}/{prompt_type}/{prompt_addition}/{approach}/"):
         os.system(f"mkdir ../data/{subtask}/{prompt_type}/{prompt_addition}/{approach}/")
-    if not os.path.exists(f"../data/{subtask}/{prompt_type}/{prompt_addition}/{approach}/{shortcut_model_name}/"):
-        os.system(f"mkdir ../data/{subtask}/{prompt_type}/{prompt_addition}/{approach}/{shortcut_model_name}/")
-    elif os.path.exists(f"../data/{subtask}/{prompt_type}/{prompt_addition}/{approach}/{shortcut_model_name}/output.txt"):
+    if not os.path.exists(output_file_path):
+        os.system(f"mkdir {output_file_path}")
+    elif os.path.exists(f"{output_file_path}/output.txt"):
         countdown(5)
-        os.system(f"rm -r ../data/{subtask}/{prompt_type}/{prompt_addition}/{approach}/{shortcut_model_name}/*")
+        os.system(f"rm -r {output_file_path}/*")
 
     if subtask in ["selection", "generation"]:
-        _process(subtask, prompt_type, prompt_addition, approach, shortcut_model_name, is_finetuned)
+        _process(output_file_path, subtask, prompt_type, prompt_addition, approach, shortcut_model_name, is_finetuned)
     
     elif subtask == "wic":
-        _process_wic(subtask, prompt_type, prompt_addition, approach, shortcut_model_name, is_finetuned)
+        _process_wic(output_file_path, subtask, prompt_type, prompt_addition, approach, shortcut_model_name, is_finetuned)
 
 if __name__ == "__main__":
 

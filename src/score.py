@@ -333,6 +333,7 @@ if __name__ == "__main__":
                                       "microsoft-phi-1_5", "TinyLlama-TinyLlama-1.1B-Chat-v1.0", "stabilityai-stablelm-2-1_6b-chat", "h2oai-h2o-danube2-1.8b-chat",
                                       "microsoft-phi-2", "microsoft-phi-3-mini-128k-instruct", "meta-llama-Meta-Llama-3-8B",
                                       "openlm-research-open_llama_3b_v2", "openlm-research-open_llama_7b_v2"]
+    # we need to add all the possible finetuned versions
     supported_shortcut_model_names += [f"finetuned_{e}" for e in supported_shortcut_model_names]
     assert args.shortcut_model_name in supported_shortcut_model_names
     
