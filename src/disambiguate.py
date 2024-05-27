@@ -123,7 +123,26 @@ def _print_log(subtask:str, prompt_type:str, prompt_addition:str, approach:str, 
     with open(log_file_path, "w") as fp:
         json.dump(log, fp, indent=4)
 
-def _process(output_file_path:str, subtask:str, prompt_type:str, prompt_addition:str, approach:str, shortcut_model_name:str, is_finetuned:bool):
+def _prepare_finetuned_model(shortcut_model_name:str, checkpoint_path:str):
+    # load the original model first
+    full_model_name = shortcut_model_name2full_model_name[shortcut_model_name]
+    tokenizer = AutoTokenizer.from_pretrained(full_model_name, trust_remote_code=True)
+    base_model = AutoModelForCausalLM.from_pretrained(
+        full_model_name,
+        quantization_config=None,
+        device_map=None,
+        trust_remote_code=True,
+        torch_dtype=torch.bfloat16,
+    ).cuda()
+
+    # merge fine-tuned weights with the base model
+    peft_model_id = checkpoint_path
+    model = PeftModel.from_pretrained(base_model, peft_model_id)
+    model.merge_and_unload()
+    
+    return tokenizer, model
+
+def _process(output_file_path:str, subtask:str, prompt_type:str, prompt_addition:str, approach:str, shortcut_model_name:str, is_finetuned:bool, checkpoint_path:str):
     """
     Processes the evaluation task for a specific subtask, approach, and model. Selection and generation subtasks only.
 
@@ -135,6 +154,7 @@ def _process(output_file_path:str, subtask:str, prompt_type:str, prompt_addition
         approach (str): The approach used for evaluation.
         shortcut_model_name (str): The name of the model.
         is_finetuned (bool): If the model is finetuned or not.
+        checkpoint_path (str): The path of the finetuned checkpoint.
 
     Returns:
         None
@@ -146,10 +166,15 @@ def _process(output_file_path:str, subtask:str, prompt_type:str, prompt_addition
     json_data = []
 
     # if the model is finetuned, the checkpoint path is needed
-    full_model_name = shortcut_model_name if is_finetuned else shortcut_model_name2full_model_name[shortcut_model_name]
-    tokenizer = AutoTokenizer.from_pretrained(full_model_name)
-    tokenizer.pad_token = tokenizer.eos_token
-    pipe = pipeline("text-generation", model=full_model_name, device="cuda", tokenizer=tokenizer, pad_token_id=tokenizer.eos_token_id, max_new_tokens=25)
+    if is_finetuned:
+        finetuned_tokenizer, finetuned_model = _prepare_finetuned_model(shortcut_model_name, checkpoint_path)
+        finetuned_tokenizer.pad_token = finetuned_tokenizer.eos_token
+        pipe = pipeline("text-generation", model=finetuned_model, device="cuda", tokenizer=finetuned_tokenizer, pad_token_id=finetuned_tokenizer.eos_token_id, max_new_tokens=25)
+    else:
+        full_model_name = shortcut_model_name2full_model_name[shortcut_model_name]
+        tokenizer = AutoTokenizer.from_pretrained(full_model_name)
+        tokenizer.pad_token = tokenizer.eos_token
+        pipe = pipeline("text-generation", model=full_model_name, device="cuda", tokenizer=tokenizer, pad_token_id=tokenizer.eos_token_id, max_new_tokens=25)
 
     with open(f"{output_file_path}/output.txt", "a") as fa_txt, open(f"{output_file_path}/output.json", "w") as fw_json:
         for instance in tqdm(gold_data, total=len(gold_data)):
@@ -172,7 +197,7 @@ def _process(output_file_path:str, subtask:str, prompt_type:str, prompt_addition
         if is_finetuned: finetuned_model_name = shortcut_model_name.split("/")[2]; shortcut_model_name = f"finetuned_{finetuned_model_name}"
         _print_log(subtask, prompt_type, prompt_addition, approach, shortcut_model_name, last_prompt, n_instances_processed)
 
-def _process_wic(output_file_path:str, subtask:str, prompt_type:str, prompt_addition:str, approach:str, shortcut_model_name:str, is_finetuned:bool):
+def _process_wic(output_file_path:str, subtask:str, prompt_type:str, prompt_addition:str, approach:str, shortcut_model_name:str, is_finetuned:bool, checkpoint_path:str):
     """
     Processes the evaluation task for a specific subtask, approach, and model. WiC subtasks only.
 
@@ -184,6 +209,7 @@ def _process_wic(output_file_path:str, subtask:str, prompt_type:str, prompt_addi
         approach (str): The approach used for evaluation.
         shortcut_model_name (str): The name of the model.
         is_finetuned (bool): If the model is finetuned or not.
+        checkpoint_path (str): The path of the finetuned checkpoint.
 
     Returns:
         None
@@ -195,10 +221,15 @@ def _process_wic(output_file_path:str, subtask:str, prompt_type:str, prompt_addi
     json_data = []
 
     # if the model is finetuned, the checkpoint path is needed
-    full_model_name = shortcut_model_name if is_finetuned else shortcut_model_name2full_model_name[shortcut_model_name]
-    tokenizer = AutoTokenizer.from_pretrained(full_model_name)
-    tokenizer.pad_token = tokenizer.eos_token
-    pipe = pipeline("text-generation", model=full_model_name, device="cuda", tokenizer=tokenizer, pad_token_id=tokenizer.eos_token_id, max_new_tokens=25)
+    if is_finetuned:
+        finetuned_tokenizer, finetuned_model = _prepare_finetuned_model(shortcut_model_name, checkpoint_path)
+        finetuned_tokenizer.pad_token = finetuned_tokenizer.eos_token
+        pipe = pipeline("text-generation", model=finetuned_model, device="cuda", tokenizer=finetuned_tokenizer, pad_token_id=finetuned_tokenizer.eos_token_id, max_new_tokens=25)
+    else:
+        full_model_name = shortcut_model_name2full_model_name[shortcut_model_name]
+        tokenizer = AutoTokenizer.from_pretrained(full_model_name)
+        tokenizer.pad_token = tokenizer.eos_token
+        pipe = pipeline("text-generation", model=full_model_name, device="cuda", tokenizer=tokenizer, pad_token_id=tokenizer.eos_token_id, max_new_tokens=25)
 
     with open(f"{output_file_path}/output.txt", "a") as fa_txt, open(f"{output_file_path}/output.json", "w") as fw_json:
         for instance_data, instance_gold in tqdm(zip(data, gold), total=len(gold)):
@@ -222,7 +253,7 @@ def _process_wic(output_file_path:str, subtask:str, prompt_type:str, prompt_addi
         if is_finetuned: finetuned_model_name = shortcut_model_name.split("/")[2]; shortcut_model_name = f"finetuned_{finetuned_model_name}"
         _print_log(subtask, prompt_type, prompt_addition, approach, shortcut_model_name, last_prompt, n_instances_processed)
 
-def process(subtask:str, prompt_type:str, prompt_addition:str, approach:str, shortcut_model_name:str, is_finetuned:bool):
+def process(subtask:str, prompt_type:str, prompt_addition:str, approach:str, shortcut_model_name:str, is_finetuned:bool, checkpoint_path:str):
     """
     Starts the processing for a specified subtask, approach, and model.
 
@@ -233,20 +264,21 @@ def process(subtask:str, prompt_type:str, prompt_addition:str, approach:str, sho
         approach (str): The approach used for evaluation.
         shortcut_model_name (str): The name of the model.
         is_finetuned (bool): If the model is finetuned or not.
+        checkpoint_path (str): The path of the finetuned checkpoint.
 
     Returns:
         None
     """
-    if not is_finetuned:
-        assert shortcut_model_name in supported_shortcut_model_names
+    assert shortcut_model_name in supported_shortcut_model_names
     assert subtask in supported_subtasks
     assert approach in supported_approaches
     assert prompt_type in supported_prompt_types
     assert prompt_addition in supported_prompt_additions
     
     # we define the correct output path
-    if is_finetuned: finetuned_model_name = shortcut_model_name.split("/")[2]; output_file_path = f"../data/{subtask}/{prompt_type}/{prompt_addition}/{approach}/finetuned_{finetuned_model_name}/"
-    else: output_file_path = f"../data/{subtask}/{prompt_type}/{prompt_addition}/{approach}/{shortcut_model_name}/"
+    output_file_path = f"../data/{subtask}/{prompt_type}/{prompt_addition}/{approach}/"
+    if is_finetuned: output_file_path += f"finetuned_{shortcut_model_name}/"
+    else: output_file_path += f"{shortcut_model_name}/"
     # to manage creation/deletion of folders
     if not os.path.exists(f"../data/{subtask}/"):
         os.system(f"mkdir ../data/{subtask}/")
@@ -263,10 +295,10 @@ def process(subtask:str, prompt_type:str, prompt_addition:str, approach:str, sho
         os.system(f"rm -r {output_file_path}/*")
 
     if subtask in ["selection", "generation"]:
-        _process(output_file_path, subtask, prompt_type, prompt_addition, approach, shortcut_model_name, is_finetuned)
+        _process(output_file_path, subtask, prompt_type, prompt_addition, approach, shortcut_model_name, is_finetuned, checkpoint_path)
     
     elif subtask == "wic":
-        _process_wic(output_file_path, subtask, prompt_type, prompt_addition, approach, shortcut_model_name, is_finetuned)
+        _process_wic(output_file_path, subtask, prompt_type, prompt_addition, approach, shortcut_model_name, is_finetuned, checkpoint_path)
 
 if __name__ == "__main__":
 
@@ -290,6 +322,9 @@ if __name__ == "__main__":
     parser.add_argument("--approach", "-a", type=str, help="Input the approach")
     parser.add_argument("--shortcut_model_name", "-m", type=str, help="Input the model")
     parser.add_argument("--is_finetuned", "-f", type=bool, default=False, help="If the model we want to test is finetuned or not")
+    parser.add_argument("--checkpoint_path", "-cp", type=str, default=None, help="Input the checkpoint path")
     parser.add_argument("--log_config", "-l", type=bool, default=True, help="Log the results")
     args = parser.parse_args()
-    process(args.subtask, args.prompt_type, args.prompt_addition, args.approach, args.shortcut_model_name, args.is_finetuned)
+    
+    assert args.is_finetuned==False or args.checkpoint_path!=None
+    process(args.subtask, args.prompt_type, args.prompt_addition, args.approach, args.shortcut_model_name, args.is_finetuned, args.checkpoint_path)

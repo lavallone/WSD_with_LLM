@@ -43,6 +43,7 @@ def finetune(subtask:str, shortcut_model_name:str):
     model.config.use_cache = False
     model = prepare_model_for_kbit_training(model)
 
+    # setup lora configuration
     peft_config = LoraConfig(
         lora_alpha=16,
         lora_dropout=0.1,
@@ -91,6 +92,8 @@ def finetune(subtask:str, shortcut_model_name:str):
             module = module.to(torch.bfloat16)
 
     trainer.train()
+    #trainer.push_to_hub()
+    
 
 if __name__ == "__main__":
 
