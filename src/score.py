@@ -82,7 +82,7 @@ def _compute_semantic_overlap(definition:str, answer:str):
     similarity_matrix = cosine_similarity(definition, answer)
     return similarity_matrix[0][0]
 
-def compute_scores(disambiguated_data_path:str):
+def compute_scores(disambiguated_data_path:str, subtask:str):
     """
     Computes and prints evaluation scores based on disambiguated data and gold data.
     
@@ -94,12 +94,14 @@ def compute_scores(disambiguated_data_path:str):
     """
     global instances
 
-    gold_data = _get_gold_data()
+    gold_data = _get_gold_data()[0]
     disambiguated_data = _get_disambiguated_data(disambiguated_data_path)
-
     assert len(gold_data) == len(disambiguated_data)
 
-    number_of_evaluation_instances = _get_number_of_evaluation_instances(gold_data)
+    if args.pos == "ALL":
+        number_of_evaluation_instances = len(gold_data)
+    else:
+        number_of_evaluation_instances = len([instance_gold for instance_gold in gold_data if instance_gold["pos"] == args.pos])
 
     true_labels = [1 for _ in range(number_of_evaluation_instances)]
     predicted_labels = [1 for _ in range(number_of_evaluation_instances)]
@@ -247,17 +249,28 @@ def _get_disambiguated_data(disambiguated_data_path:str):
         disambiguated_data = json.load(json_file)
     return disambiguated_data
 
-def _get_gold_data():
+def _get_gold_data(subtask:str):
     """
     Loads gold data from a JSON file.
 
     Returns:
         dict: A dictionary containing the loaded gold data.
     """
-    data_path = "../data/evaluation/ALL_preprocessed.json"
-    with open(data_path, "r") as json_file:
-        gold_data = json.load(json_file)
-    return gold_data
+    data = []
+    if subtask in ["selection", "generation"]:
+        data_path = "../data/evaluation/ALL_preprocessed.json"
+        with open(data_path, "r") as json_file:
+            data_ = json.load(json_file)
+        data.append(data_)
+    elif subtask == "wic":
+        data_path = "../data/evaluation/test.en-en.data"
+        gold_path = "../data/evaluation/test.en-en.gold"
+        with open(data_path, "r") as fr:
+            data_ = json.load(fr)
+        with open(gold_path, "r") as fr:
+            gold = json.load(fr)
+        data.extend((data_, gold))
+    return data
 
 def _get_disambiguated_data_vectors():
     """
@@ -296,21 +309,63 @@ def _get_gold_data_vectors():
             id2vec_gold[id+definition] = vec
     return id2vec_gold
 
-def _get_number_of_evaluation_instances(gold_data:list):
-    """
-    Computes the number of instances based on the specified part-of-speech tag.
+def compute_scores_wic(disambiguated_data_file:str, substask:str):
 
-    Args:
-        pos (str): The part-of-speech tag to filter instances. If "ALL", considers all instances.
+    data_file, gold_file = _get_gold_data(subtask)
+    answers = _get_disambiguated_data(disambiguated_data_file) 
+    assert len(gold_file) == len(answers)
 
-    Returns:
-        int: The number of instances matching the specified part-of-speech tag.
-    """
     if args.pos == "ALL":
-        number_of_evaluation_instances = len(gold_data)
+        number_of_instances = len(answers)
+        ids_ = [instance_gold["id"] for instance_gold in data_file]
     else:
-        number_of_evaluation_instances = len([instance_gold for instance_gold in gold_data if instance_gold["pos"] == args.pos])
-    return number_of_evaluation_instances
+        number_of_instances = len([instance_gold for instance_gold in data_file if instance_gold["pos"] == args.pos])
+        ids_ = [instance_gold["id"] for instance_gold in data_file if instance_gold["pos"] == args.pos]
+
+    true_labels = [1 for _ in range(number_of_instances)]
+    predicted_labels = [1 for _ in range(number_of_instances)]
+
+    correct, wrong = 0,0
+    global_idx = 0
+
+    for instance, instance_gold, instance_gpt in zip(data_file, gold_file, answers):
+
+        if instance["id"] not in ids_:
+            continue
+        assert instance["id"] == instance_gold["id"] == instance_gpt["id"]
+
+        answer = instance_gpt["answer"]
+        if "True" in answer and "False" in answer:
+            predicted_labels[global_idx] = 0
+            wrong += 1
+            global_idx += 1
+            continue
+        elif "True" in answer and "False" not in answer:
+            answer = "T"
+        elif "False" in answer and "True" not in answer:
+            answer = "F"
+
+        if answer != instance_gold["tag"]:
+            predicted_labels[global_idx] = 0
+            wrong += 1
+        else:
+            correct+=1
+        global_idx += 1
+    assert correct+wrong == number_of_instances
+
+    precision = precision_score(true_labels, predicted_labels, average='micro')
+    recall = recall_score(true_labels, predicted_labels, average='micro')
+    f1 = f1_score(true_labels, predicted_labels, average='micro')
+
+    print("-----")
+    print("Total number of instances:", number_of_evaluation_instances)
+    print("Number of correctly classified instances:", correct)
+    print("Number of incorrectly classified instances:", wrong)
+    print()
+    print("Precision (average=micro):", precision)
+    print("Recall (average=micro):", recall)
+    print("F1 Score (average=micro):", f1)
+    print("Accuracy:", correct/number_of_evaluation_instances)
 
 if __name__ == "__main__":
 
@@ -350,7 +405,7 @@ if __name__ == "__main__":
             id2vec_gold = _get_gold_data_vectors()
             id2vec_disambiguated_data = _get_disambiguated_data_vectors()
 
-        compute_scores(disambiguated_data_path)
+        compute_scores(disambiguated_data_path, args.subtask)
 
     elif args.subtask == "wic":
-        pass
+        compute_scores_wic(disambiguated_data_path, args.subtask)

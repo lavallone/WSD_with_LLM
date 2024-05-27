@@ -1,5 +1,5 @@
 from transformers import pipeline, AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
-from analysis_variables import shortcut_model_name2full_model_name, prompts
+from variables import shortcut_model_name2full_model_name, prompts
 from tqdm import tqdm
 import warnings
 import argparse
@@ -31,13 +31,13 @@ def countdown(t):
         time.sleep(1)
         t -= 1
 
-def _generate_prompt(instance:dict, ambiguity:str, most_frequent:str, approach:str):
+def _generate_prompt(instance:dict, analysis_type:str, ambiguity:str, most_frequent:str, approach:str):
 
     word = instance["word"]
     text = instance["text"].replace(" ,", ",").replace(" .", ".")
     candidate_definitions = "\n".join([f"{idx}) {x}" for idx, x in enumerate(instance["definitions"])])
     
-    prompt = prompts["n_shot_analysis"][ambiguity][most_frequent][approach].format(
+    prompt = prompts[analysis_type][ambiguity][most_frequent][approach].format(
             word=word,
             text=text,
             candidate_definitions=candidate_definitions)
@@ -56,7 +56,9 @@ def _get_gold_data():
         gold_data = json.load(json_file)
     return gold_data
 
-def disambiguate(ambiguity:str, most_frequent:str, approach:str, shortcut_model_name:str):
+def disambiguate(analysis_type:str, ambiguity:str, most_frequent:str, approach:str, shortcut_model_name:str):
+    
+    assert analysis_type in supported_analysis_type
     assert shortcut_model_name in supported_shortcut_model_names
     assert ambiguity in supported_ambiguity
     assert approach in supported_approaches
@@ -64,21 +66,21 @@ def disambiguate(ambiguity:str, most_frequent:str, approach:str, shortcut_model_
     global shortcut_model_name2full_model_name
 
     gold_data = _get_gold_data()
-    output_file_path = f"../../data/analysis/n_shot_analysis/{ambiguity}/{most_frequent}/{approach}/{shortcut_model_name}"
+    output_file_path = f"../../data/n_shot_analysis/{analysis_type}/{ambiguity}/{most_frequent}/{approach}/{shortcut_model_name}"
     n_instances_processed = 0
     json_data = []
 
     # to manage creation/deletion of folders
-    if not os.path.exists(f"../../data/analysis/"):
-        os.system(f"mkdir ../../data/analysis/")
-    if not os.path.exists(f"../../data/analysis/n_shot_analysis/"):
-        os.system(f"mkdir ../../data/analysis/n_shot_analysis/")
-    if not os.path.exists(f"../../data/analysis/n_shot_analysis/{ambiguity}/"):
-        os.system(f"mkdir ../../data/analysis/n_shot_analysis/{ambiguity}/")
-    if not os.path.exists(f"../../data/analysis/n_shot_analysis/{ambiguity}/{most_frequent}/"):
-        os.system(f"mkdir ../../data/analysis/n_shot_analysis/{ambiguity}/{most_frequent}/")
-    if not os.path.exists(f"../../data/analysis/n_shot_analysis/{ambiguity}/{most_frequent}/{approach}/"):
-        os.system(f"mkdir ../../data/analysis/n_shot_analysis/{ambiguity}/{most_frequent}/{approach}/")
+    if not os.path.exists(f"../../data/n_shot_analysis/"):
+        os.system(f"mkdir ../../data/n_shot_analysis/")
+    if not os.path.exists(f"../../data/n_shot_analysis/{analysis_type}/"):
+        os.system(f"mkdir ../../data/n_shot_analysis/{analysis_type}/")
+    if not os.path.exists(f"../../data/n_shot_analysis/{analysis_type}/{ambiguity}/"):
+        os.system(f"mkdir ../../data/n_shot_analysis/{analysis_type}/{ambiguity}/")
+    if not os.path.exists(f"../../data/n_shot_analysis/{analysis_type}/{ambiguity}/{most_frequent}/"):
+        os.system(f"mkdir ../../data/n_shot_analysis/{analysis_type}/{ambiguity}/{most_frequent}/")
+    if not os.path.exists(f"../../data/n_shot_analysis/{analysis_type}/{ambiguity}/{most_frequent}/{approach}/"):
+        os.system(f"mkdir ../../data/n_shot_analysis/{analysis_type}/{ambiguity}/{most_frequent}/{approach}/")
     if not os.path.exists(output_file_path):
         os.system(f"mkdir {output_file_path}")
     elif os.path.exists(f"{output_file_path}/output.txt"):
@@ -95,7 +97,7 @@ def disambiguate(ambiguity:str, most_frequent:str, approach:str, shortcut_model_
 
             n_instances_processed += 1
             instance_id = instance["id"]
-            prompt = _generate_prompt(instance, ambiguity, most_frequent, approach)
+            prompt = _generate_prompt(instance, analysis_type, ambiguity, most_frequent, approach)
 
             answer = pipe(prompt)[0]["generated_text"].replace(prompt, "").replace("\n", "").strip()
 
@@ -180,13 +182,13 @@ def compute_scores(disambiguated_data_path:str):
     acc = round((correct/len(gold_data))*100,2)
     return perc_mfs_predicted, perc_not_mfs_correctly_predicted, acc
 
-def score(approach:str, shortcut_model_name:str):
+def score(analysis_type:str, approach:str, shortcut_model_name:str):
     # MFS analysis
     ambiguity_level = "6"
     most_frequent_list = ["mfs", "not_mfs"]
     mfs_ris = []
     for most_frequent in most_frequent_list:
-        disambiguated_data_path = f"../../data/analysis/n_shot_analysis/{ambiguity_level}/{most_frequent}/{args.approach}/{args.shortcut_model_name}/output.json"
+        disambiguated_data_path = f"../../data/n_shot_analysis/{analysis_type}/{ambiguity_level}/{most_frequent}/{args.approach}/{args.shortcut_model_name}/output.json"
         perc_mfs_predicted, perc_not_mfs_correctly_predicted, acc = compute_scores(disambiguated_data_path)
         mfs_ris.append([perc_mfs_predicted, perc_not_mfs_correctly_predicted, acc])
     print("# MFS analysis")
@@ -205,7 +207,7 @@ def score(approach:str, shortcut_model_name:str):
     for most_frequent in most_frequent_list:
         l = []
         for ambiguity_level in ambiguity_list:
-            disambiguated_data_path = f"data/analysis/n_shot_analysis/{ambiguity_level}/{most_frequent}/{args.approach}/{args.shortcut_model_name}/output.json"
+            disambiguated_data_path = f"../../data/n_shot_analysis/{analysis_type}/{ambiguity_level}/{most_frequent}/{args.approach}/{args.shortcut_model_name}/output.json"
             _, _, acc = compute_scores(disambiguated_data_path)
             l.append(acc)
         std = np.asarray(l).std()
@@ -225,8 +227,9 @@ if __name__ == "__main__":
     warnings.filterwarnings("ignore", category=UserWarning)
     warnings.filterwarnings("ignore", category=FutureWarning)
 
+    supported_analysis_type = ["mfs_analysis", "ambiguity_analysis"]
     supported_mode = ["disambiguate", "score"]
-    supported_ambiguity = ["1", "3", "6", "10", "16"]
+    supported_ambiguity = ["1_candidate", "3_candidates", "6_candidates", "10_candidates", "16_candidates"]
     supported_mfs = ["mfs", "not_mfs"]
     supported_approaches = ["one_shot", "few_shot"]
     supported_shortcut_model_names = ["llama-2-7b-chat-hf", "Mistral-7B-Instruct-v0.2", "falcon-7b-instruct", "vicuna-7b-v1.5",
@@ -235,6 +238,7 @@ if __name__ == "__main__":
                                       "openlm-research-open_llama_3b_v2", "openlm-research-open_llama_7b_v2"]
     
     parser = argparse.ArgumentParser()
+    parser.add_argument("--analysis_type", "-at", type=str, help="The type of analysis we want to conduct")
     parser.add_argument("--mode", "-m", type=str, help="Input the mode (disambiguate or score)")
     parser.add_argument("--ambiguity", "-am", type=str, help="Input the ambiguity level")
     parser.add_argument("--most_frequent", "-mf", type=str, help="Input the most frequent level")
@@ -242,8 +246,10 @@ if __name__ == "__main__":
     parser.add_argument("--shortcut_model_name", "-mn", type=str, help="Input the model")
     args = parser.parse_args()
     
-    assert args.ambiguity!="1" or args.most_frequent=="mfs"
+    assert args.ambiguity!="1_candidate" or args.most_frequent=="mfs" # ambiguity level 1 implies mfs
+    assert args.analysis_type=="ambiguity_analysis" or args.ambiguity=="6_candidates" # doing mfs analyzing implies 6 candidates as ambiguity level
+    
     if args.mode == "disambiguate":
-        disambiguate(args.ambiguity, args.most_frequent, args.approach, args.shortcut_model_name)
+        disambiguate(args.analysis_type, args.ambiguity, args.most_frequent, args.approach, args.shortcut_model_name)
     else:
-        score(args.approach, args.shortcut_model_name)
+        score(args.analysis_type, args.approach, args.shortcut_model_name)

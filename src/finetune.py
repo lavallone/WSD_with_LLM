@@ -7,6 +7,7 @@ from transformers import Trainer, TrainingArguments
 from trl import SFTTrainer
 import sys
 import os
+import warnings
 import argparse
 
 def finetune(subtask:str, shortcut_model_name:str):
@@ -15,7 +16,7 @@ def finetune(subtask:str, shortcut_model_name:str):
     assert subtask in supported_subtasks
     
     full_model_name = shortcut_model_name2full_model_name[shortcut_model_name]
-    output_dir = f"finetuned_models/{subtask}/{full_model_name}"
+    output_dir = f"finetuned_models/{subtask}/{shortcut_model_name}"
 
     #prepare DATASET
     dataset_name = f"../data/training/{subtask}/training.json"
