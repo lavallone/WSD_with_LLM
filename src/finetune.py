@@ -18,16 +18,17 @@ def finetune(subtask:str, shortcut_model_name:str):
     full_model_name = shortcut_model_name2full_model_name[shortcut_model_name]
     output_dir = f"finetuned_models/{subtask}/{shortcut_model_name}"
 
-    #prepare DATASET
+    ## prepare DATASET
     dataset_name = f"../data/training/{subtask}/training.json"
     data = load_dataset("json", data_files=dataset_name)
     data = data["train"].train_test_split(test_size=0.1)
 
-    # prepare TOKENIZER
+    ## prepare TOKENIZER
     tokenizer = AutoTokenizer.from_pretrained(full_model_name, trust_remote_code=True)
     tokenizer.pad_token = tokenizer.eos_token
     
-    # prepare MODEL
+    ## prepare MODEL
+    # quantization step
     bnb_config = BitsAndBytesConfig(
         load_in_4bit=True,
         bnb_4bit_quant_type="nf4",
@@ -52,7 +53,7 @@ def finetune(subtask:str, shortcut_model_name:str):
     )
     peft_model = get_peft_model(model, peft_config)
 
-    # TRAIN
+    ## TRAIN
     training_arguments = TrainingArguments(
         output_dir=output_dir,
         per_device_train_batch_size=16,
