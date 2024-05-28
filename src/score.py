@@ -94,7 +94,7 @@ def compute_scores(disambiguated_data_path:str, subtask:str):
     """
     global instances
 
-    gold_data = _get_gold_data()[0]
+    gold_data = _get_gold_data(subtask)[0]
     disambiguated_data = _get_disambiguated_data(disambiguated_data_path)
     assert len(gold_data) == len(disambiguated_data)
 
@@ -388,15 +388,17 @@ if __name__ == "__main__":
                                       "microsoft-phi-1_5", "TinyLlama-TinyLlama-1.1B-Chat-v1.0", "stabilityai-stablelm-2-1_6b-chat", "h2oai-h2o-danube2-1.8b-chat",
                                       "microsoft-phi-2", "microsoft-phi-3-mini-128k-instruct", "meta-llama-Meta-Llama-3-8B",
                                       "openlm-research-open_llama_3b_v2", "openlm-research-open_llama_7b_v2"]
-    # we need to add all the possible finetuned versions
-    supported_shortcut_model_names += [f"finetuned_{e}" for e in supported_shortcut_model_names]
     assert args.shortcut_model_name in supported_shortcut_model_names
     
     assert args.pos in ["NOUN", "ADJ", "VERB", "ADV", "ALL"]
 
+    disambiguated_data_path = f"../data/{args.subtask}/{args.prompt_type}/{args.prompt_addition}/{args.approach}/"
+    if args.is_finetuned:
+        disambiguated_data_path += f"finetuned_{args.shortcut_model_name}/output.json"
+    else:
+        disambiguated_data_path += f"{args.shortcut_model_name}/output.json"
     if args.subtask in ["selection", "generation"]:
-        disambiguated_data_path = f"../data/{args.subtask}/{args.prompt_type}/{args.prompt_addition}/{args.approach}/{args.shortcut_model_name}/output.json"
-        len_gold = len(_get_gold_data())
+        len_gold = len(_get_gold_data(args.subtask))
 
         if args.subtask == "generation":
             assert args.sentence_embedder in ["all-MiniLM-L6-v2", "all-mpnet-base-v2"]
