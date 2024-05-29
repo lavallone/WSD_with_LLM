@@ -9,6 +9,7 @@ import sys
 import os
 import warnings
 import argparse
+import zipfile
 
 def finetune(subtask:str, shortcut_model_name:str):
     
@@ -19,8 +20,17 @@ def finetune(subtask:str, shortcut_model_name:str):
     output_dir = f"finetuned_models/{subtask}/{shortcut_model_name}"
 
     ## prepare DATASET
-    dataset_name = f"../data/training/{subtask}/training.json"
-    data = load_dataset("json", data_files=dataset_name)
+    dataset_path = f"../data/training/{subtask}/training.json"
+    if not os.path.exists(dataset_path):
+        dir_path = f"../data/training/{subtask}/"
+        file_to_unzip_name = "selection.semcor.zip" if subtask== "selection" else "generation.semcor.zip"
+        file_to_unzip_path = os.path.join(dir_path, file_to_unzip_name)
+        with zipfile.ZipFile(file_to_unzip_path, 'r') as zip_ref:
+            zip_ref.extractall(os.path.dirname(dir_path))
+        extracted_file_name = "data.semcor.json" if subtask== "selection" else "generation.semcor.json"
+        extracted_file_path = os.path.join(dir_path, extracted_file_name)
+        os.rename(extracted_file_path, os.path.join(dir_path, "training.json"))
+    data = load_dataset("json", data_files=dataset_path)
     data = data["train"].train_test_split(test_size=0.1)
 
     ## prepare TOKENIZER
