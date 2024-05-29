@@ -398,7 +398,7 @@ if __name__ == "__main__":
     else:
         disambiguated_data_path += f"{args.shortcut_model_name}/output.json"
     if args.subtask in ["selection", "generation"]:
-        len_gold = len(_get_gold_data(args.subtask))
+        len_gold = len(_get_gold_data(args.subtask)[0])
 
         if args.subtask == "generation":
             assert args.sentence_embedder in ["all-MiniLM-L6-v2", "all-mpnet-base-v2"]

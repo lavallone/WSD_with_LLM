@@ -173,7 +173,7 @@ def _process(output_file_path:str, subtask:str, prompt_type:str, prompt_addition
         pipe = pipeline("text-generation", model=finetuned_model, device="cuda", tokenizer=finetuned_tokenizer, pad_token_id=finetuned_tokenizer.eos_token_id, max_new_tokens=25)
     else:
         full_model_name = shortcut_model_name2full_model_name[shortcut_model_name]
-        tokenizer = AutoTokenizer.from_pretrained(full_model_name)
+        tokenizer = AutoTokenizer.from_pretrained(full_model_name, trust_remote_code=True)
         tokenizer.pad_token = tokenizer.eos_token
         pipe = pipeline("text-generation", model=full_model_name, device="cuda", tokenizer=tokenizer, pad_token_id=tokenizer.eos_token_id, max_new_tokens=25)
 
