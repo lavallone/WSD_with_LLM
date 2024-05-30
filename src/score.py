@@ -309,21 +309,21 @@ def _get_gold_data_vectors():
             id2vec_gold[id+definition] = vec
     return id2vec_gold
 
-def compute_scores_wic(disambiguated_data_file:str, substask:str):
+def compute_scores_wic(disambiguated_data_file:str, subtask:str):
 
     data_file, gold_file = _get_gold_data(subtask)
     answers = _get_disambiguated_data(disambiguated_data_file) 
     assert len(gold_file) == len(answers)
 
     if args.pos == "ALL":
-        number_of_instances = len(answers)
+        number_of_evaluation_instances = len(answers)
         ids_ = [instance_gold["id"] for instance_gold in data_file]
     else:
-        number_of_instances = len([instance_gold for instance_gold in data_file if instance_gold["pos"] == args.pos])
+        number_of_evaluation_instances = len([instance_gold for instance_gold in data_file if instance_gold["pos"] == args.pos])
         ids_ = [instance_gold["id"] for instance_gold in data_file if instance_gold["pos"] == args.pos]
 
-    true_labels = [1 for _ in range(number_of_instances)]
-    predicted_labels = [1 for _ in range(number_of_instances)]
+    true_labels = [1 for _ in range(number_of_evaluation_instances)]
+    predicted_labels = [1 for _ in range(number_of_evaluation_instances)]
 
     correct, wrong = 0,0
     global_idx = 0
@@ -332,7 +332,7 @@ def compute_scores_wic(disambiguated_data_file:str, substask:str):
 
         if instance["id"] not in ids_:
             continue
-        assert instance["id"] == instance_gold["id"] == instance_gpt["id"]
+        assert instance["id"] == instance_gold["id"] == instance_gpt["instance_id"]
 
         answer = instance_gpt["answer"]
         if "True" in answer and "False" in answer:
@@ -351,7 +351,7 @@ def compute_scores_wic(disambiguated_data_file:str, substask:str):
         else:
             correct+=1
         global_idx += 1
-    assert correct+wrong == number_of_instances
+    assert correct+wrong == number_of_evaluation_instances
 
     precision = precision_score(true_labels, predicted_labels, average='micro')
     recall = recall_score(true_labels, predicted_labels, average='micro')

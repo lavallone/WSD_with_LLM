@@ -177,50 +177,59 @@ def compute_scores(disambiguated_data_path:str):
         global_idx += 1
     assert correct+wrong == len(gold_data)
     
-    perc_mfs_predicted = round(((correct_most_frequent+not_correct_most_frequent)/500)*100,2)
+    perc_mfs_predicted = round(((correct_most_frequent+not_correct_most_frequent)/len(gold_data))*100,2)
     perc_not_mfs_correctly_predicted = round( ((correct_not_most_frequent)/(correct_not_most_frequent+not_correct_not_most_frequent))*100 , 2)
     acc = round((correct/len(gold_data))*100,2)
     return perc_mfs_predicted, perc_not_mfs_correctly_predicted, acc
 
 def score(analysis_type:str, approach:str, shortcut_model_name:str):
-    # MFS analysis
-    ambiguity_level = "6"
-    most_frequent_list = ["mfs", "not_mfs"]
-    mfs_ris = []
-    for most_frequent in most_frequent_list:
-        disambiguated_data_path = f"../../data/n_shot_analysis/{analysis_type}/{ambiguity_level}/{most_frequent}/{args.approach}/{args.shortcut_model_name}/output.json"
-        perc_mfs_predicted, perc_not_mfs_correctly_predicted, acc = compute_scores(disambiguated_data_path)
-        mfs_ris.append([perc_mfs_predicted, perc_not_mfs_correctly_predicted, acc])
-    print("# MFS analysis")
-    table_values=[["", "% mfs predicted", "% not mfs predicted correctly", "f1-score"],
-                  ["MFS", str(mfs_ris[0][0])+"%", str(mfs_ris[0][1])+"%", str(mfs_ris[0][2])],
-                  ["not MFS", str(mfs_ris[1][0])+"%", str(mfs_ris[1][1])+"%", str(mfs_ris[1][2])]]
-    col_widths = [max(len(str(cell)) for cell in column) for column in zip(*table_values)]
-    for row in table_values:
-        print(" | ".join(str(cell).ljust(width) for cell, width in zip(row, col_widths)))
-    print(f"The loss is about -{mfs_ris[0][2]-mfs_ris[1][2]}%.")
-    print()
     
-    # AMBIGUITY analysis
-    ambiguity_list = ["1", "3", "6", "10", "16"]
-    ambiguity_ris = []
-    for most_frequent in most_frequent_list:
-        l = []
-        for ambiguity_level in ambiguity_list:
+    if analysis_type == "mfs_analysis":
+        # MFS analysis
+        ambiguity_level = "6_candidates"
+        most_frequent_list = ["mfs", "not_mfs"]
+        mfs_ris = []
+        for most_frequent in most_frequent_list:
             disambiguated_data_path = f"../../data/n_shot_analysis/{analysis_type}/{ambiguity_level}/{most_frequent}/{args.approach}/{args.shortcut_model_name}/output.json"
-            _, _, acc = compute_scores(disambiguated_data_path)
-            l.append(acc)
-        std = np.asarray(l).std()
-        l.append(std)
-        ambiguity_ris.append(l)
-    print("# AMBIGUITY analysis")
-    table_values=[["", "#1", "#3", "#6", "#10", "#16", "std"],
-                  ["MFS", str(ambiguity_ris[0][0]), str(ambiguity_ris[0][1]), str(ambiguity_ris[0][2]), str(ambiguity_ris[0][3]), str(ambiguity_ris[0][4]), str(ambiguity_ris[0][5])],
-                  ["MFS", str(ambiguity_ris[1][0]), str(ambiguity_ris[1][1]), str(ambiguity_ris[1][2]), str(ambiguity_ris[1][3]), str(ambiguity_ris[1][4]), str(ambiguity_ris[1][5])]]
-    col_widths = [max(len(str(cell)) for cell in column) for column in zip(*table_values)]
-    for row in table_values:
-        print(" | ".join(str(cell).ljust(width) for cell, width in zip(row, col_widths)))
-    print()
+            perc_mfs_predicted, perc_not_mfs_correctly_predicted, acc = compute_scores(disambiguated_data_path)
+            mfs_ris.append([perc_mfs_predicted, perc_not_mfs_correctly_predicted, acc])
+        print("# MFS analysis")
+        table_values=[["", "% mfs predicted", "% not mfs predicted correctly", "f1-score"],
+                    ["MFS", str(mfs_ris[0][0])+"%", str(mfs_ris[0][1])+"%", str(mfs_ris[0][2])],
+                    ["not MFS", str(mfs_ris[1][0])+"%", str(mfs_ris[1][1])+"%", str(mfs_ris[1][2])]]
+        col_widths = [max(len(str(cell)) for cell in column) for column in zip(*table_values)]
+        for row in table_values:
+            print(" | ".join(str(cell).ljust(width) for cell, width in zip(row, col_widths)))
+        print(f"The loss is about -{mfs_ris[0][2]-mfs_ris[1][2]}.")
+    
+    else:
+        # AMBIGUITY analysis
+        ambiguity_list = ["1_candidate", "3_candidates", "6_candidates", "10_candidates", "16_candidates"]
+        most_frequent_list = ["mfs", "not_mfs"]
+        ambiguity_ris = []
+        for most_frequent in most_frequent_list:
+            l = []
+            for ambiguity_level in tqdm(ambiguity_list, total=len(ambiguity_list)):
+                if ambiguity_level == "1_candidate" and most_frequent == "not_mfs":
+                    continue
+                disambiguated_data_path = f"../../data/n_shot_analysis/{analysis_type}/{ambiguity_level}/{most_frequent}/{args.approach}/{args.shortcut_model_name}/output.json"
+                _, _, acc = compute_scores(disambiguated_data_path)
+                l.append(acc)
+            std = np.asarray(l).std()
+            l.append(std)
+            ambiguity_ris.append(l)
+        print("# AMBIGUITY analysis")
+        table1_values=[["", "#1", "#3", "#6", "#10", "#16", "std"],
+                    ["MFS", str(ambiguity_ris[0][0]), str(ambiguity_ris[0][1]), str(ambiguity_ris[0][2]), str(ambiguity_ris[0][3]), str(ambiguity_ris[0][4]), str(ambiguity_ris[0][5])],]
+        col_widths = [max(len(str(cell)) for cell in column) for column in zip(*table1_values)]
+        for row in table1_values:
+            print(" | ".join(str(cell).ljust(width) for cell, width in zip(row, col_widths)))
+        print()
+        table2_values=[["", "#3", "#6", "#10", "#16", "std"],
+                    ["not MFS", str(ambiguity_ris[1][0]), str(ambiguity_ris[1][1]), str(ambiguity_ris[1][2]), str(ambiguity_ris[1][3]), str(ambiguity_ris[1][4])]]
+        col_widths = [max(len(str(cell)) for cell in column) for column in zip(*table2_values)]
+        for row in table2_values:
+            print(" | ".join(str(cell).ljust(width) for cell, width in zip(row, col_widths)))
 
 if __name__ == "__main__":
 
@@ -240,8 +249,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--analysis_type", "-at", type=str, help="The type of analysis we want to conduct")
     parser.add_argument("--mode", "-m", type=str, help="Input the mode (disambiguate or score)")
-    parser.add_argument("--ambiguity", "-am", type=str, help="Input the ambiguity level")
-    parser.add_argument("--most_frequent", "-mf", type=str, help="Input the most frequent level")
+    parser.add_argument("--ambiguity", "-am", type=str, default="6_candidates", help="Input the ambiguity level")
+    parser.add_argument("--most_frequent", "-mf", type=str, default="mfs", help="Input the most frequent level")
     parser.add_argument("--approach", "-a", type=str, help="Input the approach")
     parser.add_argument("--shortcut_model_name", "-mn", type=str, help="Input the model")
     args = parser.parse_args()
