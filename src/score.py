@@ -165,12 +165,12 @@ def compute_scores(disambiguated_data_path:str, subtask:str):
     print("F1 Score (average=micro):", f1)
     print("Accuracy:", correct/number_of_evaluation_instances)
 
-def _generate_gold_data_vectors():
+def _generate_gold_data_vectors(subtask:str):
     """
     Generates sentence embeddings for gold data and saves them to a file.
 
     Args:
-        None
+        subtask (str)
 
     Returns:
         None
@@ -185,7 +185,7 @@ def _generate_gold_data_vectors():
 
     print("Generating vectors from gold data")
     sentence_embedder = SentenceTransformer(f'sentence-transformers/{args.sentence_embedder}')
-    data = _get_gold_data()
+    data = _get_gold_data(subtask)
 
     gold_vector_file_path = f"../data/evaluation/vectors/{args.sentence_embedder}_id2vec.tsv"
     id2vec_dd = {}
@@ -402,7 +402,7 @@ if __name__ == "__main__":
 
         if args.subtask == "generation":
             assert args.sentence_embedder in ["all-MiniLM-L6-v2", "all-mpnet-base-v2"]
-            _generate_gold_data_vectors()
+            _generate_gold_data_vectors(args.subtask)
             _generate_disambiguated_data_vectors(disambiguated_data_path, len_gold)
             id2vec_gold = _get_gold_data_vectors()
             id2vec_disambiguated_data = _get_disambiguated_data_vectors()
