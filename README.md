@@ -1,2 +1,1 @@
-# WSD_with_LLMs
-<img src="https://i.imgur.com/CGRzgru.png"  width="300" height="300">
+## ⚡️ LLeMantiX: A Novel Benchmark for Measuring Lexical Semantic Capabilities of Instruction-Tuned Large Language Models
