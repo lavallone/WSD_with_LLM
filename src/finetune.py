@@ -49,6 +49,7 @@ def finetune(subtask:str, shortcut_model_name:str):
         full_model_name,
         quantization_config=bnb_config,
         device_map="auto",
+        trust_remote_code=True
     )
     model.config.use_cache = False
     model = prepare_model_for_kbit_training(model)
