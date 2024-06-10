@@ -185,7 +185,7 @@ def _generate_gold_data_vectors(subtask:str):
 
     print("Generating vectors from gold data")
     sentence_embedder = SentenceTransformer(f'sentence-transformers/{args.sentence_embedder}')
-    data = _get_gold_data(subtask)
+    data = _get_gold_data(subtask)[0]
 
     gold_vector_file_path = f"../data/evaluation/vectors/{args.sentence_embedder}_id2vec.tsv"
     id2vec_dd = {}
@@ -198,18 +198,18 @@ def _generate_gold_data_vectors(subtask:str):
                 vec = " ".join([str(x) for x in vec])
                 fw.write(f"{id_}\t{definition}\t{vec}\n")
 
-def _generate_disambiguated_data_vectors(disambiguated_data_path:str, len_gold:int):
+def _generate_disambiguated_data_vectors(disambiguated_data_path:str, len_gold:int, is_finetuned:bool):
     """
     Generates sentence embeddings for disambiguated data and saves them to a file.
 
     Args:
         disambiguated_data_path (str): the path to the data disambiguated file 
         len_gold (int): number of instances in the gold file
-
+        is_finetuned (bool): if the model is finetuned or not
     Returns:
         None
     """
-    vector_file_path = f"../data/{args.subtask}/{args.prompt_type}/{args.prompt_addition}/{args.approach}/{args.shortcut_model_name}/vectors/{args.sentence_embedder}_id2vec.tsv"
+    vector_file_path = f"../data/{args.subtask}/{args.prompt_type}/{args.prompt_addition}/{args.approach}/finetuned_{args.shortcut_model_name}/vectors/{args.sentence_embedder}_id2vec.tsv" if is_finetuned else f"../data/{args.subtask}/{args.prompt_type}/{args.prompt_addition}/{args.approach}/{args.shortcut_model_name}/vectors/{args.sentence_embedder}_id2vec.tsv"
     if os.path.exists(vector_file_path):
         with open(vector_file_path, "r") as fr:
             if len(fr.readlines()) != len_gold:
@@ -217,7 +217,7 @@ def _generate_disambiguated_data_vectors(disambiguated_data_path:str, len_gold:i
                 exit()
             print("Disambiguated data vectors already exist")
             return None
-    vector_folder_path = f"../data/{args.subtask}/{args.prompt_type}/{args.prompt_addition}/{args.approach}/{args.shortcut_model_name}/vectors"
+    vector_folder_path = f"../data/{args.subtask}/{args.prompt_type}/{args.prompt_addition}/{args.approach}/finetuned_{args.shortcut_model_name}/vectors" if is_finetuned else f"../data/{args.subtask}/{args.prompt_type}/{args.prompt_addition}/{args.approach}/{args.shortcut_model_name}/vectors"
     if not os.path.exists(vector_folder_path):
         os.makedirs(vector_folder_path)          
 
@@ -227,7 +227,7 @@ def _generate_disambiguated_data_vectors(disambiguated_data_path:str, len_gold:i
     with open(disambiguated_data_path) as fr:
         data = json.load(fr)
 
-    vector_file_path = f"../data/{args.subtask}/{args.prompt_type}/{args.prompt_addition}/{args.approach}/{args.shortcut_model_name}/vectors/{args.sentence_embedder}_id2vec.tsv"
+    vector_file_path = f"../data/{args.subtask}/{args.prompt_type}/{args.prompt_addition}/{args.approach}/finetuned_{args.shortcut_model_name}/vectors/{args.sentence_embedder}_id2vec.tsv" if is_finetuned else f"../data/{args.subtask}/{args.prompt_type}/{args.prompt_addition}/{args.approach}/{args.shortcut_model_name}/vectors/{args.sentence_embedder}_id2vec.tsv"
     id2vec_dd = {}
     with open(vector_file_path, "w") as fw:
         for el in tqdm(data, total=len(data)):
@@ -272,19 +272,19 @@ def _get_gold_data(subtask:str):
         data.extend((data_, gold))
     return data
 
-def _get_disambiguated_data_vectors():
+def _get_disambiguated_data_vectors(is_finetuned:bool):
     """
     Retrieves the disambiguated data sentence embeddings from a file and returns them as a dictionary.
 
     Args:
-        None
+        is_finetuned (bool): if the model is finetuned or not
 
     Returns:
         dict: A dictionary mapping instance IDs to their corresponding sentence embeddings.
     """
     id2vec_disambiguated_data = {}
 
-    vector_file_path = f"../data/{args.subtask}/{args.prompt_type}/{args.prompt_addition}/{args.approach}/{args.shortcut_model_name}/vectors/{args.sentence_embedder}_id2vec.tsv"
+    vector_file_path = f"../data/{args.subtask}/{args.prompt_type}/{args.prompt_addition}/{args.approach}/finetuned_{args.shortcut_model_name}/vectors/{args.sentence_embedder}_id2vec.tsv" if is_finetuned else f"../data/{args.subtask}/{args.prompt_type}/{args.prompt_addition}/{args.approach}/{args.shortcut_model_name}/vectors/{args.sentence_embedder}_id2vec.tsv"
     with open(vector_file_path, "r") as fr:
         for line in fr:
             id_, vec = line.strip().split('\t')
@@ -403,9 +403,9 @@ if __name__ == "__main__":
         if args.subtask == "generation":
             assert args.sentence_embedder in ["all-MiniLM-L6-v2", "all-mpnet-base-v2"]
             _generate_gold_data_vectors(args.subtask)
-            _generate_disambiguated_data_vectors(disambiguated_data_path, len_gold)
+            _generate_disambiguated_data_vectors(disambiguated_data_path, len_gold, args.is_finetuned)
             id2vec_gold = _get_gold_data_vectors()
-            id2vec_disambiguated_data = _get_disambiguated_data_vectors()
+            id2vec_disambiguated_data = _get_disambiguated_data_vectors(args.is_finetuned)
 
         compute_scores(disambiguated_data_path, args.subtask)
 
