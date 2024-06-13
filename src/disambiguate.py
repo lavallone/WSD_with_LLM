@@ -42,7 +42,6 @@ def _generate_prompt(instance:list, subtask:str, prompt_type:str, prompt_additio
     """
     if subtask in ["selection", "generation"]:
         
-        instance = instance
         word = instance["word"]
         text = instance["text"].replace(" ,", ",").replace(" .", ".")
         
