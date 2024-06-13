@@ -88,7 +88,7 @@ def disambiguate(analysis_type:str, ambiguity:str, most_frequent:str, approach:s
         os.system(f"rm -r {output_file_path}/*")
 
     full_model_name = shortcut_model_name2full_model_name[shortcut_model_name]
-    tokenizer = AutoTokenizer.from_pretrained(full_model_name)
+    tokenizer = AutoTokenizer.from_pretrained(full_model_name, trust_remote_code=True)
     tokenizer.pad_token = tokenizer.eos_token
     pipe = pipeline("text-generation", model=full_model_name, device="cuda", tokenizer=tokenizer, pad_token_id=tokenizer.eos_token_id, max_new_tokens=25)
 
