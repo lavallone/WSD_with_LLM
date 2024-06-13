@@ -158,10 +158,16 @@ def compute_scores(disambiguated_data_path:str):
         # adds n) before all candidate definitions
         for idx, definition in enumerate(instance_gold["definitions"]):
             instance_gold["definitions"][idx] = f"{idx}) {definition}"
-            
+        
+        # we need it for differentiate mfs and not_mfs answers
         def2idx = {d:i for i,d in enumerate(instance_gold["definitions"])}
 
-        if answer.strip() == "": selected_definition = ""
+        # if model answers "", we consider as not_mfs and wrong prediction
+        if answer.strip() == "": 
+            not_correct_not_most_frequent+=1
+            wrong += 1
+            global_idx += 1
+            continue
         else: selected_definition = _choose_definition(instance_gold, answer)
         
         if selected_definition in instance_gold["gold_definitions"]:
