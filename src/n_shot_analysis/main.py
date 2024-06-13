@@ -33,6 +33,7 @@ def countdown(t):
 
 def _generate_prompt(instance:dict, analysis_type:str, ambiguity:str, most_frequent:str, approach:str):
 
+    instace = instance
     word = instance["word"]
     text = instance["text"].replace(" ,", ",").replace(" .", ".")
     candidate_definitions = "\n".join([f"{idx}) {x}" for idx, x in enumerate(instance["definitions"])])
