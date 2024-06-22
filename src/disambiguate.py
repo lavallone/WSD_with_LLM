@@ -176,8 +176,7 @@ def _process(output_file_path:str, subtask:str, prompt_type:str, prompt_addition
         tokenizer.pad_token = tokenizer.eos_token
         model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True)
         if hasattr(model, "_check_and_enable_flash_attn_2"):
-            method = getattr(model, "_check_and_enable_flash_attn_2")
-            method()
+            model.config.attn_implementation = "flash_attention_2"
         pipe = pipeline("text-generation", model=model, device="cuda", tokenizer=tokenizer, pad_token_id=tokenizer.eos_token_id, max_new_tokens=25)
 
     with open(f"{output_file_path}/output.txt", "a") as fa_txt, open(f"{output_file_path}/output.json", "w") as fw_json:
