@@ -181,8 +181,8 @@ def _process(output_file_path:str, subtask:str, prompt_type:str, prompt_addition
                 model.config.use_flash_attn = True  # Enable flash-attention if the model configuration supports it
                 print("Flash-attention enabled.")
             else:
-                print(getattr(model, _check_and_enable_flash_attn_2))
-                print(getattr(model, _supports_flash_attn_2))
+                print(getattr(model, "_check_and_enable_flash_attn_2"))
+                print(getattr(model, "_supports_flash_attn_2"))
                 print("Flash-attention not supported in this model configuration.")
         except ImportError:
             print("flash-attention package not found. Please install it for better performance.")
