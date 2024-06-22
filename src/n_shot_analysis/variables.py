@@ -1,18 +1,16 @@
-shortcut_model_name2full_model_name = {"llama-2-7b-chat":"meta-llama/Llama-2-7b-chat",
-                                       "llama-2-7b-chat-hf":"meta-llama/Llama-2-7b-chat-hf",
-                                       "vicuna-7b-v1.5":"lmsys/vicuna-7b-v1.5",
-                                       "Mistral-7B-Instruct-v0.2":"mistralai/Mistral-7B-Instruct-v0.2",
-                                       "falcon-7b-instruct":"tiiuae/falcon-7b-instruct", 
-                                       "microsoft-phi-1_5":"microsoft/phi-1_5",
-                                       "TinyLlama-TinyLlama-1.1B-Chat-v1.0":"TinyLlama/TinyLlama-1.1B-Chat-v1.0",
-                                       "stabilityai-stablelm-2-1_6b-chat": "stabilityai/stablelm-2-1_6b-chat",
-                                       "h2oai-h2o-danube2-1.8b-chat": "h2oai/h2o-danube2-1.8b-chat",
-                                       "microsoft-phi-2":"microsoft/phi-2",
-                                       "microsoft-phi-3-mini-128k-instruct":"microsoft/Phi-3-mini-128k-instruct",
-                                       "meta-llama-Meta-Llama-3-8B" : "meta-llama/Meta-Llama-3-8B",
+shortcut_model_name2full_model_name = {"llama_2":"meta-llama/Llama-2-7b-chat-hf",
+                                       "vicuna":"lmsys/vicuna-7b-v1.5",
+                                       "mistral":"mistralai/Mistral-7B-Instruct-v0.2",
+                                       "falcon":"tiiuae/falcon-7b-instruct", 
+                                       "phi_3_medium":"microsoft/Phi-3-medium-128k-instruct",
+                                       "tiny_llama":"TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+                                       "stabilityai": "stabilityai/stablelm-2-1_6b-chat",
+                                       "h2oai": "h2oai/h2o-danube2-1.8b-chat",
+                                       "phi_3_small":"microsoft/Phi-3-small-8k-instruct",
+                                       "phi_3_mini":"microsoft/Phi-3-mini-128k-instruct",
+                                       "llama_3" : "meta-llama/Meta-Llama-3-8B-Instruct",
                                        "openlm-research-open_llama_3b_v2" : "openlm-research/open_llama_3b_v2",
                                        "openlm-research-open_llama_7b_v2" : "openlm-research/open_llama_7b_v2"}
-
 prompts = {"ambiguity_analysis":{
                                 "1_candidate":{
                                         "mfs":{
