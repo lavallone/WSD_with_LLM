@@ -185,7 +185,10 @@ def _process(output_file_path:str, subtask:str, prompt_type:str, prompt_addition
         except ImportError:
             print("flash-attention package not found. Please install it for better performance.")
         attributes = dir(model)
-        print(attributes)
+        with open("output.txt", "w") as file_:
+        # Iterate through the list and write each element to the file
+        for item in attributes:
+            file_.write(f"{item}\n")
 
         pipe = pipeline("text-generation", model=model, device="cuda", tokenizer=tokenizer, pad_token_id=tokenizer.eos_token_id, max_new_tokens=25)
 
