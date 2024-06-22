@@ -385,7 +385,7 @@ if __name__ == "__main__":
     assert args.prompt_addition in ["no_additions", "cot", "reflective", "cognitive", "emotion"]
     assert args.approach in ["zero_shot", "one_shot", "few_shot"]
     supported_shortcut_model_names =  ["llama_2", "mistral", "falcon", "vicuna", 
-                                      "phi_3_medium", "tiny_llama", "stabilityai", "h2oai",
+                                      "tiny_llama", "stabilityai", "h2oai",
                                       "phi_3_small", "phi_3_mini", "llama_3",
                                       "openlm-research-open_llama_3b_v2", "openlm-research-open_llama_7b_v2"]
     assert args.shortcut_model_name in supported_shortcut_model_names

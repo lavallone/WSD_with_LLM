@@ -248,7 +248,7 @@ if __name__ == "__main__":
     supported_mfs = ["mfs", "not_mfs"]
     supported_approaches = ["one_shot", "few_shot"]
     supported_shortcut_model_names = ["llama_2", "mistral", "falcon", "vicuna", 
-                                      "phi_3_medium", "tiny_llama", "stabilityai", "h2oai",
+                                      "tiny_llama", "stabilityai", "h2oai",
                                       "phi_3_small", "phi_3_mini", "llama_3",
                                       "openlm-research-open_llama_3b_v2", "openlm-research-open_llama_7b_v2"]
     

@@ -174,8 +174,8 @@ def _process(output_file_path:str, subtask:str, prompt_type:str, prompt_addition
         full_model_name = shortcut_model_name2full_model_name[shortcut_model_name]
         tokenizer = AutoTokenizer.from_pretrained(full_model_name, trust_remote_code=True)
         tokenizer.pad_token = tokenizer.eos_token
-        model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True)
-        if hasattr(model.config, 'use_flash_attn'): model.config.use_flash_attn = True
+        model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, use_flash_attn=True)
+        #if hasattr(model.config, 'use_flash_attn'): model.config.use_flash_attn = True
         pipe = pipeline("text-generation", model=model, device="cuda", tokenizer=tokenizer, pad_token_id=tokenizer.eos_token_id, max_new_tokens=25)
 
     with open(f"{output_file_path}/output.txt", "a") as fa_txt, open(f"{output_file_path}/output.json", "w") as fw_json:
@@ -231,7 +231,9 @@ def _process_wic(output_file_path:str, subtask:str, prompt_type:str, prompt_addi
         full_model_name = shortcut_model_name2full_model_name[shortcut_model_name]
         tokenizer = AutoTokenizer.from_pretrained(full_model_name)
         tokenizer.pad_token = tokenizer.eos_token
-        pipe = pipeline("text-generation", model=full_model_name, device="cuda", tokenizer=tokenizer, pad_token_id=tokenizer.eos_token_id, max_new_tokens=25)
+        model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, use_flash_attn=True)
+        #if hasattr(model.config, 'use_flash_attn'): model.config.use_flash_attn = True
+        pipe = pipeline("text-generation", model=model, device="cuda", tokenizer=tokenizer, pad_token_id=tokenizer.eos_token_id, max_new_tokens=25)
 
     with open(f"{output_file_path}/output.txt", "a") as fa_txt, open(f"{output_file_path}/output.json", "w") as fw_json:
         for instance_data, instance_gold in tqdm(zip(data, gold), total=len(gold)):
@@ -312,7 +314,7 @@ if __name__ == "__main__":
     supported_prompt_additions = ["no_additions", "cot", "reflective", "cognitive", "emotion"]
     supported_approaches = ["zero_shot", "one_shot", "few_shot"]
     supported_shortcut_model_names = ["llama_2", "mistral", "falcon", "vicuna", 
-                                      "phi_3_medium", "tiny_llama", "stabilityai", "h2oai",
+                                      "tiny_llama", "stabilityai", "h2oai",
                                       "phi_3_small", "phi_3_mini", "llama_3",
                                       "openlm-research-open_llama_3b_v2", "openlm-research-open_llama_7b_v2"]
     full_model_name2pipeline = {}
