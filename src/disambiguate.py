@@ -174,23 +174,8 @@ def _process(output_file_path:str, subtask:str, prompt_type:str, prompt_addition
         full_model_name = shortcut_model_name2full_model_name[shortcut_model_name]
         tokenizer = AutoTokenizer.from_pretrained(full_model_name, trust_remote_code=True)
         tokenizer.pad_token = tokenizer.eos_token
-        
         model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True)
-        try:
-            if hasattr(model.config, 'use_flash_attn'):
-                model.config.use_flash_attn = True  # Enable flash-attention if the model configuration supports it
-                print("Flash-attention enabled.")
-            else:
-                print(getattr(model, "_check_and_enable_flash_attn_2"))
-                print(getattr(model, "_supports_flash_attn_2"))
-                print("Flash-attention not supported in this model configuration.")
-        except ImportError:
-            print("flash-attention package not found. Please install it for better performance.")
-        attributes = dir(model)
-        with open("output.txt", "w") as file_:
-            for item in attributes:
-                file_.write(f"{item}\n")
-
+        if hasattr(model, "_check_and_enable_flash_attn_2"): setattr(model, "_check_and_enable_flash_attn_2", True)
         pipe = pipeline("text-generation", model=model, device="cuda", tokenizer=tokenizer, pad_token_id=tokenizer.eos_token_id, max_new_tokens=25)
 
     with open(f"{output_file_path}/output.txt", "a") as fa_txt, open(f"{output_file_path}/output.json", "w") as fw_json:
