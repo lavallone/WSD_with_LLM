@@ -240,7 +240,7 @@ def _process_wic(output_file_path:str, subtask:str, prompt_type:str, prompt_addi
             instance_id = instance_data["id"]
             
             prompt = _generate_prompt([instance_data, instance_gold], subtask, prompt_type, prompt_addition, approach)
-            messages = [{"role": "user", "content": "How many helicopters can a human eat in one sitting?"}]
+            messages = [{"role": "user", "content": prompt}]
             prompt_template = tokenizer.apply_chat_template(messages, tokenize=True, add_generation_prompt=True, return_tensors="pt")
             answer = pipe(prompt_template)[0]["generated_text"].replace(prompt_template, "").replace("\n", "").strip()
             
