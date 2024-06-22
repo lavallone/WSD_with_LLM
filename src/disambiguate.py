@@ -185,8 +185,7 @@ def _process(output_file_path:str, subtask:str, prompt_type:str, prompt_addition
         except ImportError:
             print("flash-attention package not found. Please install it for better performance.")
         attributes = dir(model)
-        for attr in attributes:
-            print(attr)
+        print(attributes)
 
         pipe = pipeline("text-generation", model=model, device="cuda", tokenizer=tokenizer, pad_token_id=tokenizer.eos_token_id, max_new_tokens=25)
 
