@@ -174,7 +174,7 @@ def _process(output_file_path:str, subtask:str, prompt_type:str, prompt_addition
         full_model_name = shortcut_model_name2full_model_name[shortcut_model_name]
         tokenizer = AutoTokenizer.from_pretrained(full_model_name, trust_remote_code=True)
         tokenizer.pad_token = tokenizer.eos_token
-        model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.float16, attn_implementation="flash_attention_2", device_map="auto")
+        model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.float16, attn_implementation="flash_attention_2").cuda()
         #if getattr(model, "_supports_flash_attn_2") == True:
         #    model.config.attn_implementation = "flash_attention_2"
         pipe = pipeline("text-generation", model=model, device="cuda", tokenizer=tokenizer, pad_token_id=tokenizer.eos_token_id, max_new_tokens=25)
@@ -315,9 +315,8 @@ if __name__ == "__main__":
     supported_prompt_additions = ["no_additions", "cot", "reflective", "cognitive", "emotion"]
     supported_approaches = ["zero_shot", "one_shot", "few_shot"]
     supported_shortcut_model_names = ["llama_2", "mistral", "falcon", "vicuna", 
-                                      "tiny_llama", "stabilityai", "h2oai",
-                                      "phi_3_small", "phi_3_mini", "llama_3",
-                                      "openlm-research-open_llama_3b_v2", "openlm-research-open_llama_7b_v2"]
+                                      "instruct_pt", "tiny_llama", "stability_ai", "h2o_ai",
+                                      "phi_3_small", "phi_3_mini", "llama_3"]
     full_model_name2pipeline = {}
     
     parser = argparse.ArgumentParser()
