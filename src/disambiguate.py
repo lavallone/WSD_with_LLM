@@ -133,6 +133,7 @@ def _prepare_finetuned_model(shortcut_model_name:str, checkpoint_path:str):
         device_map=None,
         trust_remote_code=True,
         torch_dtype=torch.bfloat16,
+        attn_implementation="flash_attention_2"
     ).cuda()
 
     # merge fine-tuned weights with the base model
@@ -182,10 +183,12 @@ def _process(output_file_path:str, subtask:str, prompt_type:str, prompt_addition
 
             n_instances_processed += 1
             instance_id = instance["id"]
-            prompt = _generate_prompt(instance, subtask, prompt_type, prompt_addition, approach)
             
-            answer = pipe(prompt)[0]["generated_text"].replace(prompt, "").replace("\n", "").strip()
-
+            prompt = _generate_prompt(instance, subtask, prompt_type, prompt_addition, approach)
+            chat = [{"role": "user", "content": prompt}]
+            prompt_template = tokenizer.apply_chat_template(chat, tokenize=False, add_generation_prompt=True)
+            answer = pipe(prompt_template)[0]["generated_text"].replace(prompt_template, "").replace("\n", "").strip()
+            
             fa_txt.write(f"{instance_id}\t{answer}\n")
             fa_txt.flush()
 
@@ -240,8 +243,8 @@ def _process_wic(output_file_path:str, subtask:str, prompt_type:str, prompt_addi
             instance_id = instance_data["id"]
             
             prompt = _generate_prompt([instance_data, instance_gold], subtask, prompt_type, prompt_addition, approach)
-            messages = [{"role": "user", "content": prompt}]
-            prompt_template = tokenizer.apply_chat_template(messages, tokenize=True, add_generation_prompt=True, return_tensors="pt")
+            chat = [{"role": "user", "content": prompt}]
+            prompt_template = tokenizer.apply_chat_template(chat, tokenize=False, add_generation_prompt=True)
             answer = pipe(prompt_template)[0]["generated_text"].replace(prompt_template, "").replace("\n", "").strip()
             
             fa_txt.write(f"{instance_id}\t{answer}\n")
