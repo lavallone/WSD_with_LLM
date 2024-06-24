@@ -5,7 +5,7 @@ shortcut_model_name2full_model_name = {"llama_2":"meta-llama/Llama-2-7b-chat-hf"
                                        "tiny_llama":"TinyLlama/TinyLlama-1.1B-Chat-v1.0",
                                        "stability_ai": "stabilityai/stablelm-2-1_6b-chat",
                                        "h2o_ai": "h2oai/h2o-danube2-1.8b-chat",
-                                       "phi_3_small":"microsoft/Phi-3-small-8k-instruct",
+                                       "phi_3_small":"microsoft/Phi-3-small-128k-instruct",
                                        "phi_3_mini":"microsoft/Phi-3-mini-128k-instruct",
                                        "llama_3" : "meta-llama/Meta-Llama-3-8B-Instruct",
                                        "instruct_pt" : "instruction-pretrain/InstructLM-1.3B"}

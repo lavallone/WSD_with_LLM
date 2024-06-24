@@ -1,4 +1,4 @@
-from transformers import pipeline, AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
+from transformers import pipeline, AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig, FalconForCausalLM
 from peft import PeftModel
 from variables import shortcut_model_name2full_model_name, prompts
 from tqdm import tqdm
@@ -127,14 +127,24 @@ def _prepare_finetuned_model(shortcut_model_name:str, checkpoint_path:str):
     # load the original model first
     full_model_name = shortcut_model_name2full_model_name[shortcut_model_name]
     tokenizer = AutoTokenizer.from_pretrained(full_model_name, trust_remote_code=True)
-    base_model = AutoModelForCausalLM.from_pretrained(
-        full_model_name,
-        quantization_config=None,
-        device_map=None,
-        trust_remote_code=True,
-        torch_dtype=torch.bfloat16,
-        attn_implementation="flash_attention_2"
-    ).cuda()
+    if shortcut_model_name == "falcon":
+        base_model = FalconForCausalLM.from_pretrained(
+            full_model_name,
+            quantization_config=None,
+            device_map=None,
+            trust_remote_code=True,
+            torch_dtype=torch.bfloat16,
+            attn_implementation="flash_attention_2"
+        ).cuda()
+    else:
+        base_model = AutoModelForCausalLM.from_pretrained(
+            full_model_name,
+            quantization_config=None,
+            device_map=None,
+            trust_remote_code=True,
+            torch_dtype=torch.bfloat16,
+            attn_implementation="flash_attention_2"
+        ).cuda()
 
     # merge fine-tuned weights with the base model
     peft_model_id = checkpoint_path
@@ -175,7 +185,8 @@ def _process(output_file_path:str, subtask:str, prompt_type:str, prompt_addition
         full_model_name = shortcut_model_name2full_model_name[shortcut_model_name]
         tokenizer = AutoTokenizer.from_pretrained(full_model_name, trust_remote_code=True)
         tokenizer.pad_token = tokenizer.eos_token
-        model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.float16, attn_implementation="flash_attention_2").cuda()
+        if shortcut_model_name == "falcon" : model = FalconForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.float16, attn_implementation="flash_attention_2").cuda()
+        else: model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.float16, attn_implementation="flash_attention_2").cuda()
         pipe = pipeline("text-generation", model=model, device="cuda", tokenizer=tokenizer, pad_token_id=tokenizer.eos_token_id, max_new_tokens=25)
     
     with open(f"{output_file_path}/output.txt", "a") as fa_txt, open(f"{output_file_path}/output.json", "w") as fw_json:
@@ -233,7 +244,8 @@ def _process_wic(output_file_path:str, subtask:str, prompt_type:str, prompt_addi
         full_model_name = shortcut_model_name2full_model_name[shortcut_model_name]
         tokenizer = AutoTokenizer.from_pretrained(full_model_name)
         tokenizer.pad_token = tokenizer.eos_token
-        model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.float16, attn_implementation="flash_attention_2").cuda()
+        if shortcut_model_name == "falcon" : model = FalconForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.float16, attn_implementation="flash_attention_2").cuda()
+        else: model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.float16, attn_implementation="flash_attention_2").cuda()
         pipe = pipeline("text-generation", model=model, device="cuda", tokenizer=tokenizer, pad_token_id=tokenizer.eos_token_id, max_new_tokens=25)
 
     with open(f"{output_file_path}/output.txt", "a") as fa_txt, open(f"{output_file_path}/output.json", "w") as fw_json:
