@@ -1,4 +1,4 @@
-from transformers import pipeline, AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig, FalconForCausalLM
+from transformers import pipeline, AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 from variables import shortcut_model_name2full_model_name, prompts
 from tqdm import tqdm
 import warnings
@@ -90,8 +90,8 @@ def disambiguate(analysis_type:str, ambiguity:str, most_frequent:str, approach:s
     full_model_name = shortcut_model_name2full_model_name[shortcut_model_name]
     tokenizer = AutoTokenizer.from_pretrained(full_model_name, trust_remote_code=True)
     tokenizer.pad_token = tokenizer.eos_token
-    if shortcut_model_name == "falcon" : model = FalconForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.float16, attn_implementation="flash_attention_2").cuda()
-    else: model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.float16, attn_implementation="flash_attention_2").cuda()
+    if shortcut_model_name == "phi_3_mini" or shortcut_model_name == "phi_3_small": model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.float16, attn_implementation="flash_attention_2").cuda()
+        else: model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.float16).cuda()
     pipe = pipeline("text-generation", model=model, device="cuda", tokenizer=tokenizer, pad_token_id=tokenizer.eos_token_id, max_new_tokens=25)
 
     with open(f"{output_file_path}/output.txt", "a") as fa_txt, open(f"{output_file_path}/output.json", "w") as fw_json:
@@ -101,9 +101,12 @@ def disambiguate(analysis_type:str, ambiguity:str, most_frequent:str, approach:s
             instance_id = instance["id"]
             
             prompt = _generate_prompt(instance, subtask, prompt_type, prompt_addition, approach)
-            chat = [{"role": "user", "content": prompt}]
-            prompt_template = tokenizer.apply_chat_template(chat, tokenize=False, add_generation_prompt=True)
-            answer = pipe(prompt_template)[0]["generated_text"].replace(prompt_template, "").replace("\n", "").strip()
+            if shortcut_model_name == "vicuna":
+                answer = pipe(prompt)[0]["generated_text"].replace(prompt, "").replace("\n", "").strip()
+            else:
+                chat = [{"role": "user", "content": prompt}]
+                prompt_template = tokenizer.apply_chat_template(chat, tokenize=False, add_generation_prompt=True)
+                answer = pipe(prompt_template)[0]["generated_text"].replace(prompt_template, "").replace("\n", "").strip()
             
             fa_txt.write(f"{instance_id}\t{answer}\n")
             fa_txt.flush()
