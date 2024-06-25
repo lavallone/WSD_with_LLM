@@ -196,9 +196,9 @@ def _process(output_file_path:str, subtask:str, prompt_type:str, prompt_addition
             instance_id = instance["id"]
             
             prompt = _generate_prompt(instance, subtask, prompt_type, prompt_addition, approach)
-            chat = [{"role": "user", "content": prompt}]
-            prompt_template = tokenizer.apply_chat_template(chat, tokenize=False, add_generation_prompt=True)
-            answer = pipe(prompt_template)[0]["generated_text"].replace(prompt_template, "").replace("\n", "").strip()
+            #chat = [{"role": "user", "content": prompt}]
+            #prompt_template = tokenizer.apply_chat_template(chat, tokenize=False, add_generation_prompt=True)
+            answer = pipe(prompt)[0]["generated_text"].replace(prompt, "").replace("\n", "").strip()
             
             fa_txt.write(f"{instance_id}\t{answer}\n")
             fa_txt.flush()
