@@ -7,7 +7,6 @@ import numpy as np
 import argparse
 import json
 import nltk
-nltk.download('punkt')
 import sys
 import os
 
