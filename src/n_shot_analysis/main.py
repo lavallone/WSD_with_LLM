@@ -256,7 +256,7 @@ if __name__ == "__main__":
     supported_approaches = ["one_shot", "few_shot"]
     supported_shortcut_model_names = ["llama_2", "mistral", "falcon", "vicuna", 
                                       "instruct_pt", "tiny_llama", "stability_ai", "h2o_ai",
-                                      "phi_3_small", "phi_3_mini", "llama_3"]
+                                      "phi_3_small", "phi_3_mini", "llama_3", "gemma_2b", "gemma_9b"]
     
     parser = argparse.ArgumentParser()
     parser.add_argument("--analysis_type", "-at", type=str, help="The type of analysis we want to conduct")

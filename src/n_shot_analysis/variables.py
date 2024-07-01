@@ -8,7 +8,8 @@ shortcut_model_name2full_model_name = {"llama_2":"meta-llama/Llama-2-7b-chat-hf"
                                        "phi_3_small":"microsoft/Phi-3-small-128k-instruct",
                                        "phi_3_mini":"microsoft/Phi-3-mini-128k-instruct",
                                        "llama_3" : "meta-llama/Meta-Llama-3-8B-Instruct",
-                                       "instruct_pt" : "instruction-pretrain/InstructLM-1.3B"}
+                                       "gemma_2b" : "google/gemma-1.1-2b-it",
+                                       "gemma_9b" : "google/gemma-2-9b-it"}
 
 prompts = {"ambiguity_analysis":{
                                 "1_candidate":{
