@@ -1,0 +1,11 @@
+{
+    "log": {
+        "subtask": "selection",
+        "prompt_type": "v1",
+        "prompt_addition": "no_additions",
+        "approach": "zero_shot",
+        "model": "tiny_llama",
+        "number of instances processed": 7253,
+        "last prompt": "Question: select the most suitable meaning for 'people' in the following sentence: Cerenia does not represent a particular risk for people.\nChoose the corresponding definition among: \n0) (plural) any group of human beings (men or women or children) collectively\n1) the body of citizens of a state or country\n2) members of a family line\n3) the common people generally.\nAnswer by reporting the corresponding definition and do not motivate your answer. \nAnswer:"
+    }
+}

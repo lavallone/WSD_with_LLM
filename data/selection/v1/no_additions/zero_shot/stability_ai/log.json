@@ -1,0 +1,11 @@
+{
+    "log": {
+        "subtask": "selection",
+        "prompt_type": "v1",
+        "prompt_addition": "no_additions",
+        "approach": "zero_shot",
+        "model": "stability_ai",
+        "number of instances processed": 1,
+        "last prompt": "Question: select the most suitable meaning for 'art' in the following sentence: The art of change-ringing is peculiar to the English, and, like most English peculiarities, unintelligible to the rest of the world.\nChoose the corresponding definition among: \n0) the products of human creativity; works of art collectively\n1) the creation of beautiful or significant things\n2) a superior skill that you can learn by study and practice and observation\n3) photographs or other visual representations in a printed publication.\nAnswer by reporting the corresponding definition and do not motivate your answer. \nAnswer:"
+    }
+}

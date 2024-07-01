@@ -1,0 +1,11 @@
+{
+    "log": {
+        "subtask": "selection",
+        "prompt_type": "v1",
+        "prompt_addition": "no_additions",
+        "approach": "one_shot",
+        "model": "tiny_llama",
+        "number of instances processed": 7253,
+        "last prompt": "Question: select the most suitable meaning for \"floor\" in the following sentence: they needed rugs to cover the bare floors. Choose the corresponding definition among: \n0) the inside lower horizontal surface (as of a room, hallway, tent, or other structure).\n1) a structure consisting of a room or set of rooms at a single position along a vertical scale.\n2) a lower limit.\n3) the ground on which people and animals move about.\n4) the bottom surface of any lake or other body of water.\n5) the lower inside surface of any hollow structure.\n6) the occupants of a floor.\n7) the parliamentary right to address an assembly.\n8) the legislative hall where members debate and vote and conduct other business.\n9) a large room in a exchange where the trading is done.\nAnswer by reporting the corresponding definition and do not motivate your answer. Answer: 0) the inside lower horizontal surface (as of a room, hallway, tent, or other structure).\n\nQuestion: select the most suitable meaning for \"people\" in the following sentence: Cerenia does not represent a particular risk for people.\nChoose the corresponding definition among: \n0) (plural) any group of human beings (men or women or children) collectively\n1) the body of citizens of a state or country\n2) members of a family line\n3) the common people generally. \nAnswer by reporting the corresponding definition and do not motivate your answer. Answer:"
+    }
+}
