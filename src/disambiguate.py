@@ -199,7 +199,7 @@ def _process(output_file_path:str, subtask:str, prompt_type:str, prompt_addition
             instance_id = instance["id"]
             
             prompt = _generate_prompt(instance, subtask, prompt_type, prompt_addition, approach)
-            if shortcut_model_name == "vicuna":
+            if shortcut_model_name == "vicuna" or shortcut_model_name == "falcon":
                 answer = pipe(prompt)[0]["generated_text"].replace(prompt, "").replace("\n", "").strip()
             else:
                 chat = [{"role": "user", "content": prompt}]
@@ -264,7 +264,7 @@ def _process_wic(output_file_path:str, subtask:str, prompt_type:str, prompt_addi
             instance_id = instance_data["id"]
             
             prompt = _generate_prompt([instance_data, instance_gold], subtask, prompt_type, prompt_addition, approach)
-            if shortcut_model_name == "vicuna":
+            if shortcut_model_name == "vicuna" or shortcut_model_name == "falcon":
                 answer = pipe(prompt)[0]["generated_text"].replace(prompt, "").replace("\n", "").strip()
             else:
                 chat = [{"role": "user", "content": prompt}]
