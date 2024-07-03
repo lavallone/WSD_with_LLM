@@ -247,7 +247,7 @@ def _process_wic(output_file_path:str, subtask:str, prompt_type:str, prompt_addi
         full_model_name = shortcut_model_name2full_model_name[shortcut_model_name]
         tokenizer = AutoTokenizer.from_pretrained(full_model_name)
         tokenizer.pad_token = tokenizer.eos_token
-        if shortcut_model_name == "phi_3_mini" or shortcut_model_name == "phi_3_small": model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.float16, attn_implementation="flash_attention_2").cuda()
+        if shortcut_model_name == "phi_3_mini": model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.float16, attn_implementation="flash_attention_2").cuda()
         else: model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.float16).cuda()
         pipe = pipeline("text-generation", model=model, device="cuda", tokenizer=tokenizer, pad_token_id=tokenizer.eos_token_id, max_new_tokens=25)
 
