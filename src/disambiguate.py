@@ -175,6 +175,9 @@ def _process(output_file_path:str, subtask:str, prompt_type:str, prompt_addition
     gold_data = _get_gold_data(subtask)[0]
     n_instances_processed = 0
     json_data = []
+    
+    trust_remote_code = True
+    if shortcut_model_name == "falcon": trust_remote_code = False
 
     # if the model is finetuned, the checkpoint path is needed
     if is_finetuned:
@@ -183,10 +186,10 @@ def _process(output_file_path:str, subtask:str, prompt_type:str, prompt_addition
         pipe = pipeline("text-generation", model=finetuned_model, device="cuda", tokenizer=finetuned_tokenizer, pad_token_id=finetuned_tokenizer.eos_token_id, max_new_tokens=25)
     else:
         full_model_name = shortcut_model_name2full_model_name[shortcut_model_name]
-        tokenizer = AutoTokenizer.from_pretrained(full_model_name, trust_remote_code=True)
+        tokenizer = AutoTokenizer.from_pretrained(full_model_name, trust_remote_code=trust_remote_code)
         tokenizer.pad_token = tokenizer.eos_token
-        if shortcut_model_name == "phi_3_mini": model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.float16, attn_implementation="flash_attention_2").cuda()
-        else: model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.float16).cuda()
+        if shortcut_model_name == "phi_3_mini": model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=trust_remote_code, torch_dtype=torch.float16, attn_implementation="flash_attention_2").cuda()
+        else: model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=trust_remote_code, torch_dtype=torch.float16).cuda()
         pipe = pipeline("text-generation", model=model, device="cuda", tokenizer=tokenizer, pad_token_id=tokenizer.eos_token_id, max_new_tokens=25)
     
     with open(f"{output_file_path}/output.txt", "a") as fa_txt, open(f"{output_file_path}/output.json", "w") as fw_json:
@@ -237,6 +240,9 @@ def _process_wic(output_file_path:str, subtask:str, prompt_type:str, prompt_addi
     data, gold = _get_gold_data(subtask)
     n_instances_processed = 0
     json_data = []
+    
+    trust_remote_code = True
+    if shortcut_model_name == "falcon": trust_remote_code = False
 
     # if the model is finetuned, the checkpoint path is needed
     if is_finetuned:
@@ -245,10 +251,10 @@ def _process_wic(output_file_path:str, subtask:str, prompt_type:str, prompt_addi
         pipe = pipeline("text-generation", model=finetuned_model, device="cuda", tokenizer=finetuned_tokenizer, pad_token_id=finetuned_tokenizer.eos_token_id, max_new_tokens=25)
     else:
         full_model_name = shortcut_model_name2full_model_name[shortcut_model_name]
-        tokenizer = AutoTokenizer.from_pretrained(full_model_name, trust_remote_code=True)
+        tokenizer = AutoTokenizer.from_pretrained(full_model_name, trust_remote_code=trust_remote_code)
         tokenizer.pad_token = tokenizer.eos_token
-        if shortcut_model_name == "phi_3_mini": model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.float16, attn_implementation="flash_attention_2").cuda()
-        else: model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.float16).cuda()
+        if shortcut_model_name == "phi_3_mini": model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=trust_remote_code, torch_dtype=torch.float16, attn_implementation="flash_attention_2").cuda()
+        else: model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=trust_remote_code, torch_dtype=torch.float16).cuda()
         pipe = pipeline("text-generation", model=model, device="cuda", tokenizer=tokenizer, pad_token_id=tokenizer.eos_token_id, max_new_tokens=25)
 
     with open(f"{output_file_path}/output.txt", "a") as fa_txt, open(f"{output_file_path}/output.json", "w") as fw_json:
