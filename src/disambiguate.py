@@ -3,11 +3,24 @@ from peft import PeftModel
 from variables import shortcut_model_name2full_model_name, prompts
 from tqdm import tqdm
 import warnings
+import logging
 import argparse
 import time
 import json
 import torch
 import os
+
+logging.basicConfig(
+    level=logging.WARNING,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    filename='warnings.log',
+    filemode='a'
+)
+
+def log_warning(message, category, filename, lineno, file=None, line=None):
+    logging.warning(f'{filename}:{lineno}: {category.__name__}: {message}')
+
+warnings.showwarning = log_warning
 
 def countdown(t):
     """
@@ -204,6 +217,8 @@ def _process(output_file_path:str, subtask:str, prompt_type:str, prompt_addition
             else:
                 chat = [{"role": "user", "content": prompt}]
                 prompt_template = tokenizer.apply_chat_template(chat, tokenize=False, add_generation_prompt=True)
+                print(prompt_template)
+                print()
                 answer = pipe(prompt_template)[0]["generated_text"].replace(prompt_template, "").replace("\n", "").strip()
             
             fa_txt.write(f"{instance_id}\t{answer}\n")
@@ -211,6 +226,7 @@ def _process(output_file_path:str, subtask:str, prompt_type:str, prompt_addition
 
             json_answer = {"instance_id":instance_id, "answer":answer}
             json_data.append(json_answer)
+            break
         json.dump(json_data, fw_json, indent=4)
 
     last_prompt= prompt
@@ -356,4 +372,9 @@ if __name__ == "__main__":
     args = parser.parse_args()
     
     assert args.is_finetuned==False or args.checkpoint_path!=None
-    process(args.subtask, args.prompt_type, args.prompt_addition, args.approach, args.shortcut_model_name, args.is_finetuned, args.checkpoint_path)
+    #process(args.subtask, args.prompt_type, args.prompt_addition, args.approach, args.shortcut_model_name, args.is_finetuned, args.checkpoint_path)
+
+    
+    for model in supported_shortcut_model_names:
+        print(f"\n{model}\n")
+        process(args.subtask, args.prompt_type, args.prompt_addition, args.approach, model, args.is_finetuned, args.checkpoint_path)
