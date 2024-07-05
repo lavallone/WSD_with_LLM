@@ -3,24 +3,11 @@ from peft import PeftModel
 from variables import shortcut_model_name2full_model_name, prompts
 from tqdm import tqdm
 import warnings
-import logging
 import argparse
 import time
 import json
 import torch
 import os
-
-logging.basicConfig(
-    level=logging.WARNING,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    filename='warnings.log',
-    filemode='a'
-)
-
-def log_warning(message, category, filename, lineno, file=None, line=None):
-    logging.warning(f'{filename}:{lineno}: {category.__name__}: {message}')
-
-warnings.showwarning = log_warning
 
 def countdown(t):
     """
@@ -205,7 +192,7 @@ def _process(output_file_path:str, subtask:str, prompt_type:str, prompt_addition
         else: model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=trust_remote_code, torch_dtype=torch.float16).cuda()
         pipe = pipeline("text-generation", model=model, device="cuda", tokenizer=tokenizer, pad_token_id=tokenizer.eos_token_id, max_new_tokens=25)
     
-    with open(f"{output_file_path}/output.txt", "a") as fa_txt, open(f"{output_file_path}/output.json", "w") as fw_json:
+    with open(f"{output_file_path}/output.txt", "a") as fa_txt, open(f"{output_file_path}/output.json", "w") as fw_json, open('chat_templates.txt', 'a') as chat_template_file:
         for instance in tqdm(gold_data, total=len(gold_data)):
 
             n_instances_processed += 1
@@ -219,6 +206,7 @@ def _process(output_file_path:str, subtask:str, prompt_type:str, prompt_addition
                 prompt_template = tokenizer.apply_chat_template(chat, tokenize=False, add_generation_prompt=True)
                 print(prompt_template)
                 print()
+                chat_template_file.write(f"{prompt_template}\n")
                 answer = pipe(prompt_template)[0]["generated_text"].replace(prompt_template, "").replace("\n", "").strip()
             
             fa_txt.write(f"{instance_id}\t{answer}\n")
@@ -355,9 +343,9 @@ if __name__ == "__main__":
     supported_prompt_types = ["v1", "v1.1", "v1.2", "v1.3", "v2", "v2.1", "v2.2", "v3", "v3.1", "v3.2"]
     supported_prompt_additions = ["no_additions", "cot", "reflective", "cognitive", "emotion"]
     supported_approaches = ["zero_shot", "one_shot", "few_shot"]
-    supported_shortcut_model_names = ["llama_2", "mistral", "falcon", "vicuna", 
-                                      "instruct_pt", "tiny_llama", "stability_ai", "h2o_ai",
-                                      "phi_3_small", "phi_3_mini", "llama_3", "gemma_2b", "gemma_9b"]
+    supported_shortcut_model_names = ["llama_2", "llama_3", "mistral", "falcon", "vicuna", 
+                                      "tiny_llama", "stability_ai", "h2o_ai",
+                                      "phi_3_small", "phi_3_mini", "gemma_2b", "gemma_9b"]
     full_model_name2pipeline = {}
     
     parser = argparse.ArgumentParser()
