@@ -206,8 +206,8 @@ def _process(output_file_path:str, subtask:str, prompt_type:str, prompt_addition
                 prompt_template = tokenizer.apply_chat_template(chat, tokenize=False, add_generation_prompt=True)
                 print(prompt_template)
                 print()
-                chat_template_file.write(f"{prompt_template}\n")
                 answer = pipe(prompt_template)[0]["generated_text"].replace(prompt_template, "").replace("\n", "").strip()
+                chat_template_file.write(f"\n{shortcut_model_name}\n{prompt_template}\n{answer}\n")
             
             fa_txt.write(f"{instance_id}\t{answer}\n")
             fa_txt.flush()
