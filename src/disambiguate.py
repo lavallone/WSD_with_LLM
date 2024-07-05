@@ -1,6 +1,6 @@
 from transformers import pipeline, AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 from peft import PeftModel
-from variables import shortcut_model_name2full_model_name, prompts
+from variables import shortcut_model_name2full_model_name, prompts, chat_template_prompts
 from tqdm import tqdm
 import warnings
 import argparse
@@ -26,7 +26,7 @@ def countdown(t):
         time.sleep(1)
         t -= 1
 
-def _generate_prompt(instance:list, subtask:str, prompt_type:str, prompt_addition:str, approach:str):
+def _generate_prompt(instance:list, subtask:str, prompt_type:str, prompt_addition:str, approach:str, chat_template = False):
     """
     Generates a prompt based on the instance, subtask, prompt_type, prompt_addition and approach.
 
@@ -44,28 +44,81 @@ def _generate_prompt(instance:list, subtask:str, prompt_type:str, prompt_additio
         
         word = instance["word"]
         text = instance["text"].replace(" ,", ",").replace(" .", ".")
-        
         if subtask == "selection" and prompt_type == "v3":
-            candidate_definitions = "\n".join([f"- [{sense_key}]: {definition};" for sense_key, definition in list(zip(instance["candidates"], instance["definitions"]))])
+                candidate_definitions = "\n".join([f"- [{sense_key}]: {definition};" for sense_key, definition in list(zip(instance["candidates"], instance["definitions"]))])
         else:
-            candidate_definitions = "\n".join([f"{idx}) {x}" for idx, x in enumerate(instance["definitions"])])
+            candidate_definitions = "\n".join([f"{idx+1}) {x}" for idx, x in enumerate(instance["definitions"])])
         
-        prompt = prompts[subtask][prompt_type][prompt_addition][approach].format(
-                word=word,
-                text=text,
-                candidate_definitions=candidate_definitions)
+        if chat_template:
+            chat_template_prompt_dict = chat_template_prompts[subtask][prompt_type][prompt_addition][approach]
+            if approach == "zero_shot": 
+                prompt = [{"role": "user", "content": ""}]
+                prompt[0]["content"] = chat_template_prompt_dict["prompt"].format(word=word,
+                                                                                  text=text,
+                                                                                  candidate_definitions=candidate_definitions)
+            elif approach == "one_shot": 
+                prompt = [{"role": "user", "content": ""}, {"role": "assistant", "content": ""}, {"role": "user", "content": ""}]
+                prompt[0]["content"] = chat_template_prompt_dict["example"]
+                prompt[1]["content"] = chat_template_prompt_dict["example_output"]
+                prompt[2]["content"] = chat_template_prompt_dict["prompt"].format(word=word,
+                                                                                  text=text,
+                                                                                  candidate_definitions=candidate_definitions)
+            elif approach == "few_shot": 
+                prompt = [{"role": "user", "content": ""}, {"role": "assistant", "content": ""}, {"role": "user", "content": ""}, {"role": "assistant", "content": ""}, {"role": "user", "content": ""}, {"role": "assistant", "content": ""}, {"role": "user", "content": ""}]
+                prompt[0]["content"] = chat_template_prompt_dict["example_1"]
+                prompt[1]["content"] = chat_template_prompt_dict["example_1_output"]
+                prompt[2]["content"] = chat_template_prompt_dict["example_2"]
+                prompt[3]["content"] = chat_template_prompt_dict["example_2_output"]
+                prompt[4]["content"] = chat_template_prompt_dict["example_3"]
+                prompt[5]["content"] = chat_template_prompt_dict["example_3_output"]
+                prompt[6]["content"] = chat_template_prompt_dict["prompt"].format(word=word,
+                                                                                  text=text,
+                                                                                  candidate_definitions=candidate_definitions)
+        else:
+            prompt = prompts[subtask][prompt_type][prompt_addition][approach].format(
+                    word=word,
+                    text=text,
+                    candidate_definitions=candidate_definitions)
     
     elif subtask == "wic":
         instance_data, instance_gold = instance
         sentence1, sentence2 = instance_data["sentence1"], instance_data["sentence2"]
         target_word1, target_word2 = sentence1[int(instance_data["start1"]):int(instance_data["end1"])], sentence2[int(instance_data["start2"]):int(instance_data["end2"])]
         
-        prompt = prompts[subtask][prompt_type][prompt_addition][approach].format(
-                target_word1=target_word1,
-                target_word2=target_word2,
-                sentence1=sentence1,
-                sentence2=sentence2)
-
+        if chat_template:
+            chat_template_prompt_dict = chat_template_prompts[subtask][prompt_type][prompt_addition][approach]
+            if approach == "zero_shot": 
+                prompt = [{"role": "user", "content": ""}]
+                prompt[0]["content"] = chat_template_prompt_dict["prompt"].format(target_word1=target_word1,
+                                                                                  target_word2=target_word2,
+                                                                                  sentence1=sentence1,
+                                                                                  sentence2=sentence2)
+            elif approach == "one_shot": 
+                prompt = [{"role": "user", "content": ""}, {"role": "assistant", "content": ""}, {"role": "user", "content": ""}]
+                prompt[0]["content"] = chat_template_prompt_dict["example"]
+                prompt[1]["content"] = chat_template_prompt_dict["example_output"]
+                prompt[2]["content"] = chat_template_prompt_dict["prompt"].format(target_word1=target_word1,
+                                                                                  target_word2=target_word2,
+                                                                                  sentence1=sentence1,
+                                                                                  sentence2=sentence2)
+            elif approach == "few_shot": 
+                prompt = [{"role": "user", "content": ""}, {"role": "assistant", "content": ""}, {"role": "user", "content": ""}, {"role": "assistant", "content": ""}, {"role": "user", "content": ""}, {"role": "assistant", "content": ""}, {"role": "user", "content": ""}]
+                prompt[0]["content"] = chat_template_prompt_dict["example_1"]
+                prompt[1]["content"] = chat_template_prompt_dict["example_1_output"]
+                prompt[2]["content"] = chat_template_prompt_dict["example_2"]
+                prompt[3]["content"] = chat_template_prompt_dict["example_2_output"]
+                prompt[4]["content"] = chat_template_prompt_dict["example_3"]
+                prompt[5]["content"] = chat_template_prompt_dict["example_3_output"]
+                prompt[6]["content"] = chat_template_prompt_dict["prompt"].format(target_word1=target_word1,
+                                                                                  target_word2=target_word2,
+                                                                                  sentence1=sentence1,
+                                                                                  sentence2=sentence2)
+        else:
+            prompt = prompts[subtask][prompt_type][prompt_addition][approach].format(
+                    target_word1=target_word1,
+                    target_word2=target_word2,
+                    sentence1=sentence1,
+                    sentence2=sentence2)
     return prompt
 
 def _get_gold_data(subtask:str):
@@ -198,8 +251,8 @@ def _process(output_file_path:str, subtask:str, prompt_type:str, prompt_addition
             n_instances_processed += 1
             instance_id = instance["id"]
             
-            prompt = _generate_prompt(instance, subtask, prompt_type, prompt_addition, approach)
             if shortcut_model_name == "vicuna" or shortcut_model_name == "falcon":
+                prompt = _generate_prompt(instance, subtask, prompt_type, prompt_addition, approach)
                 answer = pipe(prompt)[0]["generated_text"].replace(prompt, "").replace("\n", "").strip()
             else:
                 example = """ Question: select the most suitable meaning for "floor" in the following sentence: they needed rugs to cover the bare floors. Choose the corresponding definition among: \n0) the inside lower horizontal surface (as of a room, hallway, tent, or other structure).\n1) a structure consisting of a room or set of rooms at a single position along a vertical scale.\n2) a lower limit.\n3) the ground on which people and animals move about.\n4) the bottom surface of any lake or other body of water.\n5) the lower inside surface of any hollow structure.\n6) the occupants of a floor.\n7) the parliamentary right to address an assembly.\n8) the legislative hall where members debate and vote and conduct other business.\n9) a large room in a exchange where the trading is done.\nAnswer by reporting the corresponding definition and do not motivate your answer. Answer: """
@@ -207,7 +260,8 @@ def _process(output_file_path:str, subtask:str, prompt_type:str, prompt_addition
                 chat = [{"role": "user", "content": example},
                         {"role": "assistant", "content": example_output},
                         {"role": "user", "content": prompt}]
-                prompt_template = tokenizer.apply_chat_template(chat, tokenize=False, add_generation_prompt=True)
+                prompt = _generate_prompt(instance, subtask, prompt_type, prompt_addition, approach, chat_template = True)
+                prompt_template = tokenizer.apply_chat_template(prompt, tokenize=False, add_generation_prompt=True)
                 print(prompt_template)
                 print()
                 answer = pipe(prompt_template)[0]["generated_text"].replace(prompt_template, "").replace("\n", "").strip()
@@ -355,7 +409,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--subtask", "-st", type=str, help="Input the task")
     parser.add_argument("--prompt_type", "-pt", type=str, help="Input the prompt type")
-    parser.add_argument("--prompt_addition", "-pa", type=str, help="Input the prompt addition")
+    parser.add_argument("--prompt_addition", "-pa", type=str, default="no_additions", help="Input the prompt addition")
     parser.add_argument("--approach", "-a", type=str, help="Input the approach")
     parser.add_argument("--shortcut_model_name", "-m", type=str, help="Input the model")
     parser.add_argument("--is_finetuned", "-f", type=bool, default=False, help="If the model we want to test is finetuned or not")
