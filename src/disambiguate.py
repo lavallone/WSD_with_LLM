@@ -202,18 +202,7 @@ def _process(output_file_path:str, subtask:str, prompt_type:str, prompt_addition
             if shortcut_model_name == "vicuna" or shortcut_model_name == "falcon":
                 answer = pipe(prompt)[0]["generated_text"].replace(prompt, "").replace("\n", "").strip()
             else:
-                example = """ Question: select the most suitable meaning for "floor" in the following sentence: they needed rugs to cover the bare floors. Choose the corresponding definition among: 
-                                0) the inside lower horizontal surface (as of a room, hallway, tent, or other structure).
-                                1) a structure consisting of a room or set of rooms at a single position along a vertical scale.
-                                2) a lower limit.
-                                3) the ground on which people and animals move about.
-                                4) the bottom surface of any lake or other body of water.
-                                5) the lower inside surface of any hollow structure.
-                                6) the occupants of a floor.
-                                7) the parliamentary right to address an assembly.
-                                8) the legislative hall where members debate and vote and conduct other business.
-                                9) a large room in a exchange where the trading is done.
-                                Answer by reporting the corresponding definition and do not motivate your answer. Answer: """
+                example = """ Question: select the most suitable meaning for "floor" in the following sentence: they needed rugs to cover the bare floors. Choose the corresponding definition among: \n0) the inside lower horizontal surface (as of a room, hallway, tent, or other structure).\n1) a structure consisting of a room or set of rooms at a single position along a vertical scale.\n2) a lower limit.\n3) the ground on which people and animals move about.\n4) the bottom surface of any lake or other body of water.\n5) the lower inside surface of any hollow structure.\n6) the occupants of a floor.\n7) the parliamentary right to address an assembly.\n8) the legislative hall where members debate and vote and conduct other business.\n9) a large room in a exchange where the trading is done.\nAnswer by reporting the corresponding definition and do not motivate your answer. Answer: """
                 example_output = "0) the inside lower horizontal surface (as of a room, hallway, tent, or other structure)."
                 chat = [{"role": "user", "content": example},
                         {"role": "assistant", "content": example_output},
