@@ -251,9 +251,10 @@ def _process(output_file_path:str, subtask:str, prompt_type:str, prompt_addition
 
             json_answer = {"instance_id":instance_id, "answer":answer}
             json_data.append(json_answer)
+            break
         json.dump(json_data, fw_json, indent=4)
 
-    last_prompt= prompt
+    last_prompt = prompt if shortcut_model_name == "vicuna" or shortcut_model_name == "falcon" else prompt_template
     if args.log_config:
         if is_finetuned: shortcut_model_name = f"finetuned_{shortcut_model_name}"
         _print_log(subtask, prompt_type, prompt_addition, approach, shortcut_model_name, last_prompt, n_instances_processed)
@@ -320,7 +321,7 @@ def _process_wic(output_file_path:str, subtask:str, prompt_type:str, prompt_addi
             break
         json.dump(json_data, fw_json, indent=4)
 
-    last_prompt= prompt
+    last_prompt = prompt if shortcut_model_name == "vicuna" or shortcut_model_name == "falcon" else prompt_template
     if args.log_config:
         if is_finetuned: shortcut_model_name = f"finetuned_{shortcut_model_name}"
         _print_log(subtask, prompt_type, prompt_addition, approach, shortcut_model_name, last_prompt, n_instances_processed)
