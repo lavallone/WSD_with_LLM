@@ -317,6 +317,7 @@ def _process_wic(output_file_path:str, subtask:str, prompt_type:str, prompt_addi
 
             json_answer = {"instance_id":instance_id, "answer":answer}
             json_data.append(json_answer)
+            break
         json.dump(json_data, fw_json, indent=4)
 
     last_prompt= prompt
@@ -397,4 +398,8 @@ if __name__ == "__main__":
     args = parser.parse_args()
     
     assert args.is_finetuned==False or args.checkpoint_path!=None
-    process(args.subtask, args.prompt_type, args.prompt_addition, args.approach, args.shortcut_model_name, args.is_finetuned, args.checkpoint_path)
+    #process(args.subtask, args.prompt_type, args.prompt_addition, args.approach, args.shortcut_model_name, args.is_finetuned, args.checkpoint_path)
+    
+    for model in tqdm(supported_shortcut_model_names):
+        print(f"{model}\n")
+        process(args.subtask, args.prompt_type, args.prompt_addition, args.approach, model, args.is_finetuned, args.checkpoint_path)
