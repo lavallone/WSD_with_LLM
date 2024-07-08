@@ -7,7 +7,6 @@ import numpy as np
 import argparse
 import json
 import nltk
-import sys
 import os
 
 def _choose_definition(instance_gold, answer):
@@ -133,10 +132,10 @@ def compute_scores(disambiguated_data_path:str, subtask:str):
                 for idx, definition in enumerate(instance_gold["definitions"]):
                     for idx_, gold_definition in enumerate(instance_gold["gold_definitions"]): # because there may be more than one gold candidate
                         if definition == gold_definition:
-                            instance_gold["gold_definitions"][idx_] = f"{idx}) {instance_gold['gold_definitions'][idx_]}"
+                            instance_gold["gold_definitions"][idx_] = f"{idx+1}) {instance_gold['gold_definitions'][idx_]}"
                 # adds n) before all candidate definitions
                 for idx, definition in enumerate(instance_gold["definitions"]):
-                    instance_gold["definitions"][idx] = f"{idx}) {definition}"
+                    instance_gold["definitions"][idx] = f"{idx+1}) {definition}"
 
         if answer.strip() == "": selected_definition = ""
         else: selected_definition = _choose_definition(instance_gold, answer)
@@ -187,7 +186,6 @@ def _generate_gold_data_vectors(subtask:str):
     data = _get_gold_data(subtask)[0]
 
     gold_vector_file_path = f"../data/evaluation/vectors/{args.sentence_embedder}_id2vec.tsv"
-    id2vec_dd = {}
     with open(gold_vector_file_path, "w") as fw:
         for el in tqdm(data, total=len(data)):
             id_ = el["id"]
@@ -383,28 +381,25 @@ if __name__ == "__main__":
     assert args.prompt_type in ["v1", "v1.1", "v1.2", "v1.3", "v2", "v2.1", "v2.2", "v3", "v3.1", "v3.2"]
     assert args.prompt_addition in ["no_additions", "cot", "reflective", "cognitive", "emotion"]
     assert args.approach in ["zero_shot", "one_shot", "few_shot"]
-    supported_shortcut_model_names =  ["llama_2", "mistral", "falcon", "vicuna", 
-                                      "instruct_pt", "tiny_llama", "stability_ai", "h2o_ai",
-                                      "phi_3_small", "phi_3_mini", "llama_3", "gemma_2b", "gemma_9b"]
+    supported_shortcut_model_names =  ["llama_2", "llama_3", "mistral", "falcon", "vicuna", 
+                                      "tiny_llama", "stability_ai", "h2o_ai",
+                                      "phi_3_small", "phi_3_mini", "gemma_2b", "gemma_9b"]
     assert args.shortcut_model_name in supported_shortcut_model_names
     
     assert args.pos in ["NOUN", "ADJ", "VERB", "ADV", "ALL"]
 
     disambiguated_data_path = f"../data/{args.subtask}/{args.prompt_type}/{args.prompt_addition}/{args.approach}/"
-    if args.is_finetuned:
-        disambiguated_data_path += f"finetuned_{args.shortcut_model_name}/output.json"
-    else:
-        disambiguated_data_path += f"{args.shortcut_model_name}/output.json"
+    if args.is_finetuned: disambiguated_data_path += f"finetuned_{args.shortcut_model_name}/output.json"
+    else: disambiguated_data_path += f"{args.shortcut_model_name}/output.json"
     if args.subtask in ["selection", "generation"]:
         len_gold = len(_get_gold_data(args.subtask)[0])
 
         if args.subtask == "generation":
-            assert args.sentence_embedder in ["all-MiniLM-L6-v2", "all-mpnet-base-v2"]
+            assert args.sentence_embedder in ["all-mpnet-base-v2", "all-MiniLM-L6-v2", "Salesforce/SFR-Embedding-2_R"]
             _generate_gold_data_vectors(args.subtask)
             _generate_disambiguated_data_vectors(disambiguated_data_path, len_gold, args.is_finetuned)
             id2vec_gold = _get_gold_data_vectors()
             id2vec_disambiguated_data = _get_disambiguated_data_vectors(args.is_finetuned)
-
         compute_scores(disambiguated_data_path, args.subtask)
 
     elif args.subtask == "wic":

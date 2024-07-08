@@ -1,5 +1,5 @@
-from transformers import pipeline, AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
-from variables import shortcut_model_name2full_model_name, prompts
+from transformers import pipeline, AutoModelForCausalLM, AutoTokenizer
+from variables import shortcut_model_name2full_model_name, prompts, chat_template_prompts
 from tqdm import tqdm
 import warnings
 import argparse
@@ -25,23 +25,45 @@ def countdown(t):
         None
     """
     while t > 0:
-        mins, secs = divmod(t, 60)
+        _, secs = divmod(t, 60)
         timer = '{:02d}'.format(secs)
         print(f"\033[1mWarning\033[0m: Found output files in the target directory! I will delete them in {timer}", end='\r')
         time.sleep(1)
         t -= 1
 
-def _generate_prompt(instance:dict, analysis_type:str, ambiguity:str, most_frequent:str, approach:str):
+def _generate_prompt(instance:dict, analysis_type:str, ambiguity:str, most_frequent:str, approach:str, chat_template = False):
 
     word = instance["word"]
     text = instance["text"].replace(" ,", ",").replace(" .", ".")
-    candidate_definitions = "\n".join([f"{idx}) {x}" for idx, x in enumerate(instance["definitions"])])
+    candidate_definitions = "\n".join([f"{idx+1}) {x}" for idx, x in enumerate(instance["definitions"])])
     
-    prompt = prompts[analysis_type][ambiguity][most_frequent][approach].format(
-            word=word,
-            text=text,
-            candidate_definitions=candidate_definitions)
-
+    # if we use chat_template, we need to deal with each approach differently
+    if chat_template:
+        chat_template_prompt_dict = chat_template_prompts[analysis_type][ambiguity][most_frequent][approach]
+        if approach == "one_shot": 
+            prompt = [{"role": "user", "content": ""}, {"role": "assistant", "content": ""}, {"role": "user", "content": ""}]
+            prompt[0]["content"] = chat_template_prompt_dict["example"]
+            prompt[1]["content"] = chat_template_prompt_dict["example_output"]
+            prompt[2]["content"] = chat_template_prompt_dict["prompt"].format(word=word,
+                                                                                text=text,
+                                                                                candidate_definitions=candidate_definitions)
+        elif approach == "few_shot": 
+            prompt = [{"role": "user", "content": ""}, {"role": "assistant", "content": ""}, {"role": "user", "content": ""}, {"role": "assistant", "content": ""}, {"role": "user", "content": ""}, {"role": "assistant", "content": ""}, {"role": "user", "content": ""}]
+            prompt[0]["content"] = chat_template_prompt_dict["example_1"]
+            prompt[1]["content"] = chat_template_prompt_dict["example_1_output"]
+            prompt[2]["content"] = chat_template_prompt_dict["example_2"]
+            prompt[3]["content"] = chat_template_prompt_dict["example_2_output"]
+            prompt[4]["content"] = chat_template_prompt_dict["example_3"]
+            prompt[5]["content"] = chat_template_prompt_dict["example_3_output"]
+            prompt[6]["content"] = chat_template_prompt_dict["prompt"].format(word=word,
+                                                                                text=text,
+                                                                                candidate_definitions=candidate_definitions)
+    # otherwise we create the simple prompt
+    else:
+        prompt = prompts[analysis_type][ambiguity][most_frequent][approach].format(
+                word=word,
+                text=text,
+                candidate_definitions=candidate_definitions)
     return prompt
 
 def _get_gold_data():
@@ -86,12 +108,16 @@ def disambiguate(analysis_type:str, ambiguity:str, most_frequent:str, approach:s
     elif os.path.exists(f"{output_file_path}/output.txt"):
         countdown(5)
         os.system(f"rm -r {output_file_path}/*")
+        
+    # only for the falcon model we set trust_remote_code to False
+    trust_remote_code = True
+    if shortcut_model_name == "falcon": trust_remote_code = False
 
     full_model_name = shortcut_model_name2full_model_name[shortcut_model_name]
-    tokenizer = AutoTokenizer.from_pretrained(full_model_name, trust_remote_code=True)
+    tokenizer = AutoTokenizer.from_pretrained(full_model_name, trust_remote_code=trust_remote_code)
     tokenizer.pad_token = tokenizer.eos_token
-    if shortcut_model_name == "phi_3_mini" or shortcut_model_name == "phi_3_small": model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.float16, attn_implementation="flash_attention_2").cuda()
-    else: model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.float16).cuda()
+    if shortcut_model_name == "phi_3_mini": model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=trust_remote_code, torch_dtype=torch.float16, attn_implementation="flash_attention_2").cuda()
+    else: model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=trust_remote_code, torch_dtype=torch.float16).cuda()
     pipe = pipeline("text-generation", model=model, device="cuda", tokenizer=tokenizer, pad_token_id=tokenizer.eos_token_id, max_new_tokens=25)
 
     with open(f"{output_file_path}/output.txt", "a") as fa_txt, open(f"{output_file_path}/output.json", "w") as fw_json:
@@ -100,12 +126,13 @@ def disambiguate(analysis_type:str, ambiguity:str, most_frequent:str, approach:s
             n_instances_processed += 1
             instance_id = instance["id"]
             
-            prompt = _generate_prompt(instance, subtask, prompt_type, prompt_addition, approach)
-            if shortcut_model_name == "vicuna":
+            # only these two models doesn't support chat_template feature
+            if shortcut_model_name == "vicuna" or shortcut_model_name == "falcon":
+                prompt = _generate_prompt(instance, analysis_type, ambiguity, most_frequent, approach)
                 answer = pipe(prompt)[0]["generated_text"].replace(prompt, "").replace("\n", "").strip()
             else:
-                chat = [{"role": "user", "content": prompt}]
-                prompt_template = tokenizer.apply_chat_template(chat, tokenize=False, add_generation_prompt=True)
+                chat_prompt = _generate_prompt(instance, analysis_type, ambiguity, most_frequent, approach, chat_template = True)
+                prompt_template = tokenizer.apply_chat_template(chat_prompt, tokenize=False, add_generation_prompt=True)
                 answer = pipe(prompt_template)[0]["generated_text"].replace(prompt_template, "").replace("\n", "").strip()
             
             fa_txt.write(f"{instance_id}\t{answer}\n")
@@ -120,7 +147,6 @@ def disambiguate(analysis_type:str, ambiguity:str, most_frequent:str, approach:s
 #########
 
 def _choose_definition(instance_gold, answer):
-    id_ = instance_gold["id"]
     definitions = instance_gold["definitions"]
     definition2overlap = {}
     for definition in definitions:
@@ -144,9 +170,6 @@ def compute_scores(disambiguated_data_path:str):
     gold_data = _get_gold_data()
     disambiguated_data = _get_disambiguated_data(disambiguated_data_path)
     assert len(gold_data) == len(disambiguated_data)
-    
-    true_labels = [1 for _ in range(len(gold_data))]
-    predicted_labels = [1 for _ in range(len(gold_data))]
 
     correct_most_frequent, not_correct_most_frequent, correct_not_most_frequent, not_correct_not_most_frequent = 0, 0, 0, 0
     correct, wrong = 0,0
@@ -161,10 +184,10 @@ def compute_scores(disambiguated_data_path:str):
         for idx, definition in enumerate(instance_gold["definitions"]):
             for idx_, gold_definition in enumerate(instance_gold["gold_definitions"]): # because there may be more than one gold candidate
                 if definition == gold_definition:
-                    instance_gold["gold_definitions"][idx_] = f"{idx}) {instance_gold['gold_definitions'][idx_]}"
+                    instance_gold["gold_definitions"][idx_] = f"{idx}+1) {instance_gold['gold_definitions'][idx_]}"
         # adds n) before all candidate definitions
         for idx, definition in enumerate(instance_gold["definitions"]):
-            instance_gold["definitions"][idx] = f"{idx}) {definition}"
+            instance_gold["definitions"][idx] = f"{idx}+1) {definition}"
         
         # we need it for differentiate mfs and not_mfs answers
         def2idx = {d:i for i,d in enumerate(instance_gold["definitions"])}
@@ -182,7 +205,6 @@ def compute_scores(disambiguated_data_path:str):
             else: correct_not_most_frequent+=1
             correct += 1
         else:
-            predicted_labels[global_idx] = 0
             if def2idx[selected_definition]==0: not_correct_most_frequent+=1
             else: not_correct_not_most_frequent+=1
             wrong += 1
@@ -203,7 +225,7 @@ def score(analysis_type:str, approach:str, shortcut_model_name:str):
         most_frequent_list = ["mfs", "not_mfs"]
         mfs_ris = []
         for most_frequent in most_frequent_list:
-            disambiguated_data_path = f"../../data/n_shot_analysis/{analysis_type}/{ambiguity_level}/{most_frequent}/{args.approach}/{args.shortcut_model_name}/output.json"
+            disambiguated_data_path = f"../../data/n_shot_analysis/{analysis_type}/{ambiguity_level}/{most_frequent}/{approach}/{shortcut_model_name}/output.json"
             perc_mfs_predicted, perc_not_mfs_correctly_predicted, acc = compute_scores(disambiguated_data_path)
             mfs_ris.append([perc_mfs_predicted, perc_not_mfs_correctly_predicted, acc])
         print("# MFS analysis")
@@ -225,7 +247,7 @@ def score(analysis_type:str, approach:str, shortcut_model_name:str):
             for ambiguity_level in tqdm(ambiguity_list, total=len(ambiguity_list)):
                 if ambiguity_level == "1_candidate" and most_frequent == "not_mfs":
                     continue
-                disambiguated_data_path = f"../../data/n_shot_analysis/{analysis_type}/{ambiguity_level}/{most_frequent}/{args.approach}/{args.shortcut_model_name}/output.json"
+                disambiguated_data_path = f"../../data/n_shot_analysis/{analysis_type}/{ambiguity_level}/{most_frequent}/{approach}/{shortcut_model_name}/output.json"
                 _, _, acc = compute_scores(disambiguated_data_path)
                 l.append(acc)
             std = np.asarray(l).std()
@@ -254,9 +276,9 @@ if __name__ == "__main__":
     supported_ambiguity = ["1_candidate", "3_candidates", "6_candidates", "10_candidates", "16_candidates"]
     supported_mfs = ["mfs", "not_mfs"]
     supported_approaches = ["one_shot", "few_shot"]
-    supported_shortcut_model_names = ["llama_2", "mistral", "falcon", "vicuna", 
-                                      "instruct_pt", "tiny_llama", "stability_ai", "h2o_ai",
-                                      "phi_3_small", "phi_3_mini", "llama_3", "gemma_2b", "gemma_9b"]
+    supported_shortcut_model_names = ["llama_2", "llama_3", "mistral", "falcon", "vicuna", 
+                                      "tiny_llama", "stability_ai", "h2o_ai",
+                                      "phi_3_small", "phi_3_mini", "gemma_2b", "gemma_9b"]
     
     parser = argparse.ArgumentParser()
     parser.add_argument("--analysis_type", "-at", type=str, help="The type of analysis we want to conduct")

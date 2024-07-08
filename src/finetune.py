@@ -2,10 +2,9 @@ import torch
 from variables import shortcut_model_name2full_model_name
 from datasets import load_dataset
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig, AutoTokenizer, GenerationConfig
-from peft import LoraConfig, get_peft_model, PeftConfig, PeftModel, prepare_model_for_kbit_training
-from transformers import Trainer, TrainingArguments
+from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
+from transformers import TrainingArguments
 from trl import SFTTrainer
-import sys
 import os
 import warnings
 import argparse
@@ -111,10 +110,9 @@ if __name__ == "__main__":
     warnings.filterwarnings("ignore", category=FutureWarning)
     
     supported_subtasks = ["selection", "generation", "wic"]
-    supported_shortcut_model_names = ["llama-2-7b-chat-hf", "Mistral-7B-Instruct-v0.2", "falcon-7b-instruct", "vicuna-7b-v1.5", 
-                                      "microsoft-phi-1_5", "TinyLlama-TinyLlama-1.1B-Chat-v1.0", "stabilityai-stablelm-2-1_6b-chat", "h2oai-h2o-danube2-1.8b-chat",
-                                      "microsoft-phi-2", "microsoft-phi-3-mini-128k-instruct", "meta-llama-Meta-Llama-3-8B",
-                                      "openlm-research-open_llama_3b_v2", "openlm-research-open_llama_7b_v2"]
+    supported_shortcut_model_names = ["llama_2", "llama_3", "mistral", "falcon", "vicuna", 
+                                      "tiny_llama", "stability_ai", "h2o_ai",
+                                      "phi_3_small", "phi_3_mini", "gemma_2b", "gemma_9b"]
     
     parser = argparse.ArgumentParser()
     parser.add_argument("--subtask", "-st", type=str, help="Input the task")
