@@ -369,7 +369,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Script description')
     parser.add_argument('--subtask', '-s', type=str, help='Input the task')
     parser.add_argument("--prompt_type", "-pt", type=str, help="Input the prompt type")
-    parser.add_argument("--prompt_addition", "-pa", type=str, help="Input the prompt addition")
+    parser.add_argument("--prompt_addition", "-pa", type=str, default="no_additions", help="Input the prompt addition")
     parser.add_argument('--approach', '-a', type=str, help='Input the approach')
     parser.add_argument('--shortcut_model_name', '-sm', type=str, help='Input the model')
     parser.add_argument("--is_finetuned", "-f", type=bool, default=False, help="If the model we want to test is finetuned or not")
