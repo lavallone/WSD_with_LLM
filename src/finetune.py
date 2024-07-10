@@ -90,7 +90,7 @@ def finetune(subtask:str, shortcut_model_name:str):
         train_dataset=data['train'],
         eval_dataset=data['test'],
         peft_config=peft_config,
-        dataset_text_field="prompt",
+        dataset_text_field="messages",
         max_seq_length=2048,
         tokenizer=tokenizer,
         args=training_arguments,
