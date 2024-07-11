@@ -9,6 +9,7 @@ import os
 import warnings
 import argparse
 import zipfile
+import json
 
 def finetune(subtask:str, shortcut_model_name:str):
     
@@ -20,21 +21,27 @@ def finetune(subtask:str, shortcut_model_name:str):
 
     ## prepare DATASET
     dataset_path = f"../data/training/{subtask}/training.json"
-    if not os.path.exists(dataset_path):
-        dir_path = f"../data/training/{subtask}/"
-        file_to_unzip_name = "selection.semcor.zip" if subtask== "selection" else "generation.semcor.zip"
-        file_to_unzip_path = os.path.join(dir_path, file_to_unzip_name)
-        with zipfile.ZipFile(file_to_unzip_path, 'r') as zip_ref:
-            zip_ref.extractall(os.path.dirname(dir_path))
-        extracted_file_name = "data.semcor.json" if subtask== "selection" else "generation.semcor.json"
-        extracted_file_path = os.path.join(dir_path, extracted_file_name)
-        os.rename(extracted_file_path, os.path.join(dir_path, "training.json"))
-    data = load_dataset("json", data_files=dataset_path)
-    data = data["train"].train_test_split(test_size=0.1)
+    if os.path.exists(dataset_path):
+        os.remove(dataset_path)
+    dir_path = f"../data/training/{subtask}/"
+    file_to_unzip_name = f"{subtask}_semcor.zip"
+    file_to_unzip_path = os.path.join(dir_path, file_to_unzip_name)
+    with zipfile.ZipFile(file_to_unzip_path, 'r') as zip_ref:
+        zip_ref.extractall(os.path.dirname(dir_path))
+    extracted_file_name = f"{subtask}_semcor.json"
+    extracted_file_path = os.path.join(dir_path, extracted_file_name)
+    os.rename(extracted_file_path, os.path.join(dir_path, "training.json"))
 
     ## prepare TOKENIZER
     tokenizer = AutoTokenizer.from_pretrained(full_model_name, trust_remote_code=True)
     tokenizer.pad_token = tokenizer.eos_token
+    
+    ## build DATASET
+    with open(dataset_path, 'r') as file: data_chat = json.load(file)
+    data_list = [ {"prompt" : tokenizer.apply_chat_template(chat, tokenize=False, add_generation_prompt=True)} for chat in data_chat ] 
+    with open(dataset_path, 'w') as file: json.dump(data_list, file, indent=4)
+    data = load_dataset("json", data_files=dataset_path)
+    data = data["train"].train_test_split(test_size=0.1)
     
     ## prepare MODEL
     # quantization step
@@ -90,7 +97,7 @@ def finetune(subtask:str, shortcut_model_name:str):
         train_dataset=data['train'],
         eval_dataset=data['test'],
         peft_config=peft_config,
-        dataset_text_field="messages",
+        dataset_text_field="prompt",
         max_seq_length=2048,
         tokenizer=tokenizer,
         args=training_arguments,
@@ -110,9 +117,7 @@ if __name__ == "__main__":
     warnings.filterwarnings("ignore", category=FutureWarning)
     
     supported_subtasks = ["selection", "generation", "wic"]
-    supported_shortcut_model_names = ["llama_2", "llama_3", "mistral", "falcon", "vicuna", 
-                                      "tiny_llama", "stability_ai", "h2o_ai",
-                                      "phi_3_small", "phi_3_mini", "gemma_2b", "gemma_9b"]
+    supported_shortcut_model_names = ["llama_3", "mistral", "tiny_llama", "phi_3_mini"]
     
     parser = argparse.ArgumentParser()
     parser.add_argument("--subtask", "-st", type=str, help="Input the task")
