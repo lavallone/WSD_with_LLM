@@ -222,7 +222,7 @@ def _process(output_file_path:str, subtask:str, prompt_type:str, prompt_addition
     # if the model is finetuned, the checkpoint path is needed
     if is_finetuned:
         tokenizer, model = _prepare_finetuned_model(shortcut_model_name, checkpoint_path, trust_remote_code)
-        pipe = pipeline("text-generation", model=model, device="cuda", tokenizer=tokenizer, pad_token_id=finetuned_tokenizer.eos_token_id, max_new_tokens=25)
+        pipe = pipeline("text-generation", model=model, device="cuda", tokenizer=tokenizer, pad_token_id=tokenizer.eos_token_id, max_new_tokens=25)
     else:
         full_model_name = shortcut_model_name2full_model_name[shortcut_model_name]
         tokenizer = AutoTokenizer.from_pretrained(full_model_name, trust_remote_code=trust_remote_code)
