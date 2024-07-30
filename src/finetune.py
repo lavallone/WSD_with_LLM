@@ -57,7 +57,7 @@ def finetune(subtask:str, shortcut_model_name:str):
     #     device_map="auto",
     #     trust_remote_code=True
     # )
-    if shortcut_model_name == "phi_3_mini" or shortcut_model_name == "phi_3_small": model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.float16, quantization_config=bnb_config, device_map="auto", attn_implementation="flash_attention_2")
+    if shortcut_model_name == "phi_3_mini": model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.float16, quantization_config=bnb_config, device_map="auto", attn_implementation="flash_attention_2")
     else: model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.float16, quantization_config=bnb_config, device_map="auto")
     model.config.use_cache = False
     model = prepare_model_for_kbit_training(model)
@@ -119,7 +119,7 @@ if __name__ == "__main__":
     warnings.filterwarnings("ignore", category=FutureWarning)
     
     supported_subtasks = ["selection", "generation", "wic"]
-    supported_shortcut_model_names = ["llama_3", "phi_3_small", "tiny_llama", "phi_3_mini"]
+    supported_shortcut_model_names = ["llama_3", "falcon", "tiny_llama", "phi_3_mini"]
     
     parser = argparse.ArgumentParser()
     parser.add_argument("--subtask", "-st", type=str, help="Input the task")
