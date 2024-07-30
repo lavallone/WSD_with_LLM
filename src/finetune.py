@@ -57,7 +57,7 @@ def finetune(subtask:str, shortcut_model_name:str):
     #     device_map="auto",
     #     trust_remote_code=True
     # )
-    if shortcut_model_name == "phi_3_mini": model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.float16, quantization_config=bnb_config, device_map="auto", attn_implementation="flash_attention_2")
+    if shortcut_model_name == "phi_3_mini" or shortcut_model_name == "phi_3_small": model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.float16, quantization_config=bnb_config, device_map="auto", attn_implementation="flash_attention_2")
     else: model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.float16, quantization_config=bnb_config, device_map="auto")
     model.config.use_cache = False
     model = prepare_model_for_kbit_training(model)
