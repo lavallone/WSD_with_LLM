@@ -395,7 +395,7 @@ if __name__ == "__main__":
         len_gold = len(_get_gold_data(args.subtask)[0])
 
         if args.subtask == "generation":
-            assert args.sentence_embedder in ["all-mpnet-base-v2", "all-MiniLM-L6-v2", "Salesforce/SFR-Embedding-2_R"]
+            assert args.sentence_embedder in ["all-mpnet-base-v2", "all-MiniLM-L6-v2"]
             _generate_gold_data_vectors(args.subtask)
             _generate_disambiguated_data_vectors(disambiguated_data_path, len_gold, args.is_finetuned)
             id2vec_gold = _get_gold_data_vectors()
