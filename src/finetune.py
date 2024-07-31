@@ -39,8 +39,6 @@ def finetune(subtask:str, shortcut_model_name:str):
     ## build DATASET
     with open(dataset_path, 'r') as file: data_chat = json.load(file)
     data_list = [ {"prompt" : tokenizer.apply_chat_template(chat, tokenize=False, add_generation_prompt=True)} for chat in data_chat ] 
-    print(data_list[10])
-    return
     with open(dataset_path, 'w') as file: json.dump(data_list, file, indent=4)
     data = load_dataset("json", data_files=dataset_path)
     data = data["train"].train_test_split(test_size=0.1)
@@ -121,7 +119,7 @@ if __name__ == "__main__":
     warnings.filterwarnings("ignore", category=FutureWarning)
     
     supported_subtasks = ["selection", "generation", "wic"]
-    supported_shortcut_model_names = ["llama_3", "llama_2", "tiny_llama", "phi_3_mini", "mistral", "gemma_9b"]
+    supported_shortcut_model_names = ["llama_3", "llama_2", "tiny_llama", "phi_3_mini", "mistral"]
     
     parser = argparse.ArgumentParser()
     parser.add_argument("--subtask", "-st", type=str, help="Input the task")
