@@ -119,7 +119,14 @@ if __name__ == "__main__":
     warnings.filterwarnings("ignore", category=FutureWarning)
     
     supported_subtasks = ["selection", "generation"]
-    supported_shortcut_model_names = ["llama_3", "llama_2", "tiny_llama", "phi_3_mini", "mistral"]
+    supported_shortcut_model_names = ["llama_1b",
+                                       "gemma_2b",
+                                       "llama_3b",
+                                       "phi_mini",
+                                       "mistral",
+                                       "phi_small",
+                                       "llama_8b",
+                                       "gemma_9b"]
     
     parser = argparse.ArgumentParser()
     parser.add_argument("--subtask", "-st", type=str, help="Input the task")

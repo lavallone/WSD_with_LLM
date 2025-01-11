@@ -293,9 +293,14 @@ if __name__ == "__main__":
 
     assert args.subtask in ["generation", "selection"]
     assert args.approach in ["zero_shot", "one_shot", "few_shot"]
-    supported_shortcut_model_names =  ["llama_2", "llama_3", "mistral", "falcon", "vicuna", 
-                                      "tiny_llama", "stability_ai", "h2o_ai",
-                                      "phi_3_small", "phi_3_mini", "gemma_2b", "gemma_9b"]
+    supported_shortcut_model_names = ["llama_1b",
+                                       "gemma_2b",
+                                       "llama_3b",
+                                       "phi_mini",
+                                       "mistral",
+                                       "phi_small",
+                                       "llama_8b",
+                                       "gemma_9b"]
     assert args.shortcut_model_name in supported_shortcut_model_names
     
     assert args.pos in ["NOUN", "ADJ", "VERB", "ADV", "ALL"]

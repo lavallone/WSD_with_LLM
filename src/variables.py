@@ -1,14 +1,10 @@
-shortcut_model_name2full_model_name = {"llama_2":"meta-llama/Llama-2-7b-chat-hf",
-                                       "vicuna":"lmsys/vicuna-7b-v1.5",
-                                       "mistral":"mistralai/Mistral-7B-Instruct-v0.2",
-                                       "falcon":"tiiuae/falcon-7b-instruct",
-                                       "tiny_llama":"TinyLlama/TinyLlama-1.1B-Chat-v1.0",
-                                       "stability_ai": "stabilityai/stablelm-2-1_6b-chat",
-                                       "h2o_ai": "h2oai/h2o-danube2-1.8b-chat",
-                                       "phi_3_small":"microsoft/Phi-3-small-128k-instruct",
-                                       "phi_3_mini":"microsoft/Phi-3-mini-128k-instruct",
-                                       "llama_3" : "meta-llama/Meta-Llama-3-8B-Instruct",
-                                       "gemma_2b" : "google/gemma-1.1-2b-it",
+shortcut_model_name2full_model_name = {"llama_1b" : "meta-llama/Llama-3.2-1B-Instruct",
+                                       "gemma_2b" : "google/gemma-2-2b-it",
+                                       "llama_3b" : "meta-llama/Llama-3.2-3B-Instruct",
+                                       "phi_mini" : "microsoft/Phi-3-mini-128k-instruct",
+                                       "mistral" : "mistralai/Mistral-Nemo-Instruct-2407",
+                                       "phi_small" : "microsoft/Phi-3-small-128k-instruct",
+                                       "llama_8b" : "meta-llama/Llama-3.1-8B-Instruct",
                                        "gemma_9b" : "google/gemma-2-9b-it"}
 
 
