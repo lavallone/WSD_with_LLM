@@ -1,6 +1,6 @@
 from transformers import pipeline, AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 from peft import PeftModel
-from variables import shortcut_model_name2full_model_name, prompts, chat_template_prompts
+from variables import shortcut_model_name2full_model_name, chat_template_prompts
 from tqdm import tqdm
 import warnings
 import argparse
