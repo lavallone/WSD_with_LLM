@@ -236,7 +236,7 @@ def _get_gold_data(subtask:str):
         dict: A dictionary containing the loaded gold data.
     """
     data = []
-    data_path = "../data/evaluation/ALL_preprocessed.json"
+    data_path = "../data/evaluation/ALLamended/ALLamended_preprocessed.json"
     with open(data_path, "r") as json_file:
         data_ = json.load(json_file)
     data.append(data_)
