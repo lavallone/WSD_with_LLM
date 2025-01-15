@@ -33,7 +33,8 @@ def finetune(subtask:str, shortcut_model_name:str):
     os.rename(extracted_file_path, os.path.join(dir_path, "training.json"))
 
     ## prepare TOKENIZER
-    tokenizer = AutoTokenizer.from_pretrained(full_model_name, trust_remote_code=True)
+    if shortcut_model_name == "mistral": tokenizer = AutoTokenizer.from_pretrained(full_model_name, trust_remote_code=True, legacy=False)
+    else: tokenizer = AutoTokenizer.from_pretrained(full_model_name, trust_remote_code=True)
     tokenizer.pad_token = tokenizer.eos_token
     
     ## build DATASET
@@ -57,19 +58,29 @@ def finetune(subtask:str, shortcut_model_name:str):
     #     device_map="auto",
     #     trust_remote_code=True
     # )
-    if shortcut_model_name == "phi_3_mini": model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.float16, quantization_config=bnb_config, device_map="auto", attn_implementation="flash_attention_2")
-    else: model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.float16, quantization_config=bnb_config, device_map="auto")
+
+    # different attn_implementation is required for each different model
+    if shortcut_model_name == "phi_mini": 
+        model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.float16, quantization_config=bnb_config, device_map="auto", attn_implementation="flash_attention_2")
+    elif shortcut_model_name == "gemma_2b" or shortcut_model_name == "gemma_9b":
+        model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.float16, quantization_config=bnb_config, device_map="auto", attn_implementation="eager")
+    else:
+        model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.float16, quantization_config=bnb_config, device_map="auto")
     model.config.use_cache = False
     model = prepare_model_for_kbit_training(model)
 
-    # setup lora configuration
+    ## setup lora configuration
+    # each model have different target_modules
+    target_modules = ["self_attn.q_proj", "self_attn.k_proj", "self_attn.v_proj", "self_attn.o_proj"]
+    if shortcut_model_name == "phi_mini": target_modules = ["self_attn.o_proj", "self_attn.qkv_proj"]
+    if shortcut_model_name == "phi_small": target_modules = ["self_attn.query_key_value", "self_attn.dense"]
     peft_config = LoraConfig(
         lora_alpha=16,
         lora_dropout=0.1,
         r=64,
         bias="none",
         task_type="CAUSAL_LM",
-        target_modules=["self_attn.q_proj", "self_attn.k_proj", "self_attn.v_proj", "self_attn.o_proj"]
+        target_modules=target_modules
     )
     peft_model = get_peft_model(model, peft_config)
 
