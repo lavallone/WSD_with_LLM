@@ -8,6 +8,7 @@ import argparse
 import json
 import nltk
 import os
+from openai import OpenAI
 
 def _choose_definition(instance_gold, answer):
     """
@@ -42,14 +43,12 @@ def _choose_definition(instance_gold, answer):
     return max(definition2overlap, key=definition2overlap.get), additional_infos
 
 def _get_gpt_answer_(instance_gold, answer):
-    from openai import OpenAI
-    client = OpenAI()
     
     word = instance_gold["word"]
     candidate_definitions = "\n".join([f"\"{definition}\"" for definition in instance_gold["definitions"]])
     gpt_prompt = f"Given the following definitions of \"{word}\":\n\n{candidate_definitions}\n\nSelect the definition that most closely matches the definition: \"{answer}\". Do not explain your output."
     
-    completion = client.chat.completions.create(
+    completion = OPEN_AI_CLIENT.chat.completions.create(
     model="gpt-4o",
     messages=[
         {"role": "developer", "content": "You are a helpful assistant."},
@@ -104,7 +103,7 @@ def compute_scores(disambiguated_data_path:str):
     Returns:
         None
     """
-    global instances
+    if args.gpt_as_judge: global OPEN_AI_CLIENT; OPEN_AI_CLIENT = OpenAI()
 
     gold_data = _get_gold_data(args.subtask)[0]
     disambiguated_data = _get_disambiguated_data(disambiguated_data_path)
@@ -121,7 +120,7 @@ def compute_scores(disambiguated_data_path:str):
     additional_infos_list = []
     correct, wrong = 0,0
     global_idx = 0
-    for instance_gold, instance_disambiguated_data in zip(gold_data, disambiguated_data):
+    for instance_gold, instance_disambiguated_data in tqdm(zip(gold_data, disambiguated_data), total=len(gold_data), desc="Processing"):
         if args.pos == "ALL":
             pass
         else:
@@ -153,6 +152,7 @@ def compute_scores(disambiguated_data_path:str):
         global_idx += 1
     assert correct+wrong == number_of_evaluation_instances
     
+    # LOGGING INFOS
     additional_infos_path = f"../data/{args.subtask}/{args.approach}/{args.shortcut_model_name}/definition_ranks.json"
     if args.gpt_as_judge == False:
         with open(additional_infos_path, mode="w") as json_file:
@@ -168,8 +168,7 @@ def compute_scores(disambiguated_data_path:str):
         with open(additional_infos_path, mode="w") as json_file:
             json_file.write(json.dumps(cos_sim_data, indent=4))
 
-
-
+    # COMPUTE SCORES
     precision = precision_score(true_labels, predicted_labels, average='micro')
     recall = recall_score(true_labels, predicted_labels, average='micro')
     f1 = f1_score(true_labels, predicted_labels, average='micro')
