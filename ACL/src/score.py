@@ -23,18 +23,40 @@ def _choose_definition(instance_gold, answer):
     id_ = instance_gold["id"]
     definitions = instance_gold["definitions"]
     
-    if args.subtask == "generation":
-        global id2vec_gold, id2vec_disambiguated_data
+    if args.subtask == "generation": global id2vec_gold, id2vec_disambiguated_data
+    if args.gpt_as_judge: gpt_answer = _get_gpt_answer_(instance_gold, answer)
 
     definition2overlap = {}
     for definition in definitions:
         if args.subtask == "generation":
-            vec1, vec2 = id2vec_gold[id_+definition], id2vec_disambiguated_data[id_]
-            overlap = _compute_semantic_overlap(vec1, vec2)
+            if args.gpt_as_judge:
+                overlap = _compute_lexical_overlap(definition, gpt_answer)
+            else:   
+                vec1, vec2 = id2vec_gold[id_+definition], id2vec_disambiguated_data[id_]
+                overlap = _compute_semantic_overlap(vec1, vec2)
         else:
             overlap = _compute_lexical_overlap(definition, answer)
         definition2overlap[definition] = overlap
-    return max(definition2overlap, key=definition2overlap.get)
+    sorted_candidates_scores = sorted(definition2overlap.items(), key=lambda item: item[1], reverse=True)
+    additional_infos = {"id":id_, "model_response":answer, "candidates":[e[0] for e in sorted_candidates_scores], "scores":[str(round(e[1],2)) for e in sorted_candidates_scores]}
+    return max(definition2overlap, key=definition2overlap.get), additional_infos
+
+def _get_gpt_answer_(instance_gold, answer):
+    from openai import OpenAI
+    client = OpenAI()
+    
+    word = instance_gold["word"]
+    candidate_definitions = "\n".join([f"\"{definition}\"" for definition in instance_gold["definitions"]])
+    gpt_prompt = f"Given the following definitions of \"{word}\":\n\n{candidate_definitions}\n\nSelect the definition that most closely matches the definition: \"{answer}\". Do not explain your output."
+    
+    completion = client.chat.completions.create(
+    model="gpt-4o",
+    messages=[
+        {"role": "developer", "content": "You are a helpful assistant."},
+        {"role": "user", "content": gpt_prompt}
+    ]
+    )
+    return completion.choices[0].message.content
 
 def _compute_lexical_overlap(definition, answer):
     """
@@ -72,7 +94,7 @@ def _compute_semantic_overlap(definition:str, answer:str):
     similarity_matrix = cosine_similarity(definition, answer)
     return similarity_matrix[0][0]
 
-def compute_scores(disambiguated_data_path:str, subtask:str):
+def compute_scores(disambiguated_data_path:str):
     """
     Computes and prints evaluation scores based on disambiguated data and gold data.
     
@@ -84,7 +106,7 @@ def compute_scores(disambiguated_data_path:str, subtask:str):
     """
     global instances
 
-    gold_data = _get_gold_data(subtask)[0]
+    gold_data = _get_gold_data(args.subtask)[0]
     disambiguated_data = _get_disambiguated_data(disambiguated_data_path)
     assert len(gold_data) == len(disambiguated_data)
 
@@ -96,9 +118,9 @@ def compute_scores(disambiguated_data_path:str, subtask:str):
     true_labels = [1 for _ in range(number_of_evaluation_instances)]
     predicted_labels = [1 for _ in range(number_of_evaluation_instances)]
 
+    additional_infos_list = []
     correct, wrong = 0,0
     global_idx = 0
-
     for instance_gold, instance_disambiguated_data in zip(gold_data, disambiguated_data):
         if args.pos == "ALL":
             pass
@@ -120,7 +142,7 @@ def compute_scores(disambiguated_data_path:str, subtask:str):
                 instance_gold["definitions"][idx] = f"{idx+1}) {definition}"
 
         if answer.strip() == "": selected_definition = ""
-        else: selected_definition = _choose_definition(instance_gold, answer)
+        else: selected_definition, additional_infos = _choose_definition(instance_gold, answer); additional_infos_list.append(additional_infos)
         
         if selected_definition in instance_gold["gold_definitions"]:
             correct += 1
@@ -130,6 +152,23 @@ def compute_scores(disambiguated_data_path:str, subtask:str):
 
         global_idx += 1
     assert correct+wrong == number_of_evaluation_instances
+    
+    additional_infos_path = f"../data/{args.subtask}/{args.approach}/{args.shortcut_model_name}/definition_ranks.json"
+    if args.gpt_as_judge == False:
+        with open(additional_infos_path, mode="w") as json_file:
+            json_file.write(json.dumps(additional_infos_list, indent=4))
+    else: # we add '****' to the definition choosen by the gpt judge
+        assert os.path.isfile(additional_infos_path)
+        gpt_candidates_list = [elem["candidates"][0] for elem in additional_infos_list]
+        with open(additional_infos_path, mode="r") as json_file: 
+            cos_sim_data = json.load(json_file)
+        for idx,item in enumerate(cos_sim_data):
+            for elem in item["candidates"]:
+                if elem == gpt_candidates_list[idx]: item["candidates"][idx] = "**** " + item["candidates"][idx] + " ****"; break
+        with open(additional_infos_path, mode="w") as json_file:
+            json_file.write(json.dumps(cos_sim_data, indent=4))
+
+
 
     precision = precision_score(true_labels, predicted_labels, average='micro')
     recall = recall_score(true_labels, predicted_labels, average='micro')
@@ -289,6 +328,7 @@ if __name__ == "__main__":
     parser.add_argument("--is_finetuned", "-f", type=bool, default=False, help="If the model we want to test is finetuned or not")
     parser.add_argument('--pos', '-p', type=str, help='Input the part of speech')
     parser.add_argument('--sentence_embedder', '-se', type=str, default=None, help='Input the sentence embedder')
+    parser.add_argument('--gpt_as_judge', '-g', type=bool, default=False, help='If we are using gpt-as-a-judge for the generation setting')
     args = parser.parse_args()
 
     assert args.subtask in ["generation", "selection"]
@@ -304,16 +344,17 @@ if __name__ == "__main__":
     assert args.shortcut_model_name in supported_shortcut_model_names
     
     assert args.pos in ["NOUN", "ADJ", "VERB", "ADV", "ALL"]
+    assert args.gpt_as_judge is False or args.subtask == "generation"
 
     disambiguated_data_path = f"../data/{args.subtask}/{args.approach}/"
     if args.is_finetuned: disambiguated_data_path += f"finetuned_{args.shortcut_model_name}/output.json"
     else: disambiguated_data_path += f"{args.shortcut_model_name}/output.json"
     len_gold = len(_get_gold_data(args.subtask)[0])
 
-    if args.subtask == "generation":
+    if args.subtask == "generation" and args.gpt_as_judge is False:
         assert args.sentence_embedder in ["all-mpnet-base-v2", "all-MiniLM-L6-v2"]
         _generate_gold_data_vectors(args.subtask)
         _generate_disambiguated_data_vectors(disambiguated_data_path, len_gold, args.is_finetuned)
         id2vec_gold = _get_gold_data_vectors()
         id2vec_disambiguated_data = _get_disambiguated_data_vectors(args.is_finetuned)
-    compute_scores(disambiguated_data_path, args.subtask)
+    compute_scores(disambiguated_data_path)
