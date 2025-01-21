@@ -1,0 +1,9 @@
+{
+    "log": {
+        "subtask": "selection",
+        "approach": "zero_shot",
+        "model": "gemma_2b",
+        "number of instances processed": 4917,
+        "last prompt": "<bos><start_of_turn>user\nConsider the following sentence: Cerenia does not represent a particular risk for people.\n\nSelect the most suitable dictionary definition which identifies the meaning of \"people\" among the following definitions:\n\n1) Members of a family line\n2) Any living or extinct member of the family Hominidae characterized by superior intelligence, articulate speech, and erect carriage\n3) (plural) any group of human beings (men or women or children) collectively\n4) The common people generally\n5) The body of citizens of a state or country<end_of_turn>\n<start_of_turn>model\n"
+    }
+}
