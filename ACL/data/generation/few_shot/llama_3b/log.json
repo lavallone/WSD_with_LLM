@@ -1,0 +1,9 @@
+{
+    "log": {
+        "subtask": "generation",
+        "approach": "few_shot",
+        "model": "llama_3b",
+        "number of instances processed": 4917,
+        "last prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 21 Jan 2025\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nConsider the following sentence: I am using a computer for the creation of 3-D models.\n\nProvide a dictionary definition which identifies the meaning of \"computer\" in the above sentence and do not motivate your answer.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nA machine for performing calculations automatically.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nConsider the following sentence: a great delay.\n\nProvide a dictionary definition which identifies the meaning of \"great\" in the above sentence and do not motivate your answer.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nRelatively large in size or number or extent; larger than others of its kind.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nConsider the following sentence: What did you eat for dinner last night?\n\nProvide a dictionary definition which identifies the meaning of \"eat\" in the above sentence and do not motivate your answer.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nTake in solid food.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nConsider the following sentence: Cerenia does not represent a particular risk for people.\n\nProvide a dictionary definition which identifies the meaning of \"people\" in the above sentence and do not motivate your answer.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n"
+    }
+}
