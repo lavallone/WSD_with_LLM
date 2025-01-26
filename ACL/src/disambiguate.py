@@ -8,6 +8,7 @@ import time
 import json
 import torch
 import os
+from openai import OpenAI
 
 def countdown(t):
     """
@@ -156,13 +157,15 @@ def _process(output_file_path:str, subtask:str, approach:str, shortcut_model_nam
         tokenizer, model = _prepare_finetuned_model(shortcut_model_name, checkpoint_path)
         pipe = pipeline("text-generation", model=model, device="cuda", tokenizer=tokenizer, pad_token_id=tokenizer.eos_token_id, max_new_tokens=25)
     else:
-        full_model_name = shortcut_model_name2full_model_name[shortcut_model_name]
-        if shortcut_model_name == "mistral": tokenizer = AutoTokenizer.from_pretrained(full_model_name, trust_remote_code=True, legacy=False)
-        else: tokenizer = AutoTokenizer.from_pretrained(full_model_name, trust_remote_code=True)
-        tokenizer.pad_token = tokenizer.eos_token
-        if shortcut_model_name == "phi_mini": model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.float16, attn_implementation="flash_attention_2").cuda()
-        else: model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.float16).cuda()
-        pipe = pipeline("text-generation", model=model, device="cuda", tokenizer=tokenizer, pad_token_id=tokenizer.eos_token_id, max_new_tokens=25)
+        if shortcut_model_name == "gpt": global OPEN_AI_CLIENT; OPEN_AI_CLIENT = OpenAI()
+        else:
+            full_model_name = shortcut_model_name2full_model_name[shortcut_model_name]
+            if shortcut_model_name == "mistral": tokenizer = AutoTokenizer.from_pretrained(full_model_name, trust_remote_code=True, legacy=False)
+            else: tokenizer = AutoTokenizer.from_pretrained(full_model_name, trust_remote_code=True)
+            tokenizer.pad_token = tokenizer.eos_token
+            if shortcut_model_name == "phi_mini": model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.float16, attn_implementation="flash_attention_2").cuda()
+            else: model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.float16).cuda()
+            pipe = pipeline("text-generation", model=model, device="cuda", tokenizer=tokenizer, pad_token_id=tokenizer.eos_token_id, max_new_tokens=25)
     
     with open(f"{output_file_path}/output.txt", "a") as fa_txt, open(f"{output_file_path}/output.json", "w") as fw_json:
         for instance in tqdm(gold_data, total=len(gold_data)):
@@ -171,8 +174,16 @@ def _process(output_file_path:str, subtask:str, approach:str, shortcut_model_nam
             instance_id = instance["id"]
             
             chat_prompt = _generate_prompt(instance, subtask, approach)
-            prompt_template = tokenizer.apply_chat_template(chat_prompt, tokenize=False, add_generation_prompt=True)
-            answer = pipe(prompt_template)[0]["generated_text"].replace(prompt_template, "").replace("\n", "").strip()
+            if shortcut_model_name == "gpt":
+                gpt_prompt = chat_prompt[0]["content"]
+                completion = OPEN_AI_CLIENT.chat.completions.create(
+                                model=shortcut_model_name2full_model_name[shortcut_model_name],
+                                messages=chat_prompt
+                                )
+                answer =  completion.choices[0].message.content
+            else:
+                prompt_template = tokenizer.apply_chat_template(chat_prompt, tokenize=False, add_generation_prompt=True)
+                answer = pipe(prompt_template)[0]["generated_text"].replace(prompt_template, "").replace("\n", "").strip()
             
             fa_txt.write(f"{instance_id}\t{answer}\n")
             fa_txt.flush()
@@ -181,7 +192,7 @@ def _process(output_file_path:str, subtask:str, approach:str, shortcut_model_nam
             json_data.append(json_answer)
         json.dump(json_data, fw_json, indent=4)
 
-    last_prompt = prompt_template
+    last_prompt = chat_prompt if shortcut_model_name == "gpt" else prompt_template
     if args.log_config:
         if is_finetuned: shortcut_model_name = f"finetuned_{shortcut_model_name}"
         _print_log(subtask, approach, shortcut_model_name, last_prompt, n_instances_processed)
@@ -239,7 +250,8 @@ if __name__ == "__main__":
                                        "mistral",
                                        "phi_small",
                                        "llama_8b",
-                                       "gemma_9b"]
+                                       "gemma_9b",
+                                       "gpt"]
     full_model_name2pipeline = {}
     
     parser = argparse.ArgumentParser()

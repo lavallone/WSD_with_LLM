@@ -49,12 +49,9 @@ def _get_gpt_answer_(instance_gold, answer):
     gpt_prompt = f"Given the following definitions of \"{word}\":\n\n{candidate_definitions}\n\nSelect the definition that most closely matches the definition: \"{answer}\". Do not explain your output."
     
     completion = OPEN_AI_CLIENT.chat.completions.create(
-    model="gpt-4o",
-    messages=[
-        {"role": "developer", "content": "You are a helpful assistant."},
-        {"role": "user", "content": gpt_prompt}
-    ]
-    )
+                    model="gpt-4o",
+                    messages=[{"role": "user", "content": gpt_prompt}]
+                    )
     return completion.choices[0].message.content
 
 def _compute_lexical_overlap(definition, answer):
@@ -109,10 +106,8 @@ def compute_scores(disambiguated_data_path:str):
     disambiguated_data = _get_disambiguated_data(disambiguated_data_path)
     assert len(gold_data) == len(disambiguated_data)
 
-    if args.pos == "ALL":
-        number_of_evaluation_instances = len(gold_data)
-    else:
-        number_of_evaluation_instances = len([instance_gold for instance_gold in gold_data if instance_gold["pos"] == args.pos])
+    if args.pos == "ALL": number_of_evaluation_instances = len(gold_data)
+    else: number_of_evaluation_instances = len([instance_gold for instance_gold in gold_data if instance_gold["pos"] == args.pos])
 
     true_labels = [1 for _ in range(number_of_evaluation_instances)]
     predicted_labels = [1 for _ in range(number_of_evaluation_instances)]
@@ -121,11 +116,8 @@ def compute_scores(disambiguated_data_path:str):
     correct, wrong = 0,0
     global_idx = 0
     for instance_gold, instance_disambiguated_data in tqdm(zip(gold_data, disambiguated_data), total=len(gold_data), desc="Processing"):
-        if args.pos == "ALL":
-            pass
-        else:
-            if instance_gold["pos"] != args.pos:
-                continue
+        if args.pos == "ALL": pass
+        elif args.pos != "ALL" and instance_gold["pos"] != args.pos: continue
         assert instance_gold["id"] == instance_disambiguated_data["instance_id"]
 
         answer = instance_disambiguated_data["answer"]
@@ -143,11 +135,8 @@ def compute_scores(disambiguated_data_path:str):
         if answer.strip() == "": selected_definition = ""
         else: selected_definition, additional_infos = _choose_definition(instance_gold, answer); additional_infos_list.append(additional_infos)
         
-        if selected_definition in instance_gold["gold_definitions"]:
-            correct += 1
-        else:
-            predicted_labels[global_idx] = 0
-            wrong += 1
+        if selected_definition in instance_gold["gold_definitions"]: correct += 1
+        else: predicted_labels[global_idx] = 0; wrong += 1
 
         global_idx += 1
     assert correct+wrong == number_of_evaluation_instances
@@ -159,16 +148,71 @@ def compute_scores(disambiguated_data_path:str):
             json_file.write(json.dumps(additional_infos_list, indent=4))
     else: # we add '****' to the definition choosen by the gpt judge
         assert os.path.isfile(additional_infos_path)
-        gpt_candidates_list = [elem["candidates"][0] for elem in additional_infos_list]
-        with open(additional_infos_path, mode="r") as json_file: 
+        gpt_candidates_list = [elem["candidates"][0] for elem in additional_infos_list] # these are the senses choosen by gpt_as_judge
+        with open(additional_infos_path, mode="r") as json_file:
             cos_sim_data = json.load(json_file)
         for idx,item in enumerate(cos_sim_data):
-            for elem in item["candidates"]:
-                if elem == gpt_candidates_list[idx]: item["candidates"][idx] = "**** " + item["candidates"][idx] + " ****"; break
+            for i,elem in enumerate(item["candidates"]):
+                if elem == gpt_candidates_list[idx]: item["candidates"][i] = "**** " + item["candidates"][i] + " ****"; break
         with open(additional_infos_path, mode="w") as json_file:
             json_file.write(json.dumps(cos_sim_data, indent=4))
 
-    # COMPUTE SCORES
+    _print_scores(true_labels, predicted_labels, number_of_evaluation_instances, correct, wrong)
+
+def compute_scores_from_file(disambiguated_data_path:str, file_path:str):
+    gold_data = _get_gold_data(args.subtask)[0]
+    with open(file_path, "r") as json_file:
+        disambiguated_data = json.load(json_file)
+    assert len(gold_data) == len(disambiguated_data)
+
+    # check if gpt as a judge has been already run on all the instances
+    if args.gpt_as_judge == True:
+        has_gpt_as_judge_been_run = False
+        for candidate in disambiguated_data[-1]["candidates"]:
+            if candidate[:4]=="****": has_gpt_as_judge_been_run = True ; break
+        assert has_gpt_as_judge_been_run is True
+
+    if args.pos == "ALL": number_of_evaluation_instances = len(gold_data)
+    else: number_of_evaluation_instances = len([instance_gold for instance_gold in gold_data if instance_gold["pos"] == args.pos])
+    true_labels = [1 for _ in range(number_of_evaluation_instances)]
+    predicted_labels = [1 for _ in range(number_of_evaluation_instances)]
+    correct, wrong = 0,0
+    global_idx = 0
+    for instance_gold, instance_disambiguated_data in tqdm(zip(gold_data, disambiguated_data), total=len(gold_data), desc="Processing"):
+        if args.pos == "ALL": pass
+        elif args.pos != "ALL" and instance_gold["pos"] != args.pos: continue
+        assert instance_gold["id"] == instance_disambiguated_data["id"]
+
+        if args.subtask == "selection":
+            # adds n) before each gold definition
+            for idx, definition in enumerate(instance_gold["definitions"]):
+                for idx_, gold_definition in enumerate(instance_gold["gold_definitions"]): # because there may be more than one gold candidate
+                    if definition == gold_definition:
+                        instance_gold["gold_definitions"][idx_] = f"{idx+1}) {instance_gold['gold_definitions'][idx_]}"
+            # adds n) before all candidate definitions
+            for idx, definition in enumerate(instance_gold["definitions"]):
+                instance_gold["definitions"][idx] = f"{idx+1}) {definition}"
+
+        choosen_candidate = ""
+        if args.gpt_as_judge == True:
+            for candidate in instance_disambiguated_data["candidates"]:
+                if candidate[:4] == "****": choosen_candidate  = candidate[5:-5] ; break
+        else:
+            if args.subtask == "generation" and instance_disambiguated_data["candidates"][0][:4] == "****":
+                choosen_candidate  = instance_disambiguated_data["candidates"][0][5:-5]
+            else: choosen_candidate = instance_disambiguated_data["candidates"][0]
+        print(choosen_candidate)
+        print(instance_gold["gold_definitions"])
+        if choosen_candidate in instance_gold["gold_definitions"]: correct += 1
+        else: predicted_labels[global_idx] = 0; wrong += 1
+
+        global_idx += 1
+    assert correct+wrong == number_of_evaluation_instances
+
+    _print_scores(true_labels, predicted_labels, number_of_evaluation_instances, correct, wrong)
+
+def _print_scores(true_labels, predicted_labels, number_of_evaluation_instances, correct, wrong):
+    
     precision = precision_score(true_labels, predicted_labels, average='micro')
     recall = recall_score(true_labels, predicted_labels, average='micro')
     f1 = f1_score(true_labels, predicted_labels, average='micro')
@@ -339,7 +383,8 @@ if __name__ == "__main__":
                                        "mistral",
                                        "phi_small",
                                        "llama_8b",
-                                       "gemma_9b"]
+                                       "gemma_9b",
+                                       "gpt"]
     assert args.shortcut_model_name in supported_shortcut_model_names
     
     assert args.pos in ["NOUN", "ADJ", "VERB", "ADV", "ALL"]
@@ -350,10 +395,13 @@ if __name__ == "__main__":
     else: disambiguated_data_path += f"{args.shortcut_model_name}/output.json"
     len_gold = len(_get_gold_data(args.subtask)[0])
 
-    if args.subtask == "generation" and args.gpt_as_judge is False:
+    definition_ranks_path = f"../data/{args.subtask}/{args.approach}/{args.shortcut_model_name}/definition_ranks.json"
+    if args.subtask == "generation" and args.gpt_as_judge is False and not os.path.isfile(definition_ranks_path):
         assert args.sentence_embedder in ["all-mpnet-base-v2", "all-MiniLM-L6-v2"]
         _generate_gold_data_vectors(args.subtask)
         _generate_disambiguated_data_vectors(disambiguated_data_path, len_gold, args.is_finetuned)
         id2vec_gold = _get_gold_data_vectors()
         id2vec_disambiguated_data = _get_disambiguated_data_vectors(args.is_finetuned)
-    compute_scores(disambiguated_data_path)
+    
+    if os.path.isfile(definition_ranks_path): compute_scores_from_file(disambiguated_data_path, definition_ranks_path)
+    else: compute_scores(disambiguated_data_path)
