@@ -58,7 +58,7 @@ def _create_folder(subtask, approach, shortcut_model_name, is_finetuned):
         os.system(f"rm -r {output_file_path}/*")
     return output_file_path
 
-def _print_log(subtask:str, approach:str, shortcut_model_name:str, last_prompt, n_instances_processed:str):
+def _print_log(subtask, approach, shortcut_model_name, last_prompt, n_instances_processed):
     """
     Prints log information to a JSON file.
 
@@ -91,7 +91,7 @@ def _print_log(subtask:str, approach:str, shortcut_model_name:str, last_prompt, 
 # score.py
 ###########################################################################################################
 
-def _generate_gold_data_vectors(subtask:str):
+def _generate_gold_data_vectors(subtask, sentence_embedder):
     """
     Generates sentence embeddings for gold data and saves them to a file.
 
@@ -101,7 +101,7 @@ def _generate_gold_data_vectors(subtask:str):
     Returns:
         None
     """
-    gold_vector_file_path = f"../data/evaluation/vectors/{args.sentence_embedder}_id2vec.tsv"
+    gold_vector_file_path = f"../data/evaluation/vectors/{sentence_embedder}_id2vec.tsv"
     if os.path.exists(gold_vector_file_path):
         print("Gold vectors already exist")
         return None
@@ -110,10 +110,10 @@ def _generate_gold_data_vectors(subtask:str):
         os.makedirs(gold_vector_folder_path)
 
     print("Generating vectors from gold data")
-    sentence_embedder = SentenceTransformer(f'sentence-transformers/{args.sentence_embedder}')
+    sentence_embedder = SentenceTransformer(f'sentence-transformers/{sentence_embedder}')
     data = _get_gold_data(subtask)[0]
 
-    gold_vector_file_path = f"../data/evaluation/vectors/{args.sentence_embedder}_id2vec.tsv"
+    gold_vector_file_path = f"../data/evaluation/vectors/{sentence_embedder}_id2vec.tsv"
     with open(gold_vector_file_path, "w") as fw:
         for el in tqdm(data, total=len(data)):
             id_ = el["id"]
@@ -123,7 +123,7 @@ def _generate_gold_data_vectors(subtask:str):
                 vec = " ".join([str(x) for x in vec])
                 fw.write(f"{id_}\t{definition}\t{vec}\n")
 
-def _generate_disambiguated_data_vectors(disambiguated_data_path:str, len_gold:int, is_finetuned:bool):
+def _generate_disambiguated_data_vectors(subtask, approach, shortcut_model_name, sentence_embedder, is_finetuned, disambiguated_data_path, len_gold):
     """
     Generates sentence embeddings for disambiguated data and saves them to a file.
 
@@ -134,7 +134,7 @@ def _generate_disambiguated_data_vectors(disambiguated_data_path:str, len_gold:i
     Returns:
         None
     """
-    vector_file_path = f"../data/{args.subtask}/{args.approach}/finetuned_{args.shortcut_model_name}/vectors/{args.sentence_embedder}_id2vec.tsv" if is_finetuned else f"../data/{args.subtask}/{args.approach}/{args.shortcut_model_name}/vectors/{args.sentence_embedder}_id2vec.tsv"
+    vector_file_path = f"../data/{subtask}/{approach}/finetuned_{shortcut_model_name}/vectors/{sentence_embedder}_id2vec.tsv" if is_finetuned else f"../data/{subtask}/{approach}/{shortcut_model_name}/vectors/{sentence_embedder}_id2vec.tsv"
     if os.path.exists(vector_file_path):
         with open(vector_file_path, "r") as fr:
             if len(fr.readlines()) != len_gold:
@@ -142,17 +142,17 @@ def _generate_disambiguated_data_vectors(disambiguated_data_path:str, len_gold:i
                 exit()
             print("Disambiguated data vectors already exist")
             return None
-    vector_folder_path = f"../data/{args.subtask}/{args.approach}/finetuned_{args.shortcut_model_name}/vectors" if is_finetuned else f"../data/{args.subtask}/{args.approach}/{args.shortcut_model_name}/vectors"
+    vector_folder_path = f"../data/{subtask}/{approach}/finetuned_{shortcut_model_name}/vectors" if is_finetuned else f"../data/{subtask}/{approach}/{shortcut_model_name}/vectors"
     if not os.path.exists(vector_folder_path):
         os.makedirs(vector_folder_path)          
 
     print("Generating vectors from:", disambiguated_data_path)
-    sentence_embedder = SentenceTransformer(f'sentence-transformers/{args.sentence_embedder}')
+    sentence_embedder = SentenceTransformer(f'sentence-transformers/{sentence_embedder}')
 
     with open(disambiguated_data_path) as fr:
         data = json.load(fr)
 
-    vector_file_path = f"../data/{args.subtask}/{args.approach}/finetuned_{args.shortcut_model_name}/vectors/{args.sentence_embedder}_id2vec.tsv" if is_finetuned else f"../data/{args.subtask}/{args.approach}/{args.shortcut_model_name}/vectors/{args.sentence_embedder}_id2vec.tsv"
+    vector_file_path = f"../data/{subtask}/{approach}/finetuned_{shortcut_model_name}/vectors/{sentence_embedder}_id2vec.tsv" if is_finetuned else f"../data/{subtask}/{approach}/{shortcut_model_name}/vectors/{sentence_embedder}_id2vec.tsv"
     id2vec_dd = {}
     with open(vector_file_path, "w") as fw:
         for el in tqdm(data, total=len(data)):
@@ -163,7 +163,7 @@ def _generate_disambiguated_data_vectors(disambiguated_data_path:str, len_gold:i
             vec = " ".join([str(x) for x in vec])
             fw.write(f"{id_}\t{vec}\n")
 
-def _get_disambiguated_data_vectors(is_finetuned:bool):
+def _get_disambiguated_data_vectors(subtask, approach, shortcut_model_name, sentence_embedder, is_finetuned):
     """
     Retrieves the disambiguated data sentence embeddings from a file and returns them as a dictionary.
 
@@ -175,14 +175,14 @@ def _get_disambiguated_data_vectors(is_finetuned:bool):
     """
     id2vec_disambiguated_data = {}
 
-    vector_file_path = f"../data/{args.subtask}/{args.approach}/finetuned_{args.shortcut_model_name}/vectors/{args.sentence_embedder}_id2vec.tsv" if is_finetuned else f"../data/{args.subtask}/{args.approach}/{args.shortcut_model_name}/vectors/{args.sentence_embedder}_id2vec.tsv"
+    vector_file_path = f"../data/{subtask}/{approach}/finetuned_{shortcut_model_name}/vectors/{sentence_embedder}_id2vec.tsv" if is_finetuned else f"../data/{subtask}/{approach}/{shortcut_model_name}/vectors/{sentence_embedder}_id2vec.tsv"
     with open(vector_file_path, "r") as fr:
         for line in fr:
             id_, vec = line.strip().split('\t')
             id2vec_disambiguated_data[id_] = vec
     return id2vec_disambiguated_data
   
-def _get_gold_data_vectors():
+def _get_gold_data_vectors(sentence_embedder):
     """
     Retrieves gold data sentence embeddings from a file and returns them as a dictionary.
 
@@ -194,15 +194,15 @@ def _get_gold_data_vectors():
     """
     id2vec_gold = {}
 
-    with open(f"../data/evaluation/vectors/{args.sentence_embedder}_id2vec.tsv") as fr:
+    with open(f"../data/evaluation/vectors/{sentence_embedder}_id2vec.tsv") as fr:
         for line in fr:
             id, definition, vec = line.strip().split('\t')
             id2vec_gold[id+definition] = vec
     return id2vec_gold
 
 
-def _write_definition_ranks(definition_ranks_path, definition_ranks_list):
-    if args.gpt_as_judge == False: # both in DS and DG scenarios
+def _write_definition_ranks(definition_ranks_path, definition_ranks_list, gpt_as_judge):
+    if gpt_as_judge == False: # both in DS and DG scenarios
         with open(definition_ranks_path, mode="w") as json_file:
             json_file.write(json.dumps(definition_ranks_list, indent=4))
     else: # we add '****' to the definition choosen by the gpt_as_judge

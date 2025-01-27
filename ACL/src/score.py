@@ -143,7 +143,7 @@ def compute_scores(disambiguated_data_path:str):
     
     # we create definition_ranks file at the end (in this way the next time we save time in doing the same computations)
     definition_ranks_path = f"../data/{args.subtask}/{args.approach}/{args.shortcut_model_name}/definition_ranks.json"
-    _write_definition_ranks(definition_ranks_path, definition_ranks_list)
+    _write_definition_ranks(definition_ranks_path, definition_ranks_list, args.gpt_as_judge)
 
     # we finally print the scores
     _print_scores(true_labels, predicted_labels, number_of_evaluation_instances, correct, wrong)
@@ -238,10 +238,10 @@ if __name__ == "__main__":
     if args.subtask == "generation" and args.gpt_as_judge is False and not os.path.isfile(definition_ranks_path):
         assert args.sentence_embedder in ["all-mpnet-base-v2", "all-MiniLM-L6-v2"]
         len_gold = len(_get_gold_data(args.subtask))
-        _generate_gold_data_vectors(args.subtask)
-        _generate_disambiguated_data_vectors(disambiguated_data_path, len_gold, args.is_finetuned)
-        id2vec_gold = _get_gold_data_vectors()
-        id2vec_disambiguated_data = _get_disambiguated_data_vectors(args.is_finetuned)
+        _generate_gold_data_vectors(args.subtask, args.sentence_embedder)
+        _generate_disambiguated_data_vectors(args.subtask, args.approach, args.shortcut_model_name, args.sentence_embedder, args.is_finetuned, disambiguated_data_path, len_gold)
+        id2vec_gold = _get_gold_data_vectors(args.sentence_embedder)
+        id2vec_disambiguated_data = _get_disambiguated_data_vectors(args.subtask, args.approach, args.shortcut_model_name, args.sentence_embedder, args.is_finetuned)
     
     # two different scenarios: 
     #   1) when it's the first time we compute scores of a particular model;
