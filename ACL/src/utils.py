@@ -110,7 +110,7 @@ def _generate_gold_data_vectors(subtask, sentence_embedder):
         os.makedirs(gold_vector_folder_path)
 
     print("Generating vectors from gold data")
-    sentence_embedder = SentenceTransformer(f'sentence-transformers/{sentence_embedder}')
+    embedder = SentenceTransformer(f'sentence-transformers/{sentence_embedder}')
     data = _get_gold_data(subtask)[0]
 
     gold_vector_file_path = f"../data/evaluation/vectors/{sentence_embedder}_id2vec.tsv"
@@ -119,7 +119,7 @@ def _generate_gold_data_vectors(subtask, sentence_embedder):
             id_ = el["id"]
             definitions = el["definitions"]
             for definition in definitions:
-                vec = sentence_embedder.encode(definition).tolist()
+                vec = embedder.encode(definition).tolist()
                 vec = " ".join([str(x) for x in vec])
                 fw.write(f"{id_}\t{definition}\t{vec}\n")
 
@@ -147,7 +147,7 @@ def _generate_disambiguated_data_vectors(subtask, approach, shortcut_model_name,
         os.makedirs(vector_folder_path)          
 
     print("Generating vectors from:", disambiguated_data_path)
-    sentence_embedder = SentenceTransformer(f'sentence-transformers/{sentence_embedder}')
+    embedder = SentenceTransformer(f'sentence-transformers/{sentence_embedder}')
 
     with open(disambiguated_data_path) as fr:
         data = json.load(fr)
@@ -158,7 +158,7 @@ def _generate_disambiguated_data_vectors(subtask, approach, shortcut_model_name,
         for el in tqdm(data, total=len(data)):
             id_ = el["instance_id"]
             answer = el["answer"]
-            vec = sentence_embedder.encode(answer)
+            vec = embedder.encode(answer)
             id2vec_dd[id_] = " ".join([str(x) for x in vec.tolist()])
             vec = " ".join([str(x) for x in vec])
             fw.write(f"{id_}\t{vec}\n")
