@@ -4,28 +4,12 @@ from variables import shortcut_model_name2full_model_name, chat_template_prompts
 from tqdm import tqdm
 import warnings
 import argparse
-import time
 import json
 import torch
 import os
 from openai import OpenAI
+from utils import _get_gold_data, _create_folder, _print_log
 
-def countdown(t):
-    """
-    Activates and displays a countdown timer in the terminal.
-
-    Args:
-        t (int): The duration of the countdown timer in seconds.
-
-    Returns:
-        None
-    """
-    while t > 0:
-        mins, secs = divmod(t, 60)
-        timer = '{:02d}'.format(secs)
-        print(f"\033[1mWarning\033[0m: Found output files in the target directory! I will delete them in {timer}", end='\r')
-        time.sleep(1)
-        t -= 1
 
 def _generate_prompt(instance:dict, subtask:str, approach:str):
     """
@@ -72,48 +56,6 @@ def _generate_prompt(instance:dict, subtask:str, approach:str):
 
     return prompt
 
-def _get_gold_data(subtask:str):
-    """
-    Loads gold data from a JSON file.
-
-    Returns:
-        dict: A dictionary containing the loaded gold data.
-    """
-    data = []
-    data_path = "../data/evaluation/ALLamended/ALLamended_preprocessed.json"
-    with open(data_path, "r") as json_file:
-        data_ = json.load(json_file)
-    data.append(data_)
-    return data
-    
-def _print_log(subtask:str, approach:str, shortcut_model_name:str, last_prompt, n_instances_processed:str):
-    """
-    Prints log information to a JSON file.
-
-    Args:
-        subtask (str): The subtask of the evaluation.
-        approach (str): The approach used for evaluation.
-        shortcut_model_name (str): The name of the model.
-        last_prompt: The last prompt processed.
-        n_instances_processed (str): The number of instances processed.
-
-    Returns:
-        None
-    """
-    log_file_path = f"../data/{subtask}/{approach}/{shortcut_model_name}/log.json"
-    log = {
-            "log":{
-                    "subtask":subtask,
-                    "approach":approach,
-                    "model":shortcut_model_name,
-                    "number of instances processed": n_instances_processed,
-                    "last prompt":last_prompt,
-                  }
-          }
-
-    with open(log_file_path, "w") as fp:
-        json.dump(log, fp, indent=4)
-
 def _prepare_finetuned_model(shortcut_model_name:str, checkpoint_path:str):
     # load the original model first
     full_model_name = shortcut_model_name2full_model_name[shortcut_model_name]
@@ -131,12 +73,12 @@ def _prepare_finetuned_model(shortcut_model_name:str, checkpoint_path:str):
     model.merge_and_unload()
     return tokenizer, model
 
-def _process(output_file_path:str, subtask:str, approach:str, shortcut_model_name:str, is_finetuned:bool, checkpoint_path:str):
+def process(subtask:str, approach:str, shortcut_model_name:str, is_finetuned:bool, checkpoint_path:str):
     """
     Processes the evaluation task for a specific subtask, approach, and model. Selection and generation subtasks only.
 
     Args:
-        output_file_path (str): The path of the output foledr.
+        output_file_path (str): The path of the output folder.
         subtask (str): The subtask of the evaluation.
         approach (str): The approach used for evaluation.
         shortcut_model_name (str): The name of the model.
@@ -146,9 +88,10 @@ def _process(output_file_path:str, subtask:str, approach:str, shortcut_model_nam
     Returns:
         None
     """
-    global full_model_name2pipeline, shortcut_model_name2full_model_name
+    # we create folder structure
+    output_file_path = _create_folder(subtask, approach, shortcut_model_name, is_finetuned)
 
-    gold_data = _get_gold_data(subtask)[0]
+    gold_data = _get_gold_data(subtask)
     n_instances_processed = 0
     json_data = []
 
@@ -192,54 +135,25 @@ def _process(output_file_path:str, subtask:str, approach:str, shortcut_model_nam
             json_data.append(json_answer)
         json.dump(json_data, fw_json, indent=4)
 
+    # LOG
     last_prompt = chat_prompt if shortcut_model_name == "gpt" else prompt_template
     if args.log_config:
         if is_finetuned: shortcut_model_name = f"finetuned_{shortcut_model_name}"
         _print_log(subtask, approach, shortcut_model_name, last_prompt, n_instances_processed)
 
-def process(subtask:str, approach:str, shortcut_model_name:str, is_finetuned:bool, checkpoint_path:str):
-    """
-    Starts the processing for a specified subtask, approach, and model.
-
-    Args:
-        subtask (str): The subtask to be evaluated.
-        approach (str): The approach used for evaluation.
-        shortcut_model_name (str): The name of the model.
-        is_finetuned (bool): If the model is finetuned or not.
-        checkpoint_path (str): The path of the finetuned checkpoint.
-
-    Returns:
-        None
-    """
-    assert shortcut_model_name in supported_shortcut_model_names
-    assert subtask in supported_subtasks
-    assert approach in supported_approaches
-    
-    # we define the correct output path
-    output_file_path = f"../data/{subtask}/{approach}/"
-    if is_finetuned: output_file_path += f"finetuned_{shortcut_model_name}/"
-    else: output_file_path += f"{shortcut_model_name}/"
-    # to manage creation/deletion of folders
-    if not os.path.exists(f"../data/{subtask}/"):
-        os.system(f"mkdir ../data/{subtask}/")
-    if not os.path.exists(f"../data/{subtask}/"):
-        os.system(f"mkdir ../data/{subtask}/")
-    if not os.path.exists(f"../data/{subtask}/"):
-        os.system(f"mkdir ../data/{subtask}/")
-    if not os.path.exists(f"../data/{subtask}/{approach}/"):
-        os.system(f"mkdir ../data/{subtask}/{approach}/")
-    if not os.path.exists(output_file_path):
-        os.system(f"mkdir {output_file_path}")
-    elif os.path.exists(f"{output_file_path}/output.txt"):
-        countdown(5)
-        os.system(f"rm -r {output_file_path}/*")
-
-    _process(output_file_path, subtask, approach, shortcut_model_name, is_finetuned, checkpoint_path)
-
 if __name__ == "__main__":
 
     warnings.filterwarnings("ignore", category=UserWarning)
     warnings.filterwarnings("ignore", category=FutureWarning)
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--subtask", "-st", type=str, help="Input the task")
+    parser.add_argument("--approach", "-a", type=str, help="Input the approach")
+    parser.add_argument("--shortcut_model_name", "-m", type=str, help="Input the model")
+    parser.add_argument("--is_finetuned", "-f", type=bool, default=False, help="If the model we want to test is finetuned or not")
+    parser.add_argument("--checkpoint_path", "-cp", type=str, default=None, help="Input the checkpoint path")
+    parser.add_argument("--log_config", "-l", type=bool, default=True, help="Log the results")
+    args = parser.parse_args()
 
     supported_subtasks = ["selection", "generation"]
     supported_approaches = ["zero_shot", "one_shot", "few_shot"]
@@ -252,16 +166,10 @@ if __name__ == "__main__":
                                        "llama_8b",
                                        "gemma_9b",
                                        "gpt"]
-    full_model_name2pipeline = {}
-    
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--subtask", "-st", type=str, help="Input the task")
-    parser.add_argument("--approach", "-a", type=str, help="Input the approach")
-    parser.add_argument("--shortcut_model_name", "-m", type=str, help="Input the model")
-    parser.add_argument("--is_finetuned", "-f", type=bool, default=False, help="If the model we want to test is finetuned or not")
-    parser.add_argument("--checkpoint_path", "-cp", type=str, default=None, help="Input the checkpoint path")
-    parser.add_argument("--log_config", "-l", type=bool, default=True, help="Log the results")
-    args = parser.parse_args()
-    
+    assert args.shortcut_model_name in supported_shortcut_model_names
+    assert args.subtask in supported_subtasks
+    assert args.approach in supported_approaches
+    # if we want to test a finetuned model we need to provide the checkpoint
     assert args.is_finetuned==False or args.checkpoint_path!=None
+
     process(args.subtask, args.approach, args.shortcut_model_name, args.is_finetuned, args.checkpoint_path)
