@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 senseval2.d000.s000.t000	In the context provided, "art" refers to a skill or craft that involves the application of knowledge and practices, often requiring creativity and expertise, in this case related to change-ringing.
 senseval2.d000.s000.t002	In this context, "peculiar" means unique or specific to a particular group or characteristic, implying that change-ringing is distinctively associated with the English.
 senseval2.d000.s000.t003	In the context provided, "English" refers to the people of England or to characteristics associated with England and its culture.
@@ -4916,3 +4917,6 @@ semeval2015.d003.s023.t001	In the context provided, "represent" means to constit
 semeval2015.d003.s023.t002	In the given context, "particular" means specific or distinct.
 semeval2015.d003.s023.t003	In the given sentence, "risk" refers to the possibility or likelihood of harm or adverse effects.
 semeval2015.d003.s023.t004	In the provided sentence, "people" refers to human beings or individuals in general, distinguishing them from other groups such as animals.
+=======
+
+>>>>>>> 3ecfd736d5c095dbb1c1d340eb84274215510379
