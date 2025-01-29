@@ -4,6 +4,7 @@ from tqdm import tqdm
 import json
 import os
 import time
+import random
 
 
 ## UTILS
@@ -316,6 +317,112 @@ def mc_nemar_test(subtask, approach):
     else: print("Fail to reject Null hypotesis")
 
 
+def manual_analysis(approach):
+    
+    ## CONSEC
+    # we first need to collect the instance ids correctly and wrongly classified by ConSec
+    consec_gold_path = '../data/evaluation/ALLamended/xml/ALLamended.gold.key.txt'
+    consec_gold_data = {}
+    with open(consec_gold_path, 'r') as file:
+        for line in file:
+            parts = line.strip().split(' ')
+            consec_gold_data[parts[0]] = parts[1:]
+    consec_preds_path = '../data/evaluation/ALLamended/xml/predictions.consec.key.txt'
+    consec_preds_data = {}
+    with open(consec_preds_path, 'r') as file:
+        for line in file:
+            parts = line.strip().split(' ')
+            consec_preds_data[parts[0]] = parts[1:]
+    consec_corrects, consec_wrongs = [], []
+    for k,v in consec_preds_data.items():
+        if v[0] in consec_gold_data[k]: consec_corrects.append(k)
+        else: consec_wrongs.append(k)
+
+    ## GPT-4o
+    # we then need to do the same thing for gpt-4o in the generation setting with gpt_as_judge
+    gpt_gold_path = "../data/evaluation/ALLamended/ALLamended_preprocessed.json"
+    gpt_preds_path = f"../data/generation/{approach}/gpt/definition_ranks.json"
+    with open(gpt_gold_path, "r") as json_file:
+        gold_data = json.load(json_file)
+    with open(gpt_preds_path, "r") as json_file:
+        disambiguated_data = json.load(json_file)
+    assert len(gold_data) == len(disambiguated_data)
+
+    gpt_wrongs, gpt_corrects = [],[]
+    for instance_gold, instance_disambiguated_data in tqdm(zip(gold_data, disambiguated_data), total=len(gold_data), desc="Processing"):
+        
+        assert instance_gold["id"] == instance_disambiguated_data["id"]
+        # candidate choosen by gpt_as_judge
+        choosen_candidate = ""
+        for candidate in instance_disambiguated_data["candidates"]:
+            if candidate[:4] == "****": choosen_candidate = candidate[5:-5] ; break
+        if choosen_candidate not in instance_gold["gold_definitions"]: gpt_wrongs.append(instance_gold["id"])
+        else: gpt_corrects.append(instance_gold["id"])
+
+    # we now need to create 3 sets of 100 instances each: 
+    # 1) instances misclassifed by both models;
+    # 2) instances misclassified only by gpt-4o;
+    # 3) instances misclassified only by ConSec;
+    wrong_gpt_set = set(gpt_wrongs)
+    correct_gpt_set = set(gpt_corrects)
+    wrong_consec_set = set(consec_wrongs)
+    correct_consec_set = set(consec_corrects)
+
+    misclassified_by_both = wrong_gpt_set.intersection(wrong_consec_set) # misclassified by both
+    misclassified_only_by_gpt = wrong_gpt_set.intersection(correct_consec_set) # misclassified by GPT but not ConSeC
+    misclassified_only_by_consec = wrong_consec_set.intersection(correct_gpt_set) # misclassified by ConSeC but not GPT
+
+    misclassified_by_both = random.sample(misclassified_by_both, 100)
+    misclassified_only_by_gpt = random.sample(misclassified_only_by_gpt, 100)
+    misclassified_only_by_consec = random.sample(misclassified_only_by_consec, 100)
+    ris = {"misclassified_by_both" : misclassified_by_both, "misclassified_only_by_gpt" : misclassified_only_by_gpt, "misclassified_only_by_consec" : misclassified_only_by_consec}
+    
+    # we finally need to retrieve the choosen definitions by the two models and create the file for manual analysis
+    # we first create the skeleton of the file
+    for k,v in ris.items():
+        for i in range(len(v)):
+            for e in gold_data:
+                if e["id"] == v[i]:
+                    v[i] = {"id": e["id"], "text": e["text"], "lemma": e["lemma"], "pos": e["pos"],
+                            "gold_definitions": e["gold_definitions"], "definitions": e["definitions"],
+                            "gpt_candidate": "", 
+                            "consec_candidate": ""} ; break
+    # gpt-4o
+    for k,v in ris.items():
+        for i in range(len(v)):
+            for instance_disambiguated_data in disambiguated_data:
+                if instance_disambiguated_data["id"] == v[i]["id"]:
+                    for candidate in instance_disambiguated_data["candidates"]:
+                        if candidate[:4] == "****":
+                            v[i]["gpt_candidate"] = candidate[5:-5] ; break
+
+    # consec
+    # id --> synset --> babelnet -->  ALLamended_preprocessed.json
+    consec_id2pred = {}
+    with open("../data/evaluation/ALLamended/xml/predictions.consec.key.txt", "r") as file:
+        for line in file:
+            parts = line.strip().split()
+            consec_id2pred[parts[0]] = parts[1]
+    with open("../data/evaluation/ALLamended/babelnet/synset2babel.json", "r") as json_file:
+        synset2babel = json.load(json_file)
+    for k,v in ris.items():
+        for i in range(len(v)):
+            for e in gold_data:
+                if e["id"] == v[i]["id"]:
+                    for idx,candidate in enumerate(e["candidates"]):
+                        if candidate == synset2babel[ consec_id2pred[e["id"]] ]:
+                            v[i]["consec_candidate"] = e["definitions"][idx]
+    # we finally save the file for manual analysis
+    if not os.path.exists("../data/evaluation/manual_analysis/"):
+        os.system("mkdir ../data/evaluation/manual_analysis/")
+    with open("../data/evaluation/manual_analysis/consec_vs_gpt.json", "w") as json_file:
+        json.dump(ris, json_file, indent=4)
+
+
 if __name__ == "__main__":
 
-    mc_nemar_test("selection", "zero_shot")
+    # if you want to perform the McNemar's test with Consec performances
+    #mc_nemar_test("selection", "zero_shot")
+
+    # if you want to produce a file for MANUAL ANALYSIS
+    manual_analysis("zero_shot")

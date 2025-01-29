@@ -148,18 +148,9 @@ def compute_scores(disambiguated_data_path:str):
     # we finally print the scores
     _print_scores(true_labels, predicted_labels, number_of_evaluation_instances, correct, wrong)
 
-def compute_scores_from_file(definition_ranks_path:str):
+def compute_scores_from_file(definition_ranks_data):
     gold_data = _get_gold_data(args.subtask)
-    with open(definition_ranks_path, "r") as json_file:
-        definition_ranks_data = json.load(json_file)
     assert len(gold_data) == len(definition_ranks_data)
-
-    # check if gpt as a judge has been already run on all the instances
-    if args.gpt_as_judge == True:
-        has_gpt_as_judge_been_run = False
-        for candidate in definition_ranks_data[-1]["candidates"]:
-            if candidate[:4]=="****": has_gpt_as_judge_been_run = True ; break
-        assert has_gpt_as_judge_been_run is True
 
     if args.pos == "ALL": number_of_evaluation_instances = len(gold_data)
     else: number_of_evaluation_instances = len([instance_gold for instance_gold in gold_data if instance_gold["pos"] == args.pos])
@@ -243,8 +234,23 @@ if __name__ == "__main__":
         id2vec_gold = _get_gold_data_vectors(args.sentence_embedder)
         id2vec_disambiguated_data = _get_disambiguated_data_vectors(args.subtask, args.approach, args.shortcut_model_name, args.sentence_embedder, args.is_finetuned)
     
-    # two different scenarios: 
-    #   1) when it's the first time we compute scores of a particular model;
-    #   2) we already produced definition_ranks file and, indeed, we save a lot of time.
-    if os.path.isfile(definition_ranks_path): compute_scores_from_file(definition_ranks_path)
+    # different scenarios: 
+    # 1) if definition_ranks file already exists
+    if os.path.isfile(definition_ranks_path):
+        with open(definition_ranks_path, "r") as json_file:
+            definition_ranks_data = json.load(json_file)
+        # if we want to run gpt_as_judge and definition_ranks file already exists 
+        # we need to check if it has already been run or not
+        # 1.1)
+        if args.gpt_as_judge == True:
+            has_gpt_as_judge_been_run = False
+            for candidate in definition_ranks_data[-1]["candidates"]:
+                if candidate[:4]=="****": has_gpt_as_judge_been_run = True ; break
+            # 1.1.1) if already been run, we compute the scores from definition_ranks file
+            if has_gpt_as_judge_been_run: compute_scores_from_file(definition_ranks_data)
+            # 1.1.2) if not, we need to run it and populate definition_ranks with "****"
+            else: compute_scores(disambiguated_data_path)
+        # 1.2)
+        else: compute_scores_from_file(definition_ranks_data)
+    # 2) at the end of the process definition_ranks will be created
     else: compute_scores(disambiguated_data_path)
