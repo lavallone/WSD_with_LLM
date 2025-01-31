@@ -112,7 +112,7 @@ def _generate_gold_data_vectors(subtask, sentence_embedder):
 
     print("Generating vectors from gold data")
     embedder = SentenceTransformer(f'sentence-transformers/{sentence_embedder}')
-    data = _get_gold_data(subtask)[0]
+    data = _get_gold_data(subtask)
 
     gold_vector_file_path = f"../data/evaluation/vectors/{sentence_embedder}_id2vec.tsv"
     with open(gold_vector_file_path, "w") as fw:

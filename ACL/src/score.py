@@ -40,7 +40,7 @@ def _choose_definition(instance_gold, answer):
             overlap = _compute_lexical_overlap(definition, answer)
         definition2overlap[definition] = overlap
     sorted_candidates_scores = sorted(definition2overlap.items(), key=lambda item: item[1], reverse=True)
-    definition_ranks_infos = {"id":id_, "model_response":answer, "candidates":[e[0] for e in sorted_candidates_scores], "scores":[str(round(e[1],2)) for e in sorted_candidates_scores]}
+    definition_ranks_infos = {"id":id_, "gold_candidates": instance_gold["gold_definitions"], "model_response":answer, "candidates":[e[0] for e in sorted_candidates_scores], "scores":[str(round(e[1],2)) for e in sorted_candidates_scores]}
     return max(definition2overlap, key=definition2overlap.get), definition_ranks_infos
 
 def _get_gpt_answer_(instance_gold, answer):
@@ -101,7 +101,12 @@ def compute_scores(disambiguated_data_path:str):
     Returns:
         None
     """
+    print("Computing scores starting from LLM generated data...\n")
     if args.gpt_as_judge: global OPEN_AI_CLIENT; OPEN_AI_CLIENT = OpenAI()
+    if args.subtask == "generation" and args.gpt_as_judge is False: # we need to instatiate embedding vectors
+        global id2vec_gold, id2vec_disambiguated_data
+        id2vec_gold = _get_gold_data_vectors(args.sentence_embedder)
+        id2vec_disambiguated_data = _get_disambiguated_data_vectors(args.subtask, args.approach, args.shortcut_model_name, args.sentence_embedder, args.is_finetuned)
 
     gold_data = _get_gold_data(args.subtask)
     with open(disambiguated_data_path, "r") as json_file:
@@ -142,13 +147,14 @@ def compute_scores(disambiguated_data_path:str):
     assert correct+wrong == number_of_evaluation_instances
     
     # we create definition_ranks file at the end (in this way the next time we save time in doing the same computations)
-    definition_ranks_path = f"../data/{args.subtask}/{args.approach}/{args.shortcut_model_name}/definition_ranks.json"
-    _write_definition_ranks(definition_ranks_path, definition_ranks_list, args.gpt_as_judge)
+    definition_ranks_path = f"{disambiguated_data_path[:-11]}/definition_ranks.json"
+    if args.pos == "ALL": _write_definition_ranks(definition_ranks_path, definition_ranks_list, args.gpt_as_judge)
 
     # we finally print the scores
     _print_scores(true_labels, predicted_labels, number_of_evaluation_instances, correct, wrong)
 
 def compute_scores_from_file(definition_ranks_data):
+    print("Computing scores starting from definition_ranks.json file...\n")
     gold_data = _get_gold_data(args.subtask)
     assert len(gold_data) == len(definition_ranks_data)
 
@@ -220,19 +226,17 @@ if __name__ == "__main__":
 
     # particular handling if we are going to score a FINETUNED model
     disambiguated_data_path = f"../data/{args.subtask}/{args.approach}/"
-    if args.is_finetuned: disambiguated_data_path += f"finetuned_{args.shortcut_model_name}/output.json"
-    else: disambiguated_data_path += f"{args.shortcut_model_name}/output.json"
+    model_name = f"finetuned_{args.shortcut_model_name}" if args.is_finetuned else f"{args.shortcut_model_name}"
+    definition_ranks_path = f"{disambiguated_data_path}{model_name}/definition_ranks.json"
+    disambiguated_data_path += f"{model_name}/output.json"
 
     # when we want to perform Definition Generation using cosine similarity (we need to create vectors)
     # and the definition_ranks file has not been created yet
-    definition_ranks_path = f"../data/{args.subtask}/{args.approach}/{args.shortcut_model_name}/definition_ranks.json"
     if args.subtask == "generation" and args.gpt_as_judge is False and not os.path.isfile(definition_ranks_path):
         assert args.sentence_embedder in ["all-mpnet-base-v2", "all-MiniLM-L6-v2"]
         len_gold = len(_get_gold_data(args.subtask))
         _generate_gold_data_vectors(args.subtask, args.sentence_embedder)
         _generate_disambiguated_data_vectors(args.subtask, args.approach, args.shortcut_model_name, args.sentence_embedder, args.is_finetuned, disambiguated_data_path, len_gold)
-        id2vec_gold = _get_gold_data_vectors(args.sentence_embedder)
-        id2vec_disambiguated_data = _get_disambiguated_data_vectors(args.subtask, args.approach, args.shortcut_model_name, args.sentence_embedder, args.is_finetuned)
     
     # different scenarios: 
     # 1) if definition_ranks file already exists
