@@ -53,7 +53,7 @@
     },
     {
         "instance_id": "senseval2.d000.s003.t006",
-        "answer": "**stone** -  a solid, hard, and usually rough-textured material made of rock or mineral."
+        "answer": "**stone** - a solid, hard, and usually rough-textured material made of rock or mineral."
     },
     {
         "instance_id": "senseval2.d000.s003.t007",
@@ -145,7 +145,7 @@
     },
     {
         "instance_id": "senseval2.d000.s005.t008",
-        "answer": "**Bells:**  A metal object, typically made of bronze or steel, that produces a ringing sound when struck or shaken"
+        "answer": "**Bells:**  A metal object, typically shaped like a hollow, circular disc, that produces a ringing sound when struck"
     },
     {
         "instance_id": "senseval2.d000.s005.t009",
@@ -169,7 +169,7 @@
     },
     {
         "instance_id": "senseval2.d000.s006.t005",
-        "answer": "**enjoying** - to experience pleasure or satisfaction from something."
+        "answer": "**enjoying** (verb) - to experience pleasure or satisfaction from something."
     },
     {
         "instance_id": "senseval2.d000.s006.t007",
@@ -245,7 +245,7 @@
     },
     {
         "instance_id": "senseval2.d000.s008.t004",
-        "answer": "**remains** -  (noun)  the thing that is left after something has been removed or finished."
+        "answer": "**remains** -  (noun)  the thing that is left after something has been taken away or finished."
     },
     {
         "instance_id": "senseval2.d000.s009.t000",
@@ -285,11 +285,11 @@
     },
     {
         "instance_id": "senseval2.d000.s010.t009",
-        "answer": "A building used for religious services."
+        "answer": "**Church** - A building used for religious services and gatherings."
     },
     {
         "instance_id": "senseval2.d000.s010.t010",
-        "answer": "A building used for religious services."
+        "answer": "**Church** - A building used for religious services and gatherings."
     },
     {
         "instance_id": "senseval2.d000.s010.t011",
@@ -313,7 +313,7 @@
     },
     {
         "instance_id": "senseval2.d000.s011.t001",
-        "answer": "**service** -  a task or function that is performed or provided."
+        "answer": "**service** - a task or function that is performed or provided."
     },
     {
         "instance_id": "senseval2.d000.s011.t002",
@@ -369,7 +369,7 @@
     },
     {
         "instance_id": "senseval2.d000.s013.t005",
-        "answer": "**Ranks** -  a position or level within a group or organization."
+        "answer": "**Ranks** -  a position or level in a group or organization."
     },
     {
         "instance_id": "senseval2.d000.s013.t006",
@@ -417,7 +417,7 @@
     },
     {
         "instance_id": "senseval2.d000.s015.t011",
-        "answer": "**rung** -  (verb) to strike a bell, especially a church bell, with a hammer."
+        "answer": "**rung** -  (verb) to sound the bell of a church or other bell tower."
     },
     {
         "instance_id": "senseval2.d000.s015.t012",
@@ -541,7 +541,7 @@
     },
     {
         "instance_id": "senseval2.d000.s019.t003",
-        "answer": "**rounds** -  a sequence of notes or sounds, typically in a musical piece, played in a specific order."
+        "answer": "**Rounds** - A sequence of musical notes played in a specific order, often in a descending pattern."
     },
     {
         "instance_id": "senseval2.d000.s019.t004",
@@ -605,7 +605,7 @@
     },
     {
         "instance_id": "senseval2.d000.s020.t007",
-        "answer": "**Sound** - The production of a musical or other audible vibration."
+        "answer": "**Sound** - The production of a musical or other audible wave that travels through a medium, such as air, water,"
     },
     {
         "instance_id": "senseval2.d000.s020.t008",
@@ -685,7 +685,7 @@
     },
     {
         "instance_id": "senseval2.d000.s024.t003",
-        "answer": "**Practice** -  a session of rehearsal or training, especially for a particular skill or activity."
+        "answer": "**Practice** -  a session of rehearsal or training, typically for a particular skill or activity."
     },
     {
         "instance_id": "senseval2.d000.s024.t004",
@@ -697,7 +697,7 @@
     },
     {
         "instance_id": "senseval2.d000.s024.t007",
-        "answer": "**idea** - a thought or image of something, a mental representation of something."
+        "answer": "**idea** - a thought, conception, or image of something."
     },
     {
         "instance_id": "senseval2.d000.s024.t008",
@@ -709,7 +709,7 @@
     },
     {
         "instance_id": "senseval2.d000.s025.t000",
-        "answer": "**Ringers:**  A person who performs a specific task, often in a repetitive or strenuous manner."
+        "answer": "**Ringers:**  A person who performs a specific task, often repetitive and demanding, in a particular setting."
     },
     {
         "instance_id": "senseval2.d000.s025.t001",
@@ -793,7 +793,7 @@
     },
     {
         "instance_id": "senseval2.d000.s027.t001",
-        "answer": "**Absorbed** - completely engrossed or preoccupied with something, unable to think of anything else."
+        "answer": "**Absorbed** - completely engrossed or preoccupied with something."
     },
     {
         "instance_id": "senseval2.d000.s027.t002",
@@ -825,7 +825,7 @@
     },
     {
         "instance_id": "senseval2.d000.s027.t010",
-        "answer": "**Other** -  (in this context)  a second or additional rope, or ropes that are not the primary rope"
+        "answer": "**Other** -  (in this context)  a second or additional rope, or ropes that are not the one being"
     },
     {
         "instance_id": "senseval2.d000.s027.t011",
@@ -993,7 +993,7 @@
     },
     {
         "instance_id": "senseval2.d000.s031.t002",
-        "answer": "**filled** (verb) - to be completely or abundantly occupied or contained by something."
+        "answer": "**filled** (verb): to be completely or abundantly occupied or contained by something."
     },
     {
         "instance_id": "senseval2.d000.s031.t003",
@@ -1005,7 +1005,7 @@
     },
     {
         "instance_id": "senseval2.d000.s031.t006",
-        "answer": "**Ritual:** A set of established and often formalized actions or ceremonies that are performed in a particular way, typically with religious or"
+        "answer": "**Ritual:** A set of established practices or ceremonies that are performed in a specific order and with particular meanings."
     },
     {
         "instance_id": "senseval2.d000.s031.t008",
@@ -1013,7 +1013,7 @@
     },
     {
         "instance_id": "senseval2.d000.s032.t000",
-        "answer": "**become****Definition:**  to change or develop into something else over time."
+        "answer": "**become** - to change or develop into something else over time."
     },
     {
         "instance_id": "senseval2.d000.s032.t002",
@@ -1049,7 +1049,7 @@
     },
     {
         "instance_id": "senseval2.d000.s033.t003",
-        "answer": "**Tower:** A tall, often slender structure, typically with a pointed top, used for various purposes such as defense, observation"
+        "answer": "**Tower:** A tall, freestanding structure, often with a narrow top, used for various purposes such as observation, defense,"
     },
     {
         "instance_id": "senseval2.d000.s033.t004",
@@ -1093,7 +1093,7 @@
     },
     {
         "instance_id": "senseval2.d000.s035.t004",
-        "answer": "**Ringers** -  A person who is a substitute or temporary replacement for a regular performer or worker."
+        "answer": "**Ringers** -  A person who is a substitute or temporary replacement for a regular player or performer."
     },
     {
         "instance_id": "senseval2.d000.s035.t005",
@@ -1217,7 +1217,7 @@
     },
     {
         "instance_id": "senseval2.d000.s039.t002",
-        "answer": "**Tower:** A tall, often fortified structure, typically with a narrow, circular or square shape, used for defense, observation"
+        "answer": "**Tower:** A tall, often freestanding structure, typically with a pointed top, used for various purposes such as defense, observation"
     },
     {
         "instance_id": "senseval2.d000.s039.t003",
@@ -1285,7 +1285,7 @@
     },
     {
         "instance_id": "senseval2.d000.s043.t001",
-        "answer": "**Refuses** -  to decline to do something or to accept something."
+        "answer": "**Refuse** - to decline to accept or comply with something."
     },
     {
         "instance_id": "senseval2.d000.s043.t002",
@@ -1345,7 +1345,7 @@
     },
     {
         "instance_id": "senseval2.d000.s045.t012",
-        "answer": "**very** -  to a great extent; extremely; intensely."
+        "answer": "**very** -  to a great extent; extremely; intensely"
     },
     {
         "instance_id": "senseval2.d000.s045.t014",
@@ -1353,7 +1353,7 @@
     },
     {
         "instance_id": "senseval2.d000.s045.t015",
-        "answer": "A group of people gathered for religious worship or a religious service."
+        "answer": "**Congregation** - A group of people gathered together for religious worship or a common purpose."
     },
     {
         "instance_id": "senseval2.d000.s045.t016",
@@ -1361,7 +1361,7 @@
     },
     {
         "instance_id": "senseval2.d000.s045.t017",
-        "answer": "**says** -  verb: to speak or utter words."
+        "answer": "**says** -  verb: to speak or express something, typically in a spoken or written form."
     },
     {
         "instance_id": "senseval2.d000.s046.t000",
@@ -1509,7 +1509,7 @@
     },
     {
         "instance_id": "senseval2.d000.s050.t011",
-        "answer": "**Country** -  A large, geographically defined area, typically with a distinct culture, government, and economy."
+        "answer": "**Country** -  A large, usually rural area, often with a distinct culture or identity."
     },
     {
         "instance_id": "senseval2.d000.s050.t012",
@@ -1673,7 +1673,7 @@
     },
     {
         "instance_id": "senseval2.d000.s056.t007",
-        "answer": "**adds** - verb: to join or include something to a larger whole."
+        "answer": "**Adds** - Verb: To join or include something to a larger whole."
     },
     {
         "instance_id": "senseval2.d000.s057.t000",
@@ -1721,11 +1721,11 @@
     },
     {
         "instance_id": "senseval2.d000.s058.t000",
-        "answer": "**accepted** (verb) - to receive or agree to something, to be considered valid or legitimate."
+        "answer": "**accepted** (verb): to receive or allow something to be used, employed, or considered as valid or appropriate."
     },
     {
         "instance_id": "senseval2.d000.s058.t002",
-        "answer": "**however*** **conjunction:**  used to introduce a contrasting or contrasting idea, often introducing a qualification or exception"
+        "answer": "**however*** **conjunction:**  used to introduce a contrasting or contrasting idea, often introducing a statement that modifies"
     },
     {
         "instance_id": "senseval2.d000.s059.t000",
@@ -1773,7 +1773,7 @@
     },
     {
         "instance_id": "senseval2.d000.s059.t015",
-        "answer": "**churches** -  buildings used for religious worship."
+        "answer": "**churches** -  buildings used for religious worship and services."
     },
     {
         "instance_id": "senseval2.d000.s060.t001",
@@ -1837,7 +1837,7 @@
     },
     {
         "instance_id": "senseval2.d000.s061.t006",
-        "answer": "**remarked** -  to make a comment or statement about something."
+        "answer": "**remarked** - to make a comment or statement about something."
     },
     {
         "instance_id": "senseval2.d000.s061.t007",
@@ -1957,7 +1957,7 @@
     },
     {
         "instance_id": "senseval2.d000.s063.t008",
-        "answer": "**Belfry:**  A tower or room in a church or other building, typically at the highest point, used for storing"
+        "answer": "**Belfry:**  A tower or room in a church or other building, typically used for storing bells."
     },
     {
         "instance_id": "senseval2.d000.s064.t000",
@@ -2021,7 +2021,7 @@
     },
     {
         "instance_id": "senseval2.d001.s001.t004",
-        "answer": "**Recent** -  happening or occurring at or during a relatively short period of time."
+        "answer": "**Recent** -  happening or occurring at or during a time that is not far in the past."
     },
     {
         "instance_id": "senseval2.d001.s001.t005",
@@ -2037,7 +2037,7 @@
     },
     {
         "instance_id": "senseval2.d001.s001.t010",
-        "answer": "**develops** - to come into existence or become more advanced or complex over time."
+        "answer": "**Develops** -  to come into existence or become more advanced or complex over time."
     },
     {
         "instance_id": "senseval2.d001.s002.t001",
@@ -2077,7 +2077,7 @@
     },
     {
         "instance_id": "senseval2.d001.s003.t000",
-        "answer": "**future** *noun*the time that comes after the present; a time period yet to happen."
+        "answer": "**future** *noun*the time that comes after the present; a time to be expected or anticipated."
     },
     {
         "instance_id": "senseval2.d001.s004.t002",
@@ -2249,7 +2249,7 @@
     },
     {
         "instance_id": "senseval2.d001.s010.t011",
-        "answer": "**work** (verb): to perform a function or task."
+        "answer": "**work** - to perform a function or task."
     },
     {
         "instance_id": "senseval2.d001.s010.t012",
@@ -2321,7 +2321,7 @@
     },
     {
         "instance_id": "senseval2.d001.s012.t013",
-        "answer": "**Cancer** - A group of diseases characterized by the uncontrolled growth and spread of abnormal cells in the body."
+        "answer": "**Cancer** - A group of diseases characterized by the uncontrolled growth and spread of abnormal cells."
     },
     {
         "instance_id": "senseval2.d001.s013.t000",
@@ -2449,7 +2449,7 @@
     },
     {
         "instance_id": "senseval2.d001.s016.t012",
-        "answer": "**only** -  in a limited or exclusive way; not any other thing or person."
+        "answer": "**Only** -  (adverb)  in a limited or exclusive way; specifically; not in any other way."
     },
     {
         "instance_id": "senseval2.d001.s016.t013",
@@ -2505,11 +2505,11 @@
     },
     {
         "instance_id": "senseval2.d001.s018.t000",
-        "answer": "**First** -  coming or occurring before others in order or sequence."
+        "answer": "**First** -  (adjective)  Coming or occurring first in order or sequence."
     },
     {
         "instance_id": "senseval2.d001.s018.t001",
-        "answer": "**Beneficiaries** - persons or groups who are the recipients of something, especially a benefit or advantage."
+        "answer": "**Beneficiaries** -  persons or groups who are the recipients of something, especially a benefit or advantage."
     },
     {
         "instance_id": "senseval2.d001.s018.t002",
@@ -2565,7 +2565,7 @@
     },
     {
         "instance_id": "senseval2.d001.s019.t013",
-        "answer": "**About** -  to the extent of, approximately, roughly."
+        "answer": "**About** -  to the extent of, approximately, or roughly."
     },
     {
         "instance_id": "senseval2.d001.s019.t014",
@@ -2581,7 +2581,7 @@
     },
     {
         "instance_id": "senseval2.d001.s020.t001",
-        "answer": "**Carried** -  to have or possess something, especially a physical or genetic trait."
+        "answer": "**Carried** -  to have or possess something, especially a genetic trait or characteristic."
     },
     {
         "instance_id": "senseval2.d001.s020.t002",
@@ -2645,7 +2645,7 @@
     },
     {
         "instance_id": "senseval2.d001.s021.t009",
-        "answer": "A young human being, typically under the age of 18, especially one that is still in infancy."
+        "answer": "A young human being, typically under the age of 18, especially one that is still in its infancy."
     },
     {
         "instance_id": "senseval2.d001.s021.t010",
@@ -2753,7 +2753,7 @@
     },
     {
         "instance_id": "senseval2.d001.s025.t007",
-        "answer": "**Cell** - A microscopic, fundamental unit of life, typically microscopic, that is the basic structural and functional unit of all"
+        "answer": "**Cell** - A microscopic, fundamental unit of life, typically microscopic, that is the basic structural and functional unit of a"
     },
     {
         "instance_id": "senseval2.d001.s025.t008",
@@ -2821,7 +2821,7 @@
     },
     {
         "instance_id": "senseval2.d001.s026.t008",
-        "answer": "**Insights** -  A clear understanding or realization of something, especially something complex or difficult to understand."
+        "answer": "**Insights** -  A clear understanding or realization of something, especially something that is difficult to understand."
     },
     {
         "instance_id": "senseval2.d001.s026.t009",
@@ -2893,7 +2893,7 @@
     },
     {
         "instance_id": "senseval2.d001.s030.t002",
-        "answer": "**Spring** - a season of the year that occurs between the end of winter and the beginning of summer."
+        "answer": "**Spring** - a season of the year characterized by the growth of plants and animals, typically from late winter to early summer"
     },
     {
         "instance_id": "senseval2.d001.s030.t004",
@@ -2901,7 +2901,7 @@
     },
     {
         "instance_id": "senseval2.d001.s030.t005",
-        "answer": "**Finding** -  The act of discovering or locating something, especially something that is hidden or difficult to find."
+        "answer": "**Finding** -  to discover or locate something, especially something that is hidden or difficult to find."
     },
     {
         "instance_id": "senseval2.d001.s030.t007",
@@ -2925,7 +2925,7 @@
     },
     {
         "instance_id": "senseval2.d001.s030.t012",
-        "answer": "**Cells** - The basic, fundamental unit of life, typically microscopic, that consists of a membrane-bound nucleus and cytoplasm"
+        "answer": "**Cells** - The basic unit of structure and function in all living organisms."
     },
     {
         "instance_id": "senseval2.d001.s030.t013",
@@ -2953,7 +2953,7 @@
     },
     {
         "instance_id": "senseval2.d001.s031.t007",
-        "answer": "**Damaged** -  (adjective)  Having been impaired or broken, often in a way that affects its function."
+        "answer": "**Damaged** -  (adjective)  Having been impaired or broken, often in a way that makes it less effective or"
     },
     {
         "instance_id": "senseval2.d001.s031.t009",
@@ -2969,7 +2969,7 @@
     },
     {
         "instance_id": "senseval2.d001.s032.t005",
-        "answer": "**Common** -  occurring or found frequently; prevalent."
+        "answer": "**Common** -  occurring or found frequently; widespread."
     },
     {
         "instance_id": "senseval2.d001.s032.t007",
@@ -2997,11 +2997,11 @@
     },
     {
         "instance_id": "senseval2.d001.s033.t002",
-        "answer": "**about** -  (adverb) indicating a quantity or number that is not precisely known or specified."
+        "answer": "**about** -  (adverb) indicating a quantity or number that is approximately or roughly equal to a certain number."
     },
     {
         "instance_id": "senseval2.d001.s033.t004",
-        "answer": "**laboratories** -  places where scientific experiments are conducted, often equipped with specialized equipment and staffed by scientists."
+        "answer": "**laboratories** -  places where scientific experiments are conducted, often equipped with specialized equipment and facilities for research and analysis."
     },
     {
         "instance_id": "senseval2.d001.s033.t005",
@@ -3021,7 +3021,7 @@
     },
     {
         "instance_id": "senseval2.d001.s035.t001",
-        "answer": "**Say** - to express something, typically by speaking or writing."
+        "answer": "**Say** - to express something verbally or in writing."
     },
     {
         "instance_id": "senseval2.d001.s035.t003",
@@ -3157,7 +3157,7 @@
     },
     {
         "instance_id": "senseval2.d001.s038.t004",
-        "answer": "**Inherited** - passed down or transmitted from one generation to the next."
+        "answer": "**Inherited** - passed down or transmitted from a parent or ancestor to an offspring."
     },
     {
         "instance_id": "senseval2.d001.s038.t005",
@@ -3229,7 +3229,7 @@
     },
     {
         "instance_id": "senseval2.d001.s041.t008",
-        "answer": "**See** - To perceive with the eyes or with the aid of a device."
+        "answer": "**See** - To perceive with the eyes or by other sensory organs."
     },
     {
         "instance_id": "senseval2.d001.s041.t009",
@@ -3273,7 +3273,7 @@
     },
     {
         "instance_id": "senseval2.d001.s043.t004",
-        "answer": "**Inherited:**  Passed down from one generation to the next, typically from a parent to a child."
+        "answer": "**Inherited:**  Passed down from one generation to the next through genes or genetic material."
     },
     {
         "instance_id": "senseval2.d001.s043.t005",
@@ -3309,7 +3309,7 @@
     },
     {
         "instance_id": "senseval2.d001.s045.t003",
-        "answer": "**contained****Definition:**  to have or hold something inside or within a particular space or area."
+        "answer": "**contained****Definition:**  to have or hold something within a particular space or area."
     },
     {
         "instance_id": "senseval2.d001.s045.t006",
@@ -3337,7 +3337,7 @@
     },
     {
         "instance_id": "senseval2.d001.s047.t000",
-        "answer": "**Then*** **Definition:**  At a subsequent time or point in time."
+        "answer": "**Then*** **adv:**  At a subsequent time; afterward."
     },
     {
         "instance_id": "senseval2.d001.s047.t001",
@@ -3365,7 +3365,7 @@
     },
     {
         "instance_id": "senseval2.d001.s048.t000",
-        "answer": "A group of people working together on a particular task or project."
+        "answer": "**Team** - A group of people working together toward a common goal."
     },
     {
         "instance_id": "senseval2.d001.s048.t001",
@@ -3373,7 +3373,7 @@
     },
     {
         "instance_id": "senseval2.d001.s048.t002",
-        "answer": "A battery (noun): A group of things that are used together to do a particular task."
+        "answer": "A battery is a collection of multiple items, often of the same type, used together for a specific purpose."
     },
     {
         "instance_id": "senseval2.d001.s048.t004",
@@ -3417,7 +3417,7 @@
     },
     {
         "instance_id": "senseval2.d001.s049.t006",
-        "answer": "**defects** -  a flaw or imperfection in the structure or function of something."
+        "answer": "**defects** -  abnormalities or imperfections in the structure or function of something."
     },
     {
         "instance_id": "senseval2.d001.s049.t007",
@@ -3481,7 +3481,7 @@
     },
     {
         "instance_id": "senseval2.d001.s051.t009",
-        "answer": "**Cancer** - A group of diseases characterized by the uncontrolled growth and spread of abnormal cells in the body."
+        "answer": "**Cancer** -  A group of diseases characterized by the uncontrolled growth and spread of abnormal cells in the body."
     },
     {
         "instance_id": "senseval2.d001.s052.t001",
@@ -3545,7 +3545,7 @@
     },
     {
         "instance_id": "senseval2.d001.s055.t009",
-        "answer": "**Other** -  (adjective)  Not the one that is being specifically mentioned or referred to."
+        "answer": "**Other** -  (adjective)  Not the one that is being specifically mentioned or considered."
     },
     {
         "instance_id": "senseval2.d001.s055.t010",
@@ -3633,7 +3633,7 @@
     },
     {
         "instance_id": "senseval2.d001.s058.t011",
-        "answer": "**Stages** -  Different phases or levels of development or progression of something, especially a disease or process."
+        "answer": "**Stages** -  Different phases or levels of development or progression of a process or condition."
     },
     {
         "instance_id": "senseval2.d001.s059.t000",
@@ -3661,7 +3661,7 @@
     },
     {
         "instance_id": "senseval2.d001.s059.t010",
-        "answer": "**stages** -  distinct and sequential parts or levels of development or progression."
+        "answer": "**stages** -  distinct and sequential parts or phases of a process or development."
     },
     {
         "instance_id": "senseval2.d001.s059.t011",
@@ -3833,7 +3833,7 @@
     },
     {
         "instance_id": "senseval2.d001.s065.t000",
-        "answer": "**clear** - (adjective)  easily understood or perceived; evident; demonstrably true."
+        "answer": "**clear** -  (adjective)  easily understood or perceived; evident; demonstrably true."
     },
     {
         "instance_id": "senseval2.d001.s065.t003",
@@ -3853,7 +3853,7 @@
     },
     {
         "instance_id": "senseval2.d001.s066.t002",
-        "answer": "**Other** -  (used to refer to something that is different from something else)"
+        "answer": "**Other** -  (adverb)  in a different group or category; not the same as something else."
     },
     {
         "instance_id": "senseval2.d001.s067.t000",
@@ -3885,7 +3885,7 @@
     },
     {
         "instance_id": "senseval2.d001.s067.t009",
-        "answer": "**says****Definition:**  A verb meaning to express something, typically a statement or opinion, in spoken or written"
+        "answer": "**says** -  verb: to express something, typically a statement or opinion, in spoken or written form."
     },
     {
         "instance_id": "senseval2.d001.s068.t000",
@@ -4053,7 +4053,7 @@
     },
     {
         "instance_id": "senseval2.d001.s073.t016",
-        "answer": "**ones** -  (plural of one)  a singular noun referring to a specific thing or person."
+        "answer": "**ones** -  (plural of \"one\")  a single thing or person, or a specific instance of something."
     },
     {
         "instance_id": "senseval2.d001.s074.t000",
@@ -4065,7 +4065,7 @@
     },
     {
         "instance_id": "senseval2.d001.s074.t002",
-        "answer": "**same** -  (adjective)  being or situated in the same place or position."
+        "answer": "**same** -  (adjective)  being or situated in the same place or position; identical."
     },
     {
         "instance_id": "senseval2.d001.s074.t003",
@@ -4081,7 +4081,7 @@
     },
     {
         "instance_id": "senseval2.d001.s075.t003",
-        "answer": "**Cancer** -  A group of diseases characterized by the uncontrolled growth and spread of abnormal cells."
+        "answer": "**Cancer** - A group of diseases characterized by the uncontrolled growth and spread of abnormal cells."
     },
     {
         "instance_id": "senseval2.d001.s075.t004",
@@ -4217,7 +4217,7 @@
     },
     {
         "instance_id": "senseval2.d001.s079.t004",
-        "answer": "A copy:  A complete set of genetic material, such as a chromosome, that is identical to another."
+        "answer": "A copy:  A complete and identical version of a gene or other genetic material."
     },
     {
         "instance_id": "senseval2.d001.s079.t007",
@@ -4353,7 +4353,7 @@
     },
     {
         "instance_id": "senseval2.d001.s085.t004",
-        "answer": "**involved** -  connected with or affected by something."
+        "answer": "**involved** -  (adjective)  connected with or affected by something."
     },
     {
         "instance_id": "senseval2.d001.s086.t001",
@@ -4433,7 +4433,7 @@
     },
     {
         "instance_id": "senseval2.d001.s090.t001",
-        "answer": "**Major** -  of great importance or significance; important or substantial."
+        "answer": "**Major** -  of great importance or significance."
     },
     {
         "instance_id": "senseval2.d001.s090.t004",
@@ -4449,7 +4449,7 @@
     },
     {
         "instance_id": "senseval2.d001.s090.t008",
-        "answer": "**Turn** - to make something change direction or form a new state."
+        "answer": "**Turn** - to make something change direction or form."
     },
     {
         "instance_id": "senseval2.d001.s090.t010",
@@ -4525,7 +4525,7 @@
     },
     {
         "instance_id": "senseval2.d001.s093.t005",
-        "answer": "**versions** -  a different form or edition of something, especially a different version of a gene."
+        "answer": "**versions** -  a particular form or edition of something, especially a different version of a gene or a piece of software"
     },
     {
         "instance_id": "senseval2.d001.s093.t006",
@@ -4545,7 +4545,7 @@
     },
     {
         "instance_id": "senseval2.d001.s094.t004",
-        "answer": "**most** -  (adverb) to the greatest extent or degree; in the highest or most significant amount or degree"
+        "answer": "**most** -  (adverb) to the greatest extent or degree; the highest or most significant."
     },
     {
         "instance_id": "senseval2.d001.s094.t005",
@@ -4637,7 +4637,7 @@
     },
     {
         "instance_id": "senseval2.d002.s003.t018",
-        "answer": "**Interests** -  things that are important to someone or something, especially things that they are interested in or concerned about."
+        "answer": "**Interests** -  The things that someone values or desires, especially those that are important to them."
     },
     {
         "instance_id": "senseval2.d002.s004.t000",
@@ -4705,7 +4705,7 @@
     },
     {
         "instance_id": "senseval2.d002.s006.t003",
-        "answer": "**Parents** -  A person who is the legal guardian or custodian of a child."
+        "answer": "**Parents** -  A person who has the legal or social responsibility for the upbringing and care of a child."
     },
     {
         "instance_id": "senseval2.d002.s006.t004",
@@ -4721,7 +4721,7 @@
     },
     {
         "instance_id": "senseval2.d002.s006.t009",
-        "answer": "**Answer** -  A response or reply to a question."
+        "answer": "**Answer** - A response or reply to a question."
     },
     {
         "instance_id": "senseval2.d002.s007.t000",
@@ -4749,7 +4749,7 @@
     },
     {
         "instance_id": "senseval2.d002.s010.t002",
-        "answer": "**Young** -  (adjective)  Relating to or characteristic of a person who is young, typically in the period"
+        "answer": "**Young** - (adjective)  Relating to or characteristic of a person who is young, typically in the period of"
     },
     {
         "instance_id": "senseval2.d002.s010.t003",
@@ -4773,7 +4773,7 @@
     },
     {
         "instance_id": "senseval2.d002.s010.t010",
-        "answer": "**opinion** - a belief or judgment about something, often formed without sufficient evidence or based on personal feelings."
+        "answer": "**opinion** - a belief or judgment about something, often formed without complete knowledge or evidence."
     },
     {
         "instance_id": "senseval2.d002.s011.t000",
@@ -4793,7 +4793,7 @@
     },
     {
         "instance_id": "senseval2.d002.s011.t005",
-        "answer": "**Rebellion** -  a violent or open resistance to authority or established order."
+        "answer": "**Rebellion** -  a violent or open resistance to authority or an established order."
     },
     {
         "instance_id": "senseval2.d002.s011.t006",
@@ -4801,7 +4801,7 @@
     },
     {
         "instance_id": "senseval2.d002.s011.t007",
-        "answer": "**Instruction** - The act of teaching or guiding someone, especially in a particular subject or skill."
+        "answer": "**Instruction** - The act of teaching or guiding someone to learn or understand something."
     },
     {
         "instance_id": "senseval2.d002.s011.t009",
@@ -4885,7 +4885,7 @@
     },
     {
         "instance_id": "senseval2.d002.s013.t006",
-        "answer": "**Decent** -  of or relating to a standard of quality that is acceptable or satisfactory."
+        "answer": "**Decent** -  of a satisfactory or acceptable quality; not bad or poor."
     },
     {
         "instance_id": "senseval2.d002.s013.t007",
@@ -4949,7 +4949,7 @@
     },
     {
         "instance_id": "senseval2.d002.s015.t010",
-        "answer": "**share** (verb)**Definition:** To give or distribute something to others, especially in a way that is equal"
+        "answer": "**share** (verb)1. to give or distribute something to others, especially in a way that is equal or"
     },
     {
         "instance_id": "senseval2.d002.s016.t000",
@@ -5209,7 +5209,7 @@
     },
     {
         "instance_id": "senseval2.d002.s029.t000",
-        "answer": "**sense** -  a particular way in which something is understood or perceived."
+        "answer": "**sense** -  a particular way of understanding or interpreting something."
     },
     {
         "instance_id": "senseval2.d002.s029.t001",
@@ -5461,7 +5461,7 @@
     },
     {
         "instance_id": "senseval2.d002.s041.t001",
-        "answer": "**Majority** -  the largest number of something."
+        "answer": "**Majority** -  the largest number of something, or the greater part of a group."
     },
     {
         "instance_id": "senseval2.d002.s041.t003",
@@ -5533,7 +5533,7 @@
     },
     {
         "instance_id": "senseval2.d002.s044.t003",
-        "answer": "**Conventional** -  (adjective)  Following or conforming to established standards, customs, or practices."
+        "answer": "**Conventional** -  (adjective)  Following or conforming to generally accepted standards or practices."
     },
     {
         "instance_id": "senseval2.d002.s044.t004",
@@ -5613,7 +5613,7 @@
     },
     {
         "instance_id": "senseval2.d002.s047.t004",
-        "answer": "**system** - a set of related parts working together as a unified whole."
+        "answer": "**system** - a set of related parts working together as a whole."
     },
     {
         "instance_id": "senseval2.d002.s048.t000",
@@ -5653,7 +5653,7 @@
     },
     {
         "instance_id": "senseval2.d002.s049.t005",
-        "answer": "**improves** - to become better or more favorable."
+        "answer": "**improves** - to make something better or more favorable."
     },
     {
         "instance_id": "senseval2.d002.s049.t006",
@@ -5721,11 +5721,11 @@
     },
     {
         "instance_id": "senseval2.d002.s050.t010",
-        "answer": "**idea** -  a thought, plan, or concept."
+        "answer": "**idea** -  a thought, plan, or concept that is formed in the mind."
     },
     {
         "instance_id": "senseval2.d002.s051.t000",
-        "answer": "**Parents** -  Adults who are the biological or legal guardians of a child."
+        "answer": "**Parents** -  Adults who are responsible for the upbringing and care of their children."
     },
     {
         "instance_id": "senseval2.d002.s051.t001",
@@ -5777,7 +5777,7 @@
     },
     {
         "instance_id": "senseval2.d002.s053.t000",
-        "answer": "**see** - to pay attention to something or someone, to make sure that something happens."
+        "answer": "**see** - to pay attention to something or someone, to make sure that something happens or is done."
     },
     {
         "instance_id": "senseval2.d002.s053.t001",
@@ -5793,11 +5793,11 @@
     },
     {
         "instance_id": "senseval2.d002.s053.t007",
-        "answer": "**spend** - to use or devote time or money on something."
+        "answer": "**spend** - to use (time, money, or effort) in a particular way."
     },
     {
         "instance_id": "senseval2.d002.s053.t009",
-        "answer": "**Time** - A period of existence or duration, often measured in units like seconds, minutes, hours, or days."
+        "answer": "**Time** -  A period of existence or duration, especially a period of time that is measured or counted."
     },
     {
         "instance_id": "senseval2.d002.s053.t011",
@@ -5873,11 +5873,11 @@
     },
     {
         "instance_id": "senseval2.d002.s057.t013",
-        "answer": "**Politician** - A person who is involved in politics, especially one who holds public office."
+        "answer": "**Politician:** A person who is involved in politics, especially one who holds public office."
     },
     {
         "instance_id": "senseval2.d002.s057.t015",
-        "answer": "**Politician** - A person who is involved in politics, especially one who holds public office."
+        "answer": "**Politician:** A person who is involved in politics, especially one who holds public office."
     },
     {
         "instance_id": "senseval2.d002.s058.t000",
@@ -5953,7 +5953,7 @@
     },
     {
         "instance_id": "senseval2.d002.s060.t000",
-        "answer": "**Reason** -  a statement or explanation that provides a logical basis for an action or belief."
+        "answer": "**Reason** -  a thought or explanation that shows why something is true or should be done."
     },
     {
         "instance_id": "senseval2.d002.s060.t001",
@@ -6125,7 +6125,7 @@
     },
     {
         "instance_id": "senseval2.d002.s065.t001",
-        "answer": "**Educational** - relating to or concerned with the process of learning and acquiring knowledge, skills, and abilities."
+        "answer": "**Educational** - relating to or concerned with the process of learning and acquiring knowledge or skills."
     },
     {
         "instance_id": "senseval2.d002.s065.t002",
@@ -6133,7 +6133,7 @@
     },
     {
         "instance_id": "senseval2.d002.s065.t003",
-        "answer": "**Potential** - the ability or capacity to do something; the possibility of something happening or being achieved."
+        "answer": "**Potential** - the ability or capacity to develop or become something in the future."
     },
     {
         "instance_id": "senseval2.d002.s065.t004",
@@ -6149,7 +6149,7 @@
     },
     {
         "instance_id": "senseval2.d002.s066.t002",
-        "answer": "**Graduated** -  to complete a course of study or training, typically at a school or educational institution, and receive a"
+        "answer": "**Graduated** -  To complete a course of study or a period of instruction, typically at a school or educational institution,"
     },
     {
         "instance_id": "senseval2.d002.s066.t004",
@@ -6213,7 +6213,7 @@
     },
     {
         "instance_id": "senseval2.d002.s067.t015",
-        "answer": "**entering** - to move into or become involved in something."
+        "answer": "**entering** - to come into or become involved in something."
     },
     {
         "instance_id": "senseval2.d002.s067.t017",
@@ -6301,7 +6301,7 @@
     },
     {
         "instance_id": "senseval2.d002.s071.t005",
-        "answer": "**rather****Definition:**  * **adv.**  in preference to something else; as a more suitable or"
+        "answer": "**rather****Definition:**  * **adv.**  in preference to something else; more preferable."
     },
     {
         "instance_id": "senseval2.d002.s071.t006",
@@ -6313,7 +6313,7 @@
     },
     {
         "instance_id": "senseval2.d002.s072.t003",
-        "answer": "**often** - frequently or habitually."
+        "answer": "**often** -  frequently or habitually."
     },
     {
         "instance_id": "senseval2.d002.s073.t000",
@@ -6337,7 +6337,7 @@
     },
     {
         "instance_id": "senseval2.d002.s074.t000",
-        "answer": "**Reasons** -  The things that cause or contribute to something."
+        "answer": "**Reasons** -  the things that cause something to happen or exist."
     },
     {
         "instance_id": "senseval2.d002.s074.t001",
@@ -6577,7 +6577,7 @@
     },
     {
         "instance_id": "senseval2.d002.s081.t000",
-        "answer": "**publishes** - to make something available to the public, typically by printing or distributing it."
+        "answer": "**publishes** - to make something (a book, magazine, newspaper, etc.) available to the public for sale or"
     },
     {
         "instance_id": "senseval3.d000.s000.t000",
@@ -6585,7 +6585,7 @@
     },
     {
         "instance_id": "senseval3.d000.s001.t002",
-        "answer": "**Bleary** -  (adjective)  marked by or causing blurred vision; hazy or unclear."
+        "answer": "**Bleary** -  (adjective)  blurred or hazy, often due to tiredness or lack of sleep."
     },
     {
         "instance_id": "senseval3.d000.s001.t003",
@@ -6665,7 +6665,7 @@
     },
     {
         "instance_id": "senseval3.d000.s006.t000",
-        "answer": "**Eyes** -  The organs of sight, located in the head, that allow a person or animal to perceive light and"
+        "answer": "**Eyes** -  The organs of sight, located on the face, that allow a person or animal to perceive light and"
     },
     {
         "instance_id": "senseval3.d000.s006.t002",
@@ -6681,7 +6681,7 @@
     },
     {
         "instance_id": "senseval3.d000.s006.t005",
-        "answer": "**Cold** - lacking warmth, feeling or showing no emotion."
+        "answer": "**Cold** - lacking warmth or heat; not warm; lacking in feeling or emotion."
     },
     {
         "instance_id": "senseval3.d000.s006.t006",
@@ -6693,7 +6693,7 @@
     },
     {
         "instance_id": "senseval3.d000.s007.t000",
-        "answer": "**noticed** (verb) - to become aware of something, especially something that was previously unknown or not previously perceived."
+        "answer": "**noticed** (verb) - to become aware of something, especially something that was previously unknown or not obvious."
     },
     {
         "instance_id": "senseval3.d000.s008.t000",
@@ -6705,7 +6705,7 @@
     },
     {
         "instance_id": "senseval3.d000.s009.t000",
-        "answer": "**wondered** (verb) - to think about something in a thoughtful or curious way, often with uncertainty or doubt."
+        "answer": "**wondered** -  to be filled with curiosity or uncertainty about something."
     },
     {
         "instance_id": "senseval3.d000.s009.t001",
@@ -6773,7 +6773,7 @@
     },
     {
         "instance_id": "senseval3.d000.s013.t000",
-        "answer": "**Brakes** -  Devices that apply friction to a vehicle's wheels to slow it down or stop it."
+        "answer": "**Brakes** -  Devices that apply friction to a moving vehicle to slow it down or stop it."
     },
     {
         "instance_id": "senseval3.d000.s013.t001",
@@ -6833,7 +6833,7 @@
     },
     {
         "instance_id": "senseval3.d000.s016.t003",
-        "answer": "A large vehicle with a cab for carrying people or goods, typically powered by an engine."
+        "answer": "A large vehicle with a cab for carrying people and cargo, typically powered by an engine."
     },
     {
         "instance_id": "senseval3.d000.s016.t005",
@@ -6841,7 +6841,7 @@
     },
     {
         "instance_id": "senseval3.d000.s016.t006",
-        "answer": "**Angry** - Feeling or showing strong displeasure or hostility."
+        "answer": "**Angry** - Feeling or showing displeasure or hostility; feeling or showing a strong feeling of displeasure or resentment."
     },
     {
         "instance_id": "senseval3.d000.s016.t007",
@@ -6949,7 +6949,7 @@
     },
     {
         "instance_id": "senseval3.d000.s020.t004",
-        "answer": "**heel** (noun) - the back part of the foot, especially when it is used to support the body."
+        "answer": "**heel** -  the back part of the foot, especially when it is used to support the body when walking or standing"
     },
     {
         "instance_id": "senseval3.d000.s020.t005",
@@ -6957,7 +6957,7 @@
     },
     {
         "instance_id": "senseval3.d000.s021.t000",
-        "answer": "**Given****Definition:**  To consider or think about something."
+        "answer": "**Given****Definition:**  To consider or think about something, especially in a particular way or with a particular purpose"
     },
     {
         "instance_id": "senseval3.d000.s021.t002",
@@ -6969,7 +6969,7 @@
     },
     {
         "instance_id": "senseval3.d000.s022.t000",
-        "answer": "**Recall****Definition:** To bring to mind or remember something."
+        "answer": "**Recall****Definition:** To bring something to mind; to remember."
     },
     {
         "instance_id": "senseval3.d000.s022.t001",
@@ -7005,7 +7005,7 @@
     },
     {
         "instance_id": "senseval3.d000.s023.t005",
-        "answer": "**Word** - A unit of language that is used to express a thought or idea."
+        "answer": "**Word** - A unit of language, consisting of a set of sounds or symbols that convey meaning."
     },
     {
         "instance_id": "senseval3.d000.s024.t000",
@@ -7037,7 +7037,7 @@
     },
     {
         "instance_id": "senseval3.d000.s025.t004",
-        "answer": "**Bars** -  Places that serve alcoholic beverages, often with a lively atmosphere and often featuring live music or entertainment."
+        "answer": "**Bars** -  Places that serve alcoholic beverages, often with a focus on socializing and entertainment."
     },
     {
         "instance_id": "senseval3.d000.s025.t005",
@@ -7053,7 +7053,7 @@
     },
     {
         "instance_id": "senseval3.d000.s025.t008",
-        "answer": "**drinks** - noun: alcoholic beverages, typically served in a bar or restaurant."
+        "answer": "**drinks** -  alcoholic beverages, typically served in a bar or restaurant."
     },
     {
         "instance_id": "senseval3.d000.s026.t000",
@@ -7101,7 +7101,7 @@
     },
     {
         "instance_id": "senseval3.d000.s027.t004",
-        "answer": "**Free** -  not costing money or being obligated to pay."
+        "answer": "**Free** -  not costing money or being subject to any obligation or restriction."
     },
     {
         "instance_id": "senseval3.d000.s027.t005",
@@ -7109,7 +7109,7 @@
     },
     {
         "instance_id": "senseval3.d000.s027.t006",
-        "answer": "**made** -  past tense of \"make\" This means to create or produce something."
+        "answer": "**made** -  to produce or create something, or to bring about a particular result."
     },
     {
         "instance_id": "senseval3.d000.s027.t007",
@@ -7133,7 +7133,7 @@
     },
     {
         "instance_id": "senseval3.d000.s030.t000",
-        "answer": "**take** (verb) - to accept or receive something, especially an offer or proposal."
+        "answer": "**take** (verb) - to accept or receive something, especially an offer or a suggestion."
     },
     {
         "instance_id": "senseval3.d000.s030.t001",
@@ -7153,7 +7153,7 @@
     },
     {
         "instance_id": "senseval3.d000.s031.t002",
-        "answer": "**realized** -  to become aware of something that was previously unknown or unclear."
+        "answer": "**realized** -  to become aware of something that was previously unknown or not fully understood."
     },
     {
         "instance_id": "senseval3.d000.s031.t003",
@@ -7169,7 +7169,7 @@
     },
     {
         "instance_id": "senseval3.d000.s031.t007",
-        "answer": "**seem** - to appear to be or to have a particular quality or characteristic, but not necessarily be so."
+        "answer": "**seem** - to appear to be or to have a particular quality or characteristic, but not necessarily to be so."
     },
     {
         "instance_id": "senseval3.d000.s031.t008",
@@ -7205,7 +7205,7 @@
     },
     {
         "instance_id": "senseval3.d000.s035.t001",
-        "answer": "A crease: a line or mark made by folding or bending something."
+        "answer": "A crease: a line or fold in a surface, often caused by pressure or tension."
     },
     {
         "instance_id": "senseval3.d000.s035.t002",
@@ -7413,7 +7413,7 @@
     },
     {
         "instance_id": "senseval3.d000.s057.t001",
-        "answer": "**Study** -  to examine or investigate something carefully and systematically in order to gain knowledge or understanding."
+        "answer": "**Study** -  to examine or investigate something carefully in order to learn about it."
     },
     {
         "instance_id": "senseval3.d000.s057.t003",
@@ -7533,7 +7533,7 @@
     },
     {
         "instance_id": "senseval3.d000.s067.t002",
-        "answer": "**Time** - A period of existence, measured by a sequence of events, or a duration of something."
+        "answer": "**Time** - A duration or period of existence, often measured in units like seconds, minutes, hours, days, or"
     },
     {
         "instance_id": "senseval3.d000.s067.t003",
@@ -7553,7 +7553,7 @@
     },
     {
         "instance_id": "senseval3.d000.s067.t007",
-        "answer": "**Man** - A male human being."
+        "answer": "**Man** -  A male human being."
     },
     {
         "instance_id": "senseval3.d000.s067.t008",
@@ -7613,7 +7613,7 @@
     },
     {
         "instance_id": "senseval3.d000.s070.t001",
-        "answer": "**Reminded** -  to cause someone to remember something, often something unpleasant or painful."
+        "answer": "**Reminded** -  to cause someone to remember something."
     },
     {
         "instance_id": "senseval3.d000.s071.t000",
@@ -7629,7 +7629,7 @@
     },
     {
         "instance_id": "senseval3.d000.s071.t007",
-        "answer": "**Alive** -  In a state of being living; existing."
+        "answer": "**Alive** -  In a state of being living; existing or in existence."
     },
     {
         "instance_id": "senseval3.d000.s071.t009",
@@ -7661,7 +7661,7 @@
     },
     {
         "instance_id": "senseval3.d000.s075.t005",
-        "answer": "**Maintenance** - The act of providing for the upkeep, repair, or support of something."
+        "answer": "Maintenance:  The act of providing for the upkeep, repair, or support of something."
     },
     {
         "instance_id": "senseval3.d000.s075.t007",
@@ -7685,7 +7685,7 @@
     },
     {
         "instance_id": "senseval3.d000.s076.t002",
-        "answer": "**Work** -  The activity of performing a job or task, especially one that is paid."
+        "answer": "**Work** -  The activity of performing a task or job, especially one that is paid."
     },
     {
         "instance_id": "senseval3.d000.s076.t004",
@@ -7709,7 +7709,7 @@
     },
     {
         "instance_id": "senseval3.d000.s078.t000",
-        "answer": "**Spine** -  The backbone or central part of something, often used figuratively to refer to the main or most important"
+        "answer": "**Spine** -  The backbone of something; the central or most important part."
     },
     {
         "instance_id": "senseval3.d000.s078.t001",
@@ -7729,7 +7729,7 @@
     },
     {
         "instance_id": "senseval3.d000.s078.t006",
-        "answer": "**Tenants** -  people who rent or lease property from another person or entity."
+        "answer": "**Tenants** -  people who rent property from another person or company."
     },
     {
         "instance_id": "senseval3.d000.s078.t007",
@@ -7833,7 +7833,7 @@
     },
     {
         "instance_id": "senseval3.d000.s084.t004",
-        "answer": "**Slowness** - The state of moving at a rate of speed that is less than normal or expected."
+        "answer": "**Slowness** - the state of moving at a rate of speed that is less than normal or expected."
     },
     {
         "instance_id": "senseval3.d000.s084.t005",
@@ -7913,7 +7913,7 @@
     },
     {
         "instance_id": "senseval3.d000.s092.t001",
-        "answer": "**kills** (verb) - to cause the death of a person."
+        "answer": "**kills** (verb) - to cause the death of (a person) by violence or an accident."
     },
     {
         "instance_id": "senseval3.d000.s092.t002",
@@ -7937,7 +7937,7 @@
     },
     {
         "instance_id": "senseval3.d000.s094.t000",
-        "answer": "**Stranger** - A person who is not known to the speaker or listener."
+        "answer": "**Stranger** - A person who is not known to another person."
     },
     {
         "instance_id": "senseval3.d000.s094.t001",
@@ -8065,7 +8065,7 @@
     },
     {
         "instance_id": "senseval3.d000.s100.t004",
-        "answer": "**pet** -  a person or thing that is especially dear or beloved."
+        "answer": "**pet** -  a person or thing that is especially dear or important to someone."
     },
     {
         "instance_id": "senseval3.d000.s100.t005",
@@ -8129,7 +8129,7 @@
     },
     {
         "instance_id": "senseval3.d000.s105.t008",
-        "answer": "**became****Definition:**  To change or develop into a particular state or condition."
+        "answer": "**became****Definition:**  Changed or transformed into a different state or condition."
     },
     {
         "instance_id": "senseval3.d000.s105.t009",
@@ -8169,7 +8169,7 @@
     },
     {
         "instance_id": "senseval3.d000.s107.t001",
-        "answer": "**Name** - A word or term that identifies a person, place, or thing."
+        "answer": "**Name** -  A word or term that identifies a person, place, or thing."
     },
     {
         "instance_id": "senseval3.d000.s107.t002",
@@ -8277,7 +8277,7 @@
     },
     {
         "instance_id": "senseval3.d000.s112.t002",
-        "answer": "**other** (adverb) -  in a different place or location, or in a different group or category."
+        "answer": "**other** (adverb) -  used to indicate something different from the one that is already mentioned."
     },
     {
         "instance_id": "senseval3.d000.s112.t003",
@@ -8317,7 +8317,7 @@
     },
     {
         "instance_id": "senseval3.d000.s114.t002",
-        "answer": "**answering*** **verb:** to give a response to a question, statement, or request."
+        "answer": "**answering** - to give a response or reply to a question, statement, or request."
     },
     {
         "instance_id": "senseval3.d000.s114.t004",
@@ -8425,7 +8425,7 @@
     },
     {
         "instance_id": "senseval3.d000.s119.t003",
-        "answer": "**began****Definition:**  To start or initiate (an action, process, or activity)."
+        "answer": "**began** -  to start or commence doing something."
     },
     {
         "instance_id": "senseval3.d000.s119.t004",
@@ -8493,7 +8493,7 @@
     },
     {
         "instance_id": "senseval3.d000.s121.t004",
-        "answer": "**broke in** -  to enter suddenly or unexpectedly, often in a forceful or disruptive way."
+        "answer": "**broke in** -  to enter or intrude suddenly and unexpectedly."
     },
     {
         "instance_id": "senseval3.d000.s122.t000",
@@ -8509,7 +8509,7 @@
     },
     {
         "instance_id": "senseval3.d000.s123.t002",
-        "answer": "**men** (plural) -  **male human beings**"
+        "answer": "**men** (plural) -  **(1) male human beings**"
     },
     {
         "instance_id": "senseval3.d000.s123.t004",
@@ -8637,7 +8637,7 @@
     },
     {
         "instance_id": "senseval3.d000.s139.t002",
-        "answer": "**guy** * **Noun:** A man, typically a male of unspecified age or social status."
+        "answer": "**guy** - *noun*  A man, typically a male of unspecified age or social status."
     },
     {
         "instance_id": "senseval3.d000.s139.t003",
@@ -8665,7 +8665,7 @@
     },
     {
         "instance_id": "senseval3.d000.s142.t001",
-        "answer": "**do** (verb)To perform an action or to cause something to happen."
+        "answer": "**do** (verb) - to cause something to happen; to perform an action."
     },
     {
         "instance_id": "senseval3.d000.s143.t000",
@@ -8709,7 +8709,7 @@
     },
     {
         "instance_id": "senseval3.d000.s146.t001",
-        "answer": "**suspect** -  to believe that something is true or likely to be true, especially something that is not certain."
+        "answer": "**suspect** -  to believe that something is true or likely to be true, especially something that is suspicious or questionable"
     },
     {
         "instance_id": "senseval3.d000.s146.t002",
@@ -8721,7 +8721,7 @@
     },
     {
         "instance_id": "senseval3.d000.s146.t004",
-        "answer": "**coincidence***noun*A happening or event that is not due to chance or planning; an unexpected or"
+        "answer": "**coincidence***noun*A happening or event that is unexpected and seemingly unplanned."
     },
     {
         "instance_id": "senseval3.d000.s147.t000",
@@ -8761,7 +8761,7 @@
     },
     {
         "instance_id": "senseval3.d000.s155.t001",
-        "answer": "**way** -  a method, manner, or approach; a particular course of action."
+        "answer": "**way** -  a method, manner, or course of action."
     },
     {
         "instance_id": "senseval3.d000.s155.t002",
@@ -8885,7 +8885,7 @@
     },
     {
         "instance_id": "senseval3.d001.s003.t000",
-        "answer": "**know****Definition:** To have knowledge or awareness of something."
+        "answer": "**know** -  to have knowledge or information about something."
     },
     {
         "instance_id": "senseval3.d001.s003.t002",
@@ -8929,7 +8929,7 @@
     },
     {
         "instance_id": "senseval3.d001.s004.t008",
-        "answer": "**Major** -  (adjective)  of significant importance or influence; principal or leading."
+        "answer": "**Major** -  (adjective)  of significant importance or scale; principal or leading."
     },
     {
         "instance_id": "senseval3.d001.s004.t009",
@@ -9017,7 +9017,7 @@
     },
     {
         "instance_id": "senseval3.d001.s009.t007",
-        "answer": "**Brand** - A symbol, design, or name that identifies a product, service, or organization."
+        "answer": "**Brand** - A symbol, design, or name that identifies a particular product, service, or organization."
     },
     {
         "instance_id": "senseval3.d001.s009.t009",
@@ -9029,7 +9029,7 @@
     },
     {
         "instance_id": "senseval3.d001.s009.t011",
-        "answer": "**virtues** -  **noun:**  **desirable qualities or characteristics that are considered morally good or praiseworthy.**"
+        "answer": "**virtues** -  **noun:**  **qualities or characteristics that are considered morally good or desirable.**"
     },
     {
         "instance_id": "senseval3.d001.s009.t012",
@@ -9057,7 +9057,7 @@
     },
     {
         "instance_id": "senseval3.d001.s009.t018",
-        "answer": "**Brand** - A symbol, design, or name that identifies a product, service, or organization."
+        "answer": "**Brand** - A symbol, design, or name that identifies a particular product, service, or organization."
     },
     {
         "instance_id": "senseval3.d001.s009.t022",
@@ -9137,7 +9137,7 @@
     },
     {
         "instance_id": "senseval3.d001.s010.t014",
-        "answer": "**Legislation** -  A law or a set of laws enacted by a legislative body, such as a congress or parliament."
+        "answer": "**Legislation** - A law or a set of laws enacted by a legislative body."
     },
     {
         "instance_id": "senseval3.d001.s010.t015",
@@ -9149,7 +9149,7 @@
     },
     {
         "instance_id": "senseval3.d001.s010.t017",
-        "answer": "**confer****Definition:** To give or bestow; to bestow or grant."
+        "answer": "**confer****Definition:** To give or bestow; to provide or grant."
     },
     {
         "instance_id": "senseval3.d001.s010.t018",
@@ -9165,7 +9165,7 @@
     },
     {
         "instance_id": "senseval3.d001.s010.t021",
-        "answer": "Relating to or affecting a particular place or area, especially a small or specific community."
+        "answer": "**Local** means relating to a particular place or area, especially a small or specific community."
     },
     {
         "instance_id": "senseval3.d001.s010.t022",
@@ -9285,7 +9285,7 @@
     },
     {
         "instance_id": "senseval3.d001.s014.t002",
-        "answer": "**National** - relating to or characteristic of a nation or the people of a nation."
+        "answer": "**National** - relating to or characteristic of a nation or country."
     },
     {
         "instance_id": "senseval3.d001.s014.t003",
@@ -9317,7 +9317,7 @@
     },
     {
         "instance_id": "senseval3.d001.s016.t002",
-        "answer": "**Local** -  Relating to or characteristic of a particular place or area, especially a small or specific area within a"
+        "answer": "**Local** -  Relating to or characteristic of a particular place or area, especially a small or specific community."
     },
     {
         "instance_id": "senseval3.d001.s016.t003",
@@ -9349,7 +9349,7 @@
     },
     {
         "instance_id": "senseval3.d001.s016.t016",
-        "answer": "**Local** -  Relating to or characteristic of a particular place or area, especially a small or specific area within a"
+        "answer": "**Local** -  Relating to or characteristic of a particular place or area, especially a small or specific community."
     },
     {
         "instance_id": "senseval3.d001.s016.t017",
@@ -9385,7 +9385,7 @@
     },
     {
         "instance_id": "senseval3.d001.s018.t005",
-        "answer": "**things** - noun:  objects or concepts that are distinct and separate from each other."
+        "answer": "**things** - noun:  objects or concepts that exist or are perceived."
     },
     {
         "instance_id": "senseval3.d001.s019.t000",
@@ -9557,7 +9557,7 @@
     },
     {
         "instance_id": "senseval3.d001.s023.t002",
-        "answer": "**Trend** - A general direction or pattern of change or development over time."
+        "answer": "**Trend** - a general direction or pattern of change or development over time."
     },
     {
         "instance_id": "senseval3.d001.s023.t003",
@@ -9585,7 +9585,7 @@
     },
     {
         "instance_id": "senseval3.d001.s023.t009",
-        "answer": "**Running** -  to move or proceed in a particular direction, typically with a purpose or intention."
+        "answer": "**Running** (verb): to move or operate in a continuous, often swift, manner."
     },
     {
         "instance_id": "senseval3.d001.s024.t000",
@@ -9637,7 +9637,7 @@
     },
     {
         "instance_id": "senseval3.d001.s025.t010",
-        "answer": "**Office** -  A place of work, especially one that is specifically designated for a particular person or group."
+        "answer": "**Office** -  A place of work, especially one that is officially designated for a particular person or group."
     },
     {
         "instance_id": "senseval3.d001.s026.t000",
@@ -9685,7 +9685,7 @@
     },
     {
         "instance_id": "senseval3.d001.s027.t004",
-        "answer": "**Realize****Definition:** To become aware of or understand something."
+        "answer": "**Realize** - to become aware of or understand something."
     },
     {
         "instance_id": "senseval3.d001.s027.t007",
@@ -9701,7 +9701,7 @@
     },
     {
         "instance_id": "senseval3.d001.s027.t011",
-        "answer": "**Competitive** -  (adjective)  contending or striving for victory or success against others; offering a range of choices"
+        "answer": "**Competitive** -  (adjective)  able to compete successfully with others; offering a range of choices or options."
     },
     {
         "instance_id": "senseval3.d001.s027.t012",
@@ -9733,7 +9733,7 @@
     },
     {
         "instance_id": "senseval3.d001.s029.t005",
-        "answer": "**Share** - A portion or part of something, especially a portion that is divided or allocated among several people or things."
+        "answer": "**Share** -  a portion or part of something, especially a portion that is divided or allocated among several people or things"
     },
     {
         "instance_id": "senseval3.d001.s029.t006",
@@ -9893,7 +9893,7 @@
     },
     {
         "instance_id": "senseval3.d001.s034.t000",
-        "answer": "**First** -  (adverb)  Coming first in order or sequence."
+        "answer": "**First** -  (adverb)  Coming first in order or sequence; preceding others."
     },
     {
         "instance_id": "senseval3.d001.s034.t002",
@@ -9997,7 +9997,7 @@
     },
     {
         "instance_id": "senseval3.d001.s036.t007",
-        "answer": "**Rates****Definition:** A measure of frequency or amount, often expressed as a ratio or percentage."
+        "answer": "**Rates** - A measure of frequency or amount per unit of time or quantity."
     },
     {
         "instance_id": "senseval3.d001.s036.t009",
@@ -10097,7 +10097,7 @@
     },
     {
         "instance_id": "senseval3.d001.s039.t005",
-        "answer": "**Personal** -  belonging to or associated with an individual."
+        "answer": "**Personal** -  belonging to or associated with an individual; relating to a person's own affairs or interests."
     },
     {
         "instance_id": "senseval3.d001.s039.t006",
@@ -10125,7 +10125,7 @@
     },
     {
         "instance_id": "senseval3.d001.s039.t015",
-        "answer": "**Making** (verb): To create or bring something into existence; to produce or bring about."
+        "answer": "**Making** (verb): To create or bring something into existence; to produce or develop."
     },
     {
         "instance_id": "senseval3.d001.s039.t016",
@@ -10237,7 +10237,7 @@
     },
     {
         "instance_id": "senseval3.d001.s041.t004",
-        "answer": "**Other** (in this context) means **not specifically mentioned or included in the previous context**."
+        "answer": "**Other** (in this context) means \"not the specific thing being discussed.\""
     },
     {
         "instance_id": "senseval3.d001.s041.t005",
@@ -10305,7 +10305,7 @@
     },
     {
         "instance_id": "senseval3.d001.s041.t022",
-        "answer": "**Positive** (adjective):  Increasing or growing in magnitude or amount."
+        "answer": "**Positive** (adjective):  Having a value that increases or grows as something else increases."
     },
     {
         "instance_id": "senseval3.d001.s041.t023",
@@ -10313,7 +10313,7 @@
     },
     {
         "instance_id": "senseval3.d001.s041.t027",
-        "answer": "**burden** - a heavy load or weight that is difficult to carry or bear."
+        "answer": "**burden** - a heavy load or weight, especially one that is difficult to carry or bear."
     },
     {
         "instance_id": "senseval3.d001.s041.t028",
@@ -10321,11 +10321,11 @@
     },
     {
         "instance_id": "senseval3.d001.s041.t029",
-        "answer": "**Progressive** -  (adjective)  increasing or becoming more in a gradual or systematic way, often in a way that"
+        "answer": "**Progressive** (adjective):  Increasing or becoming more in a gradual or systematic way, often in a way that benefits those"
     },
     {
         "instance_id": "senseval3.d001.s041.t031",
-        "answer": "**hits** -  to have a direct and noticeable effect on something."
+        "answer": "**hits** -  to have a significant effect on something, often in a negative or damaging way."
     },
     {
         "instance_id": "senseval3.d001.s041.t032",
@@ -10349,7 +10349,7 @@
     },
     {
         "instance_id": "senseval3.d001.s042.t003",
-        "answer": "**looked on** -  to regard or consider someone or something with attention or approval."
+        "answer": "**looked on** -  to regard or consider someone or something with attention or interest."
     },
     {
         "instance_id": "senseval3.d001.s042.t005",
@@ -10393,7 +10393,7 @@
     },
     {
         "instance_id": "senseval3.d001.s044.t004",
-        "answer": "**Reverse** means to change the order or direction of something."
+        "answer": "**Reverse** -  to change the order or direction of something."
     },
     {
         "instance_id": "senseval3.d001.s045.t001",
@@ -10493,7 +10493,7 @@
     },
     {
         "instance_id": "senseval3.d001.s046.t007",
-        "answer": "**Behavior** -  The way in which a person or animal acts or conducts itself."
+        "answer": "**Behavior** -  The way in which a person or animal acts or conducts themselves."
     },
     {
         "instance_id": "senseval3.d001.s046.t009",
@@ -10593,7 +10593,7 @@
     },
     {
         "instance_id": "senseval3.d002.s005.t007",
-        "answer": "**reports** -  (plural)  statements or accounts of something that has happened or been done."
+        "answer": "**reports** -  (plural)  statements or accounts of something, especially something that has happened or been done."
     },
     {
         "instance_id": "senseval3.d002.s006.t001",
@@ -10633,7 +10633,7 @@
     },
     {
         "instance_id": "senseval3.d002.s011.t003",
-        "answer": "**Old** -  (adjective)  Having existed for a long time; aged."
+        "answer": "**Old** -  (adjective)  having existed for a long time; aged."
     },
     {
         "instance_id": "senseval3.d002.s011.t004",
@@ -10681,7 +10681,7 @@
     },
     {
         "instance_id": "senseval3.d002.s015.t002",
-        "answer": "**Game** - A contest or competition, often involving skill, strategy, or chance, played for entertainment or for a prize"
+        "answer": "**Game** - A contest or competition, often involving skill, strategy, or chance, played for amusement or entertainment."
     },
     {
         "instance_id": "senseval3.d002.s015.t003",
@@ -10833,7 +10833,7 @@
     },
     {
         "instance_id": "senseval3.d002.s024.t004",
-        "answer": "**Sent****verb**1. **(of a force or object) to cause to move or travel in"
+        "answer": "**Sent****verb**1. **(of a force or object) to cause to move or be moved"
     },
     {
         "instance_id": "senseval3.d002.s024.t006",
@@ -10929,7 +10929,7 @@
     },
     {
         "instance_id": "senseval3.d002.s035.t002",
-        "answer": "**Liquefy** - To change a solid into a liquid by applying heat or pressure."
+        "answer": "**Liquefy** - To change a solid into a liquid state."
     },
     {
         "instance_id": "senseval3.d002.s036.t000",
@@ -11013,7 +11013,7 @@
     },
     {
         "instance_id": "senseval3.d002.s041.t006",
-        "answer": "**drive** (verb) - to move a vehicle or object along a road or path."
+        "answer": "**drive** (verb) - to move a vehicle or person forward by using a motor or by physical force."
     },
     {
         "instance_id": "senseval3.d002.s044.t000",
@@ -11065,7 +11065,7 @@
     },
     {
         "instance_id": "senseval3.d002.s051.t003",
-        "answer": "**head** -  the top or uppermost part of a person or animal, or the top part of a building or structure"
+        "answer": "**head** -  the top or uppermost part of a person or animal, or the top part of a building."
     },
     {
         "instance_id": "senseval3.d002.s051.t004",
@@ -11149,7 +11149,7 @@
     },
     {
         "instance_id": "senseval3.d002.s058.t003",
-        "answer": "**shaking** -  (present participle of \"shake\")  to move back and forth or up and down rapidly, often"
+        "answer": "**shaking** -  (verb) to move back and forth or in a rapid, uncontrolled way."
     },
     {
         "instance_id": "senseval3.d002.s059.t000",
@@ -11181,7 +11181,7 @@
     },
     {
         "instance_id": "senseval3.d002.s063.t001",
-        "answer": "**believe*** **verb:** to accept or trust something as true or real, often with confidence or certainty."
+        "answer": "**believe** (verb) - to accept or trust something as true or real, often based on evidence or personal conviction."
     },
     {
         "instance_id": "senseval3.d002.s063.t002",
@@ -11229,7 +11229,7 @@
     },
     {
         "instance_id": "senseval3.d002.s068.t002",
-        "answer": "**Position** -  A particular place or location, or a particular arrangement or state of being."
+        "answer": "**Position** -  a particular place or location, or a particular arrangement or state of being."
     },
     {
         "instance_id": "senseval3.d002.s072.t000",
@@ -11245,7 +11245,7 @@
     },
     {
         "instance_id": "senseval3.d002.s072.t003",
-        "answer": "**Strange** -  Unusual or peculiar; not conforming to what is usual or expected."
+        "answer": "**Strange** -  Unusual; odd; peculiar; not conforming to what is usual or expected."
     },
     {
         "instance_id": "senseval3.d002.s072.t004",
@@ -11313,7 +11313,7 @@
     },
     {
         "instance_id": "senseval3.d002.s082.t000",
-        "answer": "**Quivers** -  to tremble or shake slightly."
+        "answer": "**Quivers** -  to tremble or quiver."
     },
     {
         "instance_id": "senseval3.d002.s082.t002",
@@ -11369,7 +11369,7 @@
     },
     {
         "instance_id": "senseval3.d002.s086.t002",
-        "answer": "**ran** (verb) - to move quickly on foot, typically with a purpose or in a hurry."
+        "answer": "**ran** (verb) - to move quickly on foot, typically with a purpose or in a hurried manner."
     },
     {
         "instance_id": "senseval3.d002.s086.t003",
@@ -11581,7 +11581,7 @@
     },
     {
         "instance_id": "senseval3.d002.s098.t002",
-        "answer": "**Bouncing** - to move up and down repeatedly in a quick, irregular way."
+        "answer": "**Bouncing:**  To move up and down repeatedly in a quick, irregular way."
     },
     {
         "instance_id": "senseval3.d002.s099.t000",
@@ -11605,7 +11605,7 @@
     },
     {
         "instance_id": "senseval3.d002.s100.t001",
-        "answer": "**doors** -  (plural)  a movable barrier that separates a room or space from the outside or another room."
+        "answer": "**doors** -  (plural)  a movable covering that closes a space, typically made of wood, metal, or"
     },
     {
         "instance_id": "senseval3.d002.s100.t007",
@@ -11717,7 +11717,7 @@
     },
     {
         "instance_id": "senseval3.d002.s109.t000",
-        "answer": "**sitting down** - to be in a position of being seated, typically on a chair or other furniture."
+        "answer": "**sitting down** - to recline or settle into a position on a chair, stool, or other surface."
     },
     {
         "instance_id": "senseval3.d002.s109.t001",
@@ -11753,7 +11753,7 @@
     },
     {
         "instance_id": "senseval3.d002.s110.t001",
-        "answer": "**Structure** -  A framework or organization that provides support and stability to something."
+        "answer": "**Structure** -  A framework or organization that provides support and shape to something."
     },
     {
         "instance_id": "senseval3.d002.s110.t002",
@@ -11793,7 +11793,7 @@
     },
     {
         "instance_id": "senseval3.d002.s112.t004",
-        "answer": "**Session** -  A period of time during which something is being done or a particular activity is taking place."
+        "answer": "**Session:** A period of time, typically a meeting or a series of related events."
     },
     {
         "instance_id": "senseval3.d002.s116.t000",
@@ -11845,7 +11845,7 @@
     },
     {
         "instance_id": "senseval3.d002.s120.t003",
-        "answer": "**next** -  occurring or coming after something else in time or sequence."
+        "answer": "**next** -  occurring or coming after something else in time or order."
     },
     {
         "instance_id": "senseval3.d002.s120.t004",
@@ -11933,7 +11933,7 @@
     },
     {
         "instance_id": "senseval3.d002.s128.t000",
-        "answer": "**amazing****adjective**1. causing great wonder or astonishment; extremely impressive or remarkable."
+        "answer": "**amazing****adjective**causing great wonder, astonishment, or admiration; extremely impressive or remarkable."
     },
     {
         "instance_id": "senseval3.d002.s128.t001",
@@ -11985,7 +11985,7 @@
     },
     {
         "instance_id": "senseval3.d002.s133.t002",
-        "answer": "**Relax*** To become less tense, strained, or worried; to become calm and comfortable."
+        "answer": "**Relax** -  to become less tense, strained, or worried; to become calm and comfortable."
     },
     {
         "instance_id": "senseval3.d002.s136.t000",
@@ -12069,7 +12069,7 @@
     },
     {
         "instance_id": "senseval3.d002.s140.t012",
-        "answer": "**Great** -  of exceptional quality or importance; extremely good or enjoyable."
+        "answer": "**Great** -  of exceptional quality or magnitude; extremely good or enjoyable."
     },
     {
         "instance_id": "senseval3.d002.s140.t013",
@@ -12093,7 +12093,7 @@
     },
     {
         "instance_id": "semeval2013.d000.s001.t000",
-        "answer": "**Climate** - The long-term average weather patterns of a region, including temperature, precipitation, and wind."
+        "answer": "**Climate** - The long-term average weather patterns of a particular region or the atmosphere as a whole."
     },
     {
         "instance_id": "semeval2013.d000.s001.t001",
@@ -12161,7 +12161,7 @@
     },
     {
         "instance_id": "semeval2013.d000.s003.t006",
-        "answer": "A period of seven consecutive days."
+        "answer": "A week is a period of seven consecutive days."
     },
     {
         "instance_id": "semeval2013.d000.s004.t001",
@@ -12209,7 +12209,7 @@
     },
     {
         "instance_id": "semeval2013.d000.s006.t000",
-        "answer": "**Definition:** A considerable amount or degree of freedom or adaptability."
+        "answer": "**lot** - a considerable amount or quantity; a large number or amount."
     },
     {
         "instance_id": "semeval2013.d000.s006.t001",
@@ -12457,7 +12457,7 @@
     },
     {
         "instance_id": "semeval2013.d000.s019.t003",
-        "answer": "Central America is a geographical region comprising a group of countries located in the western part of North America."
+        "answer": "Central America is a geographical region comprising a group of countries located in the northern part of the Americas."
     },
     {
         "instance_id": "semeval2013.d000.s020.t000",
@@ -12541,7 +12541,7 @@
     },
     {
         "instance_id": "semeval2013.d000.s024.t001",
-        "answer": "A minister is a high-ranking government official, typically responsible for a specific department or area of government policy."
+        "answer": "**Minister** - A high-ranking official in a government, typically responsible for a specific department or area of policy."
     },
     {
         "instance_id": "semeval2013.d000.s024.t002",
@@ -12613,7 +12613,7 @@
     },
     {
         "instance_id": "semeval2013.d000.s028.t000",
-        "answer": "**Heavyweights** -  (in a figurative sense)  people or things of great importance, influence, or power."
+        "answer": "**Heavyweights** -  (in a context like sports or politics) people who are very important or influential, often because"
     },
     {
         "instance_id": "semeval2013.d001.s000.t001",
@@ -12645,7 +12645,7 @@
     },
     {
         "instance_id": "semeval2013.d001.s001.t008",
-        "answer": "A group is a collection of people or things that are associated together."
+        "answer": "A group is a collection of people or things that are related or associated together."
     },
     {
         "instance_id": "semeval2013.d001.s002.t000",
@@ -12809,7 +12809,7 @@
     },
     {
         "instance_id": "semeval2013.d001.s014.t002",
-        "answer": "**line** -  a marked area on a playing field or court, used for scoring points."
+        "answer": "**line** -  a marked area on a playing field or court, used for scoring points in a game."
     },
     {
         "instance_id": "semeval2013.d001.s015.t001",
@@ -12825,7 +12825,7 @@
     },
     {
         "instance_id": "semeval2013.d001.s015.t006",
-        "answer": "**Season** - A period of time, typically a year, that is characterized by a particular set of events or activities."
+        "answer": "**Season** - A period of time, typically a year, during which a particular activity or event occurs."
     },
     {
         "instance_id": "semeval2013.d002.s000.t000",
@@ -12865,11 +12865,11 @@
     },
     {
         "instance_id": "semeval2013.d002.s004.t000",
-        "answer": "**Market** - A place or system where goods, services, or financial instruments are bought and sold."
+        "answer": "**Market** - A place or system where goods, services, or assets are bought and sold."
     },
     {
         "instance_id": "semeval2013.d002.s005.t002",
-        "answer": "**Volumes** -  The amount of something that is being traded or exchanged."
+        "answer": "**Volumes** -  The amount of goods or services exchanged in a particular market or industry."
     },
     {
         "instance_id": "semeval2013.d002.s005.t003",
@@ -12877,7 +12877,7 @@
     },
     {
         "instance_id": "semeval2013.d002.s005.t004",
-        "answer": "**end** - a point or period of time at which something comes to an end."
+        "answer": "**end** - a point or period at which something comes to an end."
     },
     {
         "instance_id": "semeval2013.d002.s005.t005",
@@ -12985,7 +12985,7 @@
     },
     {
         "instance_id": "semeval2013.d002.s012.t002",
-        "answer": "**Yields** - The percentage return on an investment, representing the income generated from it."
+        "answer": "**Yields** - The rate of return on an investment, expressed as a percentage."
     },
     {
         "instance_id": "semeval2013.d002.s012.t004",
@@ -12997,7 +12997,7 @@
     },
     {
         "instance_id": "semeval2013.d002.s012.t006",
-        "answer": "**Yields** - The percentage return on an investment, representing the income generated from it."
+        "answer": "**Yields** - The rate of return on an investment, expressed as a percentage."
     },
     {
         "instance_id": "semeval2013.d002.s012.t007",
@@ -13061,7 +13061,7 @@
     },
     {
         "instance_id": "semeval2013.d003.s003.t000",
-        "answer": "**Companies** -  A business organization, typically large and formally structured, that is owned by shareholders and operates for profit."
+        "answer": "**Companies** -  A business organization, typically a corporation, that is owned by shareholders and operates for profit."
     },
     {
         "instance_id": "semeval2013.d003.s003.t001",
@@ -13189,7 +13189,7 @@
     },
     {
         "instance_id": "semeval2013.d003.s012.t000",
-        "answer": "**Companies** -  A business organization, typically a corporation, that is formed for the purpose of carrying on a commercial enterprise"
+        "answer": "**Companies** -  A business organization, typically a corporation, that is owned by many people and operates for profit."
     },
     {
         "instance_id": "semeval2013.d003.s012.t001",
@@ -13229,11 +13229,11 @@
     },
     {
         "instance_id": "semeval2013.d003.s015.t002",
-        "answer": "A company is a business organization, typically a legal entity, that is owned by its shareholders and operates for profit."
+        "answer": "A company is a business organization, typically a legal entity, that is owned by one or more shareholders and operates for profit."
     },
     {
         "instance_id": "semeval2013.d003.s015.t003",
-        "answer": "**stakes** - a portion or share of something, especially a share of ownership or control."
+        "answer": "**stakes** - a portion or share of something, especially a large or important share."
     },
     {
         "instance_id": "semeval2013.d003.s015.t004",
@@ -13241,7 +13241,7 @@
     },
     {
         "instance_id": "semeval2013.d003.s015.t005",
-        "answer": "A **field** (in this context) refers to a geographical area where oil or natural gas is extracted."
+        "answer": "**Fields** -  A geographical area of land used for agriculture, mining, or other purposes."
     },
     {
         "instance_id": "semeval2013.d003.s016.t000",
@@ -13397,7 +13397,7 @@
     },
     {
         "instance_id": "semeval2013.d004.s006.t000",
-        "answer": "**rest** -  the remaining part of something, or the remaining amount of something."
+        "answer": "**rest** -  the remaining part of something, after a portion has been taken or used."
     },
     {
         "instance_id": "semeval2013.d004.s006.t001",
@@ -13481,11 +13481,11 @@
     },
     {
         "instance_id": "semeval2013.d005.s003.t000",
-        "answer": "**In the end:**  In the final or ultimate outcome; as a result of the events that have transpired."
+        "answer": "**In the end:**  In the final analysis, or as a result of the final outcome."
     },
     {
         "instance_id": "semeval2013.d005.s003.t001",
-        "answer": "**Defense** -  The side of a legal case that argues against the prosecution's claims and seeks to prove the defendant"
+        "answer": "**Defense** -  The legal arguments and evidence presented by the party accused of a crime or offense in a court of law"
     },
     {
         "instance_id": "semeval2013.d005.s003.t002",
@@ -13525,7 +13525,7 @@
     },
     {
         "instance_id": "semeval2013.d005.s004.t004",
-        "answer": "**End** -  The final point or stage of something; the termination or conclusion of something."
+        "answer": "**End** -  The final point or stage of something; the termination or completion of a process or event."
     },
     {
         "instance_id": "semeval2013.d005.s004.t005",
@@ -13533,7 +13533,7 @@
     },
     {
         "instance_id": "semeval2013.d005.s004.t006",
-        "answer": "**imposition** - the act of imposing something, especially a punishment or duty, on someone or something."
+        "answer": "**Imposition** - The act of placing something forcefully or formally upon someone or something."
     },
     {
         "instance_id": "semeval2013.d005.s004.t007",
@@ -13629,7 +13629,7 @@
     },
     {
         "instance_id": "semeval2013.d005.s008.t005",
-        "answer": "**Rights** -  Fundamental entitlements or freedoms that are legally protected and guaranteed to individuals."
+        "answer": "**Rights** -  Fundamental entitlements or freedoms granted to a person by law or by virtue of their status as a human being"
     },
     {
         "instance_id": "semeval2013.d005.s009.t003",
@@ -13685,7 +13685,7 @@
     },
     {
         "instance_id": "semeval2013.d005.s012.t002",
-        "answer": "**Conviction** - A formal judgment of guilt, usually made by a court of law, after a trial."
+        "answer": "**Conviction** - A formal judgment of guilt by a court of law."
     },
     {
         "instance_id": "semeval2013.d005.s012.t003",
@@ -13765,7 +13765,7 @@
     },
     {
         "instance_id": "semeval2013.d005.s015.t007",
-        "answer": "A report is a written account of something, often a formal document that presents information or findings."
+        "answer": "A report is a written account of something, often a formal document that presents information, findings, or recommendations."
     },
     {
         "instance_id": "semeval2013.d005.s016.t001",
@@ -13777,7 +13777,7 @@
     },
     {
         "instance_id": "semeval2013.d005.s016.t003",
-        "answer": "**idea** -  a thought, concept, or notion."
+        "answer": "**idea** -  a thought, concept, or notion about something."
     },
     {
         "instance_id": "semeval2013.d005.s016.t004",
@@ -13785,7 +13785,7 @@
     },
     {
         "instance_id": "semeval2013.d005.s016.t006",
-        "answer": "**Trials** -  A formal legal proceeding in which a case is heard and decided by a judge or jury."
+        "answer": "**Trials** -  A formal legal proceeding in which a person is accused of a crime or offense and is brought to court"
     },
     {
         "instance_id": "semeval2013.d005.s017.t000",
@@ -13845,7 +13845,7 @@
     },
     {
         "instance_id": "semeval2013.d005.s022.t004",
-        "answer": "**Interest****Definition:**  A feeling of curiosity, eagerness, or concern about something."
+        "answer": "**Interest**1.  **A feeling of curiosity or concern about something.**2.  **A desire to"
     },
     {
         "instance_id": "semeval2013.d005.s023.t000",
@@ -13885,11 +13885,11 @@
     },
     {
         "instance_id": "semeval2013.d005.s025.t003",
-        "answer": "**Courthouse:** A building where legal proceedings are held, such as trials, hearings, and other legal matters."
+        "answer": "**Courthouse:** A building where legal proceedings are held, typically for trials and other legal matters."
     },
     {
         "instance_id": "semeval2013.d005.s026.t000",
-        "answer": "**Focus** (verb): to concentrate or direct attention on something."
+        "answer": "**Focus** (verb): to concentrate or direct attention on a particular thing or person."
     },
     {
         "instance_id": "semeval2013.d005.s026.t001",
@@ -13981,7 +13981,7 @@
     },
     {
         "instance_id": "semeval2013.d005.s030.t006",
-        "answer": "**rules** -  established principles or guidelines that govern behavior or conduct."
+        "answer": "**Rules** -  A set of established principles, guidelines, or regulations that govern a particular activity or situation."
     },
     {
         "instance_id": "semeval2013.d005.s031.t000",
@@ -14065,7 +14065,7 @@
     },
     {
         "instance_id": "semeval2013.d006.s004.t002",
-        "answer": "A group (in this context) refers to a division or category within a competition, such as a league or tournament."
+        "answer": "**Group** - A collection of individuals or things that are associated together."
     },
     {
         "instance_id": "semeval2013.d006.s004.t003",
@@ -14221,7 +14221,7 @@
     },
     {
         "instance_id": "semeval2013.d006.s010.t003",
-        "answer": "**Spirit** -  The qualities or characteristics that give something its character or essence."
+        "answer": "**Spirit** -  The qualities or characteristics that give someone or something a sense of enthusiasm, determination, or vitality."
     },
     {
         "instance_id": "semeval2013.d006.s011.t000",
@@ -14265,7 +14265,7 @@
     },
     {
         "instance_id": "semeval2013.d006.s012.t004",
-        "answer": "**takes advantage** - to use something (like a situation, opportunity, or someone else's vulnerability) to gain an"
+        "answer": "**takes advantage** - to use something or someone for one's own benefit, often unfairly or without regard for the other"
     },
     {
         "instance_id": "semeval2013.d006.s012.t005",
@@ -14277,7 +14277,7 @@
     },
     {
         "instance_id": "semeval2013.d006.s013.t001",
-        "answer": "**Action** -  The act or behavior of doing something."
+        "answer": "**Action** -  The act or process of doing something."
     },
     {
         "instance_id": "semeval2013.d006.s013.t002",
@@ -14289,7 +14289,7 @@
     },
     {
         "instance_id": "semeval2013.d006.s013.t007",
-        "answer": "**Action** -  The act or behavior of doing something."
+        "answer": "**Action** -  The act or process of doing something."
     },
     {
         "instance_id": "semeval2013.d006.s013.t009",
@@ -14305,7 +14305,7 @@
     },
     {
         "instance_id": "semeval2013.d006.s015.t001",
-        "answer": "**Type** -  A particular kind, category, or class."
+        "answer": "**Type** -  A particular kind, category, or form."
     },
     {
         "instance_id": "semeval2013.d006.s015.t002",
@@ -14373,7 +14373,7 @@
     },
     {
         "instance_id": "semeval2013.d006.s018.t004",
-        "answer": "**Championship** - A competition or tournament to determine the winner of a sport or other activity."
+        "answer": "**Championship** - A competition or tournament to determine the winner or champion."
     },
     {
         "instance_id": "semeval2013.d006.s018.t006",
@@ -14413,7 +14413,7 @@
     },
     {
         "instance_id": "semeval2013.d006.s019.t010",
-        "answer": "A game is a series of events or actions with a defined set of rules, often involving competition or a contest."
+        "answer": "A game is a series of events or actions with specific rules and objectives, often involving competition or play."
     },
     {
         "instance_id": "semeval2013.d006.s019.t011",
@@ -14497,7 +14497,7 @@
     },
     {
         "instance_id": "semeval2013.d006.s025.t001",
-        "answer": "**Factors** -  things that contribute to or influence something."
+        "answer": "**Factors** -  things that contribute to or influence a particular situation or event."
     },
     {
         "instance_id": "semeval2013.d006.s025.t002",
@@ -14517,7 +14517,7 @@
     },
     {
         "instance_id": "semeval2013.d006.s026.t001",
-        "answer": "**Principles** - Fundamental truths or accepted standards of conduct that guide behavior or thinking."
+        "answer": "**Principles** (noun): Fundamental truths or rules that guide behavior or conduct."
     },
     {
         "instance_id": "semeval2013.d006.s026.t003",
@@ -14601,7 +14601,7 @@
     },
     {
         "instance_id": "semeval2013.d007.s005.t005",
-        "answer": "A journal is a periodical publication, typically a scholarly one, that contains articles on a particular subject."
+        "answer": "A journal is a periodical publication, typically a scholarly one, that contains articles, reports, and other writings on a particular subject"
     },
     {
         "instance_id": "semeval2013.d007.s006.t000",
@@ -14625,7 +14625,7 @@
     },
     {
         "instance_id": "semeval2013.d007.s007.t004",
-        "answer": "**Phosphorus** - A chemical element, essential for life, that is a component of DNA, RNA, and ATP (ad"
+        "answer": "**Phosphorus** - A chemical element, symbol P, that is a vital nutrient for living organisms, essential for energy transfer and"
     },
     {
         "instance_id": "semeval2013.d007.s008.t000",
@@ -14677,7 +14677,7 @@
     },
     {
         "instance_id": "semeval2013.d007.s011.t006",
-        "answer": "**Report** - A written or oral account of something that has happened or been done, especially one that is given to someone"
+        "answer": "**Report** - A written or oral account of something that has happened, been done, or been learned."
     },
     {
         "instance_id": "semeval2013.d007.s011.t007",
@@ -14921,7 +14921,7 @@
     },
     {
         "instance_id": "semeval2013.d008.s003.t001",
-        "answer": "The **United States** refers to the country of the United States of America."
+        "answer": "**United States** - A country located in North America, consisting of 50 states."
     },
     {
         "instance_id": "semeval2013.d008.s004.t000",
@@ -15185,7 +15185,7 @@
     },
     {
         "instance_id": "semeval2013.d008.s021.t002",
-        "answer": "**Recession** - A period of significant decline in economic activity, typically marked by a decrease in production, employment, and"
+        "answer": "**Recession:** A period of significant decline in economic activity, typically marked by a decrease in production, employment, and income"
     },
     {
         "instance_id": "semeval2013.d008.s021.t003",
@@ -15221,7 +15221,7 @@
     },
     {
         "instance_id": "semeval2013.d008.s022.t009",
-        "answer": "A chart is a visual representation of data, typically in the form of a graph or diagram, used to illustrate information or trends"
+        "answer": "A chart is a visual representation of data, typically in the form of a graph or diagram, used to illustrate information."
     },
     {
         "instance_id": "semeval2013.d008.s023.t000",
@@ -15269,7 +15269,7 @@
     },
     {
         "instance_id": "semeval2013.d008.s025.t002",
-        "answer": "**Country** - A sovereign state, typically with a defined territory, population, government, and international relations."
+        "answer": "**Country** - A sovereign state, typically with a defined territory, population, government, and a distinct culture."
     },
     {
         "instance_id": "semeval2013.d008.s025.t003",
@@ -15369,7 +15369,7 @@
     },
     {
         "instance_id": "semeval2013.d009.s001.t006",
-        "answer": "**Justices** -  Members of a court of law, especially a supreme court, who have the authority to hear and"
+        "answer": "**Justices** -  Members of a court of law, especially a supreme court, who are responsible for deciding legal cases"
     },
     {
         "instance_id": "semeval2013.d009.s001.t007",
@@ -15405,7 +15405,7 @@
     },
     {
         "instance_id": "semeval2013.d009.s003.t003",
-        "answer": "**States** -  A political subdivision of a country, typically a sovereign entity with its own government and laws."
+        "answer": "**States** -  A political entity that is a sovereign unit within a larger political system, such as a country or federation"
     },
     {
         "instance_id": "semeval2013.d009.s003.t005",
@@ -15461,7 +15461,7 @@
     },
     {
         "instance_id": "semeval2013.d009.s004.t009",
-        "answer": "**Court** - A formal assembly of judges or justices, especially one that hears legal cases."
+        "answer": "**Court** - A formal assembly of judges or justices who hear and decide legal cases."
     },
     {
         "instance_id": "semeval2013.d009.s004.t010",
@@ -15641,7 +15641,7 @@
     },
     {
         "instance_id": "semeval2013.d009.s017.t006",
-        "answer": "**Court** - A formal assembly or body of people authorized to hear and decide legal cases, especially a judicial body."
+        "answer": "**Court** -  A formal assembly or body of people authorized to hear and decide legal cases, especially a judicial body."
     },
     {
         "instance_id": "semeval2013.d009.s017.t007",
@@ -15661,7 +15661,7 @@
     },
     {
         "instance_id": "semeval2013.d009.s018.t003",
-        "answer": "**cases** -  legal disputes or matters that are being brought before a court for resolution."
+        "answer": "**Cases** -  A legal matter or dispute that is being brought before a court for resolution."
     },
     {
         "instance_id": "semeval2013.d009.s018.t004",
@@ -15713,7 +15713,7 @@
     },
     {
         "instance_id": "semeval2013.d009.s023.t001",
-        "answer": "**Administration** -  The group of people who are in charge of running a government or organization."
+        "answer": "**Administration** -  The management or operation of a government or organization, especially by a particular person or group."
     },
     {
         "instance_id": "semeval2013.d009.s023.t003",
@@ -15805,7 +15805,7 @@
     },
     {
         "instance_id": "semeval2013.d010.s006.t005",
-        "answer": "A **league** refers to a competitive tournament or series of matches involving multiple teams, typically with a specific format and rules."
+        "answer": "A league is a competition or series of matches between teams, typically in a sport."
     },
     {
         "instance_id": "semeval2013.d010.s006.t007",
@@ -15961,7 +15961,7 @@
     },
     {
         "instance_id": "semeval2013.d011.s000.t003",
-        "answer": "**Economy** -  The system by which goods and services are produced, distributed, and consumed in a society."
+        "answer": "**Economy** -  The system by which goods and services are produced, distributed, and consumed in a society or region."
     },
     {
         "instance_id": "semeval2013.d011.s001.t000",
@@ -15989,7 +15989,7 @@
     },
     {
         "instance_id": "semeval2013.d011.s001.t008",
-        "answer": "**Compatibility** - the state of being able to exist or work together harmoniously."
+        "answer": "**Compatibility** - the state of being suitable or harmonious; agreement or consistency."
     },
     {
         "instance_id": "semeval2013.d011.s001.t009",
@@ -16141,7 +16141,7 @@
     },
     {
         "instance_id": "semeval2013.d011.s009.t002",
-        "answer": "**Generosity** - The quality of being willing to give or share something, especially money, possessions, or time, without"
+        "answer": "**Generosity** - The quality of being willing to give or share something, especially with others."
     },
     {
         "instance_id": "semeval2013.d011.s010.t000",
@@ -16173,7 +16173,7 @@
     },
     {
         "instance_id": "semeval2013.d011.s012.t004",
-        "answer": "**People** -  Individuals, especially as a collective."
+        "answer": "**People** -  Individuals, especially as a collective, or a group of people."
     },
     {
         "instance_id": "semeval2013.d011.s012.t005",
@@ -16209,7 +16209,7 @@
     },
     {
         "instance_id": "semeval2013.d011.s013.t000",
-        "answer": "**Immigration** - The act of coming to live permanently in a country that is not one's own."
+        "answer": "**Immigration** - the act of coming to live permanently in a country that is not one's own."
     },
     {
         "instance_id": "semeval2013.d011.s013.t001",
@@ -16269,7 +16269,7 @@
     },
     {
         "instance_id": "semeval2013.d011.s016.t001",
-        "answer": "**Sectors** -  A group of industries or businesses that are related to each other and often share similar characteristics, such as"
+        "answer": "**Sectors** -  A group of industries or businesses that are related to each other and often operate in a similar market or"
     },
     {
         "instance_id": "semeval2013.d011.s016.t002",
@@ -16281,7 +16281,7 @@
     },
     {
         "instance_id": "semeval2013.d011.s016.t004",
-        "answer": "**Sectors** -  A group of industries or businesses that are related to each other and often share similar characteristics, such as"
+        "answer": "**Sectors** -  A group of industries or businesses that are related to each other and often operate in a similar market or"
     },
     {
         "instance_id": "semeval2013.d011.s016.t005",
@@ -16313,7 +16313,7 @@
     },
     {
         "instance_id": "semeval2013.d011.s018.t005",
-        "answer": "**Complementarities** -  the state of two or more things working together in a way that enhances or improves each other."
+        "answer": "**Complementarities** -  The state of being mutually beneficial or supportive."
     },
     {
         "instance_id": "semeval2013.d011.s018.t007",
@@ -16377,7 +16377,7 @@
     },
     {
         "instance_id": "semeval2013.d011.s022.t001",
-        "answer": "**Labor** -  Work or effort, especially in the context of a job or profession."
+        "answer": "**Labor** -  Work or effort, especially in a professional or economic context."
     },
     {
         "instance_id": "semeval2013.d011.s022.t002",
@@ -16525,7 +16525,7 @@
     },
     {
         "instance_id": "semeval2013.d012.s006.t004",
-        "answer": "A city in the northeastern United States, serving as the financial center of the country."
+        "answer": "**New York** - A city in the northeastern United States, the most populous city in the state of New York."
     },
     {
         "instance_id": "semeval2013.d012.s007.t000",
@@ -16585,7 +16585,7 @@
     },
     {
         "instance_id": "semeval2013.d012.s016.t001",
-        "answer": "**number** (noun) - a quantity or amount, often a specific or countable one."
+        "answer": "**Number** - A quantity or amount, often expressed numerically."
     },
     {
         "instance_id": "semeval2013.d012.s016.t002",
@@ -16593,7 +16593,7 @@
     },
     {
         "instance_id": "semeval2013.d012.s017.t002",
-        "answer": "**height** -  the highest point or stage of something."
+        "answer": "**height** -  the highest point or level of something."
     },
     {
         "instance_id": "semeval2013.d012.s017.t003",
@@ -16601,7 +16601,7 @@
     },
     {
         "instance_id": "semeval2013.d012.s018.t000",
-        "answer": "**Banks** -  Financial institutions that accept deposits from the public and provide loans, often offering services such as checking accounts,"
+        "answer": "**Banks** -  Financial institutions that accept deposits from the public and provide loans, credit, and other financial services."
     },
     {
         "instance_id": "semeval2013.d012.s018.t001",
@@ -16657,7 +16657,7 @@
     },
     {
         "instance_id": "semeval2013.d012.s022.t003",
-        "answer": "A unit of currency used in the United States."
+        "answer": "**dollars** - A unit of currency used in the United States."
     },
     {
         "instance_id": "semeval2013.d012.s023.t000",
@@ -16693,7 +16693,7 @@
     },
     {
         "instance_id": "semeval2015.d000.s000.t003",
-        "answer": "**Public** -  accessible to or available to the general public."
+        "answer": "**Public** -  accessible to or available for the general public."
     },
     {
         "instance_id": "semeval2015.d000.s000.t004",
@@ -16785,7 +16785,7 @@
     },
     {
         "instance_id": "semeval2015.d000.s002.t010",
-        "answer": "**part** - a portion or component of something."
+        "answer": "**Part** - A portion or component of something."
     },
     {
         "instance_id": "semeval2015.d000.s002.t011",
@@ -16865,7 +16865,7 @@
     },
     {
         "instance_id": "semeval2015.d000.s008.t000",
-        "answer": "**used** -  to employ or apply something for a particular purpose."
+        "answer": "**used** -  to employ or utilize something for a particular purpose."
     },
     {
         "instance_id": "semeval2015.d000.s008.t001",
@@ -16917,7 +16917,7 @@
     },
     {
         "instance_id": "semeval2015.d000.s009.t009",
-        "answer": "**Spread** - to extend or move out from a central point, often in a way that is harmful or uncontrolled."
+        "answer": "**Spread** - to extend or move out from a central point, often in a way that is harmful."
     },
     {
         "instance_id": "semeval2015.d000.s009.t010",
@@ -16925,7 +16925,7 @@
     },
     {
         "instance_id": "semeval2015.d000.s009.t011",
-        "answer": "**Spread** - to extend or move out from a central point, often in a way that is harmful or uncontrolled."
+        "answer": "**Spread** - to extend or move out from a central point, often in a way that is harmful."
     },
     {
         "instance_id": "semeval2015.d000.s009.t012",
@@ -16977,7 +16977,7 @@
     },
     {
         "instance_id": "semeval2015.d000.s010.t004",
-        "answer": "**treated** -  to have undergone a medical procedure or treatment."
+        "answer": "**treated** -  to have received medical treatment for a disease or condition."
     },
     {
         "instance_id": "semeval2015.d000.s010.t005",
@@ -17029,7 +17029,7 @@
     },
     {
         "instance_id": "semeval2015.d000.s014.t000",
-        "answer": "**Dose:** A specific amount of a substance, typically a drug, administered to a patient for therapeutic or prophylactic purposes."
+        "answer": "**Dose:** A specific amount of a substance, such as a drug or medication, administered to a patient for therapeutic or prophylactic"
     },
     {
         "instance_id": "semeval2015.d000.s014.t001",
@@ -17037,7 +17037,7 @@
     },
     {
         "instance_id": "semeval2015.d000.s014.t003",
-        "answer": "**body** -  the physical structure of a person or animal, including the head, limbs, torso, and internal organs"
+        "answer": "**Body** - The physical frame of a person, including the head, torso, limbs, and internal organs."
     },
     {
         "instance_id": "semeval2015.d000.s014.t005",
@@ -17109,7 +17109,7 @@
     },
     {
         "instance_id": "semeval2015.d000.s016.t010",
-        "answer": "**Treatment** - The process of applying a remedy or therapy to a disease or condition."
+        "answer": "Treatment:  The process of applying a remedy or therapy to a disease or condition."
     },
     {
         "instance_id": "semeval2015.d000.s017.t000",
@@ -17161,7 +17161,7 @@
     },
     {
         "instance_id": "semeval2015.d000.s018.t002",
-        "answer": "**discontinued** - to stop or cease doing something."
+        "answer": "**Discontinued** -  to stop doing or using something."
     },
     {
         "instance_id": "semeval2015.d000.s018.t003",
@@ -17173,7 +17173,7 @@
     },
     {
         "instance_id": "semeval2015.d000.s018.t005",
-        "answer": "**patients** -  people who are being treated for a medical condition."
+        "answer": "**Patients** -  Individuals who are receiving medical treatment or care."
     },
     {
         "instance_id": "semeval2015.d000.s018.t006",
@@ -17193,7 +17193,7 @@
     },
     {
         "instance_id": "semeval2015.d000.s018.t010",
-        "answer": "**Other** (in this context) means **additional or different**."
+        "answer": "**Other** (in this context) means **not specifically mentioned or limited to the previously stated or known factors.**"
     },
     {
         "instance_id": "semeval2015.d000.s018.t011",
@@ -17309,11 +17309,11 @@
     },
     {
         "instance_id": "semeval2015.d000.s023.t015",
-        "answer": "**Cells** - The basic, fundamental units of life, typically microscopic, that are capable of carrying out all the processes essential"
+        "answer": "**Cells** - The basic, fundamental unit of life, typically microscopic, that consists of a membrane-bound nucleus and cytoplasm"
     },
     {
         "instance_id": "semeval2015.d000.s024.t000",
-        "answer": "**studied** -  to examine or investigate something in detail, often as part of a research project or experiment."
+        "answer": "**studied** -  to examine or investigate something in detail, often in order to learn about it or to find out something"
     },
     {
         "instance_id": "semeval2015.d000.s025.t000",
@@ -17377,7 +17377,7 @@
     },
     {
         "instance_id": "semeval2015.d000.s027.t009",
-        "answer": "**Patients** - individuals who are being treated for a medical condition."
+        "answer": "**Patients** - individuals who are receiving medical treatment for a disease or condition."
     },
     {
         "instance_id": "semeval2015.d000.s027.t010",
@@ -17405,7 +17405,7 @@
     },
     {
         "instance_id": "semeval2015.d000.s028.t006",
-        "answer": "**Involving** means including or containing something as a part of something else."
+        "answer": "Involving means **including or containing.**"
     },
     {
         "instance_id": "semeval2015.d000.s028.t007",
@@ -17545,7 +17545,7 @@
     },
     {
         "instance_id": "semeval2015.d000.s035.t004",
-        "answer": "**Past** -  Referring to a time that has already happened and is no longer in the present."
+        "answer": "**Past** -  Referring to a time that has already happened."
     },
     {
         "instance_id": "semeval2015.d000.s035.t005",
@@ -17633,7 +17633,7 @@
     },
     {
         "instance_id": "semeval2015.d001.s000.t001",
-        "answer": "**based** -  (verb) to be founded or constructed upon; derived from or originating from something else."
+        "answer": "**based** -  (verb) to be derived from or constructed upon something else."
     },
     {
         "instance_id": "semeval2015.d001.s001.t001",
@@ -17657,7 +17657,7 @@
     },
     {
         "instance_id": "semeval2015.d001.s002.t000",
-        "answer": "**actually****Definition:**  In a factual or literal sense; in reality; in truth."
+        "answer": "**Actually****Definition:**  In fact; in reality; truly."
     },
     {
         "instance_id": "semeval2015.d001.s002.t002",
@@ -17729,7 +17729,7 @@
     },
     {
         "instance_id": "semeval2015.d001.s008.t000",
-        "answer": "```json{  \"definition\": \"Located beneath or below something else.\"}```"
+        "answer": "```python{  \"Below\": \"Located beneath or below something else.\"}```"
     },
     {
         "instance_id": "semeval2015.d001.s008.t001",
@@ -17741,7 +17741,7 @@
     },
     {
         "instance_id": "semeval2015.d001.s008.t004",
-        "answer": "```python{'type':'verb (in the context of this sentence): to enter or specify the kind of data or"
+        "answer": "```python{'type':'verb (transitive)}'```"
     },
     {
         "instance_id": "semeval2015.d001.s008.t005",
@@ -17765,7 +17765,7 @@
     },
     {
         "instance_id": "semeval2015.d001.s009.t002",
-        "answer": "**works** -  to function or operate."
+        "answer": "**works** -  to function or operate in a particular way."
     },
     {
         "instance_id": "semeval2015.d001.s009.t003",
@@ -17777,7 +17777,7 @@
     },
     {
         "instance_id": "semeval2015.d001.s009.t005",
-        "answer": "**do** (verb) - to perform an action or action sequence."
+        "answer": "**do** -  to perform an action or to take a course of action."
     },
     {
         "instance_id": "semeval2015.d001.s009.t006",
@@ -17801,7 +17801,7 @@
     },
     {
         "instance_id": "semeval2015.d001.s010.t000",
-        "answer": "**based** (adjective) -  derived from or founded on a foundation of something; originating from or derived from a source"
+        "answer": "**based** (adjective) -  derived from or founded on a foundation of something; established or developed on the basis of"
     },
     {
         "instance_id": "semeval2015.d001.s010.t004",
@@ -17877,7 +17877,7 @@
     },
     {
         "instance_id": "semeval2015.d001.s016.t001",
-        "answer": "```pythondefine_specify = {  \"specify\": \"To define or indicate the exact nature or characteristics of something"
+        "answer": "```pythondefine_specify = {  \"specify\": \"To define or indicate the exact value or range of a"
     },
     {
         "instance_id": "semeval2015.d001.s016.t003",
@@ -17953,7 +17953,7 @@
     },
     {
         "instance_id": "semeval2015.d001.s022.t000",
-        "answer": "```python{  \"way\": \"a method or approach\"}```"
+        "answer": "```python{  \"way\": \"a method or means by which something is done\"}```"
     },
     {
         "instance_id": "semeval2015.d001.s022.t001",
@@ -17969,11 +17969,11 @@
     },
     {
         "instance_id": "semeval2015.d001.s023.t000",
-        "answer": "**introduce** (verb) - to bring something into existence or into a situation; to present or make known."
+        "answer": "**introduce** (verb) - to bring something new or unexpected into existence or into a situation."
     },
     {
         "instance_id": "semeval2015.d001.s023.t002",
-        "answer": "**use** -  to employ or apply something for a particular purpose."
+        "answer": "**use** -  to employ or utilize something for a particular purpose."
     },
     {
         "instance_id": "semeval2015.d001.s023.t005",
@@ -18001,7 +18001,7 @@
     },
     {
         "instance_id": "semeval2015.d001.s026.t002",
-        "answer": "**working** -  (verb) to be in use or operation."
+        "answer": "**working** -  (verb) to be in use or operation; to be engaged in a task or activity."
     },
     {
         "instance_id": "semeval2015.d001.s027.t000",
@@ -18061,7 +18061,7 @@
     },
     {
         "instance_id": "semeval2015.d001.s030.t004",
-        "answer": "```pythonoperator: A symbol or function that performs a specific operation on operands, such as addition, multiplication, or comparison"
+        "answer": "```pythonoperator: A symbol or function that performs a specific operation on operands, such as addition (+), multiplication (*),"
     },
     {
         "instance_id": "semeval2015.d001.s031.t000",
@@ -18069,7 +18069,7 @@
     },
     {
         "instance_id": "semeval2015.d001.s032.t000",
-        "answer": "```There:  A pronoun indicating a location or position.```"
+        "answer": "**There*** **Definition:**  A pronoun indicating a location or position."
     },
     {
         "instance_id": "semeval2015.d001.s032.t001",
@@ -18097,7 +18097,7 @@
     },
     {
         "instance_id": "semeval2015.d001.s033.t003",
-        "answer": "**values** -  The specific numerical or categorical data points that can be adjusted or modified within a system or context."
+        "answer": "**values** -  The specific numerical or categorical data points that can be modified or adjusted within a system or context."
     },
     {
         "instance_id": "semeval2015.d001.s033.t004",
@@ -18113,7 +18113,7 @@
     },
     {
         "instance_id": "semeval2015.d001.s034.t000",
-        "answer": "```python{  \"time\": \"a point in time or a duration of time\"}```"
+        "answer": "```python{  \"time\": \"a period of time, or a specific instance of time\"}"
     },
     {
         "instance_id": "semeval2015.d001.s034.t002",
@@ -18189,7 +18189,7 @@
     },
     {
         "instance_id": "semeval2015.d001.s039.t005",
-        "answer": "**previous** -  existing or occurring before something else; preceding in time or order."
+        "answer": "**previous** -  existing or occurring before something else; preceding or preceding in time or order."
     },
     {
         "instance_id": "semeval2015.d001.s039.t006",
@@ -18225,7 +18225,7 @@
     },
     {
         "instance_id": "semeval2015.d001.s042.t002",
-        "answer": "**easy** -  (adjective) not difficult; simple; requiring little effort."
+        "answer": "**easy** -  (adjective) requiring little effort or difficulty; not hard to do or understand."
     },
     {
         "instance_id": "semeval2015.d001.s042.t003",
@@ -18349,7 +18349,7 @@
     },
     {
         "instance_id": "semeval2015.d001.s049.t004",
-        "answer": "```necessary: (adj.) required or obligatory; essential. ```"
+        "answer": "```necessary: (adj.) required or obligatory; essential.```"
     },
     {
         "instance_id": "semeval2015.d001.s049.t005",
@@ -18409,7 +18409,7 @@
     },
     {
         "instance_id": "semeval2015.d001.s053.t002",
-        "answer": "**color** (noun): a hue or shade, typically of a pigment or dye, used to give visual appearance to something"
+        "answer": "**color** -  a visual property of an object or surface, typically a hue, shade, or tone, that is"
     },
     {
         "instance_id": "semeval2015.d002.s000.t000",
@@ -18433,11 +18433,11 @@
     },
     {
         "instance_id": "semeval2015.d002.s000.t006",
-        "answer": "**Critical** -  having a significant impact or importance; essential or crucial."
+        "answer": "**Critical** -  Having a decisive or important impact; essential or crucial."
     },
     {
         "instance_id": "semeval2015.d002.s000.t007",
-        "answer": "**Challenge** -  a difficult task or problem that requires effort and skill to overcome."
+        "answer": "**Challenge** -  a difficult task or problem that requires effort, skill, or courage to overcome."
     },
     {
         "instance_id": "semeval2015.d002.s001.t000",
@@ -18485,7 +18485,7 @@
     },
     {
         "instance_id": "semeval2015.d002.s001.t017",
-        "answer": "A service is a service that provides a benefit or assistance to someone or something."
+        "answer": "A service is a service or activity that is provided to meet a need or want."
     },
     {
         "instance_id": "semeval2015.d002.s001.t018",
@@ -18509,7 +18509,7 @@
     },
     {
         "instance_id": "semeval2015.d002.s002.t006",
-        "answer": "**Users** - Individuals who utilize or interact with a particular service or system."
+        "answer": "**Users** - Individuals or entities that utilize or interact with a particular service or system."
     },
     {
         "instance_id": "semeval2015.d002.s002.t007",
@@ -18553,7 +18553,7 @@
     },
     {
         "instance_id": "semeval2015.d002.s003.t005",
-        "answer": "**played****Definition:**  To have a part in or contribute to something."
+        "answer": "**played** (verb) - to have a part in or contribute to something."
     },
     {
         "instance_id": "semeval2015.d002.s003.t006",
@@ -18589,7 +18589,7 @@
     },
     {
         "instance_id": "semeval2015.d002.s004.t008",
-        "answer": "A body of people appointed to manage a country or region, typically with the power to make laws and enforce them."
+        "answer": "A body of people appointed to manage a country or region, typically with the power to make and enforce laws."
     },
     {
         "instance_id": "semeval2015.d002.s004.t010",
@@ -18821,7 +18821,7 @@
     },
     {
         "instance_id": "semeval2015.d002.s009.t002",
-        "answer": "**Report** - A written account of something, typically a formal document that presents information, findings, or an analysis of a"
+        "answer": "**Report** - A written account of something, typically a formal document that presents information, findings, or recommendations."
     },
     {
         "instance_id": "semeval2015.d002.s009.t003",
@@ -18869,7 +18869,7 @@
     },
     {
         "instance_id": "semeval2015.d002.s011.t000",
-        "answer": "**Case study:** A detailed examination of a particular person, event, or situation to gain a deeper understanding of a specific phenomenon"
+        "answer": "**Case study:** A detailed, in-depth examination of a particular person, event, or situation to understand its complexities and"
     },
     {
         "instance_id": "semeval2015.d002.s011.t001",
@@ -18929,7 +18929,7 @@
     },
     {
         "instance_id": "semeval2015.d002.s013.t003",
-        "answer": "**basis** - the fundamental or underlying reason or source for something."
+        "answer": "**basis** - the fundamental or underlying reason or principle on which something is based."
     },
     {
         "instance_id": "semeval2015.d002.s013.t005",
@@ -18997,7 +18997,7 @@
     },
     {
         "instance_id": "semeval2015.d002.s015.t010",
-        "answer": "**causes** - the reasons or factors that bring about a particular event or situation."
+        "answer": "**causes** -  the reasons or factors that bring about a particular event or situation."
     },
     {
         "instance_id": "semeval2015.d002.s016.t000",
@@ -19009,7 +19009,7 @@
     },
     {
         "instance_id": "semeval2015.d002.s016.t004",
-        "answer": "**Particular** -  (adjective)  relating to or designating a specific person, thing, or instance, rather than"
+        "answer": "**Particular** -  (adjective)  Referring to a specific or particular instance or person, as opposed to a general or"
     },
     {
         "instance_id": "semeval2015.d002.s016.t005",
@@ -19037,11 +19037,11 @@
     },
     {
         "instance_id": "semeval2015.d002.s017.t002",
-        "answer": "**Assess** - to examine or evaluate something carefully to determine its value, quality, or condition."
+        "answer": "**Assess** - to examine or evaluate the value, quality, or condition of something."
     },
     {
         "instance_id": "semeval2015.d002.s017.t005",
-        "answer": "**Private** -  belonging to or operated by an individual or a small group, rather than a government or a large"
+        "answer": "**Private** -  belonging to or conducted by a single individual or a small group, rather than a government or organization"
     },
     {
         "instance_id": "semeval2015.d002.s017.t006",
@@ -19073,7 +19073,7 @@
     },
     {
         "instance_id": "semeval2015.d002.s018.t002",
-        "answer": "**Early** -  occurring or happening at an earlier time than usual or expected."
+        "answer": "**Early** -  occurring or happening before the usual or expected time."
     },
     {
         "instance_id": "semeval2015.d002.s018.t003",
@@ -19169,7 +19169,7 @@
     },
     {
         "instance_id": "semeval2015.d003.s000.t004",
-        "answer": "**Assessment** - The process of evaluating or judging something, typically to determine its quality, value, or effectiveness."
+        "answer": "**Assessment** - The process of evaluating or judging something, typically to determine its quality, value, or worth."
     },
     {
         "instance_id": "semeval2015.d003.s000.t005",
@@ -19193,7 +19193,7 @@
     },
     {
         "instance_id": "semeval2015.d003.s001.t006",
-        "answer": "**assessed** - to examine or evaluate something carefully to determine its quality, value, or suitability."
+        "answer": "**assessed** - to examine or evaluate something carefully to determine its quality, value, or significance."
     },
     {
         "instance_id": "semeval2015.d003.s001.t007",
@@ -19237,7 +19237,7 @@
     },
     {
         "instance_id": "semeval2015.d003.s003.t004",
-        "answer": "A solid dosage form, typically compressed and containing a powdered or granular mixture of active ingredients, intended for oral administration."
+        "answer": "A solid dosage form, typically compressed and containing a powdered or granular mixture of active ingredients, designed for oral administration."
     },
     {
         "instance_id": "semeval2015.d003.s003.t005",
@@ -19257,7 +19257,7 @@
     },
     {
         "instance_id": "semeval2015.d003.s004.t002",
-        "answer": "**Score** -  A line or mark that divides something into two or more parts."
+        "answer": "**Score** -  A line or mark made by cutting or slicing, often used to divide something into equal parts."
     },
     {
         "instance_id": "semeval2015.d003.s004.t003",
@@ -19413,7 +19413,7 @@
     },
     {
         "instance_id": "semeval2015.d003.s013.t000",
-        "answer": "**studied** -  to examine or investigate something in detail, often as part of a research project or investigation."
+        "answer": "**studied** -  to examine or investigate something in detail, often in order to learn about it or to gain knowledge about"
     },
     {
         "instance_id": "semeval2015.d003.s014.t001",
@@ -19545,11 +19545,11 @@
     },
     {
         "instance_id": "semeval2015.d003.s018.t003",
-        "answer": "To give or put into effect (a substance, such as a drug or medicine) by a person or an instrument."
+        "answer": "To give or put into effect (a substance, such as a drug or medicine) by a person or machine."
     },
     {
         "instance_id": "semeval2015.d003.s018.t004",
-        "answer": "A small, solid piece of medication, typically for oral consumption."
+        "answer": "A small, solid piece of medication, typically made of compressed powder or granules."
     },
     {
         "instance_id": "semeval2015.d003.s018.t005",

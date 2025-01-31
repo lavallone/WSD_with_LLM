@@ -9,7 +9,7 @@
     },
     {
         "instance_id": "senseval2.d000.s000.t003",
-        "answer": "Relating to or characteristic of the English people or their language, customs, or culture."
+        "answer": "Relating to or characteristic of the English people or language."
     },
     {
         "instance_id": "senseval2.d000.s000.t004",
@@ -17,7 +17,7 @@
     },
     {
         "instance_id": "senseval2.d000.s000.t005",
-        "answer": "Relating to or characteristic of the English people or their language, customs, or culture."
+        "answer": "Relating to or characteristic of the English people or language."
     },
     {
         "instance_id": "senseval2.d000.s000.t006",
@@ -121,7 +121,7 @@
     },
     {
         "instance_id": "senseval2.d000.s005.t000",
-        "answer": "A tall, often fortified structure, typically with a narrow top, used for observation, defense, or as a place of residence"
+        "answer": "A tall, often fortified structure, typically with a narrow top, used for observation, defense, or as a place of worship"
     },
     {
         "instance_id": "senseval2.d000.s005.t001",
@@ -141,7 +141,7 @@
     },
     {
         "instance_id": "senseval2.d000.s005.t007",
-        "answer": "The same in quality or nature."
+        "answer": "The same in quality or kind."
     },
     {
         "instance_id": "senseval2.d000.s005.t008",
@@ -257,7 +257,7 @@
     },
     {
         "instance_id": "senseval2.d000.s009.t002",
-        "answer": "To exist or be situated in a particular place."
+        "answer": "To exist or be present in a particular place or situation."
     },
     {
         "instance_id": "senseval2.d000.s010.t001",
@@ -297,7 +297,7 @@
     },
     {
         "instance_id": "senseval2.d000.s010.t012",
-        "answer": "To maintain or preserve something."
+        "answer": "Maintain or preserve."
     },
     {
         "instance_id": "senseval2.d000.s010.t013",
@@ -353,7 +353,7 @@
     },
     {
         "instance_id": "senseval2.d000.s012.t006",
-        "answer": "Move or go in a leisurely or aimless way."
+        "answer": "Move or go without direction or control."
     },
     {
         "instance_id": "senseval2.d000.s012.t007",
@@ -361,7 +361,7 @@
     },
     {
         "instance_id": "senseval2.d000.s013.t000",
-        "answer": "Feel anxious or troubled about something."
+        "answer": "To be anxious or troubled about something."
     },
     {
         "instance_id": "senseval2.d000.s013.t003",
@@ -385,7 +385,7 @@
     },
     {
         "instance_id": "senseval2.d000.s014.t000",
-        "answer": "The study of past events, especially those of a particular country or period."
+        "answer": "The past events of a particular people or civilization."
     },
     {
         "instance_id": "senseval2.d000.s014.t001",
@@ -441,7 +441,7 @@
     },
     {
         "instance_id": "senseval2.d000.s016.t003",
-        "answer": "The creative and skillful work of a human being, especially in a particular field or style."
+        "answer": "The creative and skillful work of a human being, especially in the visual arts, music, or literature."
     },
     {
         "instance_id": "senseval2.d000.s017.t000",
@@ -497,7 +497,7 @@
     },
     {
         "instance_id": "senseval2.d000.s018.t003",
-        "answer": "To create or bring into existence."
+        "answer": "To create or originate something new."
     },
     {
         "instance_id": "senseval2.d000.s018.t004",
@@ -541,7 +541,7 @@
     },
     {
         "instance_id": "senseval2.d000.s019.t003",
-        "answer": "A series of notes or sounds."
+        "answer": "A series of notes or sounds, typically in a musical context."
     },
     {
         "instance_id": "senseval2.d000.s019.t004",
@@ -677,7 +677,7 @@
     },
     {
         "instance_id": "senseval2.d000.s024.t000",
-        "answer": "To examine or observe something."
+        "answer": "To examine or observe something closely."
     },
     {
         "instance_id": "senseval2.d000.s024.t002",
@@ -717,7 +717,7 @@
     },
     {
         "instance_id": "senseval2.d000.s025.t002",
-        "answer": "A closed, continuous path or path of movement that is formed by a group of things or people."
+        "answer": "A closed, continuous path or path of movement that forms a ring."
     },
     {
         "instance_id": "senseval2.d000.s025.t003",
@@ -737,7 +737,7 @@
     },
     {
         "instance_id": "senseval2.d000.s025.t008",
-        "answer": "A long, flexible cord."
+        "answer": "A long, thick cord or strand of fibrous material."
     },
     {
         "instance_id": "senseval2.d000.s025.t009",
@@ -777,7 +777,7 @@
     },
     {
         "instance_id": "senseval2.d000.s026.t006",
-        "answer": "A series of vibrations that are perceived as a musical or other auditory phenomenon."
+        "answer": "A series of vibrations that are produced by a source, such as a bell or a musical instrument."
     },
     {
         "instance_id": "senseval2.d000.s026.t007",
@@ -913,7 +913,7 @@
     },
     {
         "instance_id": "senseval2.d000.s029.t006",
-        "answer": "A movement of something, typically a part of a body or an object, back and forth."
+        "answer": "A movement of something, typically a body part, back and forth."
     },
     {
         "instance_id": "senseval2.d000.s029.t007",
@@ -941,7 +941,7 @@
     },
     {
         "instance_id": "senseval2.d000.s030.t003",
-        "answer": "A building used for religious services."
+        "answer": "A place of worship for Christians."
     },
     {
         "instance_id": "senseval2.d000.s030.t004",
@@ -961,7 +961,7 @@
     },
     {
         "instance_id": "senseval2.d000.s030.t009",
-        "answer": "discovers or experiences."
+        "answer": "discovers or obtains."
     },
     {
         "instance_id": "senseval2.d000.s030.t010",
@@ -969,7 +969,7 @@
     },
     {
         "instance_id": "senseval2.d000.s030.t011",
-        "answer": "Relating to or involving numbers, quantities, or the principles of mathematics."
+        "answer": "Relating to or involving numbers, quantities, or mathematical principles."
     },
     {
         "instance_id": "senseval2.d000.s030.t012",
@@ -1005,7 +1005,7 @@
     },
     {
         "instance_id": "senseval2.d000.s031.t006",
-        "answer": "A set of established and often formal practices or ceremonies."
+        "answer": "A set of established and often ceremonial practices or actions."
     },
     {
         "instance_id": "senseval2.d000.s031.t008",
@@ -1017,7 +1017,7 @@
     },
     {
         "instance_id": "senseval2.d000.s032.t002",
-        "answer": "An excessive or consuming interest or preoccupation."
+        "answer": "An intense and often uncontrollable fixation or preoccupation with something."
     },
     {
         "instance_id": "senseval2.d000.s032.t003",
@@ -1045,7 +1045,7 @@
     },
     {
         "instance_id": "senseval2.d000.s033.t002",
-        "answer": "Remain in a particular place or position."
+        "answer": "Remain in a particular place or state."
     },
     {
         "instance_id": "senseval2.d000.s033.t003",
@@ -1157,7 +1157,7 @@
     },
     {
         "instance_id": "senseval2.d000.s037.t012",
-        "answer": "A religious ceremony or gathering."
+        "answer": "Religious ceremonies or gatherings."
     },
     {
         "instance_id": "senseval2.d000.s038.t000",
@@ -1225,7 +1225,7 @@
     },
     {
         "instance_id": "senseval2.d000.s039.t004",
-        "answer": "Not connected or joined to anything else."
+        "answer": "Not connected or joined; distinct or different."
     },
     {
         "instance_id": "senseval2.d000.s039.t006",
@@ -1265,7 +1265,7 @@
     },
     {
         "instance_id": "senseval2.d000.s042.t000",
-        "answer": "A ringing device, typically made of metal, that is hung in a tower and used to announce the time or signal events."
+        "answer": "A ringing instrument, typically made of metal, that is used to announce the time or signal events."
     },
     {
         "instance_id": "senseval2.d000.s042.t002",
@@ -1541,7 +1541,7 @@
     },
     {
         "instance_id": "senseval2.d000.s051.t006",
-        "answer": "The state or rank of being of greater importance or value."
+        "answer": "The state or rank of being more important or of greater value than others."
     },
     {
         "instance_id": "senseval2.d000.s051.t007",
@@ -1801,7 +1801,7 @@
     },
     {
         "instance_id": "senseval2.d000.s060.t008",
-        "answer": "The season of the year that follows spring and precedes autumn."
+        "answer": "The season of the year that follows spring and before autumn."
     },
     {
         "instance_id": "senseval2.d000.s060.t009",
@@ -1837,7 +1837,7 @@
     },
     {
         "instance_id": "senseval2.d000.s061.t006",
-        "answer": "To express an opinion or comment."
+        "answer": "Made a statement or comment."
     },
     {
         "instance_id": "senseval2.d000.s061.t007",
@@ -1881,7 +1881,7 @@
     },
     {
         "instance_id": "senseval2.d000.s062.t001",
-        "answer": "Answers or responses to a question or statement."
+        "answer": "Answers or communications made in response to something."
     },
     {
         "instance_id": "senseval2.d000.s062.t002",
@@ -1957,7 +1957,7 @@
     },
     {
         "instance_id": "senseval2.d000.s063.t008",
-        "answer": "A tower or structure at the top of a church, often with a bell in it."
+        "answer": "A tower or structure at the top of a church, often with bells."
     },
     {
         "instance_id": "senseval2.d000.s064.t000",
@@ -1997,7 +1997,7 @@
     },
     {
         "instance_id": "senseval2.d001.s000.t008",
-        "answer": "The act of increasing in size or amount."
+        "answer": "The process of increasing in size or amount."
     },
     {
         "instance_id": "senseval2.d001.s000.t009",
@@ -2049,7 +2049,7 @@
     },
     {
         "instance_id": "senseval2.d001.s002.t004",
-        "answer": "Bring forth or create."
+        "answer": "To create or bring about."
     },
     {
         "instance_id": "senseval2.d001.s002.t005",
@@ -2281,7 +2281,7 @@
     },
     {
         "instance_id": "senseval2.d001.s011.t008",
-        "answer": "Used to indicate a previous or earlier designation or name."
+        "answer": "Used to indicate a previous name or designation."
     },
     {
         "instance_id": "senseval2.d001.s012.t001",
@@ -2353,7 +2353,7 @@
     },
     {
         "instance_id": "senseval2.d001.s013.t015",
-        "answer": "Exclusively; not in any other way."
+        "answer": "Solely; exclusively."
     },
     {
         "instance_id": "senseval2.d001.s013.t017",
@@ -2385,7 +2385,7 @@
     },
     {
         "instance_id": "senseval2.d001.s015.t004",
-        "answer": "To regulate or direct the behavior or activity of something."
+        "answer": "To regulate or direct the behavior or development of something."
     },
     {
         "instance_id": "senseval2.d001.s015.t005",
@@ -2577,7 +2577,7 @@
     },
     {
         "instance_id": "senseval2.d001.s020.t000",
-        "answer": "To be aware of something."
+        "answer": "Be aware of or understand something."
     },
     {
         "instance_id": "senseval2.d001.s020.t001",
@@ -2585,7 +2585,7 @@
     },
     {
         "instance_id": "senseval2.d001.s020.t002",
-        "answer": "Having or showing impairment or malfunction."
+        "answer": "Having been impaired or broken."
     },
     {
         "instance_id": "senseval2.d001.s020.t004",
@@ -2629,7 +2629,7 @@
     },
     {
         "instance_id": "senseval2.d001.s021.t004",
-        "answer": "Capable of being done or occurring."
+        "answer": "Capable of being done or occurring; feasible."
     },
     {
         "instance_id": "senseval2.d001.s021.t005",
@@ -2745,7 +2745,7 @@
     },
     {
         "instance_id": "senseval2.d001.s025.t003",
-        "answer": "The act of finding or making something new or previously unknown."
+        "answer": "The act of finding or making something known."
     },
     {
         "instance_id": "senseval2.d001.s025.t005",
@@ -2873,7 +2873,7 @@
     },
     {
         "instance_id": "senseval2.d001.s027.t010",
-        "answer": "At that place or location."
+        "answer": "At that place or point."
     },
     {
         "instance_id": "senseval2.d001.s029.t000",
@@ -2989,7 +2989,7 @@
     },
     {
         "instance_id": "senseval2.d001.s033.t000",
-        "answer": "Correct or appropriate in position or time."
+        "answer": "Correct or appropriate in position, time, or manner."
     },
     {
         "instance_id": "senseval2.d001.s033.t001",
@@ -3009,7 +3009,7 @@
     },
     {
         "instance_id": "senseval2.d001.s033.t008",
-        "answer": "Moving or proceeding at a rapid pace."
+        "answer": "Moving or proceeding at a rapid pace, especially with great speed or urgency."
     },
     {
         "instance_id": "senseval2.d001.s033.t009",
@@ -3357,7 +3357,7 @@
     },
     {
         "instance_id": "senseval2.d001.s047.t007",
-        "answer": "Discover or determine (something) through investigation or research."
+        "answer": "Discover or come to know something."
     },
     {
         "instance_id": "senseval2.d001.s047.t008",
@@ -3421,7 +3421,7 @@
     },
     {
         "instance_id": "senseval2.d001.s049.t007",
-        "answer": "The second in order or sequence."
+        "answer": "The second of two things in a sequence or series."
     },
     {
         "instance_id": "senseval2.d001.s049.t008",
@@ -3473,7 +3473,7 @@
     },
     {
         "instance_id": "senseval2.d001.s051.t007",
-        "answer": "Cause to happen or to result in."
+        "answer": "Cause to happen or to occur."
     },
     {
         "instance_id": "senseval2.d001.s051.t008",
@@ -3485,7 +3485,7 @@
     },
     {
         "instance_id": "senseval2.d001.s052.t001",
-        "answer": "Providing pleasure or contentment."
+        "answer": "Providing pleasure or satisfaction."
     },
     {
         "instance_id": "senseval2.d001.s052.t002",
@@ -3497,11 +3497,11 @@
     },
     {
         "instance_id": "senseval2.d001.s053.t000",
-        "answer": "Accurate or correct."
+        "answer": "Accurate; correct."
     },
     {
         "instance_id": "senseval2.d001.s053.t002",
-        "answer": "Accurate or correct."
+        "answer": "Accurate; correct."
     },
     {
         "instance_id": "senseval2.d001.s053.t003",
@@ -3533,7 +3533,7 @@
     },
     {
         "instance_id": "senseval2.d001.s055.t006",
-        "answer": "To do again or perform again."
+        "answer": "To do again or once more."
     },
     {
         "instance_id": "senseval2.d001.s055.t007",
@@ -3581,7 +3581,7 @@
     },
     {
         "instance_id": "senseval2.d001.s057.t001",
-        "answer": "Changed the focus of one's attention or activity."
+        "answer": "Changed the focus of one's attention or efforts."
     },
     {
         "instance_id": "senseval2.d001.s057.t002",
@@ -3589,7 +3589,7 @@
     },
     {
         "instance_id": "senseval2.d001.s057.t005",
-        "answer": "Coming after something else in order or rank."
+        "answer": "In order of rank or position."
     },
     {
         "instance_id": "senseval2.d001.s057.t006",
@@ -3669,7 +3669,7 @@
     },
     {
         "instance_id": "senseval2.d001.s059.t012",
-        "answer": "Not as great in degree or amount."
+        "answer": "Not as great in amount, degree, or intensity."
     },
     {
         "instance_id": "senseval2.d001.s059.t013",
@@ -3725,7 +3725,7 @@
     },
     {
         "instance_id": "senseval2.d001.s060.t012",
-        "answer": "Injury or harm to something."
+        "answer": "Injury or harm."
     },
     {
         "instance_id": "senseval2.d001.s061.t000",
@@ -3969,7 +3969,7 @@
     },
     {
         "instance_id": "senseval2.d001.s071.t000",
-        "answer": "A portion or fragment of something."
+        "answer": "A part or portion of something."
     },
     {
         "instance_id": "senseval2.d001.s071.t002",
@@ -4265,7 +4265,7 @@
     },
     {
         "instance_id": "senseval2.d001.s080.t015",
-        "answer": "A disease characterized by abnormal cell growth."
+        "answer": "A disease characterized by uncontrolled cell growth."
     },
     {
         "instance_id": "senseval2.d001.s081.t002",
@@ -4285,7 +4285,7 @@
     },
     {
         "instance_id": "senseval2.d001.s082.t004",
-        "answer": "To express or declare something."
+        "answer": "To express or assert something."
     },
     {
         "instance_id": "senseval2.d001.s082.t005",
@@ -4305,7 +4305,7 @@
     },
     {
         "instance_id": "senseval2.d001.s082.t011",
-        "answer": "To examine or try to find out something about."
+        "answer": "To examine or try to find something."
     },
     {
         "instance_id": "senseval2.d001.s082.t012",
@@ -4369,7 +4369,7 @@
     },
     {
         "instance_id": "senseval2.d001.s086.t005",
-        "answer": "A category or kind."
+        "answer": "Kinds or categories."
     },
     {
         "instance_id": "senseval2.d001.s086.t008",
@@ -4521,7 +4521,7 @@
     },
     {
         "instance_id": "senseval2.d001.s093.t004",
-        "answer": "Not causing disease or illness; free from harmful or damaging effects."
+        "answer": "Not causing disease or illness; sound and well."
     },
     {
         "instance_id": "senseval2.d001.s093.t005",
@@ -4573,7 +4573,7 @@
     },
     {
         "instance_id": "senseval2.d002.s000.t002",
-        "answer": "To understand and interpret written or printed language."
+        "answer": "To understand the meaning of written or printed words."
     },
     {
         "instance_id": "senseval2.d002.s000.t003",
@@ -4629,7 +4629,7 @@
     },
     {
         "instance_id": "senseval2.d002.s003.t014",
-        "answer": "Human beings."
+        "answer": "Individuals."
     },
     {
         "instance_id": "senseval2.d002.s003.t016",
@@ -4713,7 +4713,7 @@
     },
     {
         "instance_id": "senseval2.d002.s006.t006",
-        "answer": "To stimulate or promote the development of something."
+        "answer": "To inspire or promote."
     },
     {
         "instance_id": "senseval2.d002.s006.t008",
@@ -4837,7 +4837,7 @@
     },
     {
         "instance_id": "senseval2.d002.s011.t020",
-        "answer": "The immaterial essence or animating principle of a living being."
+        "answer": "The immaterial essence or spirit of a person."
     },
     {
         "instance_id": "senseval2.d002.s011.t021",
@@ -4889,7 +4889,7 @@
     },
     {
         "instance_id": "senseval2.d002.s013.t007",
-        "answer": "The process of acquiring knowledge and skills, typically through instruction and study."
+        "answer": "The process of acquiring knowledge and skills, especially through instruction and study."
     },
     {
         "instance_id": "senseval2.d002.s013.t013",
@@ -4929,7 +4929,7 @@
     },
     {
         "instance_id": "senseval2.d002.s015.t003",
-        "answer": "Set or decided upon."
+        "answer": "Set or fix (something) firmly in place."
     },
     {
         "instance_id": "senseval2.d002.s015.t004",
@@ -4949,7 +4949,7 @@
     },
     {
         "instance_id": "senseval2.d002.s015.t010",
-        "answer": "To possess or have in common with others."
+        "answer": "To give or distribute something to others."
     },
     {
         "instance_id": "senseval2.d002.s016.t000",
@@ -5105,7 +5105,7 @@
     },
     {
         "instance_id": "senseval2.d002.s021.t004",
-        "answer": "To consider or believe something to be true."
+        "answer": "To consider or believe something."
     },
     {
         "instance_id": "senseval2.d002.s022.t001",
@@ -5365,7 +5365,7 @@
     },
     {
         "instance_id": "senseval2.d002.s036.t011",
-        "answer": "Of great significance or value."
+        "answer": "Of great significance or value; having a strong influence or impact."
     },
     {
         "instance_id": "senseval2.d002.s037.t000",
@@ -5405,7 +5405,7 @@
     },
     {
         "instance_id": "senseval2.d002.s038.t001",
-        "answer": "Proof or information that supports a claim or belief."
+        "answer": "Proof or information that supports a claim or statement."
     },
     {
         "instance_id": "senseval2.d002.s038.t002",
@@ -5417,7 +5417,7 @@
     },
     {
         "instance_id": "senseval2.d002.s039.t001",
-        "answer": "Taking something very seriously; not to be taken lightly."
+        "answer": "Taking something very seriously; not to be treated lightly."
     },
     {
         "instance_id": "senseval2.d002.s039.t002",
@@ -5433,7 +5433,7 @@
     },
     {
         "instance_id": "senseval2.d002.s039.t005",
-        "answer": "Precisely; without any room for doubt or variation."
+        "answer": "Precisely; without any room for doubt or ambiguity."
     },
     {
         "instance_id": "senseval2.d002.s039.t006",
@@ -5537,7 +5537,7 @@
     },
     {
         "instance_id": "senseval2.d002.s044.t004",
-        "answer": "Food, especially simple, uninspired food."
+        "answer": "Food, especially simple, uninspired food, often considered dull or bland."
     },
     {
         "instance_id": "senseval2.d002.s045.t000",
@@ -5561,11 +5561,11 @@
     },
     {
         "instance_id": "senseval2.d002.s045.t005",
-        "answer": "Made known or made public."
+        "answer": "Made known or stated publicly."
     },
     {
         "instance_id": "senseval2.d002.s045.t006",
-        "answer": "A large, independent political entity with a defined territory and government."
+        "answer": "A large, politically organized territory with a defined territory and government."
     },
     {
         "instance_id": "senseval2.d002.s045.t007",
@@ -5577,7 +5577,7 @@
     },
     {
         "instance_id": "senseval2.d002.s045.t010",
-        "answer": "Young human beings, typically under the age of 18."
+        "answer": "Young human beings, especially those under the age of puberty."
     },
     {
         "instance_id": "senseval2.d002.s046.t001",
@@ -5685,7 +5685,7 @@
     },
     {
         "instance_id": "senseval2.d002.s050.t001",
-        "answer": "Be aware of or have knowledge of."
+        "answer": "Be aware of or have knowledge of something."
     },
     {
         "instance_id": "senseval2.d002.s050.t002",
@@ -5729,7 +5729,7 @@
     },
     {
         "instance_id": "senseval2.d002.s051.t001",
-        "answer": "In a considerable or excessive amount; more than is necessary or appropriate."
+        "answer": "In a greater amount than is necessary or reasonable."
     },
     {
         "instance_id": "senseval2.d002.s051.t002",
@@ -5917,7 +5917,7 @@
     },
     {
         "instance_id": "senseval2.d002.s059.t000",
-        "answer": "The majority of something."
+        "answer": "The majority of."
     },
     {
         "instance_id": "senseval2.d002.s059.t002",
@@ -6045,7 +6045,7 @@
     },
     {
         "instance_id": "senseval2.d002.s062.t011",
-        "answer": "Professionals who instruct students in a school or educational institution."
+        "answer": "Professionals who teach students."
     },
     {
         "instance_id": "senseval2.d002.s063.t000",
@@ -6149,7 +6149,7 @@
     },
     {
         "instance_id": "senseval2.d002.s066.t002",
-        "answer": "To receive a degree or certificate, especially one that signifies completion of a course of study."
+        "answer": "To receive a degree or certificate, typically one earned after completing a course of study."
     },
     {
         "instance_id": "senseval2.d002.s066.t004",
@@ -6229,7 +6229,7 @@
     },
     {
         "instance_id": "senseval2.d002.s069.t000",
-        "answer": "An aim or goal."
+        "answer": "An aim or reason for doing something."
     },
     {
         "instance_id": "senseval2.d002.s069.t001",
@@ -6421,7 +6421,7 @@
     },
     {
         "instance_id": "senseval2.d002.s075.t017",
-        "answer": "A person who is a student at a college or university, especially one who is pursuing a particular field of study."
+        "answer": "A person who is a student in a particular field of study."
     },
     {
         "instance_id": "senseval2.d002.s076.t000",
@@ -6657,7 +6657,7 @@
     },
     {
         "instance_id": "senseval3.d000.s005.t002",
-        "answer": "Considered or formed an idea or opinion."
+        "answer": "Considered or decided upon."
     },
     {
         "instance_id": "senseval3.d000.s005.t004",
@@ -6801,7 +6801,7 @@
     },
     {
         "instance_id": "senseval3.d000.s013.t007",
-        "answer": "The position of something in a sequence or order, or a period of time that is immediately before something else."
+        "answer": "The position of something in a sequence or order, or a unit of time equal to one-half of a minute."
     },
     {
         "instance_id": "senseval3.d000.s014.t002",
@@ -6817,7 +6817,7 @@
     },
     {
         "instance_id": "senseval3.d000.s015.t003",
-        "answer": "To strike with a blow or impact."
+        "answer": "To strike or knock with a blow."
     },
     {
         "instance_id": "senseval3.d000.s016.t000",
@@ -6829,7 +6829,7 @@
     },
     {
         "instance_id": "senseval3.d000.s016.t002",
-        "answer": "The opening at the front of the head through which food and drink are taken."
+        "answer": "The opening at the front of the head through which food and drink are taken in."
     },
     {
         "instance_id": "senseval3.d000.s016.t003",
@@ -6845,11 +6845,11 @@
     },
     {
         "instance_id": "senseval3.d000.s016.t007",
-        "answer": "The person who operates a vehicle, especially a truck."
+        "answer": "The person who operates a vehicle."
     },
     {
         "instance_id": "senseval3.d000.s016.t008",
-        "answer": "To move suddenly and forcefully from one place to another."
+        "answer": "Leaped or sprang suddenly and with force."
     },
     {
         "instance_id": "senseval3.d000.s016.t009",
@@ -7021,7 +7021,7 @@
     },
     {
         "instance_id": "senseval3.d000.s024.t004",
-        "answer": "A public road, usually paved, for the passage of vehicles and pedestrians."
+        "answer": "A public road, usually paved, for vehicles and pedestrians."
     },
     {
         "instance_id": "senseval3.d000.s025.t000",
@@ -7081,7 +7081,7 @@
     },
     {
         "instance_id": "senseval3.d000.s026.t006",
-        "answer": "To take care of or support (something) with attention and care."
+        "answer": "To take care of or support, especially in a way that is prolonged or persistent."
     },
     {
         "instance_id": "senseval3.d000.s026.t007",
@@ -7093,7 +7093,7 @@
     },
     {
         "instance_id": "senseval3.d000.s027.t001",
-        "answer": "Consider (something) to be acceptable or agreeable."
+        "answer": "Be willing to accept or tolerate something."
     },
     {
         "instance_id": "senseval3.d000.s027.t002",
@@ -7141,7 +7141,7 @@
     },
     {
         "instance_id": "senseval3.d000.s030.t003",
-        "answer": "Experience or perceive a particular sensation or emotion."
+        "answer": "Experience or perceive a sensation or emotion."
     },
     {
         "instance_id": "senseval3.d000.s030.t004",
@@ -7337,7 +7337,7 @@
     },
     {
         "instance_id": "senseval3.d000.s049.t007",
-        "answer": "A tub or container of water used for bathing."
+        "answer": "A tub or container of water used for washing."
     },
     {
         "instance_id": "senseval3.d000.s050.t000",
@@ -7497,7 +7497,7 @@
     },
     {
         "instance_id": "senseval3.d000.s066.t004",
-        "answer": "Move smoothly and quietly, often in a way that is difficult to see."
+        "answer": "Move smoothly and quietly, often in a way that is not deliberate."
     },
     {
         "instance_id": "senseval3.d000.s066.t005",
@@ -7705,7 +7705,7 @@
     },
     {
         "instance_id": "senseval3.d000.s077.t003",
-        "answer": "To speak in a way that is audible."
+        "answer": "To speak in a conversational manner."
     },
     {
         "instance_id": "senseval3.d000.s078.t000",
@@ -7809,7 +7809,7 @@
     },
     {
         "instance_id": "senseval3.d000.s083.t007",
-        "answer": "To remove or withdraw something, especially liquid or color."
+        "answer": "To remove or take away something, especially liquid or color."
     },
     {
         "instance_id": "senseval3.d000.s083.t008",
@@ -7829,7 +7829,7 @@
     },
     {
         "instance_id": "senseval3.d000.s084.t003",
-        "answer": "Done or done with careful thought and intention."
+        "answer": "Done intentionally, with careful thought and purpose."
     },
     {
         "instance_id": "senseval3.d000.s084.t004",
@@ -7861,11 +7861,11 @@
     },
     {
         "instance_id": "senseval3.d000.s086.t002",
-        "answer": "To experience a particular sensation or emotion."
+        "answer": "To experience a particular emotion or sensation."
     },
     {
         "instance_id": "senseval3.d000.s086.t003",
-        "answer": "Troubled or concerned about something."
+        "answer": "To trouble or disturb."
     },
     {
         "instance_id": "senseval3.d000.s086.t004",
@@ -8189,7 +8189,7 @@
     },
     {
         "instance_id": "senseval3.d000.s108.t002",
-        "answer": "A dark, indistinct image or form cast by a light source."
+        "answer": "A dark, indistinct image of a person or object cast by a light source."
     },
     {
         "instance_id": "senseval3.d000.s108.t003",
@@ -8201,7 +8201,7 @@
     },
     {
         "instance_id": "senseval3.d000.s108.t006",
-        "answer": "A dark, indistinct image or form cast by a light source."
+        "answer": "A dark, indistinct image of a person or object cast by a light source."
     },
     {
         "instance_id": "senseval3.d000.s109.t001",
@@ -8213,7 +8213,7 @@
     },
     {
         "instance_id": "senseval3.d000.s109.t004",
-        "answer": "A usually enclosed, usually small, space, often at a corner of a room or building."
+        "answer": "A usually enclosed, usually small, space formed by the meeting of walls or other boundaries."
     },
     {
         "instance_id": "senseval3.d000.s109.t005",
@@ -8249,7 +8249,7 @@
     },
     {
         "instance_id": "senseval3.d000.s110.t005",
-        "answer": "A large vehicle with a flat bed used for carrying goods."
+        "answer": "A large vehicle with a flat bed, used for carrying goods."
     },
     {
         "instance_id": "senseval3.d000.s110.t006",
@@ -8265,7 +8265,7 @@
     },
     {
         "instance_id": "senseval3.d000.s111.t001",
-        "answer": "A person who is unpleasant or undesirable."
+        "answer": "A person who is unpleasant or annoying."
     },
     {
         "instance_id": "senseval3.d000.s112.t000",
@@ -8373,7 +8373,7 @@
     },
     {
         "instance_id": "senseval3.d000.s116.t004",
-        "answer": "To purchase."
+        "answer": "To purchase or acquire something."
     },
     {
         "instance_id": "senseval3.d000.s116.t005",
@@ -8409,7 +8409,7 @@
     },
     {
         "instance_id": "senseval3.d000.s118.t005",
-        "answer": "Recognition or acknowledgment of the value or worth of something or someone."
+        "answer": "Acknowledgement or feeling of gratitude or thankfulness."
     },
     {
         "instance_id": "senseval3.d000.s119.t000",
@@ -8421,7 +8421,7 @@
     },
     {
         "instance_id": "senseval3.d000.s119.t002",
-        "answer": "The state of being quiet or lacking sound."
+        "answer": "The state of being quiet or without sound."
     },
     {
         "instance_id": "senseval3.d000.s119.t003",
@@ -8437,7 +8437,7 @@
     },
     {
         "instance_id": "senseval3.d000.s120.t001",
-        "answer": "Expressing dissatisfaction or displeasure."
+        "answer": "Expressing dissatisfaction or displeasure in a harsh or bitter way."
     },
     {
         "instance_id": "senseval3.d000.s120.t003",
@@ -8741,7 +8741,7 @@
     },
     {
         "instance_id": "senseval3.d000.s151.t001",
-        "answer": "Engaged or attached to something, especially in a way that is difficult to break free from."
+        "answer": "Engaged or addicted to something."
     },
     {
         "instance_id": "senseval3.d000.s152.t000",
@@ -8749,11 +8749,11 @@
     },
     {
         "instance_id": "senseval3.d000.s152.t001",
-        "answer": "To be intensely hot or inflamed."
+        "answer": "To be consumed by intense heat or fire."
     },
     {
         "instance_id": "senseval3.d000.s153.t000",
-        "answer": "Spoken in a low, quiet, and often hesitant voice."
+        "answer": "Spoken in a low, quiet voice, often with little or no emphasis."
     },
     {
         "instance_id": "senseval3.d000.s154.t001",
@@ -8773,7 +8773,7 @@
     },
     {
         "instance_id": "senseval3.d000.s155.t005",
-        "answer": "A reason or excuse given for one's absence or non-presence at a particular time or place."
+        "answer": "A reason or excuse given for one's absence from a place or time."
     },
     {
         "instance_id": "senseval3.d000.s156.t000",
@@ -8833,7 +8833,7 @@
     },
     {
         "instance_id": "senseval3.d001.s000.t009",
-        "answer": "Relating to or involving the government of the United States."
+        "answer": "Relating to or involving the government of a country as a whole."
     },
     {
         "instance_id": "senseval3.d001.s000.t010",
@@ -8909,7 +8909,7 @@
     },
     {
         "instance_id": "senseval3.d001.s004.t000",
-        "answer": "Relating to or pertaining to a president."
+        "answer": "Relating to or involving a president."
     },
     {
         "instance_id": "senseval3.d001.s004.t001",
@@ -8921,7 +8921,7 @@
     },
     {
         "instance_id": "senseval3.d001.s004.t004",
-        "answer": "Relating to or pertaining to a president."
+        "answer": "Relating to or involving a president."
     },
     {
         "instance_id": "senseval3.d001.s004.t007",
@@ -9069,7 +9069,7 @@
     },
     {
         "instance_id": "senseval3.d001.s009.t024",
-        "answer": "To make something better or correct a problem."
+        "answer": "To make something better or correct."
     },
     {
         "instance_id": "senseval3.d001.s009.t025",
@@ -9189,7 +9189,7 @@
     },
     {
         "instance_id": "senseval3.d001.s011.t004",
-        "answer": "Minimizing or reducing something to its essential elements; characterized by a preference for simplicity and minimal intervention."
+        "answer": "Minimizing or reducing something to its essential elements or core."
     },
     {
         "instance_id": "senseval3.d001.s011.t005",
@@ -9653,7 +9653,7 @@
     },
     {
         "instance_id": "senseval3.d001.s026.t003",
-        "answer": "The act of moving or proceeding in a particular direction."
+        "answer": "The act of competing for a position or office."
     },
     {
         "instance_id": "senseval3.d001.s026.t006",
@@ -9861,7 +9861,7 @@
     },
     {
         "instance_id": "senseval3.d001.s033.t001",
-        "answer": "Facts or information that support a claim or belief."
+        "answer": "Facts or information that support a claim or theory."
     },
     {
         "instance_id": "senseval3.d001.s033.t004",
@@ -9945,7 +9945,7 @@
     },
     {
         "instance_id": "senseval3.d001.s035.t008",
-        "answer": "Shows or proves that something is true."
+        "answer": "Shows or suggests that something is true."
     },
     {
         "instance_id": "senseval3.d001.s035.t009",
@@ -9973,7 +9973,7 @@
     },
     {
         "instance_id": "senseval3.d001.s035.t016",
-        "answer": "Problems, worries, or anxieties."
+        "answer": "Problems, worries, or anxieties about something."
     },
     {
         "instance_id": "senseval3.d001.s036.t002",
@@ -9985,7 +9985,7 @@
     },
     {
         "instance_id": "senseval3.d001.s036.t004",
-        "answer": "A political party in the United States that advocates for social and economic programs that promote equality and social justice."
+        "answer": "A political party in the United States that advocates for social and economic programs for the poor and disadvantaged."
     },
     {
         "instance_id": "senseval3.d001.s036.t005",
@@ -10109,7 +10109,7 @@
     },
     {
         "instance_id": "senseval3.d001.s039.t009",
-        "answer": "Relating to or characteristic of a particular place or area, especially a smaller or more immediate one."
+        "answer": "Relating to or characteristic of a particular place or area."
     },
     {
         "instance_id": "senseval3.d001.s039.t011",
@@ -10209,7 +10209,7 @@
     },
     {
         "instance_id": "senseval3.d001.s040.t020",
-        "answer": "Something else; different from the one that is being mentioned."
+        "answer": "Something else; not the same as something else."
     },
     {
         "instance_id": "senseval3.d001.s040.t021",
@@ -10377,7 +10377,7 @@
     },
     {
         "instance_id": "senseval3.d001.s043.t007",
-        "answer": "A particular stage or degree of something."
+        "answer": "A particular stage or position in a series or system."
     },
     {
         "instance_id": "senseval3.d001.s043.t008",
@@ -10385,7 +10385,7 @@
     },
     {
         "instance_id": "senseval3.d001.s043.t009",
-        "answer": "A particular stage or degree of something."
+        "answer": "A particular stage or position in a series or system."
     },
     {
         "instance_id": "senseval3.d001.s044.t003",
@@ -10501,7 +10501,7 @@
     },
     {
         "instance_id": "senseval3.d001.s046.t012",
-        "answer": "Based on logic or reason; sensible or justifiable."
+        "answer": "Based on reason or logic; sensible or justifiable."
     },
     {
         "instance_id": "senseval3.d002.s000.t000",
@@ -10545,7 +10545,7 @@
     },
     {
         "instance_id": "senseval3.d002.s002.t003",
-        "answer": "An electronic device for processing information and performing calculations."
+        "answer": "Electronic devices capable of processing information and performing calculations."
     },
     {
         "instance_id": "senseval3.d002.s002.t007",
@@ -10553,7 +10553,7 @@
     },
     {
         "instance_id": "senseval3.d002.s002.t008",
-        "answer": "An electronic device for processing information and performing calculations."
+        "answer": "Electronic devices capable of processing information and performing calculations."
     },
     {
         "instance_id": "senseval3.d002.s003.t000",
@@ -10601,7 +10601,7 @@
     },
     {
         "instance_id": "senseval3.d002.s006.t002",
-        "answer": "A flow of vehicles, people, or other objects moving through a space."
+        "answer": "A large amount of vehicles or other moving objects traveling on a road or other surface."
     },
     {
         "instance_id": "senseval3.d002.s007.t000",
@@ -10625,7 +10625,7 @@
     },
     {
         "instance_id": "senseval3.d002.s011.t000",
-        "answer": "A wide, usually tree-lined street."
+        "answer": "Wide, usually tree-lined streets."
     },
     {
         "instance_id": "senseval3.d002.s011.t002",
@@ -10645,7 +10645,7 @@
     },
     {
         "instance_id": "senseval3.d002.s012.t000",
-        "answer": "Dropped or descended to a lower position."
+        "answer": "Dropped or descended."
     },
     {
         "instance_id": "senseval3.d002.s012.t001",
@@ -10705,7 +10705,7 @@
     },
     {
         "instance_id": "senseval3.d002.s016.t005",
-        "answer": "Following in order or position."
+        "answer": "Following in position or order."
     },
     {
         "instance_id": "senseval3.d002.s016.t006",
@@ -10749,7 +10749,7 @@
     },
     {
         "instance_id": "senseval3.d002.s018.t002",
-        "answer": "A structure made of bricks, wood, or other materials, designed for human habitation or use."
+        "answer": "A structure made of bricks, concrete, or other materials, designed for human habitation or use."
     },
     {
         "instance_id": "senseval3.d002.s018.t003",
@@ -10901,11 +10901,11 @@
     },
     {
         "instance_id": "senseval3.d002.s030.t002",
-        "answer": "A device that emits a loud sound to warn of danger or intrusion."
+        "answer": "A device that emits a loud sound to warn of a threat or intrusion."
     },
     {
         "instance_id": "senseval3.d002.s030.t003",
-        "answer": "To sound a loud, sharp noise, typically as a warning or signal."
+        "answer": "To sound a loud, sharp noise, typically as a warning."
     },
     {
         "instance_id": "senseval3.d002.s031.t000",
@@ -10977,7 +10977,7 @@
     },
     {
         "instance_id": "senseval3.d002.s040.t002",
-        "answer": "To cease moving or being in motion."
+        "answer": "To cease moving or traveling."
     },
     {
         "instance_id": "senseval3.d002.s040.t003",
@@ -11001,7 +11001,7 @@
     },
     {
         "instance_id": "senseval3.d002.s041.t003",
-        "answer": "Moving back and forth or from side to side."
+        "answer": "Moving back and forth, usually in a gentle or rhythmic way."
     },
     {
         "instance_id": "senseval3.d002.s041.t004",
@@ -11049,7 +11049,7 @@
     },
     {
         "instance_id": "senseval3.d002.s050.t002",
-        "answer": "A level of a building, typically a horizontal surface."
+        "answer": "A level of a building, often with a specific purpose or function."
     },
     {
         "instance_id": "senseval3.d002.s051.t000",
@@ -11133,7 +11133,7 @@
     },
     {
         "instance_id": "senseval3.d002.s056.t004",
-        "answer": "A rapid combustion of material, usually involving a large amount of heat and light."
+        "answer": "A rapid combustion of material, typically involving a large amount of heat and light."
     },
     {
         "instance_id": "senseval3.d002.s057.t000",
@@ -11253,7 +11253,7 @@
     },
     {
         "instance_id": "senseval3.d002.s072.t005",
-        "answer": "The way an animal or person acts or conducts itself."
+        "answer": "The way a person or animal acts or conducts itself."
     },
     {
         "instance_id": "senseval3.d002.s073.t000",
@@ -11265,7 +11265,7 @@
     },
     {
         "instance_id": "senseval3.d002.s076.t000",
-        "answer": "Experienced or perceived as a sensation of physical contact or pressure."
+        "answer": "Experienced or perceived as a sensation of physical pressure or movement."
     },
     {
         "instance_id": "senseval3.d002.s076.t003",
@@ -11277,7 +11277,7 @@
     },
     {
         "instance_id": "senseval3.d002.s080.t001",
-        "answer": "appears to be the case."
+        "answer": "Appear to be."
     },
     {
         "instance_id": "senseval3.d002.s080.t002",
@@ -11353,7 +11353,7 @@
     },
     {
         "instance_id": "senseval3.d002.s084.t001",
-        "answer": "Passed or moved in a slow, rolling motion."
+        "answer": "Passed or moved slowly and smoothly."
     },
     {
         "instance_id": "senseval3.d002.s084.t002",
@@ -11441,7 +11441,7 @@
     },
     {
         "instance_id": "senseval3.d002.s088.t003",
-        "answer": "At a low level; not high or extreme."
+        "answer": "Of a small or moderate degree."
     },
     {
         "instance_id": "senseval3.d002.s088.t004",
@@ -11501,7 +11501,7 @@
     },
     {
         "instance_id": "senseval3.d002.s093.t001",
-        "answer": "An electronic device for processing information."
+        "answer": "A machine for performing calculations automatically."
     },
     {
         "instance_id": "senseval3.d002.s093.t005",
@@ -12177,7 +12177,7 @@
     },
     {
         "instance_id": "semeval2013.d000.s004.t004",
-        "answer": "The people or things that are being referred to."
+        "answer": "People or countries."
     },
     {
         "instance_id": "semeval2013.d000.s004.t006",
@@ -12233,7 +12233,7 @@
     },
     {
         "instance_id": "semeval2013.d000.s007.t001",
-        "answer": "A discussion or conference between two or more parties with the aim of reaching an agreement."
+        "answer": "A discussion or series of discussions between two or more parties with the aim of reaching an agreement."
     },
     {
         "instance_id": "semeval2013.d000.s007.t002",
@@ -12241,7 +12241,7 @@
     },
     {
         "instance_id": "semeval2013.d000.s007.t003",
-        "answer": "The atmosphere of the Earth, especially as it relates to temperature and weather patterns."
+        "answer": "The atmosphere of a region or place, especially in relation to temperature and weather conditions."
     },
     {
         "instance_id": "semeval2013.d000.s007.t004",
@@ -12505,7 +12505,7 @@
     },
     {
         "instance_id": "semeval2013.d000.s022.t004",
-        "answer": "A force that acts on an object, often causing it to deform or change shape."
+        "answer": "A force that acts on an object, often applied to a surface."
     },
     {
         "instance_id": "semeval2013.d000.s022.t005",
@@ -12605,7 +12605,7 @@
     },
     {
         "instance_id": "semeval2013.d000.s026.t001",
-        "answer": "A person who holds a high political office, typically in a government."
+        "answer": "A person who holds a high political office, especially in a government."
     },
     {
         "instance_id": "semeval2013.d000.s027.t002",
@@ -13069,11 +13069,11 @@
     },
     {
         "instance_id": "semeval2013.d003.s003.t002",
-        "answer": "A piece of land, especially one used for agriculture or farming."
+        "answer": "A piece of land, especially one used for agriculture."
     },
     {
         "instance_id": "semeval2013.d003.s004.t000",
-        "answer": "A business organization that is separate from the government and is owned by one or more people."
+        "answer": "A business organization that is separate from the government and owned by individuals or a group of individuals."
     },
     {
         "instance_id": "semeval2013.d003.s004.t001",
@@ -13081,7 +13081,7 @@
     },
     {
         "instance_id": "semeval2013.d003.s005.t000",
-        "answer": "A proposal or offer to do something."
+        "answer": "A proposal or offer for something."
     },
     {
         "instance_id": "semeval2013.d003.s006.t000",
@@ -13129,7 +13129,7 @@
     },
     {
         "instance_id": "semeval2013.d003.s008.t005",
-        "answer": "A business organization that is owned by a group of people and operates for profit."
+        "answer": "A business organization, especially one that is large and well-known."
     },
     {
         "instance_id": "semeval2013.d003.s008.t007",
@@ -13181,7 +13181,7 @@
     },
     {
         "instance_id": "semeval2013.d003.s011.t005",
-        "answer": "A body of people ruling a country or territory, typically with a system of elected officials."
+        "answer": "The state or a group of people controlling a country or region."
     },
     {
         "instance_id": "semeval2013.d003.s011.t006",
@@ -13217,7 +13217,7 @@
     },
     {
         "instance_id": "semeval2013.d003.s014.t001",
-        "answer": "A legally binding agreement between two or more parties, outlining the terms of a transaction or arrangement."
+        "answer": "A legally binding agreement between two or more parties."
     },
     {
         "instance_id": "semeval2013.d003.s015.t000",
@@ -13273,7 +13273,7 @@
     },
     {
         "instance_id": "semeval2013.d003.s018.t002",
-        "answer": "A proposal or suggestion for something, typically involving a price or other terms."
+        "answer": "A proposal or suggestion for something, typically a business deal or agreement."
     },
     {
         "instance_id": "semeval2013.d003.s018.t003",
@@ -13285,7 +13285,7 @@
     },
     {
         "instance_id": "semeval2013.d003.s018.t005",
-        "answer": "An organization or department of government responsible for a particular area of policy or activity."
+        "answer": "A government department or agency responsible for a particular area of policy or administration."
     },
     {
         "instance_id": "semeval2013.d003.s018.t006",
@@ -13313,7 +13313,7 @@
     },
     {
         "instance_id": "semeval2013.d004.s001.t001",
-        "answer": "An institution that accepts deposits and makes loans."
+        "answer": "Financial institutions that accept deposits and make loans."
     },
     {
         "instance_id": "semeval2013.d004.s001.t002",
@@ -13433,7 +13433,7 @@
     },
     {
         "instance_id": "semeval2013.d004.s009.t000",
-        "answer": "Money in the form of coins or bills."
+        "answer": "Money in the form of coins or banknotes."
     },
     {
         "instance_id": "semeval2013.d004.s009.t001",
@@ -13477,7 +13477,7 @@
     },
     {
         "instance_id": "semeval2013.d005.s002.t001",
-        "answer": "Evidence or proof given in court or other formal setting."
+        "answer": "Evidence or proof given in court or other official proceedings."
     },
     {
         "instance_id": "semeval2013.d005.s003.t000",
@@ -13613,7 +13613,7 @@
     },
     {
         "instance_id": "semeval2013.d005.s008.t000",
-        "answer": "A formal legal proceeding in which a person is accused of a crime and is given the opportunity to defend themselves."
+        "answer": "A formal legal proceeding in which a person is accused of a crime or offense and is brought to court to be judged."
     },
     {
         "instance_id": "semeval2013.d005.s008.t001",
@@ -13629,7 +13629,7 @@
     },
     {
         "instance_id": "semeval2013.d005.s008.t005",
-        "answer": "Fundamental freedoms or privileges guaranteed by law."
+        "answer": "A privilege or entitlement granted by law or custom."
     },
     {
         "instance_id": "semeval2013.d005.s009.t003",
@@ -13933,7 +13933,7 @@
     },
     {
         "instance_id": "semeval2013.d005.s027.t009",
-        "answer": "A legal proceeding in which a person is accused of a crime or offense and is brought to court to be judged."
+        "answer": "A legal proceeding in which a person is brought to court to be judged on a charge or accusation."
     },
     {
         "instance_id": "semeval2013.d005.s028.t002",
@@ -14077,7 +14077,7 @@
     },
     {
         "instance_id": "semeval2013.d006.s004.t006",
-        "answer": "A competition involving teams playing against each other in a set number of matches."
+        "answer": "A competition involving teams playing against each other in a set number of matches, typically for a championship or to determine a winner."
     },
     {
         "instance_id": "semeval2013.d006.s004.t008",
@@ -14161,7 +14161,7 @@
     },
     {
         "instance_id": "semeval2013.d006.s008.t008",
-        "answer": "High respect and esteem."
+        "answer": "High respect and admiration."
     },
     {
         "instance_id": "semeval2013.d006.s008.t009",
@@ -14425,7 +14425,7 @@
     },
     {
         "instance_id": "semeval2013.d006.s019.t015",
-        "answer": "The act of gathering or collecting together."
+        "answer": "The act of gathering or collecting something, especially in a gradual or steady way."
     },
     {
         "instance_id": "semeval2013.d006.s019.t017",
@@ -14449,7 +14449,7 @@
     },
     {
         "instance_id": "semeval2013.d006.s021.t002",
-        "answer": "A portion or share of something."
+        "answer": "A portion or segment of something."
     },
     {
         "instance_id": "semeval2013.d006.s021.t003",
@@ -14961,11 +14961,11 @@
     },
     {
         "instance_id": "semeval2013.d008.s006.t003",
-        "answer": "An inquiry or survey intended to gather information or opinions from a group of people."
+        "answer": "An inquiry or survey intended to obtain information or opinions from a group of people."
     },
     {
         "instance_id": "semeval2013.d008.s007.t001",
-        "answer": "A state of mind or feeling."
+        "answer": "A prevailing feeling or emotional state."
     },
     {
         "instance_id": "semeval2013.d008.s008.t000",
@@ -15045,7 +15045,7 @@
     },
     {
         "instance_id": "semeval2013.d008.s012.t005",
-        "answer": "A political entity that is a sovereign state, typically with its own government and territory."
+        "answer": "A sovereign state, typically with a defined territory and population."
     },
     {
         "instance_id": "semeval2013.d008.s012.t006",
@@ -15061,7 +15061,7 @@
     },
     {
         "instance_id": "semeval2013.d008.s013.t000",
-        "answer": "People who are asked to participate in a survey or poll."
+        "answer": "People who are asked to give their opinions or take part in a survey."
     },
     {
         "instance_id": "semeval2013.d008.s013.t002",
@@ -15093,7 +15093,7 @@
     },
     {
         "instance_id": "semeval2013.d008.s014.t001",
-        "answer": "A political entity with a defined territory and government, typically with a distinct culture and history."
+        "answer": "A sovereign state or territory with its own government and people."
     },
     {
         "instance_id": "semeval2013.d008.s014.t002",
@@ -15145,7 +15145,7 @@
     },
     {
         "instance_id": "semeval2013.d008.s018.t003",
-        "answer": "A part or share of a whole."
+        "answer": "A part or amount of something relative to the whole."
     },
     {
         "instance_id": "semeval2013.d008.s018.t005",
@@ -15297,7 +15297,7 @@
     },
     {
         "instance_id": "semeval2013.d008.s027.t001",
-        "answer": "A sovereign state, typically with a defined territory, government, and population."
+        "answer": "A sovereign state, an independent political entity with its own government and territory."
     },
     {
         "instance_id": "semeval2013.d008.s027.t002",
@@ -15337,7 +15337,7 @@
     },
     {
         "instance_id": "semeval2013.d008.s028.t006",
-        "answer": "A special or unique quality or characteristic that sets something apart from others."
+        "answer": "A special quality or characteristic that sets something apart from others."
     },
     {
         "instance_id": "semeval2013.d009.s000.t001",
@@ -15357,7 +15357,7 @@
     },
     {
         "instance_id": "semeval2013.d009.s001.t001",
-        "answer": "The highest court in a legal system, having the final say in legal matters."
+        "answer": "The highest court in a legal system, having the final say in matters of law."
     },
     {
         "instance_id": "semeval2013.d009.s001.t002",
@@ -15453,7 +15453,7 @@
     },
     {
         "instance_id": "semeval2013.d009.s004.t007",
-        "answer": "To move back and forth or to and fro."
+        "answer": "To move back and forth, typically in a lively or energetic way."
     },
     {
         "instance_id": "semeval2013.d009.s004.t008",
@@ -15637,7 +15637,7 @@
     },
     {
         "instance_id": "semeval2013.d009.s017.t005",
-        "answer": "A person who is a judge in a court of law."
+        "answer": "A member of a court of law, especially a judge."
     },
     {
         "instance_id": "semeval2013.d009.s017.t006",
@@ -15649,7 +15649,7 @@
     },
     {
         "instance_id": "semeval2013.d009.s017.t008",
-        "answer": "The head of a company or organization."
+        "answer": "The person who holds the highest office in a particular organization."
     },
     {
         "instance_id": "semeval2013.d009.s018.t000",
@@ -15665,7 +15665,7 @@
     },
     {
         "instance_id": "semeval2013.d009.s018.t004",
-        "answer": "A place where legal proceedings are held."
+        "answer": "A place where legal cases are heard and decided."
     },
     {
         "instance_id": "semeval2013.d009.s019.t000",
@@ -15725,7 +15725,7 @@
     },
     {
         "instance_id": "semeval2013.d009.s024.t001",
-        "answer": "A matter or dispute that is being brought before a court for decision."
+        "answer": "A matter or dispute that is being brought before a court for legal decision."
     },
     {
         "instance_id": "semeval2013.d009.s024.t002",
@@ -15897,7 +15897,7 @@
     },
     {
         "instance_id": "semeval2013.d010.s012.t004",
-        "answer": "A forward player in a football (soccer) team, typically positioned near the opponent's goal."
+        "answer": "A forward player in a football (soccer) team, typically responsible for scoring goals."
     },
     {
         "instance_id": "semeval2013.d010.s013.t000",
@@ -15985,7 +15985,7 @@
     },
     {
         "instance_id": "semeval2013.d011.s001.t007",
-        "answer": "A quantity or amount of something."
+        "answer": "A numerical quantity or a set of numbers."
     },
     {
         "instance_id": "semeval2013.d011.s001.t008",
@@ -16001,15 +16001,15 @@
     },
     {
         "instance_id": "semeval2013.d011.s001.t011",
-        "answer": "A particular territory with a defined political system and a population."
+        "answer": "A particular territory with a defined geographical area and a government."
     },
     {
         "instance_id": "semeval2013.d011.s001.t012",
-        "answer": "A particular territory with a defined political system and a population."
+        "answer": "A particular territory with a defined geographical area and a government."
     },
     {
         "instance_id": "semeval2013.d011.s002.t000",
-        "answer": "The act of treating someone in a hostile or annoying way."
+        "answer": "Unwelcome or abusive treatment."
     },
     {
         "instance_id": "semeval2013.d011.s002.t001",
@@ -16069,7 +16069,7 @@
     },
     {
         "instance_id": "semeval2013.d011.s005.t006",
-        "answer": "The side of a political spectrum that advocates for social welfare programs and government intervention."
+        "answer": "The side of a political spectrum that advocates for social welfare programs and government intervention in the economy."
     },
     {
         "instance_id": "semeval2013.d011.s005.t007",
@@ -16145,7 +16145,7 @@
     },
     {
         "instance_id": "semeval2013.d011.s010.t000",
-        "answer": "A plan or course of action."
+        "answer": "A plan or set of instructions for carrying out a task or achieving a goal."
     },
     {
         "instance_id": "semeval2013.d011.s010.t003",
@@ -16209,7 +16209,7 @@
     },
     {
         "instance_id": "semeval2013.d011.s013.t000",
-        "answer": "The act of coming into a country to live permanently or for an extended period."
+        "answer": "The act of coming to live permanently in a new country."
     },
     {
         "instance_id": "semeval2013.d011.s013.t001",
@@ -16381,7 +16381,7 @@
     },
     {
         "instance_id": "semeval2013.d011.s022.t002",
-        "answer": "An association or group of people working together for a common purpose."
+        "answer": "An association or group of people with a common purpose."
     },
     {
         "instance_id": "semeval2013.d011.s022.t006",
@@ -16457,7 +16457,7 @@
     },
     {
         "instance_id": "semeval2013.d012.s002.t001",
-        "answer": "A place where one lives."
+        "answer": "The place where one lives."
     },
     {
         "instance_id": "semeval2013.d012.s002.t002",
@@ -16765,7 +16765,7 @@
     },
     {
         "instance_id": "semeval2015.d000.s002.t003",
-        "answer": "Relating to the health of a person or the treatment of illness."
+        "answer": "Relating to the health of a person or animal."
     },
     {
         "instance_id": "semeval2015.d000.s002.t004",
@@ -16841,7 +16841,7 @@
     },
     {
         "instance_id": "semeval2015.d000.s005.t004",
-        "answer": "To flow slowly and steadily, often in a thin stream."
+        "answer": "To flow slowly and steadily, often in a thin, continuous stream."
     },
     {
         "instance_id": "semeval2015.d000.s005.t005",
@@ -17153,7 +17153,7 @@
     },
     {
         "instance_id": "semeval2015.d000.s018.t000",
-        "answer": "The action of applying medical care or therapy to a person or animal suffering from an illness or injury."
+        "answer": "The action of providing medical care or therapy to a person or animal with a disease or injury."
     },
     {
         "instance_id": "semeval2015.d000.s018.t001",
@@ -17325,7 +17325,7 @@
     },
     {
         "instance_id": "semeval2015.d000.s025.t005",
-        "answer": "Most important or primary."
+        "answer": "Most important or central."
     },
     {
         "instance_id": "semeval2015.d000.s025.t006",
@@ -17333,7 +17333,7 @@
     },
     {
         "instance_id": "semeval2015.d000.s025.t007",
-        "answer": "People who are sick and being treated for a medical condition."
+        "answer": "People who are sick and are being treated for a medical condition."
     },
     {
         "instance_id": "semeval2015.d000.s025.t012",
@@ -17385,15 +17385,15 @@
     },
     {
         "instance_id": "semeval2015.d000.s027.t011",
-        "answer": "In an advanced stage or condition."
+        "answer": "In an advanced stage of development or progress."
     },
     {
         "instance_id": "semeval2015.d000.s027.t016",
-        "answer": "Previously occurred or happened."
+        "answer": "Having occurred before the present time."
     },
     {
         "instance_id": "semeval2015.d000.s028.t001",
-        "answer": "To examine or assess something for similarities or differences."
+        "answer": "To examine or assess something by comparing it with something else."
     },
     {
         "instance_id": "semeval2015.d000.s028.t003",
@@ -17585,7 +17585,7 @@
     },
     {
         "instance_id": "semeval2015.d000.s036.t005",
-        "answer": "To have an influence on or cause to happen."
+        "answer": "To have an influence on or impact upon."
     },
     {
         "instance_id": "semeval2015.d000.s036.t008",
@@ -17705,7 +17705,7 @@
     },
     {
         "instance_id": "semeval2015.d001.s006.t001",
-        "answer": "A part of a computer program or application that displays information or allows interaction."
+        "answer": "A part of a program or application that displays information or allows interaction."
     },
     {
         "instance_id": "semeval2015.d001.s007.t000",
@@ -17797,7 +17797,7 @@
     },
     {
         "instance_id": "semeval2015.d001.s009.t011",
-        "answer": "Be aware of or have knowledge of."
+        "answer": "Be aware of or have knowledge of something."
     },
     {
         "instance_id": "semeval2015.d001.s010.t000",
@@ -18117,7 +18117,7 @@
     },
     {
         "instance_id": "semeval2015.d001.s034.t002",
-        "answer": "A combination of words or symbols that represents a specific calculation or operation."
+        "answer": "A combination of words or symbols that represents a calculation or operation."
     },
     {
         "instance_id": "semeval2015.d001.s034.t003",
@@ -18189,7 +18189,7 @@
     },
     {
         "instance_id": "semeval2015.d001.s039.t005",
-        "answer": "Existing or occurring before something else."
+        "answer": "Existing or occurring before the present time."
     },
     {
         "instance_id": "semeval2015.d001.s039.t006",
@@ -18425,7 +18425,7 @@
     },
     {
         "instance_id": "semeval2015.d002.s000.t004",
-        "answer": "A formal meeting of people for discussion or business."
+        "answer": "A formal meeting of people to discuss a particular topic."
     },
     {
         "instance_id": "semeval2015.d002.s000.t005",
@@ -18541,7 +18541,7 @@
     },
     {
         "instance_id": "semeval2015.d002.s002.t014",
-        "answer": "Frequently occurring or happening."
+        "answer": "Frequent or usual."
     },
     {
         "instance_id": "semeval2015.d002.s003.t002",
@@ -18665,7 +18665,7 @@
     },
     {
         "instance_id": "semeval2015.d002.s006.t000",
-        "answer": "An investigation or examination of a subject."
+        "answer": "An investigation or examination of a subject, typically involving research and analysis."
     },
     {
         "instance_id": "semeval2015.d002.s006.t001",
@@ -18681,7 +18681,7 @@
     },
     {
         "instance_id": "semeval2015.d002.s006.t004",
-        "answer": "Holding a high rank or position of authority."
+        "answer": "Of or relating to a person of high rank or authority."
     },
     {
         "instance_id": "semeval2015.d002.s006.t005",
@@ -18717,7 +18717,7 @@
     },
     {
         "instance_id": "semeval2015.d002.s007.t001",
-        "answer": "Relating to or involved in the production of goods for use in industry."
+        "answer": "Relating to or involved in the production of goods in factories or other industrial facilities."
     },
     {
         "instance_id": "semeval2015.d002.s007.t002",
@@ -18725,7 +18725,7 @@
     },
     {
         "instance_id": "semeval2015.d002.s007.t003",
-        "answer": "A material made of a solid, usually hard, metallic element or compound."
+        "answer": "A material made of a metal."
     },
     {
         "instance_id": "semeval2015.d002.s007.t004",
@@ -18837,7 +18837,7 @@
     },
     {
         "instance_id": "semeval2015.d002.s009.t008",
-        "answer": "Methods or procedures that are followed in a particular situation."
+        "answer": "Methods or procedures used in a particular activity or field."
     },
     {
         "instance_id": "semeval2015.d002.s009.t009",
@@ -18913,7 +18913,7 @@
     },
     {
         "instance_id": "semeval2015.d002.s012.t001",
-        "answer": "A conversation, typically face-to-face, between two or more people."
+        "answer": "A conversation between two or more people, typically for the purpose of gathering information or opinions."
     },
     {
         "instance_id": "semeval2015.d002.s013.t000",
@@ -19433,7 +19433,7 @@
     },
     {
         "instance_id": "semeval2015.d003.s014.t007",
-        "answer": "A more than a few; a small number of."
+        "answer": "A more than a few; a number that is not a small or limited number."
     },
     {
         "instance_id": "semeval2015.d003.s015.t000",
@@ -19561,7 +19561,7 @@
     },
     {
         "instance_id": "semeval2015.d003.s019.t003",
-        "answer": "Exclusively; not in combination with anything else."
+        "answer": "Exclusively; not in any other way."
     },
     {
         "instance_id": "semeval2015.d003.s019.t005",
@@ -19653,7 +19653,7 @@
     },
     {
         "instance_id": "semeval2015.d003.s023.t001",
-        "answer": "To be a sign or indication of."
+        "answer": "To be a sign or indication of something."
     },
     {
         "instance_id": "semeval2015.d003.s023.t002",

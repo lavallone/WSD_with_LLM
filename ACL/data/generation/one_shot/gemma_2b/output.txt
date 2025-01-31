@@ -26,7 +26,7 @@ senseval2.d000.s004.t001	To pause or halt, to come to a standstill.
 senseval2.d000.s004.t003	A building used for religious worship.
 senseval2.d000.s004.t004	A movable barrier that separates an interior space from an exterior space, or a passageway between rooms.
 senseval2.d000.s004.t005	Members of a group or organization.
-senseval2.d000.s004.t006	The place or location where something is happening.
+senseval2.d000.s004.t006	Here:  in this place or location.
 senseval2.d000.s004.t007	In a habitual or regular manner.
 senseval2.d000.s005.t000	A tall, often fortified structure, typically with a narrow top, used for observation, defense, or as a place of worship
 senseval2.d000.s005.t001	A male human being.
@@ -72,7 +72,7 @@ senseval2.d000.s010.t008	The day of the week following Saturday.
 senseval2.d000.s010.t009	A building used for religious services.
 senseval2.d000.s010.t010	A building used for religious services.
 senseval2.d000.s010.t011	The act of making an attempt to do something, especially with difficulty or expense.
-senseval2.d000.s010.t012	To maintain or continue a particular activity or state.
+senseval2.d000.s010.t012	To maintain or continue something.
 senseval2.d000.s010.t013	A metal object, typically shaped like a bowl, that produces a ringing sound when struck.
 senseval2.d000.s010.t014	To produce a musical tone or sound.
 senseval2.d000.s011.t000	In this context, "even" means "without exception" or "in every instance."
@@ -95,7 +95,7 @@ senseval2.d000.s013.t006	A collection of people or things that are united by a c
 senseval2.d000.s013.t007	To maintain or continue to do something.
 senseval2.d000.s013.t008	A ringing device, typically made of metal, that produces a sound when struck or rung.
 senseval2.d000.s014.t000	The study of past events, especially those of a particular country or period.
-senseval2.d000.s014.t001	A side, in this context, refers to a particular aspect or perspective.
+senseval2.d000.s014.t001	A particular aspect or direction.
 senseval2.d000.s015.t001	A systematic investigation or examination, often conducted to gather information or data.
 senseval2.d000.s015.t002	Completed or carried out.
 senseval2.d000.s015.t003	A period of 365 days.
@@ -133,7 +133,7 @@ senseval2.d000.s018.t015	Relating to the mind; of or relating to mental processe
 senseval2.d000.s018.t016	The act of giving full and undivided attention to a particular task or subject.
 senseval2.d000.s019.t000	Relating to or characteristic of England.
 senseval2.d000.s019.t001	A ringing instrument, typically made of metal, that produces a sound when struck.
-senseval2.d000.s019.t003	A set of notes or musical pieces played in sequence.
+senseval2.d000.s019.t003	A set of notes or musical pieces played in a particular order.
 senseval2.d000.s019.t004	Having the highest frequency of sound.
 senseval2.d000.s019.t005	A metal instrument that produces a ringing sound when struck.
 senseval2.d000.s019.t006	The lowest in position or rank.
@@ -163,7 +163,7 @@ senseval2.d000.s021.t006	A condition or situation.
 senseval2.d000.s022.t000	People who ring bells.
 senseval2.d000.s022.t005	A particular way of doing something.
 senseval2.d000.s022.t006	A name, in this context, refers to a specific designation or label.
-senseval2.d000.s023.t000	A sequence of things in a particular order.
+senseval2.d000.s023.t000	A sequence of things, events, or items arranged in a particular order.
 senseval2.d000.s023.t003	To occupy a period of time.
 senseval2.d000.s023.t004	approximately.
 senseval2.d000.s023.t005	A unit of time equal to 60 minutes.
@@ -176,7 +176,7 @@ senseval2.d000.s024.t007	A general understanding or impression of something.
 senseval2.d000.s024.t008	The effort or labor required to accomplish something.
 senseval2.d000.s024.t009	Engaged or occupied in a task or activity.
 senseval2.d000.s025.t000	A person who rings a bell.
-senseval2.d000.s025.t001	To be in a particular position, typically upright and with a certain posture.
+senseval2.d000.s025.t001	To be in a particular position, typically upright and with a specific posture.
 senseval2.d000.s025.t002	A closed, continuous path or path of movement.
 senseval2.d000.s025.t003	A part of the human body, typically used for walking, running, and standing.
 senseval2.d000.s025.t004	In front of or in a position further forward than something else.
@@ -205,16 +205,16 @@ senseval2.d000.s027.t006	To employ or make use of something.
 senseval2.d000.s027.t008	To name or designate something.
 senseval2.d000.s027.t009	To observe or keep an eye on something.
 senseval2.d000.s027.t010	Another or additional.
-senseval2.d000.s027.t011	A long, strong cord or cable, often used for tying, lifting, or pulling.
+senseval2.d000.s027.t011	A long, thin cord or cable, often made of strong material.
 senseval2.d000.s027.t012	Therefore; consequently.
 senseval2.d000.s027.t013	The act of measuring or determining the duration of something.
-senseval2.d000.s027.t014	A forceful or continuous movement of something, often with a specific direction.
+senseval2.d000.s027.t014	A forceful or gentle movement of something, often with an object or force.
 senseval2.d000.s028.t000	At a great distance.
 senseval2.d000.s028.t001	At a higher position or level.
 senseval2.d000.s028.t004	A metal alloy made primarily of copper and tin.
 senseval2.d000.s028.t005	A musical instrument that produces sound by being struck or shaken.
 senseval2.d000.s028.t006	Fixed or attached to a surface.
-senseval2.d000.s028.t007	A circular, typically round, structure with a rim and axle, used for transportation or to support something.
+senseval2.d000.s028.t007	A circular, typically round, structure with a rim and axle, used to support and move objects.
 senseval2.d000.s028.t008	To move back and forth or from side to side, typically by being moved by a force or mechanism.
 senseval2.d000.s028.t009	In a wild, uncontrolled, or frantic manner.
 senseval2.d000.s028.t010	Complete or entire.
@@ -244,8 +244,8 @@ senseval2.d000.s030.t011	Relating to or involving mathematics.
 senseval2.d000.s030.t012	The state of being complete or finished.
 senseval2.d000.s030.t013	Relating to or involving machines or their operation.
 senseval2.d000.s030.t014	The state of being free from any flaw or imperfection.
-senseval2.d000.s031.t000	A bell or a bell-like device, often used in a musical context.
-senseval2.d000.s031.t001	To include something extra or as an addition.
+senseval2.d000.s031.t000	A bell or a bell-like object, often used in a musical context.
+senseval2.d000.s031.t001	To include something extra or as an accompaniment.
 senseval2.d000.s031.t002	To be saturated or permeated with something.
 senseval2.d000.s031.t003	Serious, dignified, and impressive.
 senseval2.d000.s031.t004	results in or follows.
@@ -276,7 +276,7 @@ senseval2.d000.s035.t005	Frequently; habitually.
 senseval2.d000.s035.t006	To move quickly and lightly, often with a bouncing or skipping motion.
 senseval2.d000.s035.t007	Relating to or situated in a particular place or area, especially one that is nearby or familiar.
 senseval2.d000.s035.t009	To depart from a place or situation.
-senseval2.d000.s035.t010	The act of showing reverence or devotion to someone or something.
+senseval2.d000.s035.t010	The act of showing deep reverence or devotion to someone or something.
 senseval2.d000.s035.t011	At or in a lower position or place.
 senseval2.d000.s036.t000	In a satisfactory or agreeable manner; comfortably or pleasantly.
 senseval2.d000.s037.t000	The state of being a member of a group or organization.
@@ -379,7 +379,7 @@ senseval2.d000.s050.t011	The area or territory of a nation or state.
 senseval2.d000.s050.t012	Having the title or name of something.
 senseval2.d000.s050.t013	The sound produced by a bell, or a set of bells.
 senseval2.d000.s050.t014	Responsibility or concern for the well-being or safety of something or someone.
-senseval2.d000.s051.t000	Says is a verb that expresses a statement made by someone.
+senseval2.d000.s051.t000	Says is a verb that means "to speak or express something."
 senseval2.d000.s051.t002	To become aware of or understand something.
 senseval2.d000.s051.t003	Denying or refusing something.
 senseval2.d000.s051.t005	Of great importance or significance.
@@ -416,7 +416,7 @@ senseval2.d000.s056.t002	Having or experiencing good fortune or favorable circum
 senseval2.d000.s056.t003	A period of time equal to 365 days.
 senseval2.d000.s056.t005	Not old; recently acquired or produced.
 senseval2.d000.s056.t006	A person who is not a genuine or authentic member of a group or team.
-senseval2.d000.s056.t007	To include something, typically by saying or writing it.
+senseval2.d000.s056.t007	To include something, typically by speaking or writing.
 senseval2.d000.s057.t000	Shining; giving off light.
 senseval2.d000.s057.t001	A sign, in this context, means a visible indication or indicator.
 senseval2.d000.s057.t003	A quantity or amount.
@@ -457,7 +457,7 @@ senseval2.d000.s061.t000	A person who writes.
 senseval2.d000.s061.t001	To write one's name or signature to a document.
 senseval2.d000.s061.t002	A written message, typically formal, sent to someone else.
 senseval2.d000.s061.t005	A male person.
-senseval2.d000.s061.t006	To express an opinion or comment about something.
+senseval2.d000.s061.t006	To express an opinion or comment on something.
 senseval2.d000.s061.t007	The number of times something happens.
 senseval2.d000.s061.t008	Female human beings.
 senseval2.d000.s061.t010	To propose or recommend something.
@@ -498,11 +498,11 @@ senseval2.d001.s000.t005	Broken or impaired.
 senseval2.d001.s000.t006	To cause something to happen or to be released.
 senseval2.d001.s000.t007	Lacking order or regularity; disordered.
 senseval2.d001.s000.t008	The act of increasing in size or amount.
-senseval2.d001.s000.t009	The basic unit of life, the smallest structural and functional unit of a living organism.
+senseval2.d001.s000.t009	The basic unit of life, typically microscopic, that is capable of independent existence and reproduction.
 senseval2.d001.s000.t010	Specifies or defines the essential features or qualities of something.
 senseval2.d001.s000.t011	A group of diseases characterized by the uncontrolled growth and spread of abnormal cells.
 senseval2.d001.s001.t001	To express or declare something, typically with authority or conviction.
-senseval2.d001.s001.t002	The act of finding or making known something previously unknown or hidden.
+senseval2.d001.s001.t002	The act of finding or learning about something new, especially something that was previously unknown or not fully understood.
 senseval2.d001.s001.t004	Occurring or happening during a relatively short period of time.
 senseval2.d001.s001.t005	A period of time equal to three hundred and sixty days.
 senseval2.d001.s001.t007	Recent; newly created or introduced.
@@ -511,7 +511,7 @@ senseval2.d001.s001.t010	To come into existence or grow.
 senseval2.d001.s002.t001	The state of being aware of or comprehending something.
 senseval2.d001.s002.t003	Expected to happen or occur.
 senseval2.d001.s002.t004	To create or bring about (something).
-senseval2.d001.s002.t005	A collection or series of things, often arranged in a specific order.
+senseval2.d001.s002.t005	A collection or arrangement of things, especially in a specific order or pattern.
 senseval2.d001.s002.t006	Not yet existing; recent or newly created.
 senseval2.d001.s002.t007	A plan or method for achieving a particular goal.
 senseval2.d001.s002.t008	The time that is yet to come.
@@ -532,7 +532,7 @@ senseval2.d001.s004.t016	A group of diseases characterized by the uncontrolled g
 senseval2.d001.s005.t000	A collection or group of things.
 senseval2.d001.s005.t001	New or previously unknown facts or things.
 senseval2.d001.s005.t002	Indicates that a person is speaking or making a statement.
-senseval2.d001.s005.t005	To discover or make known (something previously unknown or not previously known).
+senseval2.d001.s005.t005	To discover or ascertain (something) by investigation or research.
 senseval2.d001.s006.t000	Only -  used to emphasize that something is the only one of its kind or the only thing that is relevant.
 senseval2.d001.s006.t001	A period of ten years.
 senseval2.d001.s006.t003	A group of diseases characterized by the uncontrolled growth and spread of abnormal cells.
@@ -559,7 +559,7 @@ senseval2.d001.s009.t004	To restrain or control.
 senseval2.d001.s009.t005	The basic, fundamental unit of life.
 senseval2.d001.s009.t006	The act of increasing in size or amount.
 senseval2.d001.s010.t001	Ruined or impaired in function or quality.
-senseval2.d001.s010.t003	Energy that travels in waves or particles, often having a high frequency and capable of interacting with matter.
+senseval2.d001.s010.t003	Energy that travels in waves or particles, often having a high frequency, and can be used to produce heat, light, or
 senseval2.d001.s010.t011	To function or operate.
 senseval2.d001.s010.t012	The basic unit of life, typically microscopic, that carries hereditary information and carries out all the processes of life.
 senseval2.d001.s010.t014	To change or become different.
@@ -633,7 +633,7 @@ senseval2.d001.s019.t001	To be aware of or understand something.
 senseval2.d001.s019.t002	At the same time; in addition to.
 senseval2.d001.s019.t003	At or in a prior time.
 senseval2.d001.s019.t004	To come to be or happen.
-senseval2.d001.s019.t005	Expecting or carrying a child in the womb.
+senseval2.d001.s019.t005	Expecting or carrying a child.
 senseval2.d001.s019.t006	A young person, especially a human offspring.
 senseval2.d001.s019.t007	The possibility of something happening.
 senseval2.d001.s019.t010	The organ of sight.
@@ -707,7 +707,7 @@ senseval2.d001.s026.t008	A clear understanding or comprehension of something, es
 senseval2.d001.s026.t009	Essential; fundamental; primary.
 senseval2.d001.s026.t010	A disease characterized by the uncontrolled growth and spread of abnormal cells.
 senseval2.d001.s026.t011	Indicates that a person is speaking or making a statement.
-senseval2.d001.s026.t012	The person who is in charge of a particular department or organization.
+senseval2.d001.s026.t012	The person who is in charge of a particular organization or department.
 senseval2.d001.s027.t001	The people in general; the general public.
 senseval2.d001.s027.t002	Feeling or showing anxiety or worry about something.
 senseval2.d001.s027.t003	Advancements, improvements, or developments in a particular field or area.
@@ -756,13 +756,13 @@ senseval2.d001.s034.t000	Approximately, roughly, or nearly.
 senseval2.d001.s035.t001	To express an opinion or assertion.
 senseval2.d001.s035.t003	Without any other factors or influences.
 senseval2.d001.s035.t004	The act of combining or uniting different things.
-senseval2.d001.s035.t005	appears to be the case.
+senseval2.d001.s035.t005	seems to be the case.
 senseval2.d001.s035.t006	Essential or indispensable; absolutely necessary.
 senseval2.d001.s035.t007	The process of growth or formation of something.
 senseval2.d001.s035.t009	Serious and widespread diseases or afflictions.
 senseval2.d001.s035.t010	A disease characterized by the uncontrolled growth and spread of abnormal cells.
 senseval2.d001.s035.t011	The part of the body that contains the cerebrum, cerebellum, and brainstem.
-senseval2.d001.s035.t012	The outer covering of the body.
+senseval2.d001.s035.t012	The outer covering of an animal or plant body.
 senseval2.d001.s035.t015	The lower part of the uterus, connecting to the vagina.
 senseval2.d001.s036.t000	Proof or information that something is true.
 senseval2.d001.s036.t001	Human beings.
@@ -772,7 +772,7 @@ senseval2.d001.s036.t006	More than usual or to a greater degree.
 senseval2.d001.s036.t007	A disease characterized by the uncontrolled growth and spread of abnormal cells.
 senseval2.d001.s036.t009	To make clear or understandable.
 senseval2.d001.s036.t010	At last; after a long time or after many attempts.
-senseval2.d001.s036.t011	A disease characterized by uncontrolled cell growth and the formation of abnormal masses of tissue.
+senseval2.d001.s036.t011	A disease characterized by uncontrolled cell growth and the potential to invade other tissues.
 senseval2.d001.s036.t012	appear to be the case.
 senseval2.d001.s036.t014	Certain (in this context) means specifically or particularly.
 senseval2.d001.s036.t015	A group of people related by blood, marriage, or adoption.
@@ -817,7 +817,7 @@ senseval2.d001.s043.t001	Young human beings, especially those under the age of m
 senseval2.d001.s043.t002	The organ of sight.
 senseval2.d001.s043.t003	A disease characterized by the uncontrolled growth and spread of abnormal cells.
 senseval2.d001.s043.t004	Received or passed down from a parent or ancestors.
-senseval2.d001.s043.t005	Having been impaired or broken.
+senseval2.d001.s043.t005	Having been altered or impaired in some way, often in a way that makes it malfunction or be less effective.
 senseval2.d001.s043.t006	A duplicate of a gene or other genetic material.
 senseval2.d001.s043.t009	A person who has a biological relationship with another person, typically a parent or a child.
 senseval2.d001.s044.t001	In fact, truly; definitely.
@@ -883,7 +883,7 @@ senseval2.d001.s055.t004	Correct or accurate.
 senseval2.d001.s055.t005	To begin a journey or undertaking.
 senseval2.d001.s055.t006	To do again, especially in order to confirm or verify.
 senseval2.d001.s055.t007	A piece of research designed to test a hypothesis or theory.
-senseval2.d001.s055.t008	The basic structural and functional unit of a living organism.
+senseval2.d001.s055.t008	The basic structural and functional units of life.
 senseval2.d001.s055.t009	Different; not the same.
 senseval2.d001.s055.t010	A disease characterized by uncontrolled cell growth.
 senseval2.d001.s056.t001	A group of people working together on a particular task or project.
@@ -899,17 +899,17 @@ senseval2.d001.s057.t005	In position or rank as the one following the first.
 senseval2.d001.s057.t006	The most important or most significant.
 senseval2.d001.s057.t007	A disease characterized by the uncontrolled growth and spread of abnormal cells.
 senseval2.d001.s057.t008	A person or thing that causes death.
-senseval2.d001.s057.t009	The United States
+senseval2.d001.s057.t009	The United States.
 senseval2.d001.s058.t000	To have the opinion or feeling that something is true.
 senseval2.d001.s058.t004	To come into existence or happen.
 senseval2.d001.s058.t006	A disease characterized by the uncontrolled growth and spread of abnormal cells.
 senseval2.d001.s058.t008	Frequently; habitually.
 senseval2.d001.s058.t009	appears to be the case.
 senseval2.d001.s058.t010	To come into existence or become apparent.
-senseval2.d001.s058.t011	Different stages of development or progression.
+senseval2.d001.s058.t011	Different phases or periods of development or progression.
 senseval2.d001.s059.t000	Frequently; habitually.
 senseval2.d001.s059.t001	Coming before or occurring in sequence.
-senseval2.d001.s059.t002	The process of growth or increase in size, number, or complexity.
+senseval2.d001.s059.t002	The process of growth or formation of something.
 senseval2.d001.s059.t003	A small, rounded growth of tissue that can form on the lining of the digestive tract.
 senseval2.d001.s059.t005	Instances or examples of something.
 senseval2.d001.s059.t006	To change or develop into a different form or state.
@@ -936,9 +936,9 @@ senseval2.d001.s061.t002	A diverse or numerous assortment of different things.
 senseval2.d001.s061.t003	Relating to or involving genes.
 senseval2.d001.s061.t004	To be present or found.
 senseval2.d001.s061.t005	Only, in this context, means "in a limited or specific way."
-senseval2.d001.s061.t006	A small, rounded growth of tissue that is often found in the lining of the digestive tract.
+senseval2.d001.s061.t006	A small, rounded growth of tissue that arises from the lining of a hollow organ, often found in the digestive tract.
 senseval2.d001.s061.t008	The basic unit of life, typically microscopic, that carries genetic material and carries out all the functions of life.
-senseval2.d001.s061.t010	A small, rounded growth of tissue that is often found in the lining of the digestive tract.
+senseval2.d001.s061.t010	A small, rounded growth of tissue that arises from the lining of a hollow organ, often found in the digestive tract.
 senseval2.d001.s061.t012	The basic unit of life, typically microscopic, that carries genetic material and carries out all the functions of life.
 senseval2.d001.s062.t001	Clear, logical, and understandable.
 senseval2.d001.s062.t002	A visual representation or a comprehensive understanding of something.
@@ -976,7 +976,7 @@ senseval2.d001.s068.t002	The state or fact of being known or recognized.
 senseval2.d001.s068.t004	Broken or impaired.
 senseval2.d001.s068.t005	Changed or transformed into a different state or form.
 senseval2.d001.s068.t006	The large intestine.
-senseval2.d001.s068.t007	The basic unit of life, typically microscopic, that is the smallest unit capable of carrying on all the processes of life.
+senseval2.d001.s068.t007	The basic unit of life, typically microscopic, that is the smallest structure capable of carrying out all the processes of life.
 senseval2.d001.s068.t008	Existing in its most advanced or severe form.
 senseval2.d001.s068.t009	The state of being cancerous or tending to cause cancer.
 senseval2.d001.s070.t000	A period of time equal to 30 days.
@@ -996,8 +996,8 @@ senseval2.d001.s071.t003	To form or make up something.
 senseval2.d001.s072.t000	To discover or obtain (something) by searching for it.
 senseval2.d001.s072.t001	Most recent or latest in time.
 senseval2.d001.s072.t003	Having or showing doubt; uncertain.
-senseval2.d001.s072.t004	The act of looking for something, especially in a thorough and systematic way.
-senseval2.d001.s073.t000	Uncertainty or hesitation about the truth or validity of something.
+senseval2.d001.s072.t004	The act of looking for something, especially in a thorough or systematic way.
+senseval2.d001.s073.t000	Questions or uncertainties about something.
 senseval2.d001.s073.t001	To originate or arise from something.
 senseval2.d001.s073.t002	A piece of information that is true and can be proven.
 senseval2.d001.s073.t003	A number of, a considerable number.
@@ -1061,12 +1061,12 @@ senseval2.d001.s080.t007	Members of a group or organization.
 senseval2.d001.s080.t008	Specifically selected or limited to a particular group or set.
 senseval2.d001.s080.t009	A group of people related by blood, marriage, or adoption.
 senseval2.d001.s080.t011	Passed down from parents to their children.
-senseval2.d001.s080.t012	Defective or impaired in function or condition.
+senseval2.d001.s080.t012	Defective or impaired in function or quality.
 senseval2.d001.s080.t013	The way something is structured or presented.
 senseval2.d001.s080.t014	Adult females.
 senseval2.d001.s080.t015	A malignant growth of abnormal cells that can invade surrounding tissues and spread to other parts of the body.
 senseval2.d001.s081.t002	To be connected or associated with something, especially in a way that suggests a connection to a particular problem or issue.
-senseval2.d001.s082.t000	A written or oral account of something, especially a formal document containing information about a particular subject.
+senseval2.d001.s082.t000	A written or printed account of something, especially a formal document containing information about a particular subject.
 senseval2.d001.s082.t001	Most recent or latest in time.
 senseval2.d001.s082.t002	A period of seven consecutive days.
 senseval2.d001.s082.t004	To express or declare something.
@@ -1075,7 +1075,7 @@ senseval2.d001.s082.t006	The basic unit of life, a microscopic structure that ca
 senseval2.d001.s082.t007	To remove or extract (something) from a place or source.
 senseval2.d001.s082.t010	A group of cells forming a solid mass, typically one that is part of an organ or body part.
 senseval2.d001.s082.t011	To examine or investigate something, especially by subjecting it to a process or procedure.
-senseval2.d001.s082.t012	Absent or not present.
+senseval2.d001.s082.t012	Not present or found.
 senseval2.d001.s083.t000	Statements or accounts of something, especially information or findings from a study or investigation.
 senseval2.d001.s083.t003	However, still.
 senseval2.d001.s083.t007	A group of cells or other biological material that forms a part of an organism.
@@ -1110,10 +1110,10 @@ senseval2.d001.s090.t001	Of great importance or significance.
 senseval2.d001.s090.t004	A part or division of a larger organization.
 senseval2.d001.s090.t005	Working together, especially for a common purpose.
 senseval2.d001.s090.t007	People who search for or pursue something, especially in a particular field or area.
-senseval2.d001.s090.t008	To make something happen or take a specific form.
+senseval2.d001.s090.t008	To make something happen or take action.
 senseval2.d001.s090.t010	New or previously unknown facts or things.
 senseval2.d001.s090.t014	Not yet existing; recent or newly created.
-senseval2.d001.s091.t001	To express or assert something, typically as a statement or opinion.
+senseval2.d001.s091.t001	To express or assert that something is true.
 senseval2.d001.s091.t002	Recent or newly created.
 senseval2.d001.s091.t005	To make something happen at a slower rate or pace.
 senseval2.d001.s091.t006	To turn around or change the direction of; to go back to an earlier state or position.
@@ -1142,7 +1142,7 @@ senseval2.d001.s094.t008	A group of diseases characterized by the uncontrolled g
 senseval2.d002.s000.t000	To impart knowledge or skills to someone, typically through instruction or training.
 senseval2.d002.s000.t001	Young people, especially those of a young age.
 senseval2.d002.s000.t002	To understand or interpret written or printed symbols.
-senseval2.d002.s000.t003	To form letters or characters on a surface with a pen, pencil, or other instrument.
+senseval2.d002.s000.t003	To form letters or characters on a surface with a pen, pencil, or other writing instrument.
 senseval2.d002.s000.t004	To estimate or calculate.
 senseval2.d002.s001.t000	To have knowledge or awareness of something.
 senseval2.d002.s002.t000	To desire or wish for something.
@@ -1169,7 +1169,7 @@ senseval2.d002.s004.t007	The biological parents of a child.
 senseval2.d002.s004.t008	appears to be the case.
 senseval2.d002.s004.t010	Extremely offensive or sacrilegious; deserving of severe condemnation.
 senseval2.d002.s004.t011	To question or dispute the validity or correctness of something.
-senseval2.d002.s005.t000	In this context, "here" refers to the location or place where the example is being presented.
+senseval2.d002.s005.t000	In this context, "here" refers to the location where the example is being presented.
 senseval2.d002.s005.t001	A person, thing, or instance that serves as a model or illustration of a particular idea or concept.
 senseval2.d002.s006.t000	To question or inquire about something.
 senseval2.d002.s006.t001	A small group selected from a larger group to represent the whole.
@@ -1204,7 +1204,7 @@ senseval2.d002.s011.t010	The act of suppressing or inhibiting something, especia
 senseval2.d002.s011.t011	The act of causing someone to be unable to do something or achieve something.
 senseval2.d002.s011.t012	Hidden or undeveloped; potential.
 senseval2.d002.s011.t013	Natural abilities or skills that a person possesses.
-senseval2.d002.s011.t016	However.
+senseval2.d002.s011.t016	However, or still.
 senseval2.d002.s011.t018	The potential for development or achievement.
 senseval2.d002.s011.t019	Existing as an essential or natural part of something.
 senseval2.d002.s011.t020	The immaterial essence or animating force of a living being.
@@ -1213,7 +1213,7 @@ senseval2.d002.s012.t001	The adult human beings who are the biological or legal 
 senseval2.d002.s012.t002	To perceive as pleasant or desirable.
 senseval2.d002.s012.t003	Characterized by or relating to love, passion, and idealized love.
 senseval2.d002.s012.t004	In this context, "so" means "to a great extent" or "in a way that is very noticeable."
-senseval2.d002.s012.t005	Appealing or pleasing to the senses or desires; appealing or captivating.
+senseval2.d002.s012.t005	Appealing or pleasing to the senses or desires.
 senseval2.d002.s013.t001	The same.
 senseval2.d002.s013.t002	The adults who are the biological or legal guardians of a child.
 senseval2.d002.s013.t003	To desire or wish for something.
@@ -1250,7 +1250,7 @@ senseval2.d002.s018.t004	To a greater extent than; more than.
 senseval2.d002.s018.t005	Greater in amount, degree, or extent.
 senseval2.d002.s018.t007	Pleasing or satisfying.
 senseval2.d002.s018.t008	Individuals who are trained to impart knowledge and skills to students.
-senseval2.d002.s018.t009	Controlled or regulated by rules or standards; strict.
+senseval2.d002.s018.t009	Controlled or regulated by rules or standards.
 senseval2.d002.s018.t010	The act of teaching or imparting knowledge or skills.
 senseval2.d002.s019.t000	Pleasing or agreeable.
 senseval2.d002.s019.t001	Individuals who are responsible for educating and instructing students.
@@ -1319,9 +1319,9 @@ senseval2.d002.s033.t001	The state of being fair or just.
 senseval2.d002.s033.t002	Relating to or concerned with education.
 senseval2.d002.s033.t003	A matter or issue that requires attention or solution.
 senseval2.d002.s034.t002	Professionals who impart knowledge and skills to students, typically in a school or educational institution.
-senseval2.d002.s034.t003	To form an opinion or belief about something.
+senseval2.d002.s034.t003	To form a belief or opinion about something.
 senseval2.d002.s034.t004	To impart knowledge or skills to; to teach.
-senseval2.d002.s034.t005	Young people, especially those in a school or educational setting.
+senseval2.d002.s034.t005	Young people, especially those of school age.
 senseval2.d002.s034.t006	Of higher quality or effectiveness; more successful or advantageous.
 senseval2.d002.s034.t008	Received.
 senseval2.d002.s034.t010	A period of twelve months.
@@ -1337,7 +1337,7 @@ senseval2.d002.s036.t004	To discover or locate something.
 senseval2.d002.s036.t006	To make easier or more convenient.
 senseval2.d002.s036.t007	To hit or attack with force.
 senseval2.d002.s036.t008	Friendly:  characterized by or showing goodwill, kindness, and good-naturedness.
-senseval2.d002.s036.t009	A position or attitude adopted by someone or something, especially one that is intended to influence how others perceive them.
+senseval2.d002.s036.t009	A position or attitude adopted by someone or something, especially one that is intended to convey a particular impression or to influence others.
 senseval2.d002.s036.t010	In the service or support of someone or something else.
 senseval2.d002.s036.t011	Having great significance or value; crucial or essential.
 senseval2.d002.s037.t000	A small piece or fragment.
@@ -1355,7 +1355,7 @@ senseval2.d002.s039.t000	To desire or hope for something to happen.
 senseval2.d002.s039.t001	Taking something very seriously; not to be treated lightly.
 senseval2.d002.s039.t002	Relating to or characteristic of the United States of America.
 senseval2.d002.s039.t003	The process of acquiring knowledge, skills, and values through instruction, experience, and study.
-senseval2.d002.s039.t004	To have knowledge or awareness of something.
+senseval2.d002.s039.t004	To have knowledge or understanding of something.
 senseval2.d002.s039.t005	Precisely; without any room for doubt or ambiguity.
 senseval2.d002.s039.t006	In a way that is absolutely necessary or essential.
 senseval2.d002.s039.t007	Of great significance or value.
@@ -1378,7 +1378,7 @@ senseval2.d002.s042.t005	To understand or absorb (information, ideas, or concept
 senseval2.d002.s043.t000	The feeling of admiration or esteem for someone or something.
 senseval2.d002.s043.t004	Not able to speak; silent.
 senseval2.d002.s043.t005	In a way that is preferable or more desirable.
-senseval2.d002.s043.t007	Feeling or showing worry or anxiety about something.
+senseval2.d002.s043.t007	Feeling or showing anxiety or worry about something.
 senseval2.d002.s044.t001	Having a tendency or inclination to do something.
 senseval2.d002.s044.t002	To repeat or reproduce something, especially in a way that is not original or creative.
 senseval2.d002.s044.t003	Following or conforming to generally accepted standards or practices.
@@ -1395,7 +1395,7 @@ senseval2.d002.s045.t009	A course of action or set of principles designed to ach
 senseval2.d002.s045.t010	Young human beings, typically under the age of 18.
 senseval2.d002.s046.t001	The process of making something better or more advanced.
 senseval2.d002.s046.t002	A course of action or set of principles designed to achieve a particular goal or solve a problem.
-senseval2.d002.s046.t003	The head of a state or territory, especially a state or territory in the United States.
+senseval2.d002.s046.t003	The head of a state or territory.
 senseval2.d002.s046.t004	appear to be the case, or to be likely.
 senseval2.d002.s046.t005	More than; greater in amount, degree, or extent.
 senseval2.d002.s046.t007	A requirement or desire for something that is essential or desirable.
@@ -1410,7 +1410,7 @@ senseval2.d002.s049.t000	To have knowledge or awareness of something.
 senseval2.d002.s049.t001	To a very great extent or degree.
 senseval2.d002.s049.t002	Occurring or happening at an earlier time than usual or expected.
 senseval2.d002.s049.t003	The act of being presented with or having contact with something.
-senseval2.d002.s049.t004	The process of receiving instruction in a school or educational institution.
+senseval2.d002.s049.t004	The act of teaching or instruction, especially in a formal educational setting.
 senseval2.d002.s049.t005	To make better or more effective.
 senseval2.d002.s049.t006	The degree or extent of accomplishment or effectiveness in a particular task or activity.
 senseval2.d002.s049.t007	The first in a series or sequence.
@@ -1446,7 +1446,7 @@ senseval2.d002.s053.t000	To make sure that something happens.
 senseval2.d002.s053.t001	Children.
 senseval2.d002.s053.t002	To engage in a game or activity, especially one that is not school-related.
 senseval2.d002.s053.t006	Young people, especially those under the age of majority.
-senseval2.d002.s053.t007	To devote time or effort to something.
+senseval2.d002.s053.t007	To use up or devote time or effort to something.
 senseval2.d002.s053.t009	A period of time, especially a period of time spent on a particular activity.
 senseval2.d002.s053.t011	To examine something carefully and in detail, often to find faults or errors.
 senseval2.d002.s054.t000	The adults who are the biological or legal guardians of a child.
@@ -1454,7 +1454,7 @@ senseval2.d002.s054.t002	A choice or possibility among several alternatives.
 senseval2.d002.s054.t003	To change from one thing to another.
 senseval2.d002.s055.t000	A group of people living in the same place or having a common interest.
 senseval2.d002.s055.t001	The act of taking part in or being engaged in something.
-senseval2.d002.s055.t002	To a greater extent or degree than something else.
+senseval2.d002.s055.t002	More than, to a greater extent or degree.
 senseval2.d002.s055.t003	More unfavorable or less desirable than something else.
 senseval2.d002.s055.t004	An imagined concept or plan for doing something.
 senseval2.d002.s056.t000	In this place or location.
@@ -1465,7 +1465,7 @@ senseval2.d002.s057.t006	To transform or change into something.
 senseval2.d002.s057.t007	Having or showing a strong desire to succeed or achieve something.
 senseval2.d002.s057.t008	Usually; frequently.
 senseval2.d002.s057.t009	Dishonest or unethical, often involving the misuse of power for personal gain.
-senseval2.d002.s057.t012	Relating to or situated in a particular place or area, especially a small or specific community.
+senseval2.d002.s057.t012	Relating to or occurring in a particular place or area, especially a small or specific community.
 senseval2.d002.s057.t013	A person who is involved in politics, especially one who holds a public office.
 senseval2.d002.s057.t015	A person who is involved in politics, especially one who holds a public office.
 senseval2.d002.s058.t000	A series of steps or actions taken to achieve a particular result.
@@ -1479,7 +1479,7 @@ senseval2.d002.s058.t007	A large urban area, typically with a population of at l
 senseval2.d002.s058.t008	To establish or put into effect.
 senseval2.d002.s059.t000	The majority of; a large proportion.
 senseval2.d002.s059.t002	The act of spending money or resources.
-senseval2.d002.s059.t003	The process of acquiring knowledge, skills, and values through instruction, experience, and study.
+senseval2.d002.s059.t003	The process of acquiring knowledge, skills, and values through instruction, study, or experience.
 senseval2.d002.s059.t005	The surrounding conditions or situation.
 senseval2.d002.s059.t006	Most likely to happen.
 senseval2.d002.s059.t007	To cause something to happen.
@@ -1488,7 +1488,7 @@ senseval2.d002.s059.t009	More unfavorable or unpleasant.
 senseval2.d002.s059.t010	More favorable or advantageous.
 senseval2.d002.s060.t000	A cause or explanation for something.
 senseval2.d002.s060.t001	Easily understood; not complicated.
-senseval2.d002.s060.t002	The process of gaining knowledge and skills, typically through instruction and study.
+senseval2.d002.s060.t002	The process of acquiring knowledge and skills, typically through instruction, study, and practice.
 senseval2.d002.s060.t005	The power or power to affect or change something.
 senseval2.d002.s060.t006	A medium of exchange, typically in the form of coins, banknotes, or electronic funds, used for buying and selling goods and
 senseval2.d002.s061.t000	A period of time equal to ten years.
@@ -1571,7 +1571,7 @@ senseval2.d002.s070.t002	Having or showing the same degree or amount.
 senseval2.d002.s070.t003	Relating to or involving education, learning, or scholarship.
 senseval2.d002.s070.t004	The capacity or possibility of becoming something or doing something.
 senseval2.d002.s071.t000	Usually or frequently.
-senseval2.d002.s071.t001	Worthwhile or advantageous; preferable.
+senseval2.d002.s071.t001	Worthwhile or advantageous.
 senseval2.d002.s071.t002	To employ or make use of something for a purpose.
 senseval2.d002.s071.t005	In a preference or choice, more preferable to something else.
 senseval2.d002.s071.t006	More recent in time; newly published or produced.
@@ -1619,7 +1619,7 @@ senseval2.d002.s077.t001	A piece of research or investigation, often involving a
 senseval2.d002.s077.t002	The most recent or highest in rank or degree.
 senseval2.d002.s077.t004	Indicates or conveys information.
 senseval2.d002.s077.t005	Of the highest quality or standard; most excellent.
-senseval2.d002.s077.t006	Educational institutions providing instruction and training for students.
+senseval2.d002.s077.t006	Educational institutions for the instruction of children or young adults.
 senseval2.d002.s077.t007	Not belonging to or originating from the inside or within a particular place or group.
 senseval2.d002.s077.t008	Disruption or meddling, especially in a way that is unwelcome or harmful.
 senseval2.d002.s077.t009	To control or direct the actions or behavior of (someone or something).
@@ -1635,7 +1635,7 @@ senseval2.d002.s079.t004	Pupils who are enrolled in a school or educational inst
 senseval2.d002.s079.t005	Above or exceeding a lower level or degree.
 senseval2.d002.s079.t006	The degree of enthusiasm, confidence, and satisfaction of a person or group.
 senseval2.d002.s079.t007	Of or relating to the highest quality or standard.
-senseval2.d002.s079.t008	Relating to or concerned with learning, especially in a school or college setting.
+senseval2.d002.s079.t008	Relating to or concerned with learning, especially in a school or college.
 senseval2.d002.s079.t009	The degree or quality of something that is done or produced.
 senseval2.d002.s080.t000	A piece of information that is true and can be proven.
 senseval2.d002.s080.t001	To cause to be disturbed or agitated.
@@ -1654,7 +1654,7 @@ senseval3.d000.s002.t005	A sudden, violent, and often uncontrollable spasm or fi
 senseval3.d000.s003.t000	A male human being.
 senseval3.d000.s003.t001	Affected by alcohol, especially to the point of being unable to think clearly or behave normally.
 senseval3.d000.s003.t002	Mentally ill or disordered; insane.
-senseval3.d000.s004.t002	To have the same amount of something, especially alcohol.
+senseval3.d000.s004.t002	To equal or compare in amount or degree.
 senseval3.d000.s004.t003	A liquid that is typically consumed for refreshment or to satisfy thirst.
 senseval3.d000.s004.t004	A liquid that is typically consumed for refreshment or to satisfy thirst.
 senseval3.d000.s004.t005	To be unable to keep track of or count.
@@ -1685,7 +1685,7 @@ senseval3.d000.s011.t004	A specific event or happening.
 senseval3.d000.s012.t000	A person who is not known to the speaker or the listener.
 senseval3.d000.s012.t001	The top part of the body, usually covered by hair, that is connected to the neck.
 senseval3.d000.s012.t003	The act of thinking or considering something.
-senseval3.d000.s012.t004	To begin or begin to do something.
+senseval3.d000.s012.t004	To begin or commence to do something.
 senseval3.d000.s012.t005	To move from one side of a place to the other, typically by walking or driving.
 senseval3.d000.s012.t006	A public road, typically for vehicles.
 senseval3.d000.s012.t007	The visible radiation emitted by a source, such as the sun or a lamp, that is used to illuminate an area.
@@ -1706,7 +1706,7 @@ senseval3.d000.s015.t003	To strike or knock against with force.
 senseval3.d000.s016.t000	To feel or show sorrow or remorse for something that has been done or said.
 senseval3.d000.s016.t001	To cause to be open or to become open.
 senseval3.d000.s016.t002	The opening in the face through which one speaks or eats.
-senseval3.d000.s016.t003	A large vehicle with a cab and a cargo bed, typically used for transporting goods.
+senseval3.d000.s016.t003	A large vehicle with a flat bed, typically used for transporting goods.
 senseval3.d000.s016.t005	To bring to a halt or cessation of motion.
 senseval3.d000.s016.t006	Feeling or showing strong displeasure or hostility.
 senseval3.d000.s016.t007	The person who operates a vehicle, especially a truck.
@@ -1723,7 +1723,7 @@ senseval3.d000.s018.t001	To begin or commence doing something.
 senseval3.d000.s018.t002	To utter words of strong displeasure or anger, often with the intention of causing harm or annoyance.
 senseval3.d000.s018.t003	A plan or scheme, especially one intended to deceive or harm someone.
 senseval3.d000.s018.t004	To cause (something) to be damaged or destroyed.
-senseval3.d000.s018.t006	A record of events or information, typically kept in a formal or official way.
+senseval3.d000.s018.t006	A record of events or information, often kept in a formal or official way.
 senseval3.d000.s019.t000	A male human being.
 senseval3.d000.s019.t001	To rescue or deliver from danger or harm.
 senseval3.d000.s019.t002	Changed direction or position.
@@ -1738,7 +1738,7 @@ senseval3.d000.s020.t003	Changed direction or position.
 senseval3.d000.s020.t004	The back part of the foot, especially the part that is turned toward the body.
 senseval3.d000.s020.t005	A large vehicle with a flat bed, typically used for hauling goods.
 senseval3.d000.s021.t000	To provide or present something, especially something that has been previously considered or discussed.
-senseval3.d000.s021.t002	The act of giving consideration to something, or the state of having considered something.
+senseval3.d000.s021.t002	The act of considering or thinking about something.
 senseval3.d000.s021.t003	A period of time, a duration.
 senseval3.d000.s022.t000	To bring back to mind or memory.
 senseval3.d000.s022.t001	To think about something with curiosity or uncertainty.
@@ -1798,7 +1798,7 @@ senseval3.d000.s032.t001	Not strong or vigorous; lacking force or intensity.
 senseval3.d000.s032.t002	To emit a sound of amusement or mirth.
 senseval3.d000.s033.t000	To form an idea or concept in the mind.
 senseval3.d000.s034.t000	A word expressing gratitude or appreciation.
-senseval3.d000.s035.t000	Not strong or intense; barely noticeable.
+senseval3.d000.s035.t000	Not strong or clear; barely noticeable.
 senseval3.d000.s035.t001	A fold or wrinkle, often in a fabric or skin.
 senseval3.d000.s035.t002	To come into existence or become visible.
 senseval3.d000.s035.t003	A male human being.
@@ -1812,11 +1812,11 @@ senseval3.d000.s040.t000	To give something back to someone who has given somethi
 senseval3.d000.s040.t001	Acts or things done for someone else, typically as a return for a previous act or kindness.
 senseval3.d000.s041.t000	To perform an action or task.
 senseval3.d000.s041.t002	To be fond of or enjoy.
-senseval3.d000.s042.t000	To require a payment of money or other valuable thing.
+senseval3.d000.s042.t000	To require a financial expenditure or expense.
 senseval3.d000.s043.t001	To attempt to do something, especially to test or experiment with.
 senseval3.d000.s044.t000	To move something back and forth over a surface, typically with a hand or a tool.
 senseval3.d000.s044.t001	The forehead is the part of the head that is located between the eyes and the hairline.
-senseval3.d000.s045.t001	To perceive or experience something with the senses.
+senseval3.d000.s045.t001	To perceive with the senses, especially by touch.
 senseval3.d000.s045.t002	Covered with or resembling wool; soft and fluffy.
 senseval3.d000.s046.t001	A man.
 senseval3.d000.s046.t002	To bring something into existence or to cause something to happen.
@@ -1830,20 +1830,20 @@ senseval3.d000.s049.t000	Continues to do something repeatedly.
 senseval3.d000.s049.t001	To repeatedly engage in a particular activity, often in a way that is annoying or bothersome.
 senseval3.d000.s049.t002	To enjoy or have a preference for something.
 senseval3.d000.s049.t003	To perceive or hear sounds with the ears.
-senseval3.d000.s049.t004	An electronic device that broadcasts or receives radio waves, typically for transmitting and receiving audio and/or video signals.
+senseval3.d000.s049.t004	An electronic device that broadcasts or receives radio waves, typically for transmitting music, news, and other audio programs.
 senseval3.d000.s049.t005	To utter musical sounds with the voice.
 senseval3.d000.s049.t007	A tub or container of water used for bathing.
 senseval3.d000.s050.t000	To speak or utter (something).
 senseval3.d000.s050.t001	People who live near or in close proximity to someone.
 senseval3.d000.s050.t002	To express dissatisfaction or displeasure about something, typically by making a verbal or written complaint.
-senseval3.d000.s050.t003	To accept as true or trustworthy.
+senseval3.d000.s050.t003	To accept as true or genuine.
 senseval3.d000.s051.t000	To communicate or convey information verbally or in writing.
 senseval3.d000.s051.t001	Causes annoyance or distress.
 senseval3.d000.s052.t000	A male human being.
 senseval3.d000.s052.t001	To shut or cover (something) completely.
 senseval3.d000.s052.t002	The organ of sight, consisting of a transparent outer layer (the cornea) and a colored inner layer (the iris and pupil
 senseval3.d000.s052.t003	To move the head from side to side, usually as a sign of agreement or understanding.
-senseval3.d000.s053.t000	To examine or observe with the eyes.
+senseval3.d000.s053.t000	To examine or observe something with the eyes.
 senseval3.d000.s053.t001	To appear to be or to give the impression of.
 senseval3.d000.s054.t000	Acceptable; satisfactory; not bad.
 senseval3.d000.s055.t000	To present or hand over (something) to someone.
@@ -1857,17 +1857,17 @@ senseval3.d000.s057.t004	Actions or ways of moving or being in motion.
 senseval3.d000.s058.t000	To perceive with the eyes or mind.
 senseval3.d000.s058.t001	To cause (something) to happen or to be the case.
 senseval3.d000.s059.t000	The act of intentionally ending one's own life.
-senseval3.d000.s059.t001	appears to be the case or to be a reasonable possibility.
+senseval3.d000.s059.t001	appears to be the case or to be a suitable or plausible option.
 senseval3.d000.s060.t000	Difficulties, problems, or issues.
 senseval3.d000.s061.t001	moved rapidly and suddenly, often in a way that suggests surprise or excitement.
-senseval3.d000.s063.t000	To show happiness or pleasure by curving the mouth into a gentle curve.
+senseval3.d000.s063.t000	To show happiness or pleasure by curving the lips and showing teeth.
 senseval3.d000.s064.t001	Said, in this context, means to utter words.
 senseval3.d000.s065.t000	A unit of time equal to 60 seconds.
 senseval3.d000.s065.t001	To cause to happen or to occur.
 senseval3.d000.s065.t003	A person who is not known to the speaker or listener.
 senseval3.d000.s065.t004	To get to a vertical position, typically by rising from a sitting or lying position.
 senseval3.d000.s065.t005	To move the head up and down or side to side, usually as a sign of acknowledgement or farewell.
-senseval3.d000.s065.t006	A formal or polite expression of goodbye.
+senseval3.d000.s065.t006	A formal expression of goodbye.
 senseval3.d000.s066.t000	To observe or look at someone or something with attention.
 senseval3.d000.s066.t001	Of moderate size; not large.
 senseval3.d000.s066.t002	Thin and strong, often with a hard, flexible body.
@@ -1887,7 +1887,7 @@ senseval3.d000.s067.t004	appeared to be the case.
 senseval3.d000.s067.t005	Unusual; peculiar; odd.
 senseval3.d000.s067.t006	Of small size or amount.
 senseval3.d000.s067.t007	A male human being.
-senseval3.d000.s067.t008	The second or additional one of a group.
+senseval3.d000.s067.t008	The second or additional one of a group or set.
 senseval3.d000.s067.t009	A transparent, hard, usually curved, object made of glass.
 senseval3.d000.s067.t010	A piece of furniture with a flat top and usually legs, used for placing objects on.
 senseval3.d000.s068.t002	To go back to a place or position.
@@ -1905,7 +1905,7 @@ senseval3.d000.s070.t001	To cause someone to remember something.
 senseval3.d000.s071.t000	To move from one place to another.
 senseval3.d000.s071.t002	A period of 24 hours.
 senseval3.d000.s071.t003	To move past or through something.
-senseval3.d000.s071.t007	Living.
+senseval3.d000.s071.t007	Living; existing.
 senseval3.d000.s071.t009	People who rent property from another person.
 senseval3.d000.s071.t010	A heavy or difficult task or responsibility.
 senseval3.d000.s071.t011	The state of being alive.
@@ -1916,15 +1916,15 @@ senseval3.d000.s075.t003	A written order for a sum of money, typically one that 
 senseval3.d000.s075.t005	The act of keeping something in good condition or repair.
 senseval3.d000.s075.t007	To desire or hope for something to happen.
 senseval3.d000.s075.t008	A person who is not known to the speaker or listener.
-senseval3.d000.s075.t009	To perform an action.
+senseval3.d000.s075.t009	To perform an action or task.
 senseval3.d000.s076.t000	Moving towards a destination.
 senseval3.d000.s076.t001	The place where one lives, especially one's residence.
 senseval3.d000.s076.t002	Paid employment or labor performed for wages or other compensation.
 senseval3.d000.s076.t004	To perceive with the eyes.
-senseval3.d000.s077.t000	A public entrance hall, especially in a building, such as a hotel, office building, or theater.
+senseval3.d000.s077.t000	A public entrance hall, especially in a building, such as a hotel, office, or theater.
 senseval3.d000.s077.t001	Human beings.
 senseval3.d000.s077.t002	To be in a position of being upright and supported by legs.
-senseval3.d000.s077.t003	To speak or converse, especially in a lively or animated manner.
+senseval3.d000.s077.t003	To speak or converse.
 senseval3.d000.s078.t000	The backbone of a person or animal.
 senseval3.d000.s078.t001	Moved slowly and uncomfortably, often with a sense of fear or anxiety.
 senseval3.d000.s078.t003	A feeling that something bad is going to happen.
@@ -1964,7 +1964,7 @@ senseval3.d000.s085.t004	The part of the body that is used for grasping, holding
 senseval3.d000.s085.t005	To fall or slump down with a heavy or awkward movement.
 senseval3.d000.s085.t006	A piece of furniture with a seat and back, typically with legs.
 senseval3.d000.s086.t002	To experience a particular emotion or sensation.
-senseval3.d000.s086.t003	To cause someone to be concerned or worried about something.
+senseval3.d000.s086.t003	To cause someone to be concerned or interested in something.
 senseval3.d000.s086.t004	To inquire or request something, typically by asking a question.
 senseval3.d000.s086.t005	Questions, a request for information or clarification.
 senseval3.d000.s088.t002	An event or occurrence that happens by chance.
@@ -2015,7 +2015,7 @@ senseval3.d000.s100.t000	To experience pleasure or satisfaction from something.
 senseval3.d000.s100.t002	A customary or established sequence of actions or practices, often repeated regularly.
 senseval3.d000.s100.t003	To drink or consume something, often in a large quantity, to relieve or lessen a feeling or emotion.
 senseval3.d000.s100.t004	A person or thing that is cherished or held dear.
-senseval3.d000.s100.t005	A cause of annoyance or complaint.
+senseval3.d000.s100.t005	A cause of annoyance or dissatisfaction.
 senseval3.d000.s100.t006	A type of American whiskey made from fermented corn.
 senseval3.d000.s100.t007	Liquid that is essential for life and used for drinking, cooking, and cleaning.
 senseval3.d000.s101.t000	Most preferred or most cherished.
@@ -2045,13 +2045,13 @@ senseval3.d000.s107.t002	To perceive or become aware of something.
 senseval3.d000.s107.t003	To lower oneself onto a seat or other surface, typically with the intention of remaining seated.
 senseval3.d000.s108.t000	A male human being.
 senseval3.d000.s108.t001	Strange or mysterious in a way that is both fascinating and unsettling.
-senseval3.d000.s108.t002	A dark, indistinct image or form cast by a light source.
+senseval3.d000.s108.t002	A dark area or shape produced by the absence of light.
 senseval3.d000.s108.t003	To produce or cause to happen.
 senseval3.d000.s108.t005	Sound produced by a source, especially one that is loud or unusual.
-senseval3.d000.s108.t006	A dark, indistinct image or form cast by a light source.
+senseval3.d000.s108.t006	A dark area or shape produced by the absence of light.
 senseval3.d000.s109.t001	To become smaller in size.
 senseval3.d000.s109.t003	Imprisoned or confined, unable to escape.
-senseval3.d000.s109.t004	A point where two sides of a surface meet, often a sharp or angular point.
+senseval3.d000.s109.t004	A point where two sides of a shape meet.
 senseval3.d000.s109.t005	Thin and wiry.
 senseval3.d000.s109.t007	Small in size or amount.
 senseval3.d000.s109.t008	A male human being.
@@ -2065,7 +2065,7 @@ senseval3.d000.s110.t006	To move or proceed with great force or momentum, often 
 senseval3.d000.s110.t007	A place where two or more roads or paths meet.
 senseval3.d000.s111.t000	To be burdened with a heavy or unpleasant responsibility or obligation.
 senseval3.d000.s111.t001	A person who is unpleasant, undesirable, or suspicious.
-senseval3.d000.s112.t000	To begin doing something for the first time or to resume doing something that had been stopped.
+senseval3.d000.s112.t000	To begin doing something.
 senseval3.d000.s112.t001	To move from one place to another, typically by walking or traveling.
 senseval3.d000.s112.t002	Different; not the same.
 senseval3.d000.s112.t003	Places, plural, a location or spot.
@@ -2091,7 +2091,7 @@ senseval3.d000.s116.t000	To desire or wish for something.
 senseval3.d000.s116.t001	To give support or approval to (someone or something).
 senseval3.d000.s116.t002	A group of people who are together for a particular purpose or occasion.
 senseval3.d000.s116.t003	Experienced or perceived as being true.
-senseval3.d000.s116.t004	To purchase or acquire (something).
+senseval3.d000.s116.t004	To purchase or acquire (something) for a specific purpose or price.
 senseval3.d000.s116.t005	A beverage, typically alcoholic, that is consumed for refreshment or to stimulate or relax.
 senseval3.d000.s116.t006	To stop something from happening.
 senseval3.d000.s116.t007	Having a chance of occurring or happening.
@@ -2107,14 +2107,14 @@ senseval3.d000.s119.t002	The state of being quiet or lacking sound.
 senseval3.d000.s119.t003	To start or begin to do something.
 senseval3.d000.s119.t004	To speak, especially in a way that is intended to communicate or engage in conversation.
 senseval3.d000.s120.t000	A beverage, typically alcoholic, that is consumed for refreshment or to stimulate or relax.
-senseval3.d000.s120.t001	Expressing dissatisfaction or displeasure, typically by making negative remarks.
+senseval3.d000.s120.t001	Expressing dissatisfaction or displeasure, typically by making a lot of noise or expressing strong negative feelings.
 senseval3.d000.s120.t003	The person or thing that is the focus of attention or discussion.
 senseval3.d000.s120.t004	A unit of time equal to 60 seconds.
 senseval3.d000.s120.t005	To become aware of something, especially something that was previously hidden or not obvious.
 senseval3.d000.s120.t007	The state of being curious or eager to learn about something or someone.
 senseval3.d000.s120.t009	Indicated or became evident.
 senseval3.d000.s120.t010	Showing or characterized by keenness, sharpness, or readiness.
-senseval3.d000.s120.t011	The front part of a person's head, including the eyes, nose, and mouth.
+senseval3.d000.s120.t011	The front part of the head, including the eyes, nose, and mouth.
 senseval3.d000.s120.t012	Shining with light; luminous.
 senseval3.d000.s120.t013	The organ of sight.
 senseval3.d000.s121.t000	To stop briefly for a moment.
@@ -2155,12 +2155,12 @@ senseval3.d000.s138.t000	Uncontrolled, unrestrained, or impulsive.
 senseval3.d000.s138.t001	An idea or notion, especially one that is formed in the mind.
 senseval3.d000.s138.t004	Covered or obscured by a haze or mist; unclear or indistinct.
 senseval3.d000.s138.t005	The organ of the head that is responsible for thought, memory, and other mental processes.
-senseval3.d000.s139.t000	To assume that something is true, especially as a hypothetical or tentative idea.
+senseval3.d000.s139.t000	To assume that something is true, especially as a starting point for reasoning or argument.
 senseval3.d000.s139.t001	To consider as possible or likely.
 senseval3.d000.s139.t002	A man.
-senseval3.d000.s139.t003	Said (verb):  To express something verbally.
+senseval3.d000.s139.t003	Said (verb): to express something verbally.
 senseval3.d000.s140.t001	A person who has a job or occupation that is done regularly and for pay.
-senseval3.d000.s140.t002	A person who kills, especially one who is skilled or experienced in killing.
+senseval3.d000.s140.t002	A person who kills, especially one who is paid to do so.
 senseval3.d000.s141.t000	A small, hard, usually round, edible seed or fruit.
 senseval3.d000.s141.t001	Damage or injury.
 senseval3.d000.s141.t002	Completed or finished.
@@ -2188,9 +2188,9 @@ senseval3.d000.s152.t000	The organ of sight.
 senseval3.d000.s152.t001	To be intensely hot or inflamed.
 senseval3.d000.s153.t000	To speak in a low, quiet, and often hesitant voice.
 senseval3.d000.s154.t001	appeared to be.
-senseval3.d000.s155.t001	A method or manner of doing something.
+senseval3.d000.s155.t001	A method or course of action.
 senseval3.d000.s155.t002	A period of time, especially a specific time or a particular moment.
-senseval3.d000.s155.t004	Possesses or has the quality or state of being.
+senseval3.d000.s155.t004	Possesses or has the quality or state of being in a particular condition.
 senseval3.d000.s155.t005	A reason or excuse given for one's absence from a place or time when they are suspected of being somewhere else.
 senseval3.d000.s156.t000	To give permission or allow.
 senseval3.d000.s156.t001	To demonstrate the truth or validity of something.
@@ -2207,11 +2207,11 @@ senseval3.d001.s000.t006	Relating to or involving the office of the president of
 senseval3.d001.s000.t007	A person who is running for a political office.
 senseval3.d001.s000.t008	A thing that serves to bring something to mind.
 senseval3.d001.s000.t009	Relating to or involving the government of the United States.
-senseval3.d001.s000.t010	A horizontal plane or surface.
+senseval3.d001.s000.t010	The state of being equal or consistent.
 senseval3.d001.s000.t011	Relating to politics or government.
 senseval3.d001.s000.t013	The period of time that has already happened.
 senseval3.d001.s001.t000	Relating to or involving the office of the president of the United States.
-senseval3.d001.s001.t001	An event in which voters cast ballots to choose a person or group to hold a particular office or position.
+senseval3.d001.s001.t001	An event in which votes are cast to choose a person or group to hold a particular office or position.
 senseval3.d001.s001.t002	A period of twelve months.
 senseval3.d001.s001.t004	The entire country or territory of a state or country.
 senseval3.d001.s001.t007	To select or pick out.
@@ -2239,7 +2239,7 @@ senseval3.d001.s004.t014	A seat in a legislative body, such as a Congress or Sen
 senseval3.d001.s004.t015	Relating to or derived from the general public or the people.
 senseval3.d001.s004.t016	The act of casting a ballot or expressing an opinion in favor of or against a candidate or proposition.
 senseval3.d001.s005.t001	The position or direction that is directly opposite to something else.
-senseval3.d001.s006.t000	Makes responsible for or explains.
+senseval3.d001.s006.t000	To be responsible for or cause.
 senseval3.d001.s006.t001	The outcome or effect of something; the consequence or effect of an action or event.
 senseval3.d001.s006.t002	Occurring or happening within the last few years.
 senseval3.d001.s006.t003	A period of ten years.
@@ -2248,14 +2248,14 @@ senseval3.d001.s007.t004	Not complete or full; only a part of something.
 senseval3.d001.s007.t007	To show or manifest (a quality, characteristic, or behavior).
 senseval3.d001.s007.t008	Citizens of the United States of America.
 senseval3.d001.s008.t002	A belief or supposition that is accepted as true without proof.
-senseval3.d001.s009.t002	A distinctive type or variety of something, often used to distinguish products or services.
+senseval3.d001.s009.t002	A distinctive type or variety of something, often used to represent a particular product, service, or political ideology.
 senseval3.d001.s009.t004	Relating to government or politics.
 senseval3.d001.s009.t005	Individuals who act on behalf of or represent another person or group.
 senseval3.d001.s009.t006	A member of a political party that advocates for limited government, free markets, and individual liberty.
 senseval3.d001.s009.t007	A distinctive name or symbol that identifies a particular product, service, or organization.
 senseval3.d001.s009.t009	Minimizing or reducing to the bare essentials; characterized by simplicity and a lack of excess.
 senseval3.d001.s009.t010	The condition or situation of a person, group, or society.
-senseval3.d001.s009.t011	Moral excellence or desirable qualities.
+senseval3.d001.s009.t011	Qualities or characteristics that are considered desirable or admirable.
 senseval3.d001.s009.t012	Owned or controlled by an individual or a small group, rather than by the government or a larger organization.
 senseval3.d001.s009.t013	A place or system where goods or services are bought and sold.
 senseval3.d001.s009.t014	Weaknesses or shortcomings; bad habits or practices.
@@ -2300,7 +2300,7 @@ senseval3.d001.s011.t005	The condition or situation of a group of people living 
 senseval3.d001.s011.t006	Ready or disposed to do something.
 senseval3.d001.s011.t007	To take part in or participate in an activity or process.
 senseval3.d001.s011.t008	Relating to or occurring in a particular place or area, especially a small or specific area.
-senseval3.d001.s011.t009	Affiliated with or supporting a political party that advocates for social and economic policies based on the principles of social justice, equality,
+senseval3.d001.s011.t009	Affiliated with or supporting a political party that advocates for social and economic equality and government intervention in the economy.
 senseval3.d001.s011.t010	A person who is a member of a group or organization.
 senseval3.d001.s012.t000	A belief or proposition that is taken to be true or accepted as a starting point for reasoning or discussion.
 senseval3.d001.s012.t001	To remain true to a stated condition or belief.
@@ -2312,9 +2312,9 @@ senseval3.d001.s012.t010	To incline or shift in favor of something.
 senseval3.d001.s012.t011	Relating to or advocating for the political party known as the Democratic Party.
 senseval3.d001.s013.t000	To place or install (something) in a particular position.
 senseval3.d001.s013.t001	A position of authority or responsibility, especially one that involves governing or administering a particular area.
-senseval3.d001.s013.t002	To obtain or get possession of (something).
+senseval3.d001.s013.t002	To obtain or gain possession of something.
 senseval3.d001.s013.t003	Relating to or belonging to a particular locality or region.
-senseval3.d001.s013.t004	Advantages or advantages, especially those that are tangible or material.
+senseval3.d001.s013.t004	Advantages or things that are received or gained.
 senseval3.d001.s013.t007	To stop or hinder something from happening.
 senseval3.d001.s013.t008	Other (in this context) -  a second or additional person or thing.
 senseval3.d001.s013.t010	To secure or obtain financial benefits or resources for oneself or one's constituents.
@@ -2332,7 +2332,7 @@ senseval3.d001.s016.t003	Something that is given or provided as a reward or adva
 senseval3.d001.s016.t005	Relating to or belonging to a specific person, place, or thing.
 senseval3.d001.s016.t008	The head of a state or country, especially a chief executive of a republic.
 senseval3.d001.s016.t009	Having a high probability of happening.
-senseval3.d001.s016.t010	Producing a desired or intended result; successful.
+senseval3.d001.s016.t010	Producing a desired or intended result.
 senseval3.d001.s016.t011	To hinder or stop something from happening.
 senseval3.d001.s016.t012	Different; not the same.
 senseval3.d001.s016.t016	Relating to or belonging to a particular place or area, especially a small or specific area.
@@ -2378,7 +2378,7 @@ senseval3.d001.s021.t004	Relating to or affecting the whole country or nation.
 senseval3.d001.s021.t005	A course of action or set of actions taken by a government or other organization to achieve a particular goal.
 senseval3.d001.s021.t006	The act of creating or producing something.
 senseval3.d001.s021.t007	In comparison to something else.
-senseval3.d001.s021.t008	Relating to or affecting a particular place or region, especially one that is geographically close to the speaker or writer.
+senseval3.d001.s021.t008	Relating to or affecting a particular place or region.
 senseval3.d001.s021.t009	To possess or hold something.
 senseval3.d001.s021.t011	A position of authority or responsibility, especially one that involves public service.
 senseval3.d001.s022.t002	Individuals who are part of a group or organization.
@@ -2388,7 +2388,7 @@ senseval3.d001.s022.t006	Not susceptible to attack or harm.
 senseval3.d001.s022.t007	The act of losing a contest or struggle.
 senseval3.d001.s023.t000	A person or thing that is different from the others in a group or set.
 senseval3.d001.s023.t002	A prevailing style, pattern, or way of doing something.
-senseval3.d001.s023.t003	To lose a contest or struggle.
+senseval3.d001.s023.t003	To lose a contest or struggle; to be unsuccessful.
 senseval3.d001.s023.t004	A person who is new to a particular position or activity.
 senseval3.d001.s023.t005	A political party that advocates for conservative principles, typically emphasizing limited government, free markets, and traditional values.
 senseval3.d001.s023.t006	To introduce or cause to come into a particular place or situation.
@@ -2398,7 +2398,7 @@ senseval3.d001.s023.t009	To move or operate in a particular way, especially with
 senseval3.d001.s024.t000	First-year students in a college or university.
 senseval3.d001.s024.t001	To position or set in a particular place or position.
 senseval3.d001.s024.t002	The act of giving importance or priority to something.
-senseval3.d001.s024.t004	A part or function that someone or something has in a particular situation or activity.
+senseval3.d001.s024.t004	A part or function that someone or something plays in a particular situation or activity.
 senseval3.d001.s024.t005	To distribute or disseminate widely.
 senseval3.d001.s024.t006	A sudden and fundamental change in a society or institution, often involving a significant shift in political, social, or economic systems.
 senseval3.d001.s024.t007	Relating to or affecting the whole country.
@@ -2406,7 +2406,7 @@ senseval3.d001.s024.t008	A course of action or set of actions taken by a governm
 senseval3.d001.s024.t009	The act of creating or bringing something into existence.
 senseval3.d001.s025.t002	To show or point out that something is true or likely to be true.
 senseval3.d001.s025.t006	To draw or bring in (someone or something).
-senseval3.d001.s025.t008	A person who is a potential candidate for a particular position, especially for a political office.
+senseval3.d001.s025.t008	People who are running for a political office.
 senseval3.d001.s025.t010	A position of authority or responsibility, especially one that is elected or appointed.
 senseval3.d001.s026.t000	Having or showing the possibility of becoming a reality.
 senseval3.d001.s026.t001	People who are running for a particular office or position.
@@ -2419,7 +2419,7 @@ senseval3.d001.s026.t010	A person who competes against another in a contest or s
 senseval3.d001.s027.t000	The degree or amount of something.
 senseval3.d001.s027.t001	Having possibility or likelihood of becoming something in the future.
 senseval3.d001.s027.t002	A person who is running for a political office.
-senseval3.d001.s027.t004	To become aware of or understand something.
+senseval3.d001.s027.t004	To become aware of or understand (something).
 senseval3.d001.s027.t007	functions; operates.
 senseval3.d001.s027.t009	To make it difficult or less likely to succeed.
 senseval3.d001.s027.t010	The act of making an effort to do something.
@@ -2429,10 +2429,10 @@ senseval3.d001.s027.t014	A person who is running for a political office.
 senseval3.d001.s028.t003	Not complete or whole; incomplete or insufficient.
 senseval3.d001.s028.t004	A cause or explanation for something.
 senseval3.d001.s029.t000	The degree or amount of something.
-senseval3.d001.s029.t001	Relating to or belonging to a political party that advocates for the principles of democracy.
+senseval3.d001.s029.t001	Relating to or belonging to a political party that advocates for the advancement of the interests of the people.
 senseval3.d001.s029.t003	To possess or have control over something.
 senseval3.d001.s029.t005	A portion or part of something.
-senseval3.d001.s029.t006	The ability to influence or control others or events.
+senseval3.d001.s029.t006	The capacity or authority to influence or control others or events.
 senseval3.d001.s029.t007	Capable of doing something.
 senseval3.d001.s029.t008	To express or make something clear or understandable, often by changing it into a different form or form of expression.
 senseval3.d001.s029.t010	Relating to or characteristic of a particular place or area.
@@ -2454,7 +2454,7 @@ senseval3.d001.s031.t004	A course of action or a plan of action designed to achi
 senseval3.d001.s031.t005	To bring something into existence or to bring about something.
 senseval3.d001.s031.t007	A room or building used for a particular purpose, especially a legislative or governmental one.
 senseval3.d001.s031.t009	To anticipate or believe something will happen.
-senseval3.d001.s031.t010	A political party that advocates for conservative principles and policies, typically emphasizing individual liberty, limited government, and traditional values.
+senseval3.d001.s031.t010	A political party in the United States, characterized by its conservative ideology and emphasis on individual liberty and limited government.
 senseval3.d001.s031.t011	Ready or disposed to do something.
 senseval3.d001.s031.t012	To take part in or participate in an activity or process.
 senseval3.d001.s031.t013	Relating to or affecting a particular place or area, especially a small or local area.
@@ -2509,7 +2509,7 @@ senseval3.d001.s036.t017	To bring something into existence or to create somethin
 senseval3.d001.s036.t020	A formal decision made by a group of people, typically by raising their hands or using a voting system.
 senseval3.d001.s036.t021	A period of time, or a duration.
 senseval3.d001.s036.t023	To give one's attention, time, or effort to something.
-senseval3.d001.s036.t024	Relating to or affecting a particular locality or area.
+senseval3.d001.s036.t024	Relating to or affecting a particular locality or place.
 senseval3.d001.s037.t001	To show or suggest something, often by providing evidence or proof.
 senseval3.d001.s037.t002	A particular instance or example of something.
 senseval3.d001.s038.t000	Relating to or characteristic of a political party called the Democratic Party.
@@ -2518,7 +2518,7 @@ senseval3.d001.s038.t002	The number of occurrences of something over a period of
 senseval3.d001.s038.t004	A member of the Republican Party.
 senseval3.d001.s038.t005	The act of being present or taking part in something.
 senseval3.d001.s038.t006	The number of occurrences of something over a period of time.
-senseval3.d001.s039.t000	Presented or made visible.
+senseval3.d001.s039.t000	Presented or displayed.
 senseval3.d001.s039.t001	A piece of furniture with a flat top and usually legs, used for supporting objects or as a surface for eating, working,
 senseval3.d001.s039.t002	A political party that advocates for the interests of the working class and the poor.
 senseval3.d001.s039.t004	A part or share of something.
@@ -2599,8 +2599,8 @@ senseval3.d001.s044.t003	A line of division or separation.
 senseval3.d001.s044.t004	To turn or change the order or direction of something.
 senseval3.d001.s045.t001	A thorough examination or inquiry into a particular subject or issue.
 senseval3.d001.s045.t002	To show or demonstrate something.
-senseval3.d001.s045.t003	Keeping something constant or unchanged.
-senseval3.d001.s045.t004	Other (in this context) means something that is not the specific factor being considered.
+senseval3.d001.s045.t003	Keeping or continuing something in a particular state or condition.
+senseval3.d001.s045.t004	Other (in this context) means something that is not specifically mentioned or focused on.
 senseval3.d001.s045.t005	Things that can influence or affect something else.
 senseval3.d001.s045.t006	Not changing.
 senseval3.d001.s045.t007	A difference is a state of being unlike or different.
@@ -2608,7 +2608,7 @@ senseval3.d001.s045.t008	A political subdivision of a country, typically with it
 senseval3.d001.s045.t009	The most important or principal.
 senseval3.d001.s045.t010	A political group that advocates for a particular set of policies or principles.
 senseval3.d001.s045.t011	The act of casting a ballot in an election.
-senseval3.d001.s045.t012	To move or travel towards a destination.
+senseval3.d001.s045.t012	To move or travel towards a destination or place.
 senseval3.d001.s045.t013	A member of the Republican Party.
 senseval3.d001.s045.t015	A person who is running for a particular office or position.
 senseval3.d001.s045.t016	A member of the Republican Party.
@@ -2677,7 +2677,7 @@ senseval3.d002.s016.t004	A piece of furniture with a flat top and legs, used for
 senseval3.d002.s016.t005	Following in position or order.
 senseval3.d002.s016.t006	To express happiness or amusement, typically by curving the lips and showing teeth.
 senseval3.d002.s016.t007	Feeling or showing remorse or shame for having done something wrong.
-senseval3.d002.s016.t009	To speak with the mouth open, usually in a way that is quick or secretive.
+senseval3.d002.s016.t009	To speak with the mouth open, usually in a way that shows emotion or intent.
 senseval3.d002.s016.t010	A sequence of sounds formed by the articulation of the human vocal organs, conveying meaning.
 senseval3.d002.s016.t011	A sudden, violent shaking of the ground, often caused by the movement of tectonic plates.
 senseval3.d002.s017.t000	Of considerable length or duration.
@@ -2698,9 +2698,9 @@ senseval3.d002.s022.t000	Without limit or end; infinite.
 senseval3.d002.s022.t001	A unit of time equal to one-sixtieth of a minute.
 senseval3.d002.s022.t002	To think about something with curiosity or concern.
 senseval3.d002.s022.t004	A piece of glass that is part of a building's structure, typically framed and allowing light to enter.
-senseval3.d002.s022.t005	To bend or break suddenly, often with a loud noise.
+senseval3.d002.s022.t005	To bend or break suddenly, often due to pressure or stress.
 senseval3.d002.s022.t006	To fall or be poured out in a stream or a sudden, forceful downpour.
-senseval3.d002.s022.t007	A transparent, hard, brittle material made from silica, often used for windows, bottles, and other objects.
+senseval3.d002.s022.t007	A transparent, brittle material made from silica, often used for windows, bottles, and other objects.
 senseval3.d002.s023.t001	A written work of literature, typically bound in paper or cloth.
 senseval3.d002.s023.t002	To come to the ground or a lower position.
 senseval3.d002.s024.t001	A substance applied to a surface to provide a protective coating or to change its appearance.
@@ -2730,10 +2730,10 @@ senseval3.d002.s031.t001	Not in any way ill or injured; healthy.
 senseval3.d002.s031.t002	Feeling or showing anxiety or unease.
 senseval3.d002.s034.t001	A rapid chemical reaction that releases heat, light, and other energy.
 senseval3.d002.s035.t001	To make something completely full or to add something to a space.
-senseval3.d002.s035.t002	To change from a solid to a liquid state.
+senseval3.d002.s035.t002	To change the state of a solid into a liquid.
 senseval3.d002.s036.t000	A female human being.
 senseval3.d002.s036.t003	Capable of doing something.
-senseval3.d002.s036.t004	To move on foot, typically by putting one foot in front of the other.
+senseval3.d002.s036.t004	To move on foot, typically by taking steps.
 senseval3.d002.s036.t005	A rectangular opening in a wall, typically with a frame, that allows light and air to enter a room.
 senseval3.d002.s036.t007	A horizontal surface of a building, often divided into levels.
 senseval3.d002.s036.t008	A public road, typically for vehicular traffic.
@@ -2756,7 +2756,7 @@ senseval3.d002.s044.t000	Foot
 senseval3.d002.s044.t001	A long, narrow structure built out from a shore or harbor, often used for boats or as a walkway.
 senseval3.d002.s045.t001	Marked by or involving strong emotion or excitement; impressive or striking.
 senseval3.d002.s046.t001	Extremely thin, barely noticeable.
-senseval3.d002.s046.t002	A break or fissure in a surface, often a small, thin, and shallow one.
+senseval3.d002.s046.t002	A break or fissure in a solid material, often a thin, narrow opening.
 senseval3.d002.s047.t000	To make something bad or unpleasant.
 senseval3.d002.s047.t001	An interjection expressing strong disapproval or annoyance.
 senseval3.d002.s050.t001	The position in a sequence or order, following the first.
@@ -2785,7 +2785,7 @@ senseval3.d002.s056.t004	A burning material, typically involving a rapid chemica
 senseval3.d002.s057.t000	Experienced or perceived as a result of an external force.
 senseval3.d002.s058.t000	The part of the body that is situated behind the head and shoulders.
 senseval3.d002.s058.t002	The hands are the parts of the body that are used for grasping, holding, and manipulating objects.
-senseval3.d002.s058.t003	To move back and forth or to and fro, often with a slight tremble or vibration.
+senseval3.d002.s058.t003	To move back and forth or to and fro in a rapid, often involuntary, way.
 senseval3.d002.s059.t000	To form a belief or opinion about something.
 senseval3.d002.s059.t003	The physical human organism.
 senseval3.d002.s059.t004	To move back and forth or to and fro, often in a way that is uncontrolled or unsteady.
@@ -2808,7 +2808,7 @@ senseval3.d002.s068.t001	To be in an upright posture, supported by the legs, typ
 senseval3.d002.s068.t002	A particular arrangement or location.
 senseval3.d002.s072.t000	To perceive with the senses, especially by touch.
 senseval3.d002.s072.t001	A thing is an object or entity.
-senseval3.d002.s072.t002	To perceive or become aware of something, especially something that is subtle or not immediately obvious.
+senseval3.d002.s072.t002	To become aware of something, especially by perceiving it with the senses.
 senseval3.d002.s072.t003	Unusual; odd; not conforming to what is usual or expected.
 senseval3.d002.s072.t004	A warm-blooded vertebrate animal that typically has feathers, wings, and lays eggs.
 senseval3.d002.s072.t005	The way a person or animal acts or conducts itself.
@@ -2823,7 +2823,7 @@ senseval3.d002.s080.t003	A settlement of people, typically with a defined area a
 senseval3.d002.s081.t001	A device for making and receiving calls over a distance.
 senseval3.d002.s081.t002	A state of disorder or confusion; a jumble or clutter.
 senseval3.d002.s081.t004	An alcoholic beverage made by fermenting grapes.
-senseval3.d002.s081.t005	The horizontal surfaces of a building, typically the ground level, beneath the walls and above the base.
+senseval3.d002.s081.t005	The horizontal surfaces of a building, typically below the level of the walls and above the ground.
 senseval3.d002.s081.t006	Large in size or extent.
 senseval3.d002.s081.t007	Aged; antiquated; of long standing.
 senseval3.d002.s082.t000	To tremble or shake slightly.
@@ -2846,7 +2846,7 @@ senseval3.d002.s086.t004	To use up or consume (time, energy, or resources).
 senseval3.d002.s086.t005	Following in time or order.
 senseval3.d002.s086.t007	A unit of time equal to 60 seconds.
 senseval3.d002.s086.t008	To observe or look at something with attention.
-senseval3.d002.s086.t009	A hard, solid, and often rectangular building material made from clay or fired clay.
+senseval3.d002.s086.t009	A hard, solid, and often rectangular building material made from clay and fired in a kiln.
 senseval3.d002.s086.t011	The part of the body that supports the weight of a person and enables them to walk.
 senseval3.d002.s086.t013	The plants of the flowering plant family, typically with colorful blossoms.
 senseval3.d002.s086.t014	Moving back and forth in a gentle, rhythmic way.
@@ -2887,7 +2887,7 @@ senseval3.d002.s097.t002	To allow (someone or something) to enter or be in a pla
 senseval3.d002.s097.t003	A domesticated carnivorous mammal, typically kept as a pet.
 senseval3.d002.s097.t004	A building used as a residence for people.
 senseval3.d002.s097.t005	To perceive or become aware of something.
-senseval3.d002.s097.t006	The perception of auditory sensations produced by a source of noise.
+senseval3.d002.s097.t006	A series of noises or vibrations produced by a source, such as a person or animal.
 senseval3.d002.s097.t007	The top part of the body, usually the upper part of the skull.
 senseval3.d002.s097.t009	Moving from one place to another, typically by foot.
 senseval3.d002.s097.t010	The upper covering of a building.
@@ -2899,7 +2899,7 @@ senseval3.d002.s099.t001	occurring or taking place.
 senseval3.d002.s099.t002	To utter a loud, high-pitched cry, typically in a way that expresses strong emotion.
 senseval3.d002.s099.t003	A building designed for human habitation, typically with a roof and walls.
 senseval3.d002.s099.t004	A domesticated carnivorous mammal, typically kept as a pet or working animal.
-senseval3.d002.s100.t001	A movable covering that closes a space or opening.
+senseval3.d002.s100.t001	The movable parts of a cabinet or cupboard, typically hinged and allowing access to the interior.
 senseval3.d002.s100.t007	A unit of measurement for distance equal to 5.24 inches.
 senseval3.d002.s100.t008	A domesticated carnivorous mammal, typically kept as a pet.
 senseval3.d002.s100.t009	Arrived or moved toward a place or person.
@@ -2924,7 +2924,7 @@ senseval3.d002.s103.t002	To start or commence doing something.
 senseval3.d002.s103.t003	To shed tears, typically in response to sadness, grief, or emotion.
 senseval3.d002.s106.t000	The period of time between sunset and the beginning of the next day.
 senseval3.d002.s106.t002	Human beings.
-senseval3.d002.s106.t003	Canine animals, typically domesticated, kept as pets.
+senseval3.d002.s106.t003	Canine animals, typically domesticated.
 senseval3.d002.s106.t004	Moving on foot, typically in a casual or leisurely manner.
 senseval3.d002.s106.t005	To consume alcoholic beverages.
 senseval3.d002.s109.t000	To be in a position of being seated, typically on a chair or other furniture.
@@ -2974,7 +2974,7 @@ senseval3.d002.s123.t002	A enclosed space, typically with walls and a roof, used
 senseval3.d002.s124.t000	An object or item.
 senseval3.d002.s124.t001	A building designed for human habitation, typically consisting of a roof, walls, and floors.
 senseval3.d002.s124.t002	The framework or organization of something, especially a building or system.
-senseval3.d002.s124.t003	In good condition; sound and intact.
+senseval3.d002.s124.t003	In good condition; sound.
 senseval3.d002.s125.t000	To be in a position of being upright and supported by one's feet.
 senseval3.d002.s125.t002	To remain in a state of suspense or anticipation.
 senseval3.d002.s125.t003	A trembling or shaking movement.
@@ -2996,7 +2996,7 @@ senseval3.d002.s133.t000	To be uncertain or doubtful about something.
 senseval3.d002.s133.t001	Capable of being done or occurring.
 senseval3.d002.s133.t002	To become free from tension, stress, or anxiety; to become calm and peaceful.
 senseval3.d002.s136.t000	The body, especially the body of a living person or animal.
-senseval3.d002.s136.t001	goes:  to move or travel from one place to another.
+senseval3.d002.s136.t001	Goes:  moves or travels from one place to another.
 senseval3.d002.s136.t003	The act of escaping from danger by running away.
 senseval3.d002.s136.t004	To engage in a physical struggle or combat.
 senseval3.d002.s137.t000	A feeling of sickness or discomfort in the stomach, often accompanied by vomiting.
@@ -3013,7 +3013,7 @@ senseval3.d002.s140.t004	Of a color resembling the hue of the sky or the color o
 senseval3.d002.s140.t006	To get into a sitting position.
 senseval3.d002.s140.t007	Said is a verb that expresses the act of speaking.
 senseval3.d002.s140.t009	A female human being.
-senseval3.d002.s140.t010	To express happiness or pleasure by curving the lips into a gentle curve.
+senseval3.d002.s140.t010	To show happiness or pleasure by curving the lips and showing teeth.
 senseval3.d002.s140.t011	Said is a verb that expresses the act of speaking.
 senseval3.d002.s140.t012	Excellent; very good.
 senseval3.d002.s140.t013	Existing or operating as a living being.
@@ -3029,7 +3029,7 @@ semeval2013.d000.s001.t008	A decrease in the amount or quantity of something.
 semeval2013.d000.s001.t009	A period of time equal to 365 days.
 semeval2013.d000.s001.t010	A heavy or difficult task or responsibility.
 semeval2013.d000.s001.t011	A period of time, especially a specific period of time for a particular purpose.
-semeval2013.d000.s002.t000	A written or printed communication, or a piece of writing.
+semeval2013.d000.s002.t000	A written or printed communication of ideas or information.
 semeval2013.d000.s002.t001	The foundation or starting point for something.
 semeval2013.d000.s002.t002	An agreement or arrangement between two or more parties, especially one that is intended to resolve a dispute or achieve a common goal.
 semeval2013.d000.s002.t004	Difficulties, hindrances, or things that prevent progress or success.
@@ -3041,12 +3041,12 @@ semeval2013.d000.s003.t004	A person who holds a position of authority or respons
 semeval2013.d000.s003.t006	A period of seven consecutive days.
 semeval2013.d000.s004.t001	The written or printed words of a document.
 semeval2013.d000.s004.t002	A medium of exchange, typically in the form of coins, banknotes, or electronic transfers, used for buying and selling goods and
-semeval2013.d000.s004.t003	A political entity with its own government and territory, typically with a defined population and a system of representation.
+semeval2013.d000.s004.t003	A sovereign state, especially one with a defined territory and government.
 semeval2013.d000.s004.t004	The people or countries that are poor.
 semeval2013.d000.s004.t006	A period of time.
 semeval2013.d000.s005.t000	A variety of choices or possibilities.
 semeval2013.d000.s005.t001	Choices or possibilities.
-semeval2013.d000.s005.t002	A question, typically a query or inquiry, that is asked for information or clarification.
+semeval2013.d000.s005.t002	A question, or a query, is a request for information or clarification.
 semeval2013.d000.s005.t003	The highest possible value or amount.
 semeval2013.d000.s005.t004	The degree of hotness or coldness of a body or substance.
 semeval2013.d000.s005.t005	An increase in height or level.
@@ -3074,7 +3074,7 @@ semeval2013.d000.s010.t006	A sovereign state, especially one with a defined terr
 semeval2013.d000.s010.t007	The effect or influence of something on something else.
 semeval2013.d000.s010.t009	A large amount of water that covers an area, often causing damage.
 semeval2013.d000.s010.t010	A prolonged period of abnormally low rainfall.
-semeval2013.d000.s011.t001	A kind or type.
+semeval2013.d000.s011.t001	A category or type of something.
 semeval2013.d000.s011.t003	A period of seven consecutive days.
 semeval2013.d000.s012.t001	The state of the atmosphere, especially as it relates to temperature, weather patterns, and the effects of human activity.
 semeval2013.d000.s012.t002	A person appointed to represent a government or organization in a diplomatic capacity.
@@ -3112,7 +3112,7 @@ semeval2013.d000.s018.t002	The amount of money or resources required for somethi
 semeval2013.d000.s018.t004	A political entity with a defined territory and government, typically with its own laws and sovereignty.
 semeval2013.d000.s018.t005	The things that a person or group does.
 semeval2013.d000.s019.t000	A situation or activity involving competition or rivalry.
-semeval2013.d000.s019.t003	A region comprising the countries of Belize, Costa Rica, El Salvador, Guatemala, Honduras, Nicaragua, Panama, and the coast
+semeval2013.d000.s019.t003	A region comprising the countries of Belize, Costa Rica, El Salvador, Guatemala, Honduras, Nicaragua, and Panama.
 semeval2013.d000.s020.t000	A sovereign state, especially one with a defined territory and government.
 semeval2013.d000.s020.t001	The effect or influence of something on something else.
 semeval2013.d000.s020.t005	People or groups involved in a particular activity or event.
@@ -3121,7 +3121,7 @@ semeval2013.d000.s021.t000	Individuals or groups that are part of a larger organ
 semeval2013.d000.s021.t001	A preliminary version of a document, especially one that is intended to be revised and improved before being finalized.
 semeval2013.d000.s021.t003	A suggestion or plan for action or a course of conduct.
 semeval2013.d000.s021.t005	The period of time between the beginning of the day and midday.
-semeval2013.d000.s022.t000	The state of the atmosphere, especially as it relates to temperature, weather patterns, and the effects of human activity.
+semeval2013.d000.s022.t000	The state of the atmosphere, especially as it relates to temperature and weather patterns.
 semeval2013.d000.s022.t001	The act of discussing or bargaining to reach an agreement.
 semeval2013.d000.s022.t002	In the place or position of another.
 semeval2013.d000.s022.t004	The act of applying force or weight to something, often to deform or change its shape or form.
@@ -3133,11 +3133,11 @@ semeval2013.d000.s023.t003	A piece of information that is known to be true.
 semeval2013.d000.s023.t004	Problems or matters that need to be dealt with or settled.
 semeval2013.d000.s023.t005	An agreement or arrangement between two or more parties, especially one that is negotiated and formally concluded.
 semeval2013.d000.s024.t000	Persons holding positions of authority or responsibility in a government or organization.
-semeval2013.d000.s024.t001	A person who holds a high-ranking official position in a government, typically responsible for a specific department or area of policy.
+semeval2013.d000.s024.t001	A person who is appointed to a high-ranking position in a government or organization, typically responsible for a particular department or area
 semeval2013.d000.s024.t002	An aircraft, typically a large, motorized vehicle used for transportation.
 semeval2013.d000.s024.t003	A large, often spacious, passageway or corridor within a building.
 semeval2013.d000.s024.t004	A gathering of people for a specific purpose, typically involving discussion or deliberation.
-semeval2013.d000.s024.t006	A demand or assertion of rights or interests.
+semeval2013.d000.s024.t006	A demand or assertion of ownership or rights to something.
 semeval2013.d000.s024.t007	A period of seven consecutive days.
 semeval2013.d000.s025.t000	A group of people assembled for a common purpose.
 semeval2013.d000.s025.t001	Human beings.
@@ -3149,7 +3149,7 @@ semeval2013.d000.s025.t007	A suggestion or plan for action.
 semeval2013.d000.s025.t008	A thin, flat material made from plant fibers, typically used for writing or printing.
 semeval2013.d000.s025.t010	A difficult task or problem.
 semeval2013.d000.s026.t000	The degree or force of something.
-semeval2013.d000.s026.t001	A person who holds a high-ranking position in government, typically in a cabinet or similar body.
+semeval2013.d000.s026.t001	A person who holds a high-ranking position in government, typically responsible for a specific area of policy or administration.
 semeval2013.d000.s027.t002	A course of action or set of principles that guide the actions of an organization or individual.
 semeval2013.d000.s028.t000	People or things of great importance or significance, especially in a particular field or area.
 semeval2013.d001.s000.t001	The state of Israel.
@@ -3258,7 +3258,7 @@ semeval2013.d003.s001.t006	A public sale of property or goods, typically conduct
 semeval2013.d003.s002.t000	Agreements or arrangements, especially formal ones, for a specific purpose.
 semeval2013.d003.s002.t002	A country in East Asia, known for its large population, advanced technology, and significant economic influence.
 semeval2013.d003.s002.t003	A transcontinental country in Eastern Europe and Northern Asia, known for its vast territory, diverse culture, and significant role in global
-semeval2013.d003.s002.t004	A black, viscous, flammable liquid that is a fossil fuel, extracted from the earth and used as fuel for engines and as
+semeval2013.d003.s002.t004	A black, thick, and viscous liquid that is a fossil fuel, extracted from the earth and used as a fuel or as
 semeval2013.d003.s002.t006	A part or function that someone or something plays in a particular situation or activity.
 semeval2013.d003.s002.t009	A period of time equal to 10 years.
 semeval2013.d003.s002.t010	A prolonged and often violent conflict between organized groups or nations.
@@ -3308,20 +3308,20 @@ semeval2013.d003.s015.t001	A legally binding agreement between two or more parti
 semeval2013.d003.s015.t002	A business organization, typically one that is incorporated and has a legal existence.
 semeval2013.d003.s015.t003	A portion of something, especially a share of ownership.
 semeval2013.d003.s015.t004	A legally binding agreement between two or more parties, typically involving the exchange of goods, services, or money.
-semeval2013.d003.s015.t005	Areas of land used for agriculture, mining, or other purposes.
+semeval2013.d003.s015.t005	Areas of land used for agriculture, farming, or other purposes.
 semeval2013.d003.s016.t000	The People's Republic of China.
 semeval2013.d003.s016.t002	The capacity or ability to exert influence or control.
 semeval2013.d003.s017.t000	A business organization, especially one that is large and has many employees.
 semeval2013.d003.s017.t001	Equal in quality or performance.
 semeval2013.d003.s017.t003	Oaths or promises to do something.
 semeval2013.d003.s018.t000	Groups of people or organizations engaged in business or commerce.
-semeval2013.d003.s018.t001	A proposal or offer to do something, typically for a specific price.
+semeval2013.d003.s018.t001	A proposal or offer made in response to a request for something, typically for a specific price or amount.
 semeval2013.d003.s018.t002	Proposals or statements of price and terms for a transaction.
 semeval2013.d003.s018.t003	A unit of volume equal to 42 US gallons.
 semeval2013.d003.s018.t004	A sum of money paid for a service or for something else.
 semeval2013.d003.s018.t005	A government department or agency responsible for a particular area of policy or administration.
 semeval2013.d003.s018.t006	The amount of goods or services produced.
-semeval2013.d003.s018.t007	The quantity or amount of something, especially a particular quantity or level of something.
+semeval2013.d003.s018.t007	The quantity or amount of something, typically a measurement or standard.
 semeval2013.d003.s018.t008	A particular area of land used for a specific purpose, such as agriculture, mining, or oil production.
 semeval2013.d004.s000.t000	Financial institutions that accept deposits and provide loans.
 semeval2013.d004.s000.t001	A political subdivision of a country, such as a state or province.
@@ -3330,7 +3330,7 @@ semeval2013.d004.s001.t001	Financial institutions that accept deposits and provi
 semeval2013.d004.s001.t002	A political subdivision of a country, such as a state or province.
 semeval2013.d004.s001.t003	Heavy chains or restraints, especially those used to bind or restrict movement.
 semeval2013.d004.s002.t001	Financial assistance or aid given to someone or something.
-semeval2013.d004.s002.t002	A financial institution that accepts deposits and makes loans.
+semeval2013.d004.s002.t002	An institution that accepts deposits and makes loans.
 semeval2013.d004.s002.t003	The state or fact of being protected from harm or danger.
 semeval2013.d004.s002.t004	A fund is a sum of money set aside for a specific purpose.
 semeval2013.d004.s002.t005	The amount of money or value.
@@ -3365,7 +3365,7 @@ semeval2013.d004.s010.t004	An increase is a rise or augmentation in size, amount
 semeval2013.d004.s010.t006	A group of people or things, especially those who share a common interest or purpose.
 semeval2013.d004.s012.t000	Financial assistance or aid given to someone or something.
 semeval2013.d005.s000.t000	A request or plea for something, especially something that is considered to be desirable or advantageous.
-semeval2013.d005.s001.t002	A line of seats or places arranged in a row.
+semeval2013.d005.s001.t002	A line of seats, often arranged in a straight or curved formation.
 semeval2013.d005.s002.t000	A written or spoken account of something, especially of an event or situation.
 semeval2013.d005.s002.t001	The act of giving evidence or making a statement, especially in a legal case.
 semeval2013.d005.s003.t000	At last; finally.
@@ -3381,7 +3381,7 @@ semeval2013.d005.s004.t002	A person who is a part of a group or family.
 semeval2013.d005.s004.t003	A group of people related by blood, marriage, or adoption.
 semeval2013.d005.s004.t004	The final point or stage of something.
 semeval2013.d005.s004.t005	A person who presides over a court of law and decides legal matters.
-semeval2013.d005.s004.t006	The act of imposing something, especially a punishment or obligation.
+semeval2013.d005.s004.t006	The act of imposing something, especially a punishment or duty.
 semeval2013.d005.s004.t007	A group of people chosen to hear evidence and decide the outcome of a trial.
 semeval2013.d005.s005.t001	A formal place where legal cases are heard and decided.
 semeval2013.d005.s005.t002	Official written documents submitted to a court or other legal authority.
@@ -3389,19 +3389,19 @@ semeval2013.d005.s005.t003	A formal request to a higher court to review a decisi
 semeval2013.d005.s005.t004	A statement or proposition put forward to support a particular point of view.
 semeval2013.d005.s005.t005	A place where legal cases are heard and decided.
 semeval2013.d005.s005.t006	A long period of time, typically measured in a number of years.
-semeval2013.d005.s006.t001	A formal legal proceeding in which a person is accused of a crime or offense and is put on trial.
+semeval2013.d005.s006.t001	A formal legal proceeding in which a person is accused of a crime or offense and is brought to justice.
 semeval2013.d005.s006.t003	To employ or make use of something.
 semeval2013.d005.s006.t004	A noisy and chaotic public gathering, often for entertainment.
-semeval2013.d005.s006.t005	The prevailing mood or feeling of a particular situation.
+semeval2013.d005.s006.t005	The prevailing mood or feeling of a particular place or situation.
 semeval2013.d005.s006.t006	Specific pieces of information or facts.
 semeval2013.d005.s006.t007	A group of people chosen to hear evidence and decide the outcome of a legal case.
 semeval2013.d005.s006.t008	Strong feelings or emotions, especially those that are intense and often irrational.
 semeval2013.d005.s007.t000	A statement asserting that something is true or that someone has a right to something.
-semeval2013.d005.s007.t001	A formal request for a higher court to review a decision made by a lower court.
+semeval2013.d005.s007.t001	The act of appealing, or the process of asking a higher court to review a lower court's decision.
 semeval2013.d005.s007.t002	A person who is authorized to make legal decisions.
 semeval2013.d005.s007.t003	A matter or issue that is being considered or debated.
 semeval2013.d005.s007.t005	Established principles or guidelines that govern behavior or conduct.
-semeval2013.d005.s008.t000	A formal legal proceeding in which a person is accused of a crime or offense and is given the opportunity to defend themselves.
+semeval2013.d005.s008.t000	A formal legal proceeding in which a person is accused of a crime or offense and is brought to court to be judged.
 semeval2013.d005.s008.t001	A serious risk or threat of harm or loss.
 semeval2013.d005.s008.t002	The act of adding something to a group or collection.
 semeval2013.d005.s008.t004	A single person.
@@ -3415,7 +3415,7 @@ semeval2013.d005.s010.t000	The final or most important statement or point made o
 semeval2013.d005.s010.t001	A matter or problem that is being discussed or debated.
 semeval2013.d005.s011.t000	A long period of time, typically many years.
 semeval2013.d005.s011.t002	The act of giving extensive attention or reporting on something.
-semeval2013.d005.s011.t003	A specific instance of a legal dispute or matter that has been brought before a court for decision.
+semeval2013.d005.s011.t003	A specific instance of a legal dispute or controversy, typically involving a lawsuit or other legal proceeding.
 semeval2013.d005.s011.t004	Questions that are asked or raised.
 semeval2013.d005.s011.t005	A formal legal proceeding in which a judge or jury decides a dispute between two or more parties.
 semeval2013.d005.s011.t006	The quality of being just, impartial, and equitable.
@@ -3425,14 +3425,14 @@ semeval2013.d005.s012.t007	A formal judgment or determination made by a court or
 semeval2013.d005.s012.t008	A lively and noisy public event, often featuring games, rides, and entertainment.
 semeval2013.d005.s012.t009	The prevailing mood or feeling of a particular situation.
 semeval2013.d005.s012.t010	A formal legal proceeding in which a case is heard and decided by a judge or jury.
-semeval2013.d005.s013.t000	An act or deed that is considered wrong or illegal, often involving the violation of laws or social norms.
+semeval2013.d005.s013.t000	An act or series of acts that is considered to be wrong or illegal, often resulting in punishment.
 semeval2013.d005.s013.t001	The act of providing the idea or motive for something.
 semeval2013.d005.s014.t002	A judgment of guilt in a legal case.
 semeval2013.d005.s014.t003	One-half.
 semeval2013.d005.s014.t004	A period of 100 years.
 semeval2013.d005.s014.t005	A statement or proposition put forward to support a particular view or claim.
 semeval2013.d005.s014.t006	A set of established principles or standards governing conduct or behavior.
-semeval2013.d005.s014.t007	Methods or procedures for doing something.
+semeval2013.d005.s014.t007	Methods or procedures.
 semeval2013.d005.s014.t010	A specific instance of a legal matter, typically involving a lawsuit or other legal dispute.
 semeval2013.d005.s015.t000	A cause or justification for something.
 semeval2013.d005.s015.t001	Anxiety or worry about something.
@@ -3464,18 +3464,18 @@ semeval2013.d005.s023.t000	A formal request to a court to reconsider a decision 
 semeval2013.d005.s023.t002	A period of time equal to about 28 days.
 semeval2013.d005.s023.t003	A particular instance or instance of a legal matter, dispute, or problem.
 semeval2013.d005.s023.t004	Information about recent events, especially those considered important or interesting.
-semeval2013.d005.s023.t005	A state located in the New England region of the northeastern United States.
+semeval2013.d005.s023.t005	The state of Connecticut.
 semeval2013.d005.s023.t006	The process of choosing a person or group to hold a particular office or position.
 semeval2013.d005.s023.t007	A series of events or activities undertaken to promote a particular candidate or political party.
 semeval2013.d005.s023.t008	People who are running for a political office.
 semeval2013.d005.s024.t002	A particular instance or situation involving a particular subject or event.
-semeval2013.d005.s025.t003	A building used for the administration of justice, typically housing a court of law.
+semeval2013.d005.s025.t003	A building used for the administration of justice, especially for holding trials and legal proceedings.
 semeval2013.d005.s026.t000	The act of giving attention to something, especially with a particular intensity or importance.
 semeval2013.d005.s026.t001	The act of covering or being covered.
 semeval2013.d005.s027.t000	A conversation or discussion between two or more people, typically for the purpose of gathering information or opinions.
-semeval2013.d005.s027.t001	People who work as reporters, writers, or editors for newspapers, magazines, or other media outlets.
+semeval2013.d005.s027.t001	People who work as reporters, writers, or editors for newspapers, magazines, television, radio, or other media outlets.
 semeval2013.d005.s027.t002	A statement asserting something as true, especially one that is not supported by evidence.
-semeval2013.d005.s027.t003	Information about recent events, especially those of a recent and important nature.
+semeval2013.d005.s027.t003	Information about recent events, especially those of a current or recent nature.
 semeval2013.d005.s027.t004	Reports, plural, a written or spoken account of something.
 semeval2013.d005.s027.t005	A particular way of thinking or understanding something.
 semeval2013.d005.s027.t006	A formal body of people authorized to hear and decide legal cases.
@@ -3484,15 +3484,15 @@ semeval2013.d005.s027.t008	The act of covering or presenting something, especial
 semeval2013.d005.s027.t009	A formal legal proceeding in which a person is accused of a crime or offense and is brought to court to be judged.
 semeval2013.d005.s028.t002	A statement or proposition put forward to support a particular point of view.
 semeval2013.d005.s028.t003	Alterations or modifications in something.
-semeval2013.d005.s028.t004	The act of making something suitable to a new situation or environment.
+semeval2013.d005.s028.t004	The act of making something different or adjusting to new conditions or circumstances.
 semeval2013.d005.s028.t005	A judicial body or tribunal empowered to hear and decide legal cases.
 semeval2013.d005.s029.t001	A statement asserting that someone is entitled to something, especially a right or a financial benefit.
 semeval2013.d005.s030.t000	A formal written document, especially one submitted to a court or other official body.
-semeval2013.d005.s030.t001	The highest court in a country, having ultimate authority over the legal system.
+semeval2013.d005.s030.t001	The highest court in a country, having the ultimate authority to interpret the constitution and settle legal disputes.
 semeval2013.d005.s030.t002	A formal judgment or determination made by a court or other authority.
 semeval2013.d005.s030.t003	The act of being found guilty of a crime and sentenced to punishment.
 semeval2013.d005.s030.t004	A formal legal proceeding in which a person is accused of a crime or offense and is brought to court to be judged.
-semeval2013.d005.s030.t005	The act of covering or being covered.
+semeval2013.d005.s030.t005	The act of providing information about something, especially in a news report or broadcast.
 semeval2013.d005.s030.t006	Rules: established principles or guidelines that govern behavior or conduct.
 semeval2013.d005.s031.t000	A particular instance or example of a legal matter or dispute.
 semeval2013.d005.s031.t001	A period of 100 years.
@@ -3500,10 +3500,10 @@ semeval2013.d006.s000.t001	The act of deceiving someone for personal gain, often
 semeval2013.d006.s000.t002	A system of rules or principles that govern a particular activity or area of life.
 semeval2013.d006.s001.t000	Deceptive or clever maneuvers or strategies.
 semeval2013.d006.s001.t002	The determination or desire to do something.
-semeval2013.d006.s002.t000	The act of being forced to leave a competition or event.
+semeval2013.d006.s002.t000	The act of being forced to leave a game or competition.
 semeval2013.d006.s002.t001	A person who participates in a sport or game.
 semeval2013.d006.s002.t002	A contest or match between two or more teams or individuals, typically involving physical exertion and a set of rules.
-semeval2013.d006.s002.t003	A liquid that is used for writing or printing.
+semeval2013.d006.s002.t003	A liquid that is used for writing.
 semeval2013.d006.s002.t004	The way someone acts or conducts themselves.
 semeval2013.d006.s002.t005	A person who participates in a sport or game.
 semeval2013.d006.s003.t000	A unit of time equal to 60 seconds.
@@ -3530,7 +3530,7 @@ semeval2013.d006.s006.t002	The specific conditions or situations surrounding a p
 semeval2013.d006.s006.t003	The act of doing something repeatedly, especially as a regular or habitual activity.
 semeval2013.d006.s006.t004	The entire planet Earth.
 semeval2013.d006.s006.t005	A sport played with a ball by two teams of eleven players, typically involving kicking or heading the ball to score by getting it
-semeval2013.d006.s007.t001	Established principles or standards of behavior that govern a particular activity or situation.
+semeval2013.d006.s007.t001	A set of established principles or standards governing behavior or conduct.
 semeval2013.d006.s008.t000	A portion or segment of something.
 semeval2013.d006.s008.t001	A discussion or argument about a particular topic.
 semeval2013.d006.s008.t002	A specific instance or situation of a legal or other dispute or problem.
@@ -3541,7 +3541,7 @@ semeval2013.d006.s008.t007	The quality or state of being noble.
 semeval2013.d006.s008.t008	High moral principles; a sense of dignity and respect.
 semeval2013.d006.s008.t009	Individuals who participate in a sport or game, especially as a member of a team.
 semeval2013.d006.s008.t010	Actions; behaviors.
-semeval2013.d006.s008.t012	The record of past events, especially those of a person's life.
+semeval2013.d006.s008.t012	A record of past events, especially of a person's life or activities.
 semeval2013.d006.s009.t000	A discussion or argument about a particular topic.
 semeval2013.d006.s009.t001	A particular kind or variety of something.
 semeval2013.d006.s009.t002	Actions or conduct.
@@ -3559,7 +3559,7 @@ semeval2013.d006.s011.t002	The quality of being spirited or enthusiastic.
 semeval2013.d006.s011.t003	The quality of being honest and having strong moral principles.
 semeval2013.d006.s011.t004	Individuals who participate in a game or sport.
 semeval2013.d006.s011.t005	A particular feature or element of something.
-semeval2013.d006.s011.t006	The things that a person or group does.
+semeval2013.d006.s011.t006	The things that someone does.
 semeval2013.d006.s011.t007	The state of being in imminent risk of harm or injury.
 semeval2013.d006.s012.t000	A benefit or advantage.
 semeval2013.d006.s012.t001	A group of people who work together for a common purpose.
@@ -3604,7 +3604,7 @@ semeval2013.d006.s019.t008	Individuals participating in a game or activity.
 semeval2013.d006.s019.t010	A form of organized competition or contest, typically involving rules and a set of players or teams.
 semeval2013.d006.s019.t011	A series of successive occurrences or stages.
 semeval2013.d006.s019.t013	A temporary deprivation of a privilege or right.
-semeval2013.d006.s019.t015	The act of gathering or collecting together.
+semeval2013.d006.s019.t015	The act of gathering or collecting something, especially in a gradual or steady way.
 semeval2013.d006.s019.t017	A series of successive occurrences or stages.
 semeval2013.d006.s020.t000	A series of turns or cycles.
 semeval2013.d006.s020.t001	A benefit or favorable circumstance.
@@ -3653,7 +3653,7 @@ semeval2013.d007.s006.t000	A fundamental substance that cannot be broken down in
 semeval2013.d007.s006.t001	The state of being alive; the condition of having biological functions and processes.
 semeval2013.d007.s006.t002	A chemical element with the symbol C and atomic number 6, a nonmetal that is essential for life.
 semeval2013.d007.s006.t006	A chemical element with the symbol P and atomic number 15, a nonmetal that is essential for life.
-semeval2013.d007.s007.t003	A highly toxic, poisonous, and brittle metalloid element.
+semeval2013.d007.s007.t003	A highly toxic, brittle, and poisonous element, often found in the earth's crust.
 semeval2013.d007.s007.t004	A chemical element, symbol P, that is a vital nutrient for living organisms.
 semeval2013.d007.s008.t000	A written account of something, especially a formal document containing information or findings.
 semeval2013.d007.s009.t000	A thing discovered or obtained.
@@ -3667,7 +3667,7 @@ semeval2013.d007.s010.t002	The planet called Earth.
 semeval2013.d007.s011.t002	Specific pieces of information or facts.
 semeval2013.d007.s011.t003	A thing discovered or obtained.
 semeval2013.d007.s011.t004	The act of forming or expressing an opinion or idea about something without sufficient evidence.
-semeval2013.d007.s011.t006	A written or oral account of something, especially an official or official-sounding one.
+semeval2013.d007.s011.t006	A written or printed account of something, especially an official or official-sounding one.
 semeval2013.d007.s011.t007	The act of finding or making known something previously unknown or hidden.
 semeval2013.d007.s013.t000	The act of finding or making known something that was previously unknown or not known to be true.
 semeval2013.d007.s013.t001	The surroundings or conditions in which something exists or operates.
@@ -3685,7 +3685,7 @@ semeval2013.d007.s015.t001	The act of replacing one thing with another.
 semeval2013.d007.s015.t002	A basic component or part of something.
 semeval2013.d007.s015.t004	The arrangement or organization of parts of something.
 semeval2013.d007.s016.t000	The act of finding or learning something new or previously unknown.
-semeval2013.d007.s017.t003	An investigation or examination, especially one conducted in a systematic way to discover or prove something.
+semeval2013.d007.s017.t003	A piece of research or investigation conducted to discover or learn something.
 semeval2013.d007.s017.t004	A highly toxic, brittle, silvery-white metalloid.
 semeval2013.d007.s017.t005	The amount or degree of something.
 semeval2013.d007.s018.t000	A highly toxic, brittle, and silvery-white metalloid element.
@@ -3724,7 +3724,7 @@ semeval2013.d007.s026.t004	A member or component of a whole.
 semeval2013.d007.s026.t006	A group of people working together on a particular task or project.
 semeval2013.d008.s000.t000	A regularly recurring course of action or procedure.
 semeval2013.d008.s001.t000	The act of giving assistance or encouragement to something or someone.
-semeval2013.d008.s001.t003	Support or encouragement.
+semeval2013.d008.s001.t003	Financial or material support or assistance.
 semeval2013.d008.s002.t000	The act of committing a violation of the law, especially one that is harmful to others.
 semeval2013.d008.s002.t001	A cause for anxiety or concern.
 semeval2013.d008.s003.t000	The Republic of Brazil.
@@ -3744,7 +3744,7 @@ semeval2013.d008.s008.t000	The second in order of position or sequence.
 semeval2013.d008.s008.t001	The quality or state of being firm, steady, or unchanging.
 semeval2013.d008.s008.t002	Feelings, opinions, or beliefs about something.
 semeval2013.d008.s008.t004	Formal organizations or established practices that provide a framework for a society or group.
-semeval2013.d008.s009.t000	The act of giving assistance, encouragement, or approval.
+semeval2013.d008.s009.t000	The act of giving assistance, encouragement, or approval to something or someone.
 semeval2013.d008.s009.t002	A sovereign state, typically a political entity with its own government and territory.
 semeval2013.d008.s009.t003	The southern portion of the continent of America.
 semeval2013.d008.s009.t004	A piece of furniture with a flat top and often legs, used for supporting objects or as a surface for eating, writing,
@@ -3768,11 +3768,11 @@ semeval2013.d008.s013.t002	A sovereign state or territory with its own governmen
 semeval2013.d008.s013.t003	A system of government by the whole population or all the eligible members of a state, typically through a system of representation where supreme
 semeval2013.d008.s013.t005	A number or amount, especially one that is a part of a statistical or numerical representation.
 semeval2013.d008.s013.t006	A period of twelve months.
-semeval2013.d008.s013.t007	An increase is a rise or a growing amount.
+semeval2013.d008.s013.t007	An increase is a rise or a growing amount or degree.
 semeval2013.d008.s013.t008	A visual representation of data, typically in the form of a graph or table.
 semeval2013.d008.s014.t000	A feeling of trust or belief in something or someone.
 semeval2013.d008.s014.t001	A sovereign state or nation.
-semeval2013.d008.s014.t002	The legislative body of a country, typically consisting of a bicameral assembly.
+semeval2013.d008.s014.t002	The legislative body of a federal government, typically consisting of a bicameral assembly.
 semeval2013.d008.s014.t003	The system or organization that governs a country or state.
 semeval2013.d008.s014.t004	A period of twelve months.
 semeval2013.d008.s014.t005	Instances or examples of something.
@@ -3781,7 +3781,7 @@ semeval2013.d008.s015.t001	Serious difficulties or troubles.
 semeval2013.d008.s015.t003	The act of giving aid, encouragement, or approval to something or someone.
 semeval2013.d008.s016.t001	A sovereign state, especially one with a distinct culture and government.
 semeval2013.d008.s016.t002	A period of significant decline in economic activity, typically marked by a decrease in production, employment, and income.
-semeval2013.d008.s016.t003	The return to a previous state of prosperity or health.
+semeval2013.d008.s016.t003	The return to a normal state of prosperity or activity after a period of decline.
 semeval2013.d008.s017.t001	A system or program designed to provide financial or other forms of support to people in need, especially those who are unemployed or facing
 semeval2013.d008.s018.t002	A period of seven consecutive days.
 semeval2013.d008.s018.t003	The amount or degree of something relative to a whole or a total.
@@ -3800,7 +3800,7 @@ semeval2013.d008.s022.t000	A period of time, measured in units like hours, days,
 semeval2013.d008.s022.t001	Surveys or questionnaires used to gather information from a sample of people.
 semeval2013.d008.s022.t002	People who are being asked questions or surveyed.
 semeval2013.d008.s022.t004	The entire entirety of something.
-semeval2013.d008.s022.t005	The act of committing a violation of the law, especially one that is serious or harmful.
+semeval2013.d008.s022.t005	The act of committing a violation of the law, especially one that involves violence or harm to others.
 semeval2013.d008.s022.t007	A matter or issue that causes difficulty or trouble.
 semeval2013.d008.s022.t008	A sovereign state, typically with its own government and territory.
 semeval2013.d008.s022.t009	A visual representation of data, typically in the form of a graph or table, used to illustrate trends, comparisons, or relationships
@@ -3815,7 +3815,7 @@ semeval2013.d008.s024.t004	People who are being asked for their opinions or view
 semeval2013.d008.s024.t007	The process of growth, progress, or improvement.
 semeval2013.d008.s024.t008	A visual representation of data, typically in the form of a graph or table.
 semeval2013.d008.s025.t001	A set of interrelated parts or components that work together to achieve a particular purpose.
-semeval2013.d008.s025.t002	A sovereign state, typically with its own government and territory.
+semeval2013.d008.s025.t002	A sovereign state, typically with a defined territory, government, and population.
 semeval2013.d008.s025.t003	A period of twelve months.
 semeval2013.d008.s026.t000	People who are being asked for their opinions or views.
 semeval2013.d008.s026.t002	A belief or opinion.
@@ -3847,7 +3847,7 @@ semeval2013.d009.s002.t002	A person who is a member of a court of law, especiall
 semeval2013.d009.s002.t003	A meeting of people for discussion or consultation.
 semeval2013.d009.s002.t004	A formal written request for something, especially a legal request for a court to consider a case.
 semeval2013.d009.s002.t005	To examine or consider something carefully, often in order to make a judgment or decision.
-semeval2013.d009.s003.t000	A particular instance or instance of a legal dispute or matter.
+semeval2013.d009.s003.t000	A particular instance of a legal dispute or matter.
 semeval2013.d009.s003.t002	A formal legal action brought in a court of law.
 semeval2013.d009.s003.t003	A political subdivision of a country, typically a territory with its own government.
 semeval2013.d009.s003.t005	A thorough and comprehensive change or revision.
@@ -3867,7 +3867,7 @@ semeval2013.d009.s004.t009	A formal body of people appointed to hear and decide 
 semeval2013.d009.s004.t010	A choice or determination made after careful consideration.
 semeval2013.d009.s005.t001	A formal assembly of judges and other legal officials where legal cases are heard and decided.
 semeval2013.d009.s005.t002	A set of rules or principles that govern a society or a particular field of activity.
-semeval2013.d009.s006.t003	A formal meal, typically a large one, often served at a particular time.
+semeval2013.d009.s006.t003	A formal meal, typically served at a particular time, often as a social gathering.
 semeval2013.d009.s007.t001	A formal meal, typically a meal eaten in the evening.
 semeval2013.d009.s007.t002	A set of rules or principles that are officially established and enforced by a government or other authority.
 semeval2013.d009.s008.t000	A person or organization that provides financial or other support for a project, event, or activity.
@@ -3885,7 +3885,7 @@ semeval2013.d009.s010.t002	A person who opposes or disagrees with something or s
 semeval2013.d009.s011.t000	People invited to a social gathering.
 semeval2013.d009.s011.t001	A formal meal, typically served at a particular time, often for a social gathering.
 semeval2013.d009.s012.t000	A person who is a member of a court of law, especially a judge.
-semeval2013.d009.s012.t001	A particular occurrence or gathering of people or things, especially one that is planned or organized.
+semeval2013.d009.s012.t001	Organized gatherings or meetings, especially those related to a particular topic or purpose.
 semeval2013.d009.s012.t002	A period of time equal to 365 days.
 semeval2013.d009.s013.t002	A set of established principles or standards of conduct that govern behavior or action.
 semeval2013.d009.s014.t001	A person who is a judge, especially a judge of a court of law.
@@ -3939,19 +3939,19 @@ semeval2013.d010.s002.t000	One of two or more parts of something.
 semeval2013.d010.s002.t002	A person who participates in a game or sport.
 semeval2013.d010.s002.t003	A single instance of a sport or activity, typically involving a set number of rounds or periods.
 semeval2013.d010.s003.t002	A person who participates in a sport or game.
-semeval2013.d010.s003.t004	A contest or competition between two or more teams or individuals, typically for a specific objective or score.
+semeval2013.d010.s003.t004	A contest or competition between two or more teams or individuals, typically for a specific objective.
 semeval2013.d010.s003.t005	The current day.
 semeval2013.d010.s003.t006	The capital city of Costa Rica.
 semeval2013.d010.s004.t001	The highest ranking or position in a ranking or list.
 semeval2013.d010.s004.t003	A collection of past events or occurrences, especially those that are noteworthy or significant.
-semeval2013.d010.s004.t005	A single instance of a sporting event or competition.
+semeval2013.d010.s004.t005	A match or contest played between two or more teams or individuals.
 semeval2013.d010.s005.t000	A numerical value, often a digit or a quantity.
-semeval2013.d010.s005.t002	A contest or match between two or more teams or individuals, typically involving physical exertion or skill.
+semeval2013.d010.s005.t002	A contest or match between two or more teams or individuals, typically involving physical activity or competition.
 semeval2013.d010.s006.t001	A competition or series of matches between teams, typically in a particular sport.
 semeval2013.d010.s006.t004	A period of twelve months.
 semeval2013.d010.s006.t005	A competition or series of matches between teams, typically in a particular sport.
 semeval2013.d010.s006.t007	A contest or series of events, often with a specific set of rules and a winner determined by a specific criteria.
-semeval2013.d010.s007.t000	The fact or process of having or becoming aware of something.
+semeval2013.d010.s007.t000	The fact or state of having had a particular event or set of events.
 semeval2013.d010.s008.t000	Individuals who participate in a sport, especially a professional or competitive one.
 semeval2013.d010.s008.t001	The knowledge or skill gained through practice or involvement in a particular activity.
 semeval2013.d010.s008.t002	A particular region or part of a larger area.
@@ -3965,7 +3965,7 @@ semeval2013.d010.s009.t008	A player who defends the goal in a team sport, typica
 semeval2013.d010.s009.t009	Games played in a sport.
 semeval2013.d010.s010.t000	The current day.
 semeval2013.d010.s010.t001	A previously held or established standard of excellence or achievement.
-semeval2013.d010.s010.t002	A contest or game played between two or more teams or individuals.
+semeval2013.d010.s010.t002	A game or contest between two or more teams or individuals.
 semeval2013.d010.s011.t000	A person who participates in a sport or game, especially one who is skilled at a particular sport.
 semeval2013.d010.s011.t001	A game of a sport, typically involving two teams competing against each other.
 semeval2013.d010.s012.t000	A period of seven consecutive days.
@@ -3997,7 +3997,7 @@ semeval2013.d011.s001.t006	A course of action or set of principles that guides d
 semeval2013.d011.s001.t007	A numerical quantity or amount.
 semeval2013.d011.s001.t008	The ability to exist or work together harmoniously.
 semeval2013.d011.s001.t009	A course of action or set of principles that guides decisions and actions.
-semeval2013.d011.s001.t010	The condition or position of someone or something in relation to others.
+semeval2013.d011.s001.t010	The condition or position of someone or something, especially in relation to a particular group or society.
 semeval2013.d011.s001.t011	A sovereign state recognized by the international community.
 semeval2013.d011.s001.t012	A sovereign state recognized by the international community.
 semeval2013.d011.s002.t000	Unfair or unwelcome treatment or behavior that is intended to cause distress or harm.
@@ -4010,21 +4010,21 @@ semeval2013.d011.s004.t000	A considerable amount or quantity.
 semeval2013.d011.s004.t002	The political or ideological position that is generally considered to be more liberal or progressive.
 semeval2013.d011.s004.t003	The side of a political spectrum that advocates for conservative or traditional values.
 semeval2013.d011.s004.t004	The matter or topic being discussed or debated.
-semeval2013.d011.s005.t000	The side or position of a political or ideological group.
+semeval2013.d011.s005.t000	The side or position of a political party or group.
 semeval2013.d011.s005.t001	The general character or attitude of something, especially a particular speech or piece of writing.
 semeval2013.d011.s005.t003	A matter or situation that causes difficulty or trouble.
 semeval2013.d011.s005.t004	A sovereign state or territory with a defined political system and population.
 semeval2013.d011.s005.t005	People who work for wages or are employed.
-semeval2013.d011.s005.t006	The side or position of a political party or ideology that advocates for social welfare programs and government intervention.
+semeval2013.d011.s005.t006	The Left in this context refers to a political ideology or group of people who hold left-wing political views.
 semeval2013.d011.s005.t007	The country of France.
 semeval2013.d011.s005.t009	Great suffering or unhappiness.
-semeval2013.d011.s006.t000	A discrepancy or variation in size, amount, or quality.
+semeval2013.d011.s006.t000	A discrepancy or variation in size, amount, or character.
 semeval2013.d011.s006.t001	The amount or extent of something.
 semeval2013.d011.s006.t002	The quality of being willing to give or share generously; a readiness to give or do something for others without expecting anything in return
 semeval2013.d011.s007.t000	A feeling of apprehension or anxiety about something that might happen.
 semeval2013.d011.s007.t001	The act of entering or taking possession of a place or territory by force or by stealth.
 semeval2013.d011.s007.t002	The land or area under the control of a particular country or person.
-semeval2013.d011.s007.t003	A large group of people, especially a large and unruly group.
+semeval2013.d011.s007.t003	A large group of people, especially those acting in a threatening or aggressive way.
 semeval2013.d011.s007.t005	The Left in this context refers to a political ideology or position on the political spectrum, typically associated with socialist or liberal views.
 semeval2013.d011.s007.t006	The political Right.
 semeval2013.d011.s008.t000	The two opposing groups or parties involved in a situation.
@@ -4038,7 +4038,7 @@ semeval2013.d011.s010.t000	A plan or set of plans for achieving a particular goa
 semeval2013.d011.s010.t003	A matter or issue that causes difficulty or trouble.
 semeval2013.d011.s011.t000	An opinion or belief.
 semeval2013.d011.s011.t002	A heavy or difficult task or responsibility.
-semeval2013.d011.s011.t003	A matter that causes difficulty or trouble.
+semeval2013.d011.s011.t003	A matter that is difficult or unpleasant to deal with.
 semeval2013.d011.s012.t001	A written work, typically containing a collection of related information or ideas, often bound together in a physical form.
 semeval2013.d011.s012.t003	The act of moving to a new country to live permanently.
 semeval2013.d011.s012.t004	Individuals, especially those who are human beings.
@@ -4053,17 +4053,17 @@ semeval2013.d011.s012.t016	A sovereign state or territory with its own governmen
 semeval2013.d011.s013.t000	The act of entering a country or region to live there permanently or for an extended period.
 semeval2013.d011.s013.t001	The process of increasing in size, amount, or intensity.
 semeval2013.d011.s013.t002	The state of being employed; work or occupation.
-semeval2013.d011.s014.t000	Strong feelings of anxiety or apprehension.
+semeval2013.d011.s014.t000	Anxiety or apprehension about something.
 semeval2013.d011.s014.t001	The effect or influence of something on something else.
 semeval2013.d011.s014.t003	An idea or belief, especially one that is not based on facts.
-semeval2013.d011.s014.t004	People who are employed to do manual or intellectual work.
+semeval2013.d011.s014.t004	People who work for pay, typically in a particular job or industry.
 semeval2013.d011.s014.t005	The people or things in question.
 semeval2013.d011.s014.t006	A force that is exerted on something, often with the intention of changing its shape or position.
 semeval2013.d011.s015.t000	Knowledge or information gained through practice or observation.
 semeval2013.d011.s015.t003	One that takes the place of another.
 semeval2013.d011.s015.t004	Work or effort, especially physical or manual work.
 semeval2013.d011.s015.t005	A skilled or specialized type of work, often requiring specific tools and training.
-semeval2013.d011.s015.t006	A lack of something, especially a needed or desired item or person.
+semeval2013.d011.s015.t006	A lack of something, especially a desired or needed item or person.
 semeval2013.d011.s015.t007	Work or effort, especially physical or manual work.
 semeval2013.d011.s016.t001	Groups of industries or businesses that are related to each other.
 semeval2013.d011.s016.t002	The people who work, especially in a particular job or industry.
@@ -4075,7 +4075,7 @@ semeval2013.d011.s016.t007	The act of employing someone for work.
 semeval2013.d011.s017.t000	A result or consequence.
 semeval2013.d011.s018.t000	The manner or method by which something is done.
 semeval2013.d011.s018.t002	A particular geographical area with a defined territory and population, often with its own government and laws.
-semeval2013.d011.s018.t003	A lack or deficiency of something, especially a necessary or desirable thing.
+semeval2013.d011.s018.t003	A lack or deficiency of something, especially a needed or desired thing.
 semeval2013.d011.s018.t005	Mutual advantages or benefits that exist between two or more things.
 semeval2013.d011.s018.t007	The act of coming into a place or situation.
 semeval2013.d011.s018.t009	A result or consequence.
@@ -4099,7 +4099,7 @@ semeval2013.d011.s022.t007	A sum of money or other resources given or paid to a 
 semeval2013.d011.s022.t008	Money received or earned.
 semeval2013.d011.s022.t009	The amount of money spent on something.
 semeval2013.d011.s022.t010	The typical or usual value of a set of numbers.
-semeval2013.d011.s022.t012	The funds allocated for a particular purpose, typically for government spending or public services.
+semeval2013.d011.s022.t012	The funds allocated for government spending and operations.
 semeval2013.d011.s023.t001	The authority or powers given to a person to perform a specific task or function.
 semeval2013.d011.s023.t002	A particular place or area of something.
 semeval2013.d011.s023.t003	The state of increasing in size, amount, or extent.
@@ -4123,7 +4123,7 @@ semeval2013.d012.s003.t000	A matter or problem that is being discussed or debate
 semeval2013.d012.s003.t001	The act of selling something.
 semeval2013.d012.s004.t000	An official body or person authorized to control or supervise a particular industry or activity.
 semeval2013.d012.s004.t001	A group of things connected or joined together.
-semeval2013.d012.s004.t002	Financial institutions that accept deposits and make loans, typically offering services like checking accounts, savings accounts, and mortgages.
+semeval2013.d012.s004.t002	Financial institutions that accept deposits and make loans.
 semeval2013.d012.s004.t003	A declaration or assurance of something that is to be done or given, especially one made with the intention of inducing someone to do
 semeval2013.d012.s005.t000	The amount of money or worth that something has.
 semeval2013.d012.s005.t001	Financial assets that represent ownership in a company or government, such as stocks, bonds, or other investments.
@@ -4141,7 +4141,7 @@ semeval2013.d012.s011.t000	Financial payment or restitution for a loss or injury
 semeval2013.d012.s011.t002	A large number, equal to one thousand million.
 semeval2013.d012.s012.t000	A place where people live, especially a small town or village.
 semeval2013.d012.s013.t000	An organization or person that is responsible for overseeing and controlling the activities of another organization or group.
-semeval2013.d012.s013.t001	Financial institutions that accept deposits and provide loans, often offering a range of financial services.
+semeval2013.d012.s013.t001	Financial institutions that accept deposits and provide loans.
 semeval2013.d012.s013.t002	The season of the year between spring and autumn.
 semeval2013.d012.s016.t000	The course or destiny of something.
 semeval2013.d012.s016.t001	A quantity or amount of something.
@@ -4191,10 +4191,10 @@ semeval2015.d000.s002.t001	Additional or greater in quantity or amount.
 semeval2015.d000.s002.t002	Knowledge or facts about something.
 semeval2015.d000.s002.t003	Relating to medicine or the treatment of illness.
 semeval2015.d000.s002.t004	A state of being ill or diseased.
-semeval2015.d000.s002.t005	The action of alleviating or curing a disease or disorder.
+semeval2015.d000.s002.t005	The process of alleviating or curing a disease or disorder.
 semeval2015.d000.s002.t006	To look at and understand the written words of a document.
 semeval2015.d000.s002.t008	A small booklet containing information about a medicine or other product.
-semeval2015.d000.s002.t010	A portion or component of something.
+semeval2015.d000.s002.t010	A component or element of something.
 semeval2015.d000.s002.t011	To reach out to someone by phone, email, or in person.
 semeval2015.d000.s002.t012	A person who is qualified to provide medical care and treatment.
 semeval2015.d000.s003.t000	Desire or wish for something.
@@ -4208,7 +4208,7 @@ semeval2015.d000.s003.t009	A portion or segment of something.
 semeval2015.d000.s005.t000	A fine, dry, granular substance.
 semeval2015.d000.s005.t002	A mixture of a substance (like a drug) dissolved in a liquid, typically water.
 semeval2015.d000.s005.t003	The act of introducing a liquid or other substance into the bloodstream.
-semeval2015.d000.s005.t004	To flow slowly and steadily from a container or source, typically by gravity.
+semeval2015.d000.s005.t004	To flow slowly and steadily, typically from a container or source, as a liquid.
 semeval2015.d000.s005.t005	A blood vessel that carries blood from the heart to the rest of the body.
 semeval2015.d000.s006.t000	To have or hold something within its structure or composition.
 semeval2015.d000.s006.t001	Capable of producing a noticeable effect or change.
@@ -4252,7 +4252,7 @@ semeval2015.d000.s011.t002	To acquire or get possession of something.
 semeval2015.d000.s011.t003	A written order from a doctor or other licensed healthcare professional authorizing the dispensing of a drug.
 semeval2015.d000.s012.t000	To be employed or put into use.
 semeval2015.d000.s013.t000	Only -  in a limited or restricted way.
-semeval2015.d000.s013.t001	To administer or distribute (something, especially a substance) to someone.
+semeval2015.d000.s013.t001	To administer or distribute (something, such as a drug or treatment) to someone.
 semeval2015.d000.s013.t003	A person who is licensed to practice medicine.
 semeval2015.d000.s013.t004	To employ or apply something, especially in a particular way or for a specific purpose.
 semeval2015.d000.s014.t000	The amount of a substance that is given to a person or animal for medical treatment.
@@ -4283,7 +4283,7 @@ semeval2015.d000.s017.t004	Liquid substances, especially those that are easily a
 semeval2015.d000.s017.t005	To stop something from happening.
 semeval2015.d000.s017.t006	The state of having insufficient water in the body.
 semeval2015.d000.s017.t008	To provide or administer (something) to someone or something.
-semeval2015.d000.s017.t009	Before, in this context, means at an earlier time than.
+semeval2015.d000.s017.t009	Before, in this context, means at or in the time preceding.
 semeval2015.d000.s017.t010	At or in a subsequent time.
 semeval2015.d000.s017.t011	A specific amount of a substance, typically a medication, administered at a particular time.
 semeval2015.d000.s018.t000	The action of applying medical care or therapy to a person or animal with a disease or injury.
@@ -4296,7 +4296,7 @@ semeval2015.d000.s018.t006	The number of red blood cells, white blood cells, and
 semeval2015.d000.s018.t007	deviating from the normal or expected range.
 semeval2015.d000.s018.t008	To possess or be affected by something.
 semeval2015.d000.s018.t009	Certain (in this context) means specific or particular.
-semeval2015.d000.s018.t010	Additional or supplementary.
+semeval2015.d000.s018.t010	Additional; not the primary or main thing.
 semeval2015.d000.s018.t011	Unintended and often undesirable consequences of a drug or medical treatment.
 semeval2015.d000.s019.t002	To employ or utilize something for a particular purpose.
 semeval2015.d000.s019.t003	People who are being treated for a medical condition.
@@ -4315,7 +4315,7 @@ semeval2015.d000.s022.t004	A substance used to treat or prevent disease.
 semeval2015.d000.s022.t005	To destroy or cause the death of (living cells).
 semeval2015.d000.s022.t006	The basic unit of life, the smallest unit that can carry out all the processes of life.
 semeval2015.d000.s022.t007	Growing or multiplying.
-semeval2015.d000.s023.t000	The complete physical structure of a living organism.
+semeval2015.d000.s023.t000	The entire physical structure of a living organism.
 semeval2015.d000.s023.t001	Changed into a different form or substance.
 semeval2015.d000.s023.t002	In a state of being in operation or functioning.
 semeval2015.d000.s023.t003	A particular physical or chemical state or configuration of something.
@@ -4336,7 +4336,7 @@ semeval2015.d000.s025.t012	Prior to.
 semeval2015.d000.s026.t000	The results or consequences of something.
 semeval2015.d000.s026.t002	To examine or assess the differences or similarities between two or more things.
 semeval2015.d000.s027.t000	The act of treating or alleviating a disease or condition.
-semeval2015.d000.s027.t001	The basic unit of life, a microscopic structure that is the smallest unit capable of carrying out all the processes of life.
+semeval2015.d000.s027.t001	The basic unit of life that is the smallest unit capable of carrying out all the processes of life.
 semeval2015.d000.s027.t003	The results or consequences of something.
 semeval2015.d000.s027.t004	To examine or assess the differences or similarities between two things.
 semeval2015.d000.s027.t006	A substance used to treat or prevent disease.
@@ -4387,12 +4387,12 @@ semeval2015.d000.s035.t000	Individuals suffering from a particular illness or co
 semeval2015.d000.s035.t004	Previously occurring or completed.
 semeval2015.d000.s035.t005	The middle value of a set of numbers.
 semeval2015.d000.s035.t006	The state of being alive or free from death.
-semeval2015.d000.s035.t007	A period of time, measured in seconds, minutes, hours, days, weeks, months, or years.
+semeval2015.d000.s035.t007	The period of time during which something exists or happens.
 semeval2015.d000.s035.t008	A unit of time equal to 60 days.
 semeval2015.d000.s035.t009	Two or more groups of people or things that are being compared or studied.
 semeval2015.d000.s036.t000	Nevertheless; nonetheless.
 semeval2015.d000.s036.t001	A piece of research or investigation.
-semeval2015.d000.s036.t002	People who are being treated for a disease or illness.
+semeval2015.d000.s036.t002	People who are being treated for a medical condition.
 semeval2015.d000.s036.t003	A disease characterized by the uncontrolled growth and spread of abnormal cells in the body.
 semeval2015.d000.s036.t005	To have an influence on or cause to happen.
 semeval2015.d000.s036.t008	Greater in duration or extent.
@@ -4413,7 +4413,7 @@ semeval2015.d001.s001.t003	Not complex or difficult.
 semeval2015.d001.s001.t004	Actions or processes that are performed on something.
 semeval2015.d001.s001.t006	Having three dimensions.
 semeval2015.d001.s002.t000	In fact; truly.
-semeval2015.d001.s002.t002	Requiring or being essential for something to be done or to happen.
+semeval2015.d001.s002.t002	Essential or required; indispensable.
 semeval2015.d001.s002.t003	To have knowledge or understanding of something.
 semeval2015.d001.s002.t004	To employ or make use of something.
 semeval2015.d001.s004.t002	At the present time.
@@ -4422,7 +4422,7 @@ semeval2015.d001.s004.t004	A small or moderate amount.
 semeval2015.d001.s004.t005	Relating to mathematics.
 semeval2015.d001.s005.t000	Here as a demonstrative pronoun indicating a specific location or object.
 semeval2015.d001.s005.t001	The most important or primary.
-semeval2015.d001.s005.t002	A part of a computer program or application that displays information or allows interaction.
+semeval2015.d001.s005.t002	A part of a computer program or application that displays information or allows interaction with the program.
 semeval2015.d001.s006.t000	The most important or central one.
 semeval2015.d001.s006.t001	A large opening in a wall or building, typically made of glass, that allows light and air to enter.
 semeval2015.d001.s007.t000	The most important or primary.
@@ -4451,7 +4451,7 @@ semeval2015.d001.s009.t011	To be aware of or have knowledge of something.
 semeval2015.d001.s010.t000	To serve as the foundation or principal source for something.
 semeval2015.d001.s010.t004	Difficult or challenging.
 semeval2015.d001.s011.t001	In a close manner; with great attention to detail.
-semeval2015.d001.s011.t002	To appear or be perceived as something.
+semeval2015.d001.s011.t002	To appear to be the same or similar in appearance or characteristics.
 semeval2015.d001.s011.t003	Extremely; to a great extent.
 semeval2015.d001.s011.t004	Having or showing a resemblance in appearance, features, or character.
 semeval2015.d001.s012.t000	The act of combining two or more quantities or elements to form a larger quantity or sum.
@@ -4476,7 +4476,7 @@ semeval2015.d001.s017.t002	Of greater rank or importance.
 semeval2015.d001.s017.t003	The state or quality of being of greater importance or urgency than others.
 semeval2015.d001.s018.t001	To locate or discover something.
 semeval2015.d001.s018.t002	A set of instructions that perform a specific task.
-semeval2015.d001.s018.t003	To examine or verify something for truth or accuracy.
+semeval2015.d001.s018.t003	To examine or verify something, typically by examining it for a particular quality or characteristic.
 semeval2015.d001.s018.t004	A symbol or character that performs a specific mathematical or logical operation.
 semeval2015.d001.s019.t000	To be dealt with or handled in a particular way.
 semeval2015.d001.s019.t001	A person or thing that performs an action or operation.
@@ -4533,7 +4533,7 @@ semeval2015.d001.s034.t004	The amount or quantity of something.
 semeval2015.d001.s034.t005	Modified or altered.
 semeval2015.d001.s034.t006	Most recent; preceding the next in order.
 semeval2015.d001.s034.t007	The outcome or answer obtained after a calculation or operation.
-semeval2015.d001.s035.t000	To create a new instance of something.
+semeval2015.d001.s035.t000	Not existing before; newly created or introduced.
 semeval2015.d001.s035.t001	A rectangular opening in a wall or other structure, typically with a frame, that allows light and air to enter.
 semeval2015.d001.s036.t000	A piece of wood, typically long and cylindrical, used for fuel or as a structural element.
 semeval2015.d001.s037.t000	To put something into a state of operation or use.
@@ -4584,9 +4584,9 @@ semeval2015.d001.s048.t005	To enter or insert something, especially into a speci
 semeval2015.d001.s048.t006	A specific set of actions or operations that a program or system performs.
 semeval2015.d001.s049.t000	To desire or wish for something.
 semeval2015.d001.s049.t001	To employ or make use of something.
-semeval2015.d001.s049.t002	Common or ordinary; representative of a general type or pattern.
+semeval2015.d001.s049.t002	Common or standard; typical of a particular type or group.
 semeval2015.d001.s049.t004	Required or obligatory.
-semeval2015.d001.s049.t005	To state or indicate clearly and precisely what something is or what it should be.
+semeval2015.d001.s049.t005	To state or indicate clearly and precisely what something is or should be.
 semeval2015.d001.s050.t001	A set of instructions or a procedure that performs a specific task.
 semeval2015.d001.s050.t003	To show or present something, especially on a screen or in a visual form.
 semeval2015.d001.s050.t005	The most important or primary.
@@ -4626,10 +4626,10 @@ semeval2015.d002.s002.t003	To make known or stated.
 semeval2015.d002.s002.t004	An act of making an effort to do something.
 semeval2015.d002.s002.t005	To include someone in a process or activity.
 semeval2015.d002.s002.t006	People who use a particular service or product.
-semeval2015.d002.s002.t007	The provision of goods or services to meet a need or want.
+semeval2015.d002.s002.t007	A service is a service is a set of actions or activities that are provided to meet a need or want.
 semeval2015.d002.s002.t008	The process of making arrangements or preparations for something, especially for a future event or activity.
 semeval2015.d002.s002.t009	The act of being actively engaged in or participating in something.
-semeval2015.d002.s002.t010	The provision of goods or services to meet a need or want.
+semeval2015.d002.s002.t010	A service is a service is a set of actions or activities that are provided to meet a need or want.
 semeval2015.d002.s002.t011	The act of supplying or making something available.
 semeval2015.d002.s002.t012	Discovered or discovered to be true.
 semeval2015.d002.s002.t013	To a greater extent or amount than something else.
@@ -4667,7 +4667,7 @@ semeval2015.d002.s005.t013	To make larger or greater in size, amount, or value.
 semeval2015.d002.s006.t000	A piece of research or investigation, often involving a systematic examination of a particular subject.
 semeval2015.d002.s006.t001	To serve as the foundation or source for something.
 semeval2015.d002.s006.t002	Relating to or conducted by a single person.
-semeval2015.d002.s006.t003	A conversation in which two or more people speak to each other, typically for the purpose of gathering information or opinions.
+semeval2015.d002.s006.t003	A conversation between two or more people, typically for the purpose of gathering information or opinions.
 semeval2015.d002.s006.t004	Holding a high rank or position of authority.
 semeval2015.d002.s006.t005	High-ranking government or organizational employees with authority and responsibility.
 semeval2015.d002.s006.t006	Relating to or involving society or social relationships.
@@ -4679,7 +4679,7 @@ semeval2015.d002.s006.t013	A political entity that is a sovereign state, typical
 semeval2015.d002.s007.t000	Having great significance or value; crucial or essential.
 semeval2015.d002.s007.t001	Relating to or involving industry; relating to the production of goods or services.
 semeval2015.d002.s007.t002	A particular area or division of an industry or economy.
-semeval2015.d002.s007.t003	A material made of metal.
+semeval2015.d002.s007.t003	A material made of metal, typically a solid, hard, and shiny substance.
 semeval2015.d002.s007.t004	An organized activity or business concerned with the production of goods or services.
 semeval2015.d002.s007.t005	The business of lending and borrowing money, including managing financial assets and providing financial services.
 semeval2015.d002.s007.t006	A major division or area of activity within an industry.
@@ -4688,8 +4688,8 @@ semeval2015.d002.s008.t000	A person who is giving a talk or presentation.
 semeval2015.d002.s008.t001	Relating to or concerned with society or social relationships.
 semeval2015.d002.s008.t002	The state of being excluded or left out.
 semeval2015.d002.s008.t003	A formal meeting or gathering of people for a specific purpose, often involving presentations, discussions, and/or presentations.
-semeval2015.d002.s008.t004	Positioned on the left side of something.
-semeval2015.d002.s008.t005	In a line or position of alignment, typically indicating a specific order or arrangement.
+semeval2015.d002.s008.t004	To be positioned on the left side of something.
+semeval2015.d002.s008.t005	In a specific order or position.
 semeval2015.d002.s008.t006	The department or area concerned with the management and regulation of work, including issues like wages, working conditions, and job creation.
 semeval2015.d002.s008.t007	Relating to or involving industry, manufacturing, or production.
 semeval2015.d002.s008.t012	A group of people appointed to manage or oversee a particular organization or activity.
@@ -4705,7 +4705,7 @@ semeval2015.d002.s009.t000	Detailed accounts or examples of specific situations 
 semeval2015.d002.s009.t001	Relating to or belonging to a particular country.
 semeval2015.d002.s009.t002	A written account of something, typically a formal document containing information or findings.
 semeval2015.d002.s009.t003	To have or hold something within its scope or structure.
-semeval2015.d002.s009.t006	To show or display something.
+semeval2015.d002.s009.t006	To show or display something, typically in a visual or written form.
 semeval2015.d002.s009.t007	A course of action or set of rules established by an organization or government to guide its actions and decisions.
 semeval2015.d002.s009.t008	Methods or procedures used in a particular activity or field.
 semeval2015.d002.s009.t009	To make something better or more effective.
@@ -4733,7 +4733,7 @@ semeval2015.d002.s013.t002	To be the source or foundation for something.
 semeval2015.d002.s013.t003	The foundation or starting point for something.
 semeval2015.d002.s013.t005	A written account of something, typically a formal document containing information, findings, or recommendations.
 semeval2015.d002.s013.t007	Including or covering the whole; complete.
-semeval2015.d002.s013.t008	The methods or procedures that are followed in a particular activity or field.
+semeval2015.d002.s013.t008	The methods or procedures used in a particular field or activity.
 semeval2015.d002.s014.t000	A written account of facts, findings, or information, especially one prepared for a specific purpose.
 semeval2015.d002.s014.t003	To make (a book, article, etc.) available to the public.
 semeval2015.d002.s014.t005	A formal meeting or gathering of people for a specific purpose, often involving presentations, discussions, and/or workshops.
@@ -4752,7 +4752,7 @@ semeval2015.d002.s016.t000	A particular point of view or way of thinking about s
 semeval2015.d002.s016.t001	Relating to or involving society or social relationships.
 semeval2015.d002.s016.t004	Of or relating to a particular person, thing, or subject.
 semeval2015.d002.s016.t005	Care, consideration, or focus on something.
-semeval2015.d002.s016.t006	Given to, or devoted to, a particular purpose or activity.
+semeval2015.d002.s016.t006	Given, or devoted to.
 semeval2015.d002.s016.t007	A suggestion or plan for doing something.
 semeval2015.d002.s016.t008	To make something disappear or cease to exist.
 semeval2015.d002.s016.t009	The period of life that is typically measured in years.
@@ -4798,9 +4798,9 @@ semeval2015.d003.s001.t003	Goods or substances intended for commercial sale or u
 semeval2015.d003.s001.t005	To put something to a particular purpose or application.
 semeval2015.d003.s001.t006	To examine or evaluate critically.
 semeval2015.d003.s001.t007	Investigations or examinations conducted to gather information or evidence.
-semeval2015.d003.s001.t008	To carry out (an action or series of actions) in a particular way.
-semeval2015.d003.s001.t009	To arrive at or attain.
-semeval2015.d003.s001.t010	Suggestions or advice about what should be done.
+semeval2015.d003.s001.t008	To carry out or execute (an action or task).
+semeval2015.d003.s001.t009	To arrive at or attain (a conclusion or decision).
+semeval2015.d003.s001.t010	Suggestions or advice about how to do something.
 semeval2015.d003.s001.t011	To put something to a particular purpose or for a particular effect.
 semeval2015.d003.s001.t012	A substance used to treat or prevent disease or illness.
 semeval2015.d003.s003.t000	To have or include as an ingredient or component.
@@ -4809,7 +4809,7 @@ semeval2015.d003.s003.t002	A material that is the main component of a substance.
 semeval2015.d003.s003.t003	Being able to be obtained or used.
 semeval2015.d003.s003.t004	A solid dosage form, typically made of compressed powder or granules, that is taken orally.
 semeval2015.d003.s003.t005	A liquid mixture of a substance dissolved in a solvent.
-semeval2015.d003.s003.t006	The act of introducing a substance into the body through a vein or muscle.
+semeval2015.d003.s003.t006	The act of introducing a substance into the body through a vein, muscle, or other body cavity.
 semeval2015.d003.s004.t000	Small, flat, and usually rectangular pieces of a substance, often used for writing or eating.
 semeval2015.d003.s004.t001	To possess or be equipped with something.
 semeval2015.d003.s004.t002	A line or mark made by cutting or scoring.
@@ -4882,7 +4882,7 @@ semeval2015.d003.s017.t009	A small, solid piece of medication, typically intende
 semeval2015.d003.s017.t010	Whole, complete, or undamaged.
 semeval2015.d003.s017.t011	A small, solid piece of medication, typically intended to be swallowed.
 semeval2015.d003.s018.t000	Something done after an initial event or treatment to address any remaining issues or provide further care.
-semeval2015.d003.s018.t001	The action of providing medical care or therapy for a disease or injury.
+semeval2015.d003.s018.t001	The action of treating or alleviating a disease, injury, or other condition.
 semeval2015.d003.s018.t002	The person who has legal or rightful possession of an animal.
 semeval2015.d003.s018.t003	To give or put into effect (a substance, such as a drug or medicine).
 semeval2015.d003.s018.t004	Small, solid, and usually round or oblong pieces of medication.
@@ -4904,7 +4904,7 @@ semeval2015.d003.s021.t004	Occurring or done every day.
 semeval2015.d003.s021.t005	The amount of a substance, typically a drug, that is given to a person or animal for medical treatment.
 semeval2015.d003.s021.t008	A unit of measurement for a substance, typically a liquid or pill, representing a specific amount of that substance.
 semeval2015.d003.s021.t009	Continuing for a longer period than usual.
-semeval2015.d003.s021.t013	The length of time something continues or lasts.
+semeval2015.d003.s021.t013	The length of time something lasts.
 semeval2015.d003.s021.t014	The use of a medical treatment to alleviate or cure a disease or condition.
 semeval2015.d003.s022.t000	Measures taken to prevent harm or injury.
 semeval2015.d003.s022.t001	A human being.
