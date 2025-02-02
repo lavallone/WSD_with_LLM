@@ -16,7 +16,7 @@ def _get_gold_data(subtask:str):
     Returns:
         dict: A dictionary containing the loaded gold data.
     """
-    gold_data_path = "../data/evaluation/ALLamended/ALLamended_preprocessed.json"
+    gold_data_path = "../data/evaluation/ALLamended_preprocessed.json"
     with open(gold_data_path, "r") as json_file:
         gold_data = json.load(json_file)
     return gold_data
@@ -260,7 +260,7 @@ def mc_nemar_test(subtask, approach):
         else: consec_wrongs.append(k)
     
     # now we pass to gpt-4o model
-    gpt_gold_path = "../data/evaluation/ALLamended/ALLamended_preprocessed.json"
+    gpt_gold_path = "../data/evaluation/ALLamended_preprocessed.json"
     gpt_preds_path = f"../data/{subtask}/{approach}/gpt/definition_ranks.json"
     with open(gpt_gold_path, "r") as json_file:
         gold_data = json.load(json_file)
@@ -340,7 +340,7 @@ def manual_analysis(approach):
 
     ## GPT-4o
     # we then need to do the same thing for gpt-4o in the generation setting with gpt_as_judge
-    gpt_gold_path = "../data/evaluation/ALLamended/ALLamended_preprocessed.json"
+    gpt_gold_path = "../data/evaluation/ALLamended_preprocessed.json"
     gpt_preds_path = f"../data/generation/{approach}/gpt/definition_ranks.json"
     with open(gpt_gold_path, "r") as json_file:
         gold_data = json.load(json_file)
@@ -371,10 +371,10 @@ def manual_analysis(approach):
     misclassified_by_both = wrong_gpt_set.intersection(wrong_consec_set) # misclassified by both
     misclassified_only_by_gpt = wrong_gpt_set.intersection(correct_consec_set) # misclassified by GPT but not ConSeC
     misclassified_only_by_consec = wrong_consec_set.intersection(correct_gpt_set) # misclassified by ConSeC but not GPT
-
-    misclassified_by_both = random.sample(misclassified_by_both, 100)
-    misclassified_only_by_gpt = random.sample(misclassified_only_by_gpt, 100)
-    misclassified_only_by_consec = random.sample(misclassified_only_by_consec, 100)
+    
+    misclassified_by_both = random.sample(list(misclassified_by_both), 100)
+    misclassified_only_by_gpt = random.sample(list(misclassified_only_by_gpt), 100)
+    misclassified_only_by_consec = random.sample(list(misclassified_only_by_consec), 100)
     ris = {"misclassified_by_both" : misclassified_by_both, "misclassified_only_by_gpt" : misclassified_only_by_gpt, "misclassified_only_by_consec" : misclassified_only_by_consec}
     
     # we finally need to retrieve the choosen definitions by the two models and create the file for manual analysis
@@ -385,6 +385,7 @@ def manual_analysis(approach):
                 if e["id"] == v[i]:
                     v[i] = {"id": e["id"], "text": e["text"], "lemma": e["lemma"], "pos": e["pos"],
                             "gold_definitions": e["gold_definitions"], "definitions": e["definitions"],
+                            "gpt_response" : "",
                             "gpt_candidate": "", 
                             "consec_candidate": ""} ; break
     # gpt-4o
@@ -392,6 +393,7 @@ def manual_analysis(approach):
         for i in range(len(v)):
             for instance_disambiguated_data in disambiguated_data:
                 if instance_disambiguated_data["id"] == v[i]["id"]:
+                    v[i]["gpt_response"] = instance_disambiguated_data["model_response"]
                     for candidate in instance_disambiguated_data["candidates"]:
                         if candidate[:4] == "****":
                             v[i]["gpt_candidate"] = candidate[5:-5] ; break
@@ -403,14 +405,15 @@ def manual_analysis(approach):
         for line in file:
             parts = line.strip().split()
             consec_id2pred[parts[0]] = parts[1]
-    with open("../data/evaluation/ALLamended/babelnet/synset2babel.json", "r") as json_file:
-        synset2babel = json.load(json_file)
+    # with open("../data/evaluation/ALLamended/babelnet/synset2babel.json", "r") as json_file:
+    #     synset2babel = json.load(json_file)
     for k,v in ris.items():
         for i in range(len(v)):
             for e in gold_data:
                 if e["id"] == v[i]["id"]:
                     for idx,candidate in enumerate(e["candidates"]):
-                        if candidate == synset2babel[ consec_id2pred[e["id"]] ]:
+                        #if candidate == synset2babel[ consec_id2pred[e["id"]] ]:
+                        if candidate == consec_id2pred[e["id"]]:
                             v[i]["consec_candidate"] = e["definitions"][idx]
     # we finally save the file for manual analysis
     if not os.path.exists("../data/evaluation/manual_analysis/"):

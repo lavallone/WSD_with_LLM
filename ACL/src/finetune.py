@@ -4,7 +4,7 @@ from datasets import load_dataset
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig, AutoTokenizer, GenerationConfig
 from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
 from transformers import TrainingArguments
-from trl import SFTTrainer
+from trl import SFTTrainer, setup_chat_format
 import os
 import warnings
 import argparse
@@ -20,106 +20,83 @@ def finetune(subtask:str, shortcut_model_name:str):
     output_dir = f"finetuned_models/{subtask}/{shortcut_model_name}"
 
     ## prepare DATASET
-    dataset_path = f"../data/training/{subtask}/training.json"
-    if os.path.exists(dataset_path):
-        os.remove(dataset_path)
-    dir_path = f"../data/training/{subtask}/"
-    file_to_unzip_name = f"{subtask}_semcor.zip"
-    file_to_unzip_path = os.path.join(dir_path, file_to_unzip_name)
-    with zipfile.ZipFile(file_to_unzip_path, 'r') as zip_ref:
-        zip_ref.extractall(os.path.dirname(dir_path))
-    extracted_file_name = f"{subtask}_semcor.json"
-    extracted_file_path = os.path.join(dir_path, extracted_file_name)
-    os.rename(extracted_file_path, os.path.join(dir_path, "training.json"))
+    dataset = load_dataset(f"lavallone/{subtask}_semcor", split="train")
+    def create_conversation(sample):
+        return {
+            "messages": [
+            {"role": "user", "content": sample["prompt"]},
+            {"role": "assistant", "content": sample["response"]}
+            ]
+        }
+    dataset = dataset.shuffle() #.select(range(100000))
+    dataset = dataset.map(create_conversation, remove_columns=dataset.features, batched=False)
+    data = dataset.train_test_split(test_size=0.1)
 
     ## prepare TOKENIZER
     if shortcut_model_name == "mistral": tokenizer = AutoTokenizer.from_pretrained(full_model_name, trust_remote_code=True, legacy=False)
     else: tokenizer = AutoTokenizer.from_pretrained(full_model_name, trust_remote_code=True)
     tokenizer.pad_token = tokenizer.eos_token
-    
-    ## build DATASET
-    with open(dataset_path, 'r') as file: data_chat = json.load(file)
-    data_list = [ {"prompt" : tokenizer.apply_chat_template(chat, tokenize=False, add_generation_prompt=True)} for chat in data_chat ] 
-    with open(dataset_path, 'w') as file: json.dump(data_list, file, indent=4)
-    data = load_dataset("json", data_files=dataset_path)
-    data = data["train"].train_test_split(test_size=0.1)
-    
+
     ## prepare MODEL
     # quantization step
     bnb_config = BitsAndBytesConfig(
         load_in_4bit=True,
         bnb_4bit_quant_type="nf4",
         bnb_4bit_use_double_quant=True,
-        bnb_4bit_compute_dtype=torch.float16,
+        bnb_4bit_compute_dtype=torch.bfloat16,
     )
-    # model = AutoModelForCausalLM.from_pretrained(
-    #     full_model_name,
-    #     quantization_config=bnb_config,
-    #     device_map="auto",
-    #     trust_remote_code=True
-    # )
 
     # different attn_implementation is required for each different model
     if shortcut_model_name == "phi_mini": 
-        model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.float16, quantization_config=bnb_config, device_map="auto", attn_implementation="flash_attention_2")
+        model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.bfloat16, quantization_config=bnb_config, device_map="auto", attn_implementation="flash_attention_2")
     elif shortcut_model_name == "gemma_2b" or shortcut_model_name == "gemma_9b":
-        model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.float16, quantization_config=bnb_config, device_map="auto", attn_implementation="eager")
+        model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.bfloat16, quantization_config=bnb_config, device_map="auto", attn_implementation="eager")
     else:
-        model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.float16, quantization_config=bnb_config, device_map="auto")
+        model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.bfloat16, quantization_config=bnb_config, device_map="auto")
     model.config.use_cache = False
-    model = prepare_model_for_kbit_training(model)
 
     ## setup lora configuration
-    # each model have different target_modules
-    target_modules = ["self_attn.q_proj", "self_attn.k_proj", "self_attn.v_proj", "self_attn.o_proj"]
-    if shortcut_model_name == "phi_mini": target_modules = ["self_attn.o_proj", "self_attn.qkv_proj"]
-    if shortcut_model_name == "phi_small": target_modules = ["self_attn.query_key_value", "self_attn.dense"]
     peft_config = LoraConfig(
-        lora_alpha=16,
+        lora_alpha=128,
         lora_dropout=0.1,
-        r=64,
+        r=256,
         bias="none",
         task_type="CAUSAL_LM",
-        target_modules=target_modules
+        target_modules="all-linear"
     )
-    peft_model = get_peft_model(model, peft_config)
 
     ## TRAIN
-    training_arguments = TrainingArguments(
+    args = TrainingArguments(
         output_dir=output_dir,
-        per_device_train_batch_size=16,
+        per_device_train_batch_size=8,
+        num_train_epochs=2,
         gradient_accumulation_steps=4,
         optim="paged_adamw_32bit",
         save_strategy="epoch",
         logging_steps=10,
         learning_rate=2e-4,
-        fp16=True,
+        bf16=True,
+        tf32=True,
         max_grad_norm=0.3,
         warmup_ratio=0.03,
         group_by_length=True,
         lr_scheduler_type="cosine",
-        push_to_hub=False,
-        num_train_epochs=10,
         save_total_limit=1,
         evaluation_strategy="epoch",
         load_best_model_at_end=True
     )
 
     trainer = SFTTrainer(
-        model=peft_model,
+        model=model,
+        args=args,
         train_dataset=data['train'],
         eval_dataset=data['test'],
         peft_config=peft_config,
-        dataset_text_field="prompt",
-        max_seq_length=2048,
+        max_seq_length=512,
         tokenizer=tokenizer,
-        args=training_arguments,
+        packing=True,
+        dataset_kwargs={"add_special_tokens": False, "append_concat_token": False,}
     )
-    peft_model.config.use_cache = False
-
-    for name, module in trainer.model.named_modules():
-        if "norm" in name:
-            module = module.to(torch.bfloat16)
 
     trainer.train()
     
