@@ -2,7 +2,7 @@ import torch
 from variables import shortcut_model_name2full_model_name
 from datasets import load_dataset
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig, AutoTokenizer, GenerationConfig
-from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
+from peft import LoraConfig
 from transformers import TrainingArguments
 from trl import SFTTrainer, setup_chat_format
 import os
@@ -11,7 +11,7 @@ import argparse
 import zipfile
 import json
 
-def finetune(subtask:str, shortcut_model_name:str):
+def finetune(subtask:str, shortcut_model_name:str, epochs:int):
     
     assert shortcut_model_name in supported_shortcut_model_names
     assert subtask in supported_subtasks
@@ -69,7 +69,7 @@ def finetune(subtask:str, shortcut_model_name:str):
     args = TrainingArguments(
         output_dir=output_dir,
         per_device_train_batch_size=8,
-        num_train_epochs=2,
+        num_train_epochs=epochs,
         gradient_accumulation_steps=4,
         optim="paged_adamw_32bit",
         save_strategy="epoch",
@@ -119,6 +119,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--subtask", "-st", type=str, help="Input the task")
     parser.add_argument("--shortcut_model_name", "-m", type=str, help="Input the model")
+    parser.add_argument("--epochs", "-e", type=int, help="Number of epochs")
     args = parser.parse_args()
     
-    finetune(args.subtask, args.shortcut_model_name)
+    finetune(args.subtask, args.shortcut_model_name, args.epochs)
