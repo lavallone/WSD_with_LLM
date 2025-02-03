@@ -11,7 +11,7 @@ import argparse
 import zipfile
 import json
 
-def finetune(subtask:str, shortcut_model_name:str, epochs:int):
+def finetune(subtask:str, shortcut_model_name:str, epochs:int, batch_size:int):
     
     assert shortcut_model_name in supported_shortcut_model_names
     assert subtask in supported_subtasks
@@ -43,16 +43,16 @@ def finetune(subtask:str, shortcut_model_name:str, epochs:int):
         load_in_4bit=True,
         bnb_4bit_quant_type="nf4",
         bnb_4bit_use_double_quant=True,
-        bnb_4bit_compute_dtype=torch.bfloat16,
+        bnb_4bit_compute_dtype=torch.float16,
     )
 
     # different attn_implementation is required for each different model
-    if shortcut_model_name == "phi_mini": 
-        model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.bfloat16, quantization_config=bnb_config, device_map="auto", attn_implementation="flash_attention_2")
+    if shortcut_model_name == "phi_mini":
+        model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.float16, quantization_config=bnb_config, device_map="auto", attn_implementation="flash_attention_2")
     elif shortcut_model_name == "gemma_2b" or shortcut_model_name == "gemma_9b":
-        model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.bfloat16, quantization_config=bnb_config, device_map="auto", attn_implementation="eager")
+        model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.float16, quantization_config=bnb_config, device_map="auto", attn_implementation="eager")
     else:
-        model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.bfloat16, quantization_config=bnb_config, device_map="auto")
+        model = AutoModelForCausalLM.from_pretrained(full_model_name, trust_remote_code=True, torch_dtype=torch.float16, quantization_config=bnb_config, device_map="auto") 
     model.config.use_cache = False
 
     ## setup lora configuration
@@ -68,14 +68,14 @@ def finetune(subtask:str, shortcut_model_name:str, epochs:int):
     ## TRAIN
     args = TrainingArguments(
         output_dir=output_dir,
-        per_device_train_batch_size=8,
+        per_device_train_batch_size=batch_size,
         num_train_epochs=epochs,
         gradient_accumulation_steps=4,
         optim="paged_adamw_32bit",
         save_strategy="epoch",
         logging_steps=10,
         learning_rate=2e-4,
-        bf16=True,
+        fp16=True,
         tf32=True,
         max_grad_norm=0.3,
         warmup_ratio=0.03,
@@ -120,6 +120,7 @@ if __name__ == "__main__":
     parser.add_argument("--subtask", "-st", type=str, help="Input the task")
     parser.add_argument("--shortcut_model_name", "-m", type=str, help="Input the model")
     parser.add_argument("--epochs", "-e", type=int, help="Number of epochs")
+    parser.add_argument("--batch_size", "-bs", type=int, help="Batch size")
     args = parser.parse_args()
     
-    finetune(args.subtask, args.shortcut_model_name, args.epochs)
+    finetune(args.subtask, args.shortcut_model_name, args.epochs, args.batch_size)
