@@ -118,7 +118,6 @@ def process(subtask:str, approach:str, shortcut_model_name:str, is_finetuned:boo
             
             chat_prompt = _generate_prompt(instance, subtask, approach)
             if shortcut_model_name == "gpt":
-                gpt_prompt = chat_prompt[0]["content"]
                 completion = OPEN_AI_CLIENT.chat.completions.create(
                                 model=shortcut_model_name2full_model_name[shortcut_model_name],
                                 messages=chat_prompt
