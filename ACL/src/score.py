@@ -8,7 +8,8 @@ import argparse
 import json
 import nltk
 import os
-from openai import OpenAI
+import torch
+from transformers import pipeline, AutoModelForCausalLM, AutoTokenizer
 from utils import _get_gold_data, _generate_gold_data_vectors, _generate_disambiguated_data_vectors, _get_gold_data_vectors, _get_disambiguated_data_vectors, _write_definition_ranks, _print_scores
 
 def _choose_definition(instance_gold, answer):
@@ -26,13 +27,13 @@ def _choose_definition(instance_gold, answer):
     definitions = instance_gold["definitions"]
     
     if args.subtask == "generation": global id2vec_gold, id2vec_disambiguated_data
-    if args.gpt_as_judge: gpt_answer = _get_gpt_answer_(instance_gold, answer)
+    if args.llm_as_judge: llm_as_judge_answer = _get_llm_as_judge_answer(instance_gold, answer)
 
     definition2overlap = {}
     for definition in definitions:
         if args.subtask == "generation":
-            if args.gpt_as_judge:
-                overlap = _compute_lexical_overlap(definition, gpt_answer)
+            if args.llm_as_judge:
+                overlap = _compute_lexical_overlap(definition, llm_as_judge_answer)
             else:   
                 vec1, vec2 = id2vec_gold[id_+definition], id2vec_disambiguated_data[id_]
                 overlap = _compute_semantic_overlap(vec1, vec2)
@@ -43,17 +44,14 @@ def _choose_definition(instance_gold, answer):
     definition_ranks_infos = {"id":id_, "gold_candidates": instance_gold["gold_definitions"], "model_response":answer, "candidates":[e[0] for e in sorted_candidates_scores], "scores":[str(round(e[1],2)) for e in sorted_candidates_scores]}
     return max(definition2overlap, key=definition2overlap.get), definition_ranks_infos
 
-def _get_gpt_answer_(instance_gold, answer):
+def _get_llm_as_judge_answer(instance_gold, answer):
     
     word = instance_gold["word"]
     candidate_definitions = "\n".join([f"\"{definition}\"" for definition in instance_gold["definitions"]])
-    gpt_prompt = f"Given the following definitions of \"{word}\":\n\n{candidate_definitions}\n\nSelect the definition that most closely matches the definition: \"{answer}\". Do not explain your output."
-    
-    completion = OPEN_AI_CLIENT.chat.completions.create(
-                    model="gpt-4o",
-                    messages=[{"role": "user", "content": gpt_prompt}]
-                    )
-    return completion.choices[0].message.content
+    prompt = f"Given the following definitions of \"{word}\":\n\n{candidate_definitions}\n\nSelect the definition that most closely matches the definition: \"{answer}\". Do not explain your output."
+    prompt_template = tokenizer.apply_chat_template([{"role": "user", "content": prompt}], tokenize=False, add_generation_prompt=True)
+    answer = pipe(prompt_template)[0]["generated_text"].replace(prompt_template, "").replace("\n", "").strip()
+    return answer
 
 def _compute_lexical_overlap(definition, answer):
     """
@@ -102,8 +100,14 @@ def compute_scores(disambiguated_data_path:str):
         None
     """
     print("Computing scores starting from LLM generated data...\n")
-    if args.gpt_as_judge: global OPEN_AI_CLIENT; OPEN_AI_CLIENT = OpenAI()
-    if args.subtask == "generation" and args.gpt_as_judge is False: # we need to instatiate embedding vectors
+    if args.llm_as_judge:
+        global pipe, tokenizer
+        model_name = "google/gemma-2-9b-it"
+        tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
+        tokenizer.pad_token = tokenizer.eos_token
+        model = AutoModelForCausalLM.from_pretrained(model_name, trust_remote_code=True, torch_dtype=torch.float16).cuda()
+        pipe = pipeline("text-generation", model=model, device="cuda", tokenizer=tokenizer, pad_token_id=tokenizer.eos_token_id, max_new_tokens=25)
+    if args.subtask == "generation" and args.llm_as_judge is False: # we need to instatiate embedding vectors
         global id2vec_gold, id2vec_disambiguated_data
         id2vec_gold = _get_gold_data_vectors(args.sentence_embedder)
         id2vec_disambiguated_data = _get_disambiguated_data_vectors(args.subtask, args.approach, args.shortcut_model_name, args.sentence_embedder, args.is_finetuned)
@@ -148,7 +152,7 @@ def compute_scores(disambiguated_data_path:str):
     
     # we create definition_ranks file at the end (in this way the next time we save time in doing the same computations)
     definition_ranks_path = f"{disambiguated_data_path[:-11]}/definition_ranks.json"
-    if args.pos == "ALL": _write_definition_ranks(definition_ranks_path, definition_ranks_list, args.gpt_as_judge)
+    if args.pos == "ALL": _write_definition_ranks(definition_ranks_path, definition_ranks_list, args.llm_as_judge)
 
     # we finally print the scores
     _print_scores(true_labels, predicted_labels, number_of_evaluation_instances, correct, wrong)
@@ -179,7 +183,7 @@ def compute_scores_from_file(definition_ranks_data):
                 instance_gold["definitions"][idx] = f"{idx+1}) {definition}"
 
         choosen_candidate = ""
-        if args.gpt_as_judge == True:
+        if args.llm_as_judge == True:
             for candidate in instance_definition_ranks["candidates"]:
                 if candidate[:4] == "****": choosen_candidate  = candidate[5:-5] ; break
         else:
@@ -206,7 +210,7 @@ if __name__ == "__main__":
     parser.add_argument("--is_finetuned", "-f", type=bool, default=False, help="If the model we want to test is finetuned or not")
     parser.add_argument('--pos', '-p', type=str, help='Input the part of speech')
     parser.add_argument('--sentence_embedder', '-se', type=str, default=None, help='Input the sentence embedder')
-    parser.add_argument('--gpt_as_judge', '-g', type=bool, default=False, help='If we are using gpt-as-a-judge for the generation setting')
+    parser.add_argument('--llm_as_judge', '-j', type=bool, default=False, help='If we are using llm-as-a-judge for the generation setting')
     args = parser.parse_args()
 
     assert args.subtask in ["generation", "selection"]
@@ -222,7 +226,7 @@ if __name__ == "__main__":
                                        "gpt"]
     assert args.shortcut_model_name in supported_shortcut_model_names
     assert args.pos in ["NOUN", "ADJ", "VERB", "ADV", "ALL"]
-    assert args.gpt_as_judge is False or args.subtask == "generation"
+    assert args.llm_as_judge is False or args.subtask == "generation"
 
     # particular handling if we are going to score a FINETUNED model
     disambiguated_data_path = f"../data/{args.subtask}/{args.approach}/"
@@ -232,7 +236,7 @@ if __name__ == "__main__":
 
     # when we want to perform Definition Generation using cosine similarity (we need to create vectors)
     # and the definition_ranks file has not been created yet
-    if args.subtask == "generation" and args.gpt_as_judge is False and not os.path.isfile(definition_ranks_path):
+    if args.subtask == "generation" and args.llm_as_judge is False and not os.path.isfile(definition_ranks_path):
         assert args.sentence_embedder in ["all-mpnet-base-v2", "all-MiniLM-L6-v2"]
         len_gold = len(_get_gold_data(args.subtask))
         _generate_gold_data_vectors(args.subtask, args.sentence_embedder)
@@ -243,15 +247,15 @@ if __name__ == "__main__":
     if os.path.isfile(definition_ranks_path):
         with open(definition_ranks_path, "r") as json_file:
             definition_ranks_data = json.load(json_file)
-        # if we want to run gpt_as_judge and definition_ranks file already exists 
+        # if we want to run llm_as_judge and definition_ranks file already exists 
         # we need to check if it has already been run or not
         # 1.1)
-        if args.gpt_as_judge == True:
-            has_gpt_as_judge_been_run = False
+        if args.llm_as_judge == True:
+            has_llm_as_judge_been_run = False
             for candidate in definition_ranks_data[-1]["candidates"]:
-                if candidate[:4]=="****": has_gpt_as_judge_been_run = True ; break
+                if candidate[:4]=="****": has_llm_as_judge_been_run = True ; break
             # 1.1.1) if already been run, we compute the scores from definition_ranks file
-            if has_gpt_as_judge_been_run: compute_scores_from_file(definition_ranks_data)
+            if has_llm_as_judge_been_run: compute_scores_from_file(definition_ranks_data)
             # 1.1.2) if not, we need to run it and populate definition_ranks with "****"
             else: compute_scores(disambiguated_data_path)
         # 1.2)
