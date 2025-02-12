@@ -18,3 +18,4 @@ pytest
 openai
 triton
 statsmodels
+seaborn

@@ -70,7 +70,7 @@ def _prepare_finetuned_model(shortcut_model_name:str, checkpoint_path:str):
     # merge fine-tuned weights with the base model
     peft_model_id = checkpoint_path
     peft_model = PeftModel.from_pretrained(base_model, peft_model_id)
-    peft_model = peft_model.merge_and_unload()
+    peft_model = peft_model.merge_and_unload() # 'PeftModelForCausalLM' is not supported for text-generation
     return tokenizer, peft_model
 
 def process(subtask:str, approach:str, shortcut_model_name:str, is_finetuned:bool, checkpoint_path:str):

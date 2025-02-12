@@ -4,7 +4,7 @@ from datasets import load_dataset
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig, AutoTokenizer, GenerationConfig
 from peft import LoraConfig
 from transformers import TrainingArguments
-from trl import SFTTrainer, setup_chat_format
+from trl import SFTTrainer
 import os
 import warnings
 import argparse

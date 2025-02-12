@@ -2,7 +2,11 @@ from tqdm import tqdm
 import json
 import os
 import random
+import pandas as pd
+from scipy.stats import pearsonr
 from statsmodels.stats.contingency_tables import mcnemar 
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 
 def mc_nemar_test(subtask, approach):
@@ -191,10 +195,39 @@ def manual_analysis(approach):
         json.dump(ris, json_file, indent=4)
 
 
+def compute_task_correlations():
+
+    # load data
+    data = pd.read_csv("../data/evaluation/llm_performances.csv")
+
+    wsd_tasks = ["DS", "DG"]
+    benchmarks = ["ARC_Challenge", "ARC_Easy", "BoolQ", "Hellaswag", "MMLU_humanities", "MMLU_other", "MMLU_social_sciences", "MMLU_stem", "PIQA", "SciQ", "TruthfulQA_mc1", "TruthfulQA_mc2", "WinoGrande"]
+
+    # compute Pearson correlations
+    results = []
+    for wsd in wsd_tasks:
+        for bench in benchmarks:
+            r,_ = pearsonr(data[wsd], data[bench])
+            results.append({"WSD": wsd, "LLM Benchmarks": bench, "r": r})
+
+    # show results
+    results_df = pd.DataFrame(results)
+    heatmap_data = results_df.pivot(index="LLM Benchmarks", columns="WSD", values="r")
+    heatmap_data = heatmap_data[['DS', 'DG']]
+
+    plt.figure(figsize=(4, 8))
+    sns.heatmap(heatmap_data, annot=True, cmap="Blues", vmin=-1, vmax=1)
+    plt.title("Correlation between WSD Tasks and LLM common Benchmarks")
+    plt.savefig("../correlation_heatmap.png", dpi=300, bbox_inches='tight')
+    plt.close()
+
 if __name__ == "__main__":
 
     # if you want to perform the McNemar's test with Consec performances
     #mc_nemar_test("selection", "zero_shot")
 
     # if you want to produce a file for MANUAL ANALYSIS
-    manual_analysis("zero_shot")
+    #manual_analysis("zero_shot")
+
+    # if you want to compute linear correlations between LLM tasks
+    compute_task_correlations()
