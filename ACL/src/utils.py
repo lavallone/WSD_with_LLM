@@ -1,5 +1,6 @@
 from sklearn.metrics import precision_score, recall_score, f1_score
 from sentence_transformers import SentenceTransformer
+from datasets import load_dataset, concatenate_datasets
 from tqdm import tqdm
 import json
 import os
@@ -231,5 +232,95 @@ def _print_scores(true_labels, predicted_labels, number_of_evaluation_instances,
     print("Recall (average=micro):", recall)
     print("F1 Score (average=micro):", f1)
     print("Accuracy:", correct/number_of_evaluation_instances)
+
+###########################################################################################################
+
+
+# finetune.py
+###########################################################################################################
+
+def create_LLMB_dataset():
+    ds_arc_challenge = load_dataset("allenai/ai2_arc", "ARC-Challenge")
+    ds_arc_easy = load_dataset("allenai/ai2_arc", "ARC-Easy")
+    def format_sample_arc_challenge(sample):
+        question = sample["question"]
+        choices_text = sample["choices"]["text"]
+        choices_labels = sample["choices"]["label"]
+        answer = sample["answerKey"]
+        prompt = question
+        response = next(text for label, text in zip(choices_labels, choices_text) if label == answer)
+        return {"prompt": prompt, "response": response}
+    
+    ds_arc_challenge = ds_arc_challenge["train"].map(format_sample_arc_challenge, remove_columns=ds_arc_challenge["train"].features, batched=False)
+    ds_arc_easy = ds_arc_easy["train"].map(format_sample_arc_challenge, remove_columns=ds_arc_easy["train"].features, batched=False)
+    print(f"ds_arc_challenge: {len(ds_arc_challenge)}")
+    print(f"ds_arc_easy: {len(ds_arc_easy)}")
+
+    ds_boolq = load_dataset("google/boolq")
+    def format_sample_boolq(sample):
+        question = sample["question"]
+        answer = sample["answer"]
+        prompt = question
+        response = str(answer)
+        return {"prompt": prompt, "response": response}
+    ds_boolq = ds_boolq["train"].map(format_sample_boolq, remove_columns=ds_boolq["train"].features, batched=False)
+    print(f"ds_boolq: {len(ds_boolq)}")
+
+    ds_hellaswag = load_dataset("Rowan/hellaswag")
+    def format_sample_hellaswag(sample):
+        question = sample["ctx"]
+        answer = sample["endings"][0]
+        prompt = question
+        response = answer
+        return {"prompt": prompt, "response": response}
+    ds_hellaswag = ds_hellaswag["train"].map(format_sample_hellaswag, remove_columns=ds_hellaswag["train"].features, batched=False)
+    print(f"ds_hellaswag: {len(ds_hellaswag)}")
+
+    ds_mmlu = load_dataset("cais/mmlu", "all")
+    def format_mmlu(sample):
+        question = sample["question"]
+        choices = sample["choices"]
+        answer = sample["answer"]
+        prompt = question
+        response = choices[int(answer)]
+        return {"prompt": prompt, "response": response}
+    ds_mmlu = ds_mmlu["auxiliary_train"].map(format_mmlu, remove_columns=ds_mmlu["auxiliary_train"].features, batched=False)
+    print(f"ds_mmlu: {len(ds_mmlu)}")
+
+    ds_piqa = load_dataset("ybisk/piqa")
+    def format_piqa(sample):
+        question = sample["goal"]
+        sol = "sol1" if sample["label"]==0 else "sol2"
+        prompt = question
+        response = sample[sol]
+        return {"prompt": prompt, "response": response}
+    ds_piqa = ds_piqa["train"].map(format_piqa, remove_columns=ds_piqa["train"].features, batched=False)
+    print(f"ds_piqa: {len(ds_piqa)}")
+
+    ds_sciq = load_dataset("allenai/sciq")
+    def format_sample_sciq(sample):
+        question = sample["question"]
+        answer = sample["correct_answer"]
+        prompt = question
+        response = answer
+        return {"prompt": prompt, "response": response}
+    ds_sciq = ds_sciq["train"].map(format_sample_sciq, remove_columns=ds_sciq["train"].features, batched=False)
+    print(f"ds_sciq: {len(ds_sciq)}")
+
+    ds_winogrande = load_dataset("allenai/winogrande",  "winogrande_l")
+    def format_sample_winogrande(sample):
+        question = sample["sentence"]
+        option = "option1" if int(sample["answer"])==1 else "option2"
+        prompt = question
+        response = sample[option]
+        return {"prompt": prompt, "response": response}
+    ds_winogrande = ds_winogrande["train"].map(format_sample_winogrande, remove_columns=ds_winogrande["train"].features, batched=False)
+    print(f"ds_winogrande: {len(ds_winogrande)}")
+
+    formatted_datasets = [ds_arc_challenge, ds_arc_easy, ds_boolq, ds_hellaswag, ds_mmlu, ds_piqa, ds_sciq, ds_winogrande]
+    benchmark_merged_dataset = concatenate_datasets(formatted_datasets)
+    benchmark_merged_dataset = benchmark_merged_dataset.shuffle()
+    print(len(benchmark_merged_dataset))
+    return benchmark_merged_dataset
 
 ###########################################################################################################

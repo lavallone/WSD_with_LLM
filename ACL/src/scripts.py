@@ -189,9 +189,9 @@ def manual_analysis(approach):
                         if candidate == consec_id2pred[e["id"]]:
                             v[i]["consec_candidate"] = e["definitions"][idx]
     # we finally save the file for manual analysis
-    if not os.path.exists("../data/evaluation/manual_analysis/"):
-        os.system("mkdir ../data/evaluation/manual_analysis/")
-    with open("../data/evaluation/manual_analysis/consec_vs_gpt.json", "w") as json_file:
+    if not os.path.exists("../outputs/"):
+        os.system("mkdir ../outputs/")
+    with open("../outputs/consec_vs_gpt.json", "w") as json_file:
         json.dump(ris, json_file, indent=4)
 
 
@@ -218,7 +218,9 @@ def compute_task_correlations():
     plt.figure(figsize=(4, 8))
     sns.heatmap(heatmap_data, annot=True, cmap="Blues", vmin=-1, vmax=1)
     plt.title("Correlation between WSD Tasks and LLM common Benchmarks")
-    plt.savefig("../correlation_heatmap.png", dpi=300, bbox_inches='tight')
+    if not os.path.exists("../outputs/"):
+        os.system("mkdir ../outputs/")
+    plt.savefig("../outputs/correlation_heatmap.png", dpi=300, bbox_inches='tight')
     plt.close()
 
 if __name__ == "__main__":
