@@ -219,6 +219,7 @@ if __name__ == "__main__":
                                        "gemma_2b",
                                        "llama_3b",
                                        "phi_mini",
+                                       "mistral2",
                                        "mistral",
                                        "phi_small",
                                        "llama_8b",
