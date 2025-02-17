@@ -1,9 +1,0 @@
-{
-    "log": {
-        "subtask": "generation",
-        "approach": "few_shot",
-        "model": "mistral2",
-        "number of instances processed": 4917,
-        "last prompt": "<s>[INST] Consider the following sentence: I am using a computer for the creation of 3-D models.\n\nProvide a dictionary definition which identifies the meaning of \"computer\" in the above sentence and do not motivate your answer.[/INST] A machine for performing calculations automatically.</s>[INST] Consider the following sentence: a great delay.\n\nProvide a dictionary definition which identifies the meaning of \"great\" in the above sentence and do not motivate your answer.[/INST] Relatively large in size or number or extent; larger than others of its kind.</s>[INST] Consider the following sentence: What did you eat for dinner last night?\n\nProvide a dictionary definition which identifies the meaning of \"eat\" in the above sentence and do not motivate your answer.[/INST] Take in solid food.</s>[INST] Consider the following sentence: Cerenia does not represent a particular risk for people.\n\nProvide a dictionary definition which identifies the meaning of \"people\" in the above sentence and do not motivate your answer.[/INST]"
-    }
-}
