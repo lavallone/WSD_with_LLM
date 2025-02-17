@@ -1,0 +1,38 @@
+{
+    "log": {
+        "subtask": "generation",
+        "approach": "few_shot",
+        "model": "gpt",
+        "number of instances processed": 4917,
+        "last prompt": [
+            {
+                "role": "user",
+                "content": "Define the meaning of \"computer\" in the following sentence: I am using a computer for the creation of 3-D models. Provide a definition which identifies the meaning of \"computer\" in the context provided and do not motivate your answer."
+            },
+            {
+                "role": "assistant",
+                "content": "A machine for performing calculations automatically."
+            },
+            {
+                "role": "user",
+                "content": "Define the meaning of \"great\" in the following sentence: a great delay. Provide a definition which identifies the meaning of \"great\" in the context provided and do not motivate your answer."
+            },
+            {
+                "role": "assistant",
+                "content": "Relatively large in size or number or extent; larger than others of its kind."
+            },
+            {
+                "role": "user",
+                "content": "Define the meaning of \"eat\" in the following sentence: What did you eat for dinner last night? Provide a definition which identifies the meaning of \"eat\" in the context provided and do not motivate your answer."
+            },
+            {
+                "role": "assistant",
+                "content": "Take in solid food."
+            },
+            {
+                "role": "user",
+                "content": "Define the meaning of \"people\" in the following sentence: Cerenia does not represent a particular risk for people. Provide a definition which identifies the meaning of \"people\" in the context provided and do not motivate your answer."
+            }
+        ]
+    }
+}

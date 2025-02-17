@@ -1,0 +1,9 @@
+{
+    "log": {
+        "subtask": "generation",
+        "approach": "zero_shot",
+        "model": "gemma_2b",
+        "number of instances processed": 4917,
+        "last prompt": "<bos><start_of_turn>user\nConsider the following sentence: Cerenia does not represent a particular risk for people.\n\nProvide a dictionary definition which identifies the meaning of \"people\" in the above sentence and do not motivate your answer.<end_of_turn>\n<start_of_turn>model\n"
+    }
+}

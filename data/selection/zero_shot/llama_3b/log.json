@@ -1,0 +1,9 @@
+{
+    "log": {
+        "subtask": "selection",
+        "approach": "zero_shot",
+        "model": "llama_3b",
+        "number of instances processed": 4917,
+        "last prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 31 Jan 2025\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nConsider the following sentence: Cerenia does not represent a particular risk for people.\n\nSelect the most suitable dictionary definition which identifies the meaning of \"people\" among the following definitions:\n\n1) (plural) any group of human beings (men or women or children) collectively\n2) the body of citizens of a state or country\n3) members of a family line\n4) the common people generally<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n"
+    }
+}

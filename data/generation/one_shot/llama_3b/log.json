@@ -1,0 +1,9 @@
+{
+    "log": {
+        "subtask": "generation",
+        "approach": "one_shot",
+        "model": "llama_3b",
+        "number of instances processed": 4917,
+        "last prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 31 Jan 2025\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nConsider the following sentence: they needed rugs to cover the bare floors.\n\nProvide a dictionary definition which identifies the meaning of \"floor\" in the above sentence and do not motivate your answer.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nThe inside lower horizontal surface (as of a room, hallway, tent, or other structure).<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nConsider the following sentence: Cerenia does not represent a particular risk for people.\n\nProvide a dictionary definition which identifies the meaning of \"people\" in the above sentence and do not motivate your answer.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n"
+    }
+}
