@@ -7,9 +7,13 @@
 ```
 python3 disambiguate.py --shortcut_model_name {model} --subtask {selection,generation} --approach {zero_shot,one_shot,few_shot}
 ```
-> If the model is **finetuned** simply add
+> If the model is **finetuned** simply add:
 ```
 --is_finetuned True --checkpoint_path {path_to_checkpoint or hf_hub_model_name}
+```
+> and if the finetuned model has been trained on **LLMB** data, add the flag:
+```
+--LLMB True
 ```
 
 #### Score
@@ -26,12 +30,20 @@ python3 score.py --shortcut_model_name {model} --subtask {selection,generation} 
 ```
 > when we want to use LLM *as a judge*.
 
-> If the model is **finetuned** simply add
+> If the model is **finetuned** simply add:
 ```
 --is_finetuned True
+```
+> and if the finetuned model has been trained on **LLMB** data, add the flag:
+```
+--LLMB True
 ```
 
 #### Finetune
 ```
 python3 finetune.py --shortcut_model_name {model} --subtask {selection,generation} --epochs 8 --batch_size 8
+```
+> If we want to train on **SemCor + LLMB**, add the flag:
+```
+--LLMB True
 ```
