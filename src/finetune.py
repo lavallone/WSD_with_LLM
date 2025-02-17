@@ -10,17 +10,17 @@ import warnings
 import argparse
 import zipfile
 import json
+from utils import create_LLMB_dataset
 
-def finetune(subtask:str, shortcut_model_name:str, epochs:int, batch_size:int):
+def finetune(subtask:str, shortcut_model_name:str, epochs:int, batch_size:int, LLMB:bool):
     
     assert shortcut_model_name in supported_shortcut_model_names
     assert subtask in supported_subtasks
     
     full_model_name = shortcut_model_name2full_model_name[shortcut_model_name]
-    output_dir = f"finetuned_models/{subtask}/{shortcut_model_name}"
+    output_dir = f"finetuned_models/{subtask}/{shortcut_model_name}" if LLMB is False else f"finetuned_models/{subtask}/{shortcut_model_name}_LLMB"
 
     ## prepare DATASET
-    dataset = load_dataset(f"lavallone/{subtask}_semcor", split="train")
     def create_conversation(sample):
         return {
             "messages": [
@@ -28,9 +28,20 @@ def finetune(subtask:str, shortcut_model_name:str, epochs:int, batch_size:int):
             {"role": "assistant", "content": sample["response"]}
             ]
         }
-    dataset = dataset.shuffle() #.select(range(100000))
-    dataset = dataset.map(create_conversation, remove_columns=dataset.features, batched=False)
-    data = dataset.train_test_split(test_size=0.1)
+    
+    semcor_dataset = load_dataset(f"lavallone/{subtask}_semcor", split="train")
+    if LLMB is True:
+        LLMB_dataset = create_LLMB_dataset()
+        semcor_dataset = semcor_dataset.shuffle().select(range(60437))
+        final_merged_dataset = concatenate_datasets([LLMB_dataset, semcor_dataset])
+        final_merged_dataset = final_merged_dataset.shuffle()
+        final_merged_dataset = final_merged_dataset.map(create_conversation, remove_columns=final_merged_dataset.features, batched=False)
+        print(len(final_merged_dataset))
+        data = final_merged_dataset.train_test_split(test_size=0.1)
+    else:
+        semcor_dataset = semcor_dataset.shuffle() #.select(range(100000))
+        semcor_dataset = semcor_dataset.map(create_conversation, remove_columns=semcor_dataset.features, batched=False)
+        data = semcor_dataset.train_test_split(test_size=0.1)
 
     ## prepare TOKENIZER
     if shortcut_model_name == "mistral": tokenizer = AutoTokenizer.from_pretrained(full_model_name, trust_remote_code=True, legacy=False)
@@ -111,6 +122,7 @@ if __name__ == "__main__":
                                        "gemma_2b",
                                        "llama_3b",
                                        "phi_mini",
+                                       "mistral2",
                                        "mistral",
                                        "phi_small",
                                        "llama_8b",
@@ -121,6 +133,7 @@ if __name__ == "__main__":
     parser.add_argument("--shortcut_model_name", "-m", type=str, help="Input the model")
     parser.add_argument("--epochs", "-e", type=int, help="Number of epochs")
     parser.add_argument("--batch_size", "-bs", type=int, help="Batch size")
+    parser.add_argument("--LLMB", "-al", type=bool, default=False, help="Add LLMB data to training set")
     args = parser.parse_args()
     
-    finetune(args.subtask, args.shortcut_model_name, args.epochs, args.batch_size)
+    finetune(args.subtask, args.shortcut_model_name, args.epochs, args.batch_size, args.LLMB)

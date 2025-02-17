@@ -24,7 +24,7 @@ def _get_gold_data(subtask:str):
 # disambiguate.py
 ###########################################################################################################
 
-def _create_folder(subtask, approach, shortcut_model_name, is_finetuned):
+def _create_folder(subtask, approach, shortcut_model_name, is_finetuned, LLMB):
     
     def _countdown(t):
         """
@@ -45,7 +45,9 @@ def _create_folder(subtask, approach, shortcut_model_name, is_finetuned):
     
     # we define the correct output path
     output_file_path = f"../data/{subtask}/{approach}/"
-    if is_finetuned: output_file_path += f"finetuned_{shortcut_model_name}/"
+    if is_finetuned: 
+        if LLMB is True: output_file_path += f"finetuned_{shortcut_model_name}_LLMB/"
+        else: output_file_path += f"finetuned_{shortcut_model_name}/"
     else: output_file_path += f"{shortcut_model_name}/"
     # to manage creation/deletion of folders
     if not os.path.exists(f"../data/{subtask}/"):
@@ -124,7 +126,7 @@ def _generate_gold_data_vectors(subtask, sentence_embedder):
                 vec = " ".join([str(x) for x in vec])
                 fw.write(f"{id_}\t{definition}\t{vec}\n")
 
-def _generate_disambiguated_data_vectors(subtask, approach, shortcut_model_name, sentence_embedder, is_finetuned, disambiguated_data_path, len_gold):
+def _generate_disambiguated_data_vectors(subtask, approach, shortcut_model_name, sentence_embedder, is_finetuned, LLMB, disambiguated_data_path, len_gold):
     """
     Generates sentence embeddings for disambiguated data and saves them to a file.
 
@@ -135,25 +137,27 @@ def _generate_disambiguated_data_vectors(subtask, approach, shortcut_model_name,
     Returns:
         None
     """
-    vector_file_path = f"../data/{subtask}/{approach}/finetuned_{shortcut_model_name}/vectors/{sentence_embedder}_id2vec.tsv" if is_finetuned else f"../data/{subtask}/{approach}/{shortcut_model_name}/vectors/{sentence_embedder}_id2vec.tsv"
+    if is_finetuned is True:
+        if LLMB is True: vector_folder_path = f"../data/{subtask}/{approach}/finetuned_{shortcut_model_name}_LLMB/vectors"
+        else: vector_folder_path = f"../data/{subtask}/{approach}/finetuned_{shortcut_model_name}/vectors"
+    else: vector_folder_path = f"../data/{subtask}/{approach}/{shortcut_model_name}/vectors"
+    if not os.path.exists(vector_folder_path):
+        os.makedirs(vector_folder_path) 
+    
+    vector_file_path = f"{vector_folder_path}/{sentence_embedder}_id2vec.tsv"
     if os.path.exists(vector_file_path):
         with open(vector_file_path, "r") as fr:
             if len(fr.readlines()) != len_gold:
                 print("Missing vectors")
                 exit()
             print("Disambiguated data vectors already exist")
-            return None
-    vector_folder_path = f"../data/{subtask}/{approach}/finetuned_{shortcut_model_name}/vectors" if is_finetuned else f"../data/{subtask}/{approach}/{shortcut_model_name}/vectors"
-    if not os.path.exists(vector_folder_path):
-        os.makedirs(vector_folder_path)          
+            return None         
 
     print("Generating vectors from:", disambiguated_data_path)
     embedder = SentenceTransformer(f'sentence-transformers/{sentence_embedder}')
-
     with open(disambiguated_data_path) as fr:
         data = json.load(fr)
-
-    vector_file_path = f"../data/{subtask}/{approach}/finetuned_{shortcut_model_name}/vectors/{sentence_embedder}_id2vec.tsv" if is_finetuned else f"../data/{subtask}/{approach}/{shortcut_model_name}/vectors/{sentence_embedder}_id2vec.tsv"
+    
     id2vec_dd = {}
     with open(vector_file_path, "w") as fw:
         for el in tqdm(data, total=len(data)):
@@ -164,7 +168,7 @@ def _generate_disambiguated_data_vectors(subtask, approach, shortcut_model_name,
             vec = " ".join([str(x) for x in vec])
             fw.write(f"{id_}\t{vec}\n")
 
-def _get_disambiguated_data_vectors(subtask, approach, shortcut_model_name, sentence_embedder, is_finetuned):
+def _get_disambiguated_data_vectors(subtask, approach, shortcut_model_name, sentence_embedder, is_finetuned, LLMB):
     """
     Retrieves the disambiguated data sentence embeddings from a file and returns them as a dictionary.
 
@@ -176,7 +180,10 @@ def _get_disambiguated_data_vectors(subtask, approach, shortcut_model_name, sent
     """
     id2vec_disambiguated_data = {}
 
-    vector_file_path = f"../data/{subtask}/{approach}/finetuned_{shortcut_model_name}/vectors/{sentence_embedder}_id2vec.tsv" if is_finetuned else f"../data/{subtask}/{approach}/{shortcut_model_name}/vectors/{sentence_embedder}_id2vec.tsv"
+    if is_finetuned is True:
+        if LLMB is True: vector_file_path = f"../data/{subtask}/{approach}/finetuned_{shortcut_model_name}_LLMB/vectors/{sentence_embedder}_id2vec.tsv"
+        else: vector_file_path = f"../data/{subtask}/{approach}/finetuned_{shortcut_model_name}/vectors/{sentence_embedder}_id2vec.tsv"
+    else: vector_file_path = f"../data/{subtask}/{approach}/{shortcut_model_name}/vectors/{sentence_embedder}_id2vec.tsv"
     with open(vector_file_path, "r") as fr:
         for line in fr:
             id_, vec = line.strip().split('\t')

@@ -110,7 +110,7 @@ def compute_scores(disambiguated_data_path:str):
     if args.subtask == "generation" and args.llm_as_judge is False: # we need to instatiate embedding vectors
         global id2vec_gold, id2vec_disambiguated_data
         id2vec_gold = _get_gold_data_vectors(args.sentence_embedder)
-        id2vec_disambiguated_data = _get_disambiguated_data_vectors(args.subtask, args.approach, args.shortcut_model_name, args.sentence_embedder, args.is_finetuned)
+        id2vec_disambiguated_data = _get_disambiguated_data_vectors(args.subtask, args.approach, args.shortcut_model_name, args.sentence_embedder, args.is_finetuned, args.LLMB)
 
     gold_data = _get_gold_data(args.subtask)
     with open(disambiguated_data_path, "r") as json_file:
@@ -208,6 +208,7 @@ if __name__ == "__main__":
     parser.add_argument('--approach', '-a', type=str, help='Input the approach')
     parser.add_argument('--shortcut_model_name', '-sm', type=str, help='Input the model')
     parser.add_argument("--is_finetuned", "-f", type=bool, default=False, help="If the model we want to test is finetuned or not")
+    parser.add_argument("--LLMB", "-al", type=bool, default=False, help="If the model was finetuned with addition of LLMB data")
     parser.add_argument('--pos', '-p', type=str, help='Input the part of speech')
     parser.add_argument('--sentence_embedder', '-se', type=str, default=None, help='Input the sentence embedder')
     parser.add_argument('--llm_as_judge', '-j', type=bool, default=False, help='If we are using llm-as-a-judge for the generation setting')
@@ -229,9 +230,12 @@ if __name__ == "__main__":
     assert args.pos in ["NOUN", "ADJ", "VERB", "ADV", "ALL"]
     assert args.llm_as_judge is False or args.subtask == "generation"
 
-    # particular handling if we are going to score a FINETUNED model
     disambiguated_data_path = f"../data/{args.subtask}/{args.approach}/"
-    model_name = f"finetuned_{args.shortcut_model_name}" if args.is_finetuned else f"{args.shortcut_model_name}"
+    # particular handling if we are going to score a FINETUNED model
+    if args.is_finetuned is True:
+        if args.LLMB is True: model_name = f"finetuned_{args.shortcut_model_name}_LLMB"
+        else: model_name = f"finetuned_{args.shortcut_model_name}"
+    else: model_name = f"{args.shortcut_model_name}"
     definition_ranks_path = f"{disambiguated_data_path}{model_name}/definition_ranks.json"
     disambiguated_data_path += f"{model_name}/output.json"
 
@@ -241,7 +245,7 @@ if __name__ == "__main__":
         assert args.sentence_embedder in ["all-mpnet-base-v2", "all-MiniLM-L6-v2"]
         len_gold = len(_get_gold_data(args.subtask))
         _generate_gold_data_vectors(args.subtask, args.sentence_embedder)
-        _generate_disambiguated_data_vectors(args.subtask, args.approach, args.shortcut_model_name, args.sentence_embedder, args.is_finetuned, disambiguated_data_path, len_gold)
+        _generate_disambiguated_data_vectors(args.subtask, args.approach, args.shortcut_model_name, args.sentence_embedder, args.is_finetuned, args.LLMB, disambiguated_data_path, len_gold)
     
     # different scenarios: 
     # 1) if definition_ranks file already exists

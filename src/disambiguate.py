@@ -73,7 +73,7 @@ def _prepare_finetuned_model(shortcut_model_name:str, checkpoint_path:str):
     peft_model = peft_model.merge_and_unload() # 'PeftModelForCausalLM' is not supported for text-generation
     return tokenizer, peft_model
 
-def process(subtask:str, approach:str, shortcut_model_name:str, is_finetuned:bool, checkpoint_path:str):
+def process(subtask:str, approach:str, shortcut_model_name:str, is_finetuned:bool, checkpoint_path:str, LLMB:bool):
     """
     Processes the evaluation task for a specific subtask, approach, and model. Selection and generation subtasks only.
 
@@ -89,7 +89,7 @@ def process(subtask:str, approach:str, shortcut_model_name:str, is_finetuned:boo
         None
     """
     # we create folder structure
-    output_file_path = _create_folder(subtask, approach, shortcut_model_name, is_finetuned)
+    output_file_path = _create_folder(subtask, approach, shortcut_model_name, is_finetuned, LLMB)
 
     gold_data = _get_gold_data(subtask)
     n_instances_processed = 0
@@ -137,7 +137,9 @@ def process(subtask:str, approach:str, shortcut_model_name:str, is_finetuned:boo
     # LOG
     last_prompt = chat_prompt if shortcut_model_name == "gpt" else prompt_template
     if args.log_config:
-        if is_finetuned: shortcut_model_name = f"finetuned_{shortcut_model_name}"
+        if is_finetuned: 
+            if LLMB is True: shortcut_model_name = f"finetuned_{shortcut_model_name}_LLMB"
+            else: shortcut_model_name = f"finetuned_{shortcut_model_name}"
         _print_log(subtask, approach, shortcut_model_name, last_prompt, n_instances_processed)
 
 if __name__ == "__main__":
@@ -151,6 +153,7 @@ if __name__ == "__main__":
     parser.add_argument("--shortcut_model_name", "-m", type=str, help="Input the model")
     parser.add_argument("--is_finetuned", "-f", type=bool, default=False, help="If the model we want to test is finetuned or not")
     parser.add_argument("--checkpoint_path", "-cp", type=str, default=None, help="Input the checkpoint path")
+    parser.add_argument("--LLMB", "-al", type=bool, default=False, help="If the model was finetuned with addition of LLMB data")
     parser.add_argument("--log_config", "-l", type=bool, default=True, help="Log the results")
     args = parser.parse_args()
 
@@ -172,4 +175,4 @@ if __name__ == "__main__":
     # if we want to test a finetuned model we need to provide the checkpoint
     assert args.is_finetuned==False or args.checkpoint_path!=None
 
-    process(args.subtask, args.approach, args.shortcut_model_name, args.is_finetuned, args.checkpoint_path)
+    process(args.subtask, args.approach, args.shortcut_model_name, args.is_finetuned, args.checkpoint_path, args.LLMB)
