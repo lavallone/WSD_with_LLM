@@ -1,4 +1,4 @@
-## Do Large Language Models Understand Word Meanings?
+##  🤖🗣️🧩🤔 <br> Do Large Language Models Understand Word Meanings?
 
 ### COMMANDS 🕹️
 > (go inside the *src/* folder to run)
