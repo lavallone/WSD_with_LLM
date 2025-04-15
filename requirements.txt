@@ -9,9 +9,9 @@ sentencepiece
 protobuf
 datasets
 peft
-trl==0.12.0
+trl
 bitsandbytes
-accelerate==0.27.2
+accelerate
 #flash-attn
 tiktoken
 pytest

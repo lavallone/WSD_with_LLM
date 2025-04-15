@@ -7,7 +7,106 @@ from scipy.stats import pearsonr
 from statsmodels.stats.contingency_tables import mcnemar 
 import seaborn as sns
 import matplotlib.pyplot as plt
+import json
+import xml.etree.ElementTree as ET
+from abc import ABC, abstractmethod
+from nltk.corpus import wordnet as wn
+from functools import lru_cache
+from typing import List
 
+##############################################################################################
+class SenseInventory(ABC):
+    @abstractmethod
+    def get_possible_senses(self, lemma: str, pos: str) -> List[str]:
+        pass
+    @abstractmethod
+    def get_definition(self, sense: str) -> str:
+        pass
+
+@lru_cache(maxsize=None)
+def gloss_from_sense_key(sense_key: str) -> str:
+    return wn.lemma_from_key(sense_key).synset().definition()
+
+class WordNetSenseInventory(SenseInventory):
+    def __init__(self, wn_candidates_path: str):
+        self.lemmapos2senses = dict()
+        self._load_lemmapos2senses(wn_candidates_path)
+    def _load_lemmapos2senses(self, wn_candidates_path: str):
+        with open(wn_candidates_path) as f:
+            for line in f:
+                lemma, pos, *senses = line.strip().split("\t")
+                self.lemmapos2senses[(lemma, pos)] = senses
+    def get_possible_senses(self, lemma: str, pos: str) -> List[str]:
+        return self.lemmapos2senses.get((lemma, pos), [])
+    def get_definition(self, sense: str) -> str:
+        return gloss_from_sense_key(sense)
+
+# main method
+def create_dataset():
+    si = WordNetSenseInventory("data/evaluation/candidatesWN30.txt")
+
+    path_dir = os.path.dirname("data/evaluation/ALLamended/")
+    gold_key_path = os.path.join(path_dir, "ALLamended.gold.key.txt")
+    xml_data_path = os.path.join(path_dir, "ALLamended.data.xml")
+    output_json_path = os.path.join("data/evaluation", "ALLamended_preprocessed.json")
+
+    # Load the gold key file
+    gold_key_mapping = {}
+    with open(gold_key_path, 'r') as file:
+        for line in file:
+            parts = line.strip().split()
+            if len(parts) > 1:
+                instance_id, senses = parts[0], parts[1:]
+                gold_key_mapping[instance_id] = senses
+
+    # Parse the XML data
+    tree = ET.parse(xml_data_path)
+    root = tree.getroot()
+
+    preprocessed_data = []
+    for text in root.findall(".//text"):
+        for sentence in text.findall(".//sentence"):
+            tokens = []
+            for elem in sentence:
+                if elem.tag == "wf" or elem.tag == "instance":
+                    tokens.append(elem.text)
+            context = " ".join(tokens)
+            
+            for instance in sentence.findall("instance"):
+                instance_id = instance.get("id")
+                word = instance.text
+                lemma = instance.get("lemma")
+                pos = instance.get("pos")
+                senses = [ elem for elem in gold_key_mapping.get(instance_id, []) ] # we already apply the babelnet mapping
+                
+                entry = {
+                    "id": instance_id,
+                    "text": context,
+                    "word": word,
+                    "lemma": lemma,
+                    "pos": pos,
+                    "gold": senses,
+                    "gold_definitions" : [],
+                    "candidates": [],
+                    "definitions": []
+                }
+                preprocessed_data.append(entry)
+
+    # we add gold_definitions
+    for instance in preprocessed_data:
+        instance["gold_definitions"] = [ si.get_definition(e) for e in instance["gold"]]
+
+    # we add candidates ids and definitions
+    mapping = {"NOUN" : "n", "ADJ" : "a", "VERB" : "v", "ADV" : "r"}
+    for instance in preprocessed_data:
+        synsets = si.get_possible_senses(instance["lemma"], mapping[instance["pos"]])
+        instance["candidates"] = synsets
+        instance["definitions"] = [ si.get_definition(e) for e in instance["candidates"]]
+
+    # Save the data to JSON
+    with open(output_json_path, 'w') as outfile:
+        json.dump(preprocessed_data, outfile, indent=4)
+##############################################################################################
 
 def mc_nemar_test(subtask, approach):
 
@@ -20,7 +119,7 @@ def mc_nemar_test(subtask, approach):
             parts = line.strip().split(' ')
             consec_gold_data[parts[0]] = parts[1:]
     
-    consec_preds_path = '../data/evaluation/ALLamended/xml/predictions.consec.key.txt'
+    consec_preds_path = '../wsd_sota/consec_predictions.txt'
     consec_preds_data = {}
     with open(consec_preds_path, 'r') as file:
         for line in file:
@@ -100,7 +199,7 @@ def manual_analysis(approach):
         for line in file:
             parts = line.strip().split(' ')
             consec_gold_data[parts[0]] = parts[1:]
-    consec_preds_path = '../data/evaluation/ALLamended/xml/predictions.consec.key.txt'
+    consec_preds_path = '../wsd_sota/consec_predictions.txt'
     consec_preds_data = {}
     with open(consec_preds_path, 'r') as file:
         for line in file:
@@ -174,7 +273,7 @@ def manual_analysis(approach):
     # consec
     # id --> synset --> babelnet -->  ALLamended_preprocessed.json
     consec_id2pred = {}
-    with open("../data/evaluation/ALLamended/xml/predictions.consec.key.txt", "r") as file:
+    with open('../wsd_sota/consec_predictions.txt', "r") as file:
         for line in file:
             parts = line.strip().split()
             consec_id2pred[parts[0]] = parts[1]
@@ -225,6 +324,9 @@ def compute_task_correlations():
 
 if __name__ == "__main__":
 
+    # if you want to create ALLamended_preprocessed.json
+    create_dataset()
+
     # if you want to perform the McNemar's test with Consec performances
     #mc_nemar_test("selection", "zero_shot")
 
@@ -232,4 +334,4 @@ if __name__ == "__main__":
     #manual_analysis("zero_shot")
 
     # if you want to compute linear correlations between LLM tasks
-    compute_task_correlations()
+    #compute_task_correlations()
