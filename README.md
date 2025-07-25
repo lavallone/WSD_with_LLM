@@ -1,4 +1,5 @@
 ##  🤖🗣️🧩🤔 <br> Do Large Language Models Understand Word Meanings?
+*This is the most recently updated code from my collaboration with SapienzaNLP for research purposes.*
 
 ### COMMANDS 🕹️
 > (go inside the *src/* folder to run)
